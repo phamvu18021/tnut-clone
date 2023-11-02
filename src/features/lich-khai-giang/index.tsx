@@ -1,6 +1,3 @@
-import { Frame } from "@/components/Frame";
-import { Loading } from "@/components/Loading";
-import { LayoutNganh } from "@/layouts/layoutNganh";
 import { Container, Box, Text } from "@chakra-ui/react";
 import { Majors } from "../home/Majors";
 import { LkgMain } from "./LkgMain";
