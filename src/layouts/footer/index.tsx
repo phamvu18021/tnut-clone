@@ -84,17 +84,17 @@ export const Footer = () => {
                 py={2}
                 fontSize={"14px"}
                 as={Link}
-                href={"https://www.facebook.com/groups/835191238124628"}
+                href={"https://www.facebook.com/TNUElearning"}
               >
-                www.facebook.com/groups/835191238124628
+                www.facebook.com/TNUElearning
               </Box>
 
               <Box
                 py={2}
                 as={Link}
-                href={"https://www.facebook.com/bcvt.edu.vn/"}
+                href={"https://www.facebook.com/daihoctuxatnut/"}
               >
-                www.facebook.com/bcvt.edu.vn/
+                www.facebook.com/daihoctuxatnut
               </Box>
 
               <Box as={Link} href={"tel:0846770022"}>

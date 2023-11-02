@@ -35,7 +35,6 @@ import { FormPoup } from "@/components/FormContact";
 import { useRouter } from "next/router";
 import { useModal } from "@/components/ModalContext";
 
-
 export const Tags = ({
   label,
   type,
@@ -100,7 +99,7 @@ export const HeaderTop = () => {
             <Icon as={LuPhone} />
           </Tags>
 
-          <Tags type="mailto" label="hotro.bcvt.edu.vn@gmail.com">
+          <Tags type="mailto" label="hotro.tnut.edu.vn@gmail.com">
             <Icon as={MdOutlineMail} />
           </Tags>
 
