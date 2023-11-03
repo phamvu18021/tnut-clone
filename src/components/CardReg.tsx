@@ -12,7 +12,7 @@ export const CardReg = ({
   title: string;
 }) => {
   return (
-    <Box bgColor={"gray.50"}>
+    <Box>
       <Center
         m={2}
         style={{ textDecoration: "none" }}
@@ -31,7 +31,7 @@ export const CardReg = ({
           h={"100%"}
         >
           <Box>
-            <Box bg={"gray.100"} pos={"relative"} aspectRatio={431 / 288}>
+            <Box pos={"relative"} aspectRatio={431 / 288}>
               <Image
                 width={431}
                 height={288}
