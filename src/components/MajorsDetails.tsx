@@ -10,19 +10,18 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import { BtnTheme } from "./BtnTheme";
 import { useModal } from "./ModalContext";
-import { isNamedExportBindings } from "typescript";
+import ReactHtmlParser from "html-react-parser";
 
 interface IMDetails {
   major: string;
   image: string;
-  tabf: string;
-  tabs: string;
-  tabt: string;
-  tabfp: string[];
-  tabsp: string[];
+  tabf: any;
+  tabs: any;
+  tabt: any;
+  tabfp: any[];
+  tabsp: any[];
   tabtp: string[];
 }
 
@@ -40,32 +39,45 @@ export const MajorsDetails = (props: IMDetails) => {
                 {major}
               </Text>
               <Tabs pt={8} pb={12}>
-                <TabList>
-                  <Tab>{tabf}</Tab>
-                  <Tab>{tabs}</Tab>
-                  <Tab>{tabt}</Tab>
+                <TabList >
+                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>{tabf}</Tab>
+                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>{tabs}</Tab>
+                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>{tabt}</Tab>
                 </TabList>
 
                 <TabPanels>
                   <TabPanel>
                     {tabfp.map((line, index) => (
-                      <Text color={"gray.500"} pb={2} key={index}>
-                        {line}
-                      </Text>
+                      // <Text color={"gray.500"} pb={2} key={index}>
+                      //   {line}
+                      // </Text>
+
+                      <div
+                        style={{ paddingTop: "12px" }}
+                        key={index}
+                        dangerouslySetInnerHTML={{ __html: line }}
+                      />
                     ))}
                   </TabPanel>
                   <TabPanel>
                     {tabsp.map((lines, indexs) => (
-                      <Text color={"gray.500"} pb={2} key={indexs}>
-                        {lines}
-                      </Text>
+                      <div
+                        style={{ paddingTop: "12px" }}
+                        key={indexs}
+                        dangerouslySetInnerHTML={{ __html: lines }}
+                      />
                     ))}
                   </TabPanel>
                   <TabPanel>
                     {tabtp.map((linet, indext) => (
-                      <Text color={"gray.500"} pb={2} key={indext}>
-                        {linet}
-                      </Text>
+                      // <Text color={"gray.500"} pb={2} key={indext}>
+                      //   {linet}
+                      // </Text>
+                      <div
+                        style={{ paddingTop: "8px" }}
+                        key={indext}
+                        dangerouslySetInnerHTML={{ __html: linet }}
+                      />
                     ))}
                   </TabPanel>
                 </TabPanels>

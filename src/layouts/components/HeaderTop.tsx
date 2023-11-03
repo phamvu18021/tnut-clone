@@ -46,7 +46,7 @@ export const Tags = ({
 }) => {
   return (
     <Tag
-      color="black"
+      color="orange.500"
       borderRadius="full"
       variant="solid"
       bg={"transparent"}
@@ -96,11 +96,11 @@ export const HeaderTop = () => {
           justifyContent={{ base: "space-between", lg: "flex-end" }}
         >
           <Tags type="tel" label="0846770022">
-            <Icon as={LuPhone} />
+            <Icon w={"1.5em"} h={"1.5em"} as={LuPhone} />
           </Tags>
 
-          <Tags type="mailto" label="hotro.tnut.edu.vn@gmail.com">
-            <Icon as={MdOutlineMail} />
+          <Tags type="mailto" label="hotro.tnut.vn@gmail.com">
+            <Icon w={"1.5em"} h={"1.5em"} as={MdOutlineMail} />
           </Tags>
 
           <BtnTheme

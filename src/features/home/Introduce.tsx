@@ -29,7 +29,7 @@ export const Introduce = () => {
         margin={"0 auto"}
       >
         <GridItem colSpan={1}>
-          <Box pt={{base:'0px',lg:"24px"}}>
+          <Box pt={{ base: "0px", lg: "24px" }}>
             <Text
               size={"sm"}
               pb={"8px"}
@@ -61,7 +61,7 @@ export const Introduce = () => {
             <List
               spacing={4}
               pt={"8px"}
-              fontSize={{ base: "18px", lg: "21px", md: "md" }}
+              fontSize={{ base: "18px", lg: "20px", md: "20px" }}
             >
               <MotionTop>
                 <ListItem mt={{ lg: "19px" }}>

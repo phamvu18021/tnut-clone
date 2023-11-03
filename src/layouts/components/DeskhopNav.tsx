@@ -86,7 +86,7 @@ export const DesktopNav = () => {
                   as={Link}
                   p={3}
                   href={navItem.path ?? "#"}
-                  fontSize={{ base: "0.4rem", lg: "0.9rem" }}
+                  fontSize={{ base: "0.4rem", lg: "1rem" }}
                   fontWeight={{ base: "400", lg: "500" }}
                   color={linkColor}
                   _hover={{

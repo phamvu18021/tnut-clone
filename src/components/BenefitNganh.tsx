@@ -38,22 +38,22 @@ export const Item = ({
       href={path || "/"}
       pos="relative"
       transition={"all ease .4s"}
-      color={"#004956"}
+      color={"blue.700"}
       p={{ base: "16px", md: "20px", lg: "24px" }}
       border={"1px solid"}
       borderColor={"gray.300"}
       rounded={"sm"}
     >
-      <Heading as={"h2"} size={{ base: "md" }}>
+      <Text fontSize={"20px"} fontWeight={500}>
         {title}
-      </Heading>
+      </Text>
       <HStack spacing={"12px"} pt={"16px"}>
         <Icon
           as={icon}
           width={{ base: "50px", md: "100px" }}
           height={{ base: "50px", md: "100px" }}
           alt="Ngành kế toán HVTC"
-          color={"#004956"}
+          color={"blue.700"}
         />
 
         <VStack align={"start"}>
@@ -99,7 +99,12 @@ export const BenefitNganh = () => {
     <Box py={"48px"}>
       <Container maxW="7xl">
         <HeadSection subtitle="LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH" />
-        <SimpleGrid pt={"24px"} spacing={"8"} columns={{ base: 1, md: 2 }}>
+        <SimpleGrid
+          pt={"24px"}
+          spacing={"8"}
+          columns={{ base: 1, md: 2 }}
+          
+        >
           {benefits.map((categoty, index) => (
             <Item
               key={index}

@@ -37,11 +37,12 @@ export const Majors = () => {
           fontSize={{ base: "25px", md: "32px", lg: "32px" }}
           color={"blue.900"}
           textAlign={"center"}
+          fontWeight={500}
         >
           NGÀNH ĐÀO TẠO
         </Text>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5} py={5}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={5} py={5}>
           {Reg.map((Reg, index) => (
             <CardReg
               key={index}

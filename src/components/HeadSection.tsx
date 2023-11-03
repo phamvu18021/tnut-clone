@@ -6,9 +6,9 @@ export const HeadSection = ({ subtitle }: { subtitle: string }) => {
       <Heading
         fontSize={{ base: "25px", md: "32px", lg: "2.25rem !important" }}
         textTransform={"uppercase"}
-        color={"blue.500"}
+        color={"blue.700"}
         paddingTop={"30px"}
-        fontWeight={"bold"}
+        fontWeight={"600"}
       >
         {subtitle}
       </Heading>

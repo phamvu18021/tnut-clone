@@ -51,7 +51,7 @@ export const DkMain = () => {
                 color={"blue.800"}
                 fontWeight={600}
               >
-                ĐĂNG KÝ NGAY!
+                 THÔNG TIN TUYỂN SINH
               </Text>
             </MotionTop>
             <Divider

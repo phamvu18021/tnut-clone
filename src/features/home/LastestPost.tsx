@@ -42,10 +42,11 @@ export const LastestPost = () => {
         <Text
           pt={{ base: 16, lg: 32 }}
           size={"xl"}
-          color={"blue.600"}
+          color={"blue.800"}
           fontSize={36}
           pb={{ base: 12, lg: 20 }}
           textAlign={{ base: "center", lg: "center" }}
+          fontWeight={500}
         >
           TIN TỨC
         </Text>
