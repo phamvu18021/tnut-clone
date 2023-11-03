@@ -410,6 +410,51 @@ export const FormMain = ({ title }: { title?: string }) => {
   );
 };
 
+export const FormHome = ({ title }: { title?: string }) => {
+  const [id, setId] = useState("");
+  const [href, setHref] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const getForm = async () => {
+      try {
+        const res = await fetch(`/api/data-form/?type=form-main`);
+        const data = await res.json();
+        const id = data?.id || "";
+        id && setId(id+2);
+        const href = data?.href || "";
+        href && setHref(href);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getForm();
+  }, [id, href, isLoading]);
+  useEffect(() => {
+    comonForm({
+      id,
+      href,
+    });
+  }, [isLoading, id, href]);
+  return (
+    <>
+      {title && (
+        <Heading
+          as={"h2"}
+          size={{ base: "md", md: "lg" }}
+          textAlign={"center"}
+          color={"blue.700"}
+          pb={"16px"}
+        >
+          {title}
+        </Heading>
+      )}
+      {isLoading && <Loading he={"38vh"} />}
+      {!isLoading && <div id={id} />}
+    </>
+  );
+};
+
 export const FormPoupCTA = ({ title }: { title?: string }) => {
   const [id, setId] = useState("");
   const [href, setHref] = useState("");

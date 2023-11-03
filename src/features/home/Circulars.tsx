@@ -1,5 +1,5 @@
 "use client";
-import { FormMain } from "@/components/FormContact";
+import { FormHome } from "@/components/FormContact";
 
 import { FcBookmark } from "react-icons/fc";
 import {
@@ -67,7 +67,7 @@ export const Circulars = () => {
           </List>
         </Stack>
         <Box className="formbox" mt={{ lg: "47px" }}>
-          <FormMain title="Vui lòng điền thông tin" />
+          <FormHome title="Vui lòng điền thông tin" />
         </Box>
       </SimpleGrid>
     </Box>
