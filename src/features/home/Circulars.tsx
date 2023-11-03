@@ -35,6 +35,9 @@ export const Circulars = () => {
         margin={"0 auto"}
         gap={20}
       >
+        <Box className="formbox" mt={{ lg: "47px" }}>
+          <FormHome title="Vui lòng điền thông tin" />
+        </Box>
         <Stack bg="gray.50" height="full" padding={"40px"}>
           <Heading
             fontSize={{ base: "20px", md: "20px", lg: "28px" }}
@@ -66,9 +69,6 @@ export const Circulars = () => {
             ))}
           </List>
         </Stack>
-        <Box className="formbox" mt={{ lg: "47px" }}>
-          <FormHome title="Vui lòng điền thông tin" />
-        </Box>
       </SimpleGrid>
     </Box>
   );
