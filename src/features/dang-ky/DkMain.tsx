@@ -1,12 +1,10 @@
 "use client";
 import { MotionTop } from "@/components/MotionTop";
-import { FormPoupCTA } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 
 import {
-  AspectRatio,
   Box,
   Divider,
-  Heading,
   List,
   ListIcon,
   ListItem,
@@ -39,7 +37,7 @@ export const DkMain = () => {
             >
               ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
             </Text>
-            <FormPoupCTA />
+            <FormMain />
           </Box>
         </GridItem>
 
@@ -58,7 +56,6 @@ export const DkMain = () => {
               borderBottomWidth={"3px"}
               borderBlockEndColor={"orange"}
               w={"150px"}
-              // p={{ base: "6px", lg: "15px" }}
             />
             <List
               spacing={4}

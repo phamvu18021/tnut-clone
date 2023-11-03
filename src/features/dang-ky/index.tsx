@@ -5,14 +5,11 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Center,
   Container,
   Divider,
   HStack,
-  Heading,
   Text,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import { DkMain } from "./DkMain";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 export const Dangky = () => {

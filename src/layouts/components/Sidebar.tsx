@@ -1,6 +1,6 @@
 "use client";
 
-import {  FormPoupCTA } from "@/components/FormContact";
+import {  FormMain } from "@/components/FormContact";
 import { categotys } from "@/features/home/Categorys";
 import {
   Box,
@@ -18,7 +18,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { BiLogoTiktok } from "react-icons/bi";
-
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 export const Item = ({
@@ -110,7 +109,7 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
         >
           ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
         </Heading>
-        <FormPoupCTA />
+        <FormMain />
       </Box>
 
       <Box px={6} pt={"32px"}>

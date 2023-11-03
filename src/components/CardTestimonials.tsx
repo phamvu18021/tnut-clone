@@ -11,21 +11,20 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export const CardTestimonials = ({
   image,
   title,
   desc,
   path,
-  date,
+  career,
   imageH,
 }: {
   image?: string;
   title: string;
   desc: string;
   path: string;
-  date?: string;
+  career?: string;
   imageH?: string;
 }) => {
   return (
@@ -39,15 +38,6 @@ export const CardTestimonials = ({
       _hover={{ transform: "translateY(-6px)" }}
       className="card-blog"
     >
-      {/* <Flex
-        flexDir={"column"}
-        justify={"space-between"}
-        bg={"white"}
-        rounded={"sm"}
-        overflow={"hidden"}
-        alignItems={"start"}
-      > */}
-
       <HStack alignItems={"center"} pb={8}>
         <Box
           display={"flex"}
@@ -80,8 +70,8 @@ export const CardTestimonials = ({
             }}
             dangerouslySetInnerHTML={{ __html: clean(title) }}
           />
-          <Text fontSize={"sm"} mt={-2} color={"facebook.600"}>
-            {date}
+          <Text fontSize={"12px"} mt={-2} color={"facebook.600"}>
+            {career}
           </Text>
         </Stack>
       </HStack>
@@ -98,8 +88,6 @@ export const CardTestimonials = ({
         }}
         dangerouslySetInnerHTML={{ __html: desc }}
       />
-
-      {/* </Flex> */}
     </Box>
   );
 };

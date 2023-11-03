@@ -1,6 +1,6 @@
 "use client";
 import { MotionTop } from "@/components/MotionTop";
-import { FormPoupCTA } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { MotionRightLeft } from "@/components/MotionLeft";
 
 import {
@@ -38,7 +38,7 @@ export const Introduce = () => {
             >
               ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
             </Text>
-            <FormPoupCTA />
+            <FormMain />
           </Box>
         </GridItem>
 
@@ -52,12 +52,14 @@ export const Introduce = () => {
                 ĐÀO TẠO TỪ XA – TNUT ELEARNING
               </Text>
             </MotionTop>
+            <MotionTop>
             <Divider
               borderBottomWidth={"3px"}
               borderBlockEndColor={"orange"}
               w={"200px"}
               p={{ base: "6px", lg: "15px" }}
             />
+             </MotionTop>
             <List
               spacing={4}
               pt={"8px"}

@@ -1,38 +1,11 @@
-import {
-  Box,
-  HStack,
-  Heading,
-  Icon,
-  IconButton,
-  Link,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  Tag,
-  TagLabel,
-  VStack,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, HStack, Icon, Link, Tag, TagLabel } from "@chakra-ui/react";
 import { ReactNode, useEffect, useState } from "react";
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineMail } from "react-icons/md";
-import { Search } from "./Search";
 import { Logo } from "./Logo";
-import { FaFacebook } from "react-icons/fa";
-import { SiZalo } from "react-icons/si";
-import {
-  Stack,
-  VisuallyHidden,
-  chakra,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { FormInputs } from "@/components/FormInputs";
-import { SearchIcon } from "@chakra-ui/icons";
-import Image from "next/image";
 import { BtnTheme } from "@/components/BtnTheme";
 import { ModalBase } from "@/components/Modal";
 import { FormPoup } from "@/components/FormContact";
-import { useRouter } from "next/router";
 import { useModal } from "@/components/ModalContext";
 
 export const Tags = ({
@@ -46,7 +19,7 @@ export const Tags = ({
 }) => {
   return (
     <Tag
-      color="orange.500"
+      color="gray.500"
       borderRadius="full"
       variant="solid"
       bg={"transparent"}
@@ -91,16 +64,15 @@ export const HeaderTop = () => {
 
         <Box
           w={{ base: "-moz-min-content" }}
-          // maxW={{base :'21vw'}}
           display="flex"
           justifyContent={{ base: "space-between", lg: "flex-end" }}
         >
           <Tags type="tel" label="0846770022">
-            <Icon w={"1.5em"} h={"1.5em"} as={LuPhone} />
+            <Icon w={"1.2em"} h={"1.2em"} as={LuPhone} />
           </Tags>
 
           <Tags type="mailto" label="hotro.tnut.vn@gmail.com">
-            <Icon w={"1.5em"} h={"1.5em"} as={MdOutlineMail} />
+            <Icon w={"1.2em"} h={"1.2em"} as={MdOutlineMail} />
           </Tags>
 
           <BtnTheme

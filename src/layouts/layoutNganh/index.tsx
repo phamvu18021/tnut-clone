@@ -4,9 +4,6 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Box,
   Container,
-  GridItem,
-  Heading,
-  SimpleGrid,
   Text,
   Breadcrumb,
   BreadcrumbItem,

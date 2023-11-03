@@ -13,18 +13,18 @@ import {
 export const Reg = [
   {
     image: "/nganh-xay-dung.jpg",
-    desc: "Kỹ Thuật Xây Dựng",
-    title: ``,
+    title: "Kỹ Thuật Xây Dựng",
+    path: "/ky-thuat-xay-dung",
   },
   {
     image: "/nganh-quan-li-cong-nghiep.jpg",
-    desc: "Quản Lý Công Nghiệp",
-    title: ``,
+    title: "Quản Lý Công Nghiệp",
+    path: `quan-ly-cong-nghiep`,
   },
   {
     image: "/nganh-kinh-te-cong-nghiep.jpg",
-    desc: "Kinh Tế Công nghiệp",
-    title: ``,
+    title: "Kinh Tế Công nghiệp",
+    path: `/kinh-te-cong-nghiep`,
   },
 ];
 
@@ -46,8 +46,8 @@ export const Majors = () => {
           {Reg.map((Reg, index) => (
             <CardReg
               key={index}
-              desc={Reg.desc}
               title={Reg.title}
+              path={Reg.path}
               image={`${Reg.image}`}
             />
           ))}

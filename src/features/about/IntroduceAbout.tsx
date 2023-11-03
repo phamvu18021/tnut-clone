@@ -53,12 +53,14 @@ export const IntroduceAbout = () => {
                 ĐÔI NÉT VỀ ĐẠI HỌC KỸ THUẬT CÔNG NGHIỆP
               </Text>
             </MotionTop>
-            <Divider
-              borderBottomWidth={"3px"}
-              borderBlockEndColor={"orange"}
-              w={"200px"}
-              p={{ base: "6px", lg: "15px" }}
-            />
+            <MotionTop>
+              <Divider
+                borderBottomWidth={"3px"}
+                borderBlockEndColor={"orange"}
+                w={"200px"}
+                p={{ base: "6px", lg: "15px" }}
+              />
+            </MotionTop>
             <List
               spacing={4}
               pt={"8px"}

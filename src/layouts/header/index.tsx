@@ -1,12 +1,9 @@
 "use client";
 
-import { BtnTheme } from "@/components/BtnTheme";
 import { FormPoup } from "@/components/FormContact";
-
 import { DesktopNav } from "../components/DeskhopNav";
 import { HeaderTop } from "../components/HeaderTop";
 import { MobileNav } from "../components/MobileNav";
-import { Logo } from "../components/Logo";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -87,7 +84,6 @@ export const Header = () => {
       >
         <Container
           as={Flex}
-          // color={"white"}
           minH={"60px"}
           py={{ base: 3 }}
           px={{ base: 4 }}
@@ -109,7 +105,6 @@ export const Header = () => {
                     priority
                     width={60}
                     height={60}
-                    // style={{ borderRadius: "50%" }}
                     src={`/logo-tnut.png`}
                     alt="logo Trường Đại học Kỹ thuật Công nghiệp    "
                   />

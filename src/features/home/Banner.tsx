@@ -1,6 +1,4 @@
 import { BtnTheme } from "@/components/BtnTheme";
-import { FormMain } from "@/components/FormContact";
-import { ModalBase } from "@/components/Modal";
 import { useModal } from "@/components/ModalContext";
 import {
   Box,
@@ -12,7 +10,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
-import { link } from "node:fs";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";

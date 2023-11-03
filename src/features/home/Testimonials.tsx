@@ -75,7 +75,7 @@ export const Testimonials = () => {
           slidesPerView={
             (size.width < 480 && 1) || (size.width < 992 && 2) || 3
           }
-          spaceBetween={72}
+          spaceBetween={36}
           pagination={{
             clickable: true,
           }}
@@ -85,7 +85,7 @@ export const Testimonials = () => {
           {Testi?.map((testimo: any, index: number) => (
             <SwiperSlide key={index}>
               <CardTestimonials
-                date={testimo?.career}
+                career={testimo?.career}
                 key={index}
                 title={testimo?.name}
                 desc={testimo.comment}

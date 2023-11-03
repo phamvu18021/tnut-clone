@@ -1,8 +1,7 @@
-import { Heading, VStack, Box, Flex } from "@chakra-ui/react";
+import { Heading, VStack, Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+
 
 export const Logo = () => {
   return (
@@ -17,21 +16,21 @@ export const Logo = () => {
     >
       <Image
         priority
-        width={70}
-        height={70}
+        width={60}
+        height={60}
         src={`/logo-tnut.png`}
         alt="logo Trường Đại học Kỹ thuật Công nghiệp
         "
       />
 
       <Box>
-        <Heading
-          as="h4"
-          size={{ lg: "sm", base: "xs" }}
+        <Text
+          size={{ lg: "md", base: "xs" }}
           justifyContent={"center"}
+          fontWeight={600}
         >
           Đại học Kỹ thuật Công nghiệp
-        </Heading>
+        </Text>
       </Box>
     </Link>
   );

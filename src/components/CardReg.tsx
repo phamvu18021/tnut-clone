@@ -2,17 +2,18 @@
 
 import { Box, Center, Flex, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
 export const CardReg = ({
   image,
-  desc,
+  path,
   title,
 }: {
   image?: string;
-  desc: string;
+  path: string;
   title: string;
 }) => {
   return (
-    <Box>
+    <Box as={Link} href={path || '/'}>
       <Center
         m={2}
         style={{ textDecoration: "none" }}
@@ -43,14 +44,13 @@ export const CardReg = ({
             </Box>
             <Stack>
               <Text
-                color={"gray.800"}
-                fontSize={{ lg: "20px", base: "sm" }}
-                fontWeight={"500"}
-                lineHeight={"1.6"}
-                mt={"15px"}
-                dangerouslySetInnerHTML={{ __html: desc }}
-              />
-              <Text>{title}</Text>
+                mt={"16px"}
+                fontWeight={500}
+                color={"gray.600"}
+                fontSize={{ base: "16px", lg: "20px" }}
+              >
+                {title}
+              </Text>
             </Stack>
           </Box>
         </Flex>

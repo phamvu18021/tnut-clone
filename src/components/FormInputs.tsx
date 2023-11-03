@@ -1,13 +1,11 @@
 "use client";
 
 import { Box, Button, HStack, Input } from "@chakra-ui/react";
-
 import { useState } from "react";
-
 import { useRouter } from "next/router";
+
 export const FormInputs = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
   const router = useRouter();
 
   const onSearch = (e: React.FormEvent) => {
@@ -28,10 +26,7 @@ export const FormInputs = () => {
             px={4}
             placeholder="Tìm kiếm..."
             onChange={(e) => setSearchQuery(e.target.value)}
-          />{" "}
-          {/* <Button borderRadius={0} onClick={onSearch}>
-            Tìm kiếm
-          </Button> */}
+          />
         </HStack>
       </form>
     </Box>

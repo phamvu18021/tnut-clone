@@ -29,11 +29,8 @@ interface INavItem {
 }
 
 export const DesktopNav = () => {
-  // const [active, setActive] = useState("hidden");
   const linkColor = "black";
   const linkHoverColor = "red.500";
-
-  const popoverContentBgColor = "linear-gradient(180deg, #fff 0, #f8f9fa 100%)";
   const { onToggle, onOpen, onClose, isOpen } = useDisclosure();
 
   const rou = useRouter();
@@ -51,32 +48,6 @@ export const DesktopNav = () => {
   }, [rou.asPath]);
   return (
     <>
-      {/* <Stack direction={"column"}> */}
-      {/* <Stack
-          direction={"row"}
-          justifyContent={"end"}
-          alignItems={"flex-end"}
-          pb={2}
-          gap={6}
-        >
-          <BtnTheme
-            color={"black"}
-            colorScheme="white"
-            size={{ base: "sm", md: "lg" }}
-            onClick={onToggle}
-          >
-            Đặt câu hỏi
-          </BtnTheme>
-          <BtnTheme
-            color={"black"}
-            colorScheme="white"
-            size={{ base: "sm", md: "lg" }}
-            onClick={onToggle}
-          >
-            Đăng ký tư vấn
-          </BtnTheme>
-        </Stack> */}
-      <Box></Box>
       <Stack direction={"row"} alignItems={"center"}>
         {menus.map((navItem) => (
           <Box key={navItem.title}>
@@ -103,7 +74,6 @@ export const DesktopNav = () => {
                   boxShadow={"xl"}
                   bg={"linear-gradient(180deg, #fff 0%, #f8f9fa 100%)"}
                   borderRadius={0}
-                  // p={4}
                   minW={"2xs"}
                   maxW={200}
                   zIndex={99}
@@ -150,17 +120,6 @@ export const DesktopSubNav = ({ title, path }: INavItem) => {
             {title}
           </Text>
         </Box>
-        {/* <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"#FA692E"} w={5} h={5} as={BsChevronRight} />
-        </Flex> */}
       </Stack>
     </Box>
   );

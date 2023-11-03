@@ -18,8 +18,8 @@ const Page = () => {
   return (
     <>
       <NextSeo
-        title="Ngành kỹ thuật điện tử viễn thông "
-        description="Ngành kỹ thuật điện tử viễn thông"
+        title="Ngành kỹ thuật xây dựng "
+        description="Ngành kỹ thuật xây dựng"
       />
       <Ktxd />
       <ErrorBoundary fallback={<h1>Lỗi server</h1>}>

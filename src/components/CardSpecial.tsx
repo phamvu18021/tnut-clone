@@ -1,15 +1,11 @@
 import {
   Box,
-  Button,
-  HStack,
-  List,
-  ListIcon,
-  ListItem,
+
   Text,
-  VStack,
+
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
-import { FaCheckCircle } from "react-icons/fa";
+
 
 interface Props {
   children: React.ReactNode;

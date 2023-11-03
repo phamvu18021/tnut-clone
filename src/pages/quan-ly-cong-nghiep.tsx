@@ -18,12 +18,12 @@ const Page = () => {
   return (
     <>
       <NextSeo
-        title="Ngành kỹ thuật điện tử viễn thông "
-        description="Ngành kỹ thuật điện tử viễn thông"
-      /> 
+        title="Ngành quản lý công nghiệp"
+        description="Ngành quản lý công nghiệp"
+      />
       <Qlcn />
       <ErrorBoundary fallback={<h1>Lỗi server</h1>}>
-        <Box margin={"0 auto"} bg={'gray.50'}>
+        <Box margin={"0 auto"} bg={"gray.50"}>
           <BenefitNganh />
         </Box>
       </ErrorBoundary>

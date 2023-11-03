@@ -25,7 +25,7 @@ import { FormPoupCTA } from "./FormContact";
 
 export const BtnPhone = (props: IconButtonProps) => {
   return (
-    <Tooltip label={"0941.010.044"} placement="left" bg={"red.500"} hasArrow>
+    <Tooltip label={"0846770022"} placement="left" bg={"red.500"} hasArrow>
       <IconButton
         icon={<BiPhone />}
         size="lg"
@@ -52,7 +52,7 @@ export const BtnZalo = (props: IconButtonProps) => {
         bg={"blue.500"}
         p={"8px"}
         as={"a"}
-        href={"https://zalo.me/0914709118"}
+        href={"https://zalo.me/0846770022"}
         {...props}
       />
     </Tooltip>
@@ -70,7 +70,7 @@ export const BtnMailN = (props: IconButtonProps) => {
         bg={"blue.500"}
         p={"8px"}
         as={"a"}
-        href={"mailto: hotro.bcvt.edu.vn@gmail.com"}
+        href={"mailto: hotro.tnut.edu.vn@gmail.com"}
         {...props}
       />
     </Tooltip>
@@ -94,7 +94,7 @@ export const BtnMes = (props: IconButtonProps) => {
         p={"8px"}
         transition={"width ease .4s"}
         as={"a"}
-        href={"https://www.facebook.com/bcvt.edu.vn"}
+        href={"www.facebook.com/daihoctuxatnut"}
         {...props}
       />
     </Tooltip>

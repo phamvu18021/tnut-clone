@@ -1,6 +1,6 @@
 "use client";
 import { MotionTop } from "@/components/MotionTop";
-import { FormPoupCTA } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 
 import {
   AspectRatio,
@@ -86,7 +86,7 @@ export const LkgMain = () => {
 
         <GridItem colSpan={1}>
           <Box pt={{ base: "20px", lg: "90px" }}>
-            <FormPoupCTA />
+            <FormMain />
           </Box>
         </GridItem>
       </SimpleGrid>

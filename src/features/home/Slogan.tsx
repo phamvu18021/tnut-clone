@@ -19,9 +19,9 @@ export const Slogan = () => {
         <SimpleGrid columns={{ base: 1, lg: 5 }} spacing={{ base: 4, lg: 8 }}>
           <GridItem colSpan={3} justifyContent={"center"}>
             <Text
-              fontSize={{ base: "24px", lg: "24px" }}
+              fontSize={{ base: "24px", lg: "32px" }}
               color={"white"}
-              fontWeight={"600"}
+              fontWeight={"500"}
               textAlign={{ base: "center", lg: "right" }}
             >
               Xét tuyển – Không thi đầu vào

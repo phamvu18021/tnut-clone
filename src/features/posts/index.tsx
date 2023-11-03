@@ -85,12 +85,6 @@ export const Posts = () => {
           </Container>
         </Box>
       </Box>
-      {/* <Box
-        bgImage={"url('/bannernews.png')"}
-        bgRepeat={"no-repeat"}
-        bgSize={"cover"}
-        h={{ base: "15vh", lg: "45vh", md: "25vh", sm: "15vh" }}
-      ></Box> */}
       <Box pt={"12px"}>
         <Suspense fallback={<Loading />}>
           <ListPosts handleRouter={handleRouter} />

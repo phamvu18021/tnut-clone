@@ -23,8 +23,8 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <DefaultSeo
-        title="Học Viện Bưu Chính Viễn Thông"
-        description="Học Viện Bưu Chính Viễn Thông hệ đào tạo từ xa tuyển sinh 2023"
+        title="Đại Học Kỹ Thuật Công Nghiệp"
+        description="Đại Học Kỹ Thuật Công Nghiệp hệ đào tạo từ xa tuyển sinh 2023"
       />
       <ChakraProvider theme={theme}>
         <ModalProvider>

@@ -81,8 +81,7 @@ export const Footer = () => {
               <ListHeader>Liên hệ</ListHeader>
 
               <Box
-                py={2}
-                fontSize={"14px"}
+                pt={2}
                 as={Link}
                 href={"hhttps://www.facebook.com/daihoctuxatnut"}
               >
@@ -101,34 +100,23 @@ export const Footer = () => {
                 Hotline: 0846770022
               </Box>
             </Stack>
-
-            {/* <Stack align={"flex-start"}>
-              <ListHeader>DANH SÁCH NGÀNH HỌC</ListHeader>
-              <Box as={Link} href={"/nganh-quan-tri-kinh-doanh"}>
-                Quản trị kinh doanh
-              </Box>
-              <Box as={Link} href={"/nganh-cong-nghe-thong-tin"}>
-                Công nghệ thông tin
-              </Box>
-              <Box as={Link} href={"/nganh-ky-thuat-dien-tu-vien-thong"}>
-                Kỹ thuật Điện tử Viễn thông
-              </Box>
-            </Stack> */}
             <Stack align={"flex-start"}>
               <ListHeader> TRẠM TUYỂN SINH</ListHeader>
               <UnorderedList>
-                <ListItem>
+                <ListItem fontSize={14}>
                   Hà Nội: Số 116 Trần Vĩ, Phường Mai Dịch, Quận Cầu Giấy, Thành
                   Phố Hà Nội
+                </ListItem>
+                <ListItem fontSize={14}>
+                  Hồ Chí Minh: Số 91 Ký Con, phường Nguyễn Thái Bình, Quận 1, TP
+                  Hồ Chí Minh
                 </ListItem>
               </UnorderedList>
               <Image
                 src={"/aum.png"}
-                width={150}
+                width={100}
                 height={40}
                 alt="Aum Việt Nam"
-
-                // style={{ borderRadius: "6px" }}
               />
             </Stack>
 

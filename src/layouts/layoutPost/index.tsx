@@ -17,4 +17,3 @@ export const LayoutPost = ({ children }: { children: ReactNode }) => {
     </Container>
   );
 };
-// typez={"post"}
