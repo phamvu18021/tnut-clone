@@ -30,7 +30,7 @@ export const DkMain = () => {
         margin={"0 auto"}
       >
         <GridItem colSpan={1}>
-          <Box pt={{ base: "20px", lg: "80px" }}>
+          <Box pt={{ base: "20px", lg: "40px" }}>
             <Text
               size={"sm"}
               pb={"8px"}
@@ -51,7 +51,7 @@ export const DkMain = () => {
                 color={"blue.800"}
                 fontWeight={600}
               >
-                 THÔNG TIN TUYỂN SINH
+                THÔNG TIN TUYỂN SINH
               </Text>
             </MotionTop>
             <Divider
@@ -107,8 +107,6 @@ export const DkMain = () => {
             </List>
           </Stack>
         </GridItem>
-
-        
       </SimpleGrid>
     </Container>
   );
