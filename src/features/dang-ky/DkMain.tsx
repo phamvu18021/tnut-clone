@@ -57,11 +57,7 @@ export const DkMain = () => {
               borderBlockEndColor={"orange"}
               w={"150px"}
             />
-            <List
-              spacing={4}
-              pt={"8px"}
-              fontSize={{ base: "18px", lg: "21px", md: "md" }}
-            >
+            <List spacing={4} pt={"8px"} fontSize={{ base: "18px" }}>
               <MotionTop>
                 <ListItem mt={{ lg: "19px" }}>
                   <HStack>
