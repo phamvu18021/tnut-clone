@@ -5,9 +5,13 @@ import { Box, Container, VStack, Text } from "@chakra-ui/react";
 export const Advertisement = () => {
   const { isOpen, onOpen, onClose } = useModal();
   return (
-    <Box bg={"blue.900"} py={{ base: 12, lg: 22 }}>
+    <Box bg={"blue.900"} py={{ base: 2, lg: 10 }}>
       <Container maxW={"7xl"}>
-        <VStack spacing={{ base: 8, lg: 12 }} justifyContent={"center"}>
+        <VStack
+          py={{ base: 10, lg: 12 }}
+          spacing={{ base: 8, lg: 8 }}
+          justifyContent={"center"}
+        >
           <Box>
             <Text
               fontSize={{ base: "24px", lg: "36px" }}
