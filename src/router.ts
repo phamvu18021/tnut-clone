@@ -16,7 +16,7 @@ export const menus = [
     title: "GIỚI THIỆU", // view rendered
   },
   {
-    path: "/#", // the url
+    path: "#", // the url
     title: "CHƯƠNG TRÌNH ĐÀO TẠO",
     childs: [
       {
