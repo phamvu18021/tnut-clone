@@ -6,8 +6,6 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { useContext } from "react";
-
 interface IModalBase {
   isOpen: boolean;
   onOpen: () => void;
@@ -15,18 +13,15 @@ interface IModalBase {
   form: ReactNode;
 }
 
-
 export const ModalBase = (props: IModalBase) => {
   const { onClose, isOpen, form } = props;
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose}  isCentered>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent bg={"white"} >
+        <ModalContent bg={"white"}>
           <ModalCloseButton />
-          <ModalBody p={0}>
-              {form}
-          </ModalBody>
+          <ModalBody p={0}>{form}</ModalBody>
         </ModalContent>
       </Modal>
     </>

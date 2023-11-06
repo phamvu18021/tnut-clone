@@ -54,10 +54,6 @@ export const MajorsDetails = (props: IMDetails) => {
                 <TabPanels>
                   <TabPanel>
                     {tabfp.map((line, index) => (
-                      // <Text color={"gray.500"} pb={2} key={index}>
-                      //   {line}
-                      // </Text>
-
                       <div
                         style={{ paddingTop: "12px" }}
                         key={index}

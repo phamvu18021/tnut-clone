@@ -13,7 +13,7 @@ export const CardReg = ({
   title: string;
 }) => {
   return (
-    <Box as={Link} href={path || '/'}>
+    <Box as={Link} href={path || "/"}>
       <Center
         m={2}
         style={{ textDecoration: "none" }}

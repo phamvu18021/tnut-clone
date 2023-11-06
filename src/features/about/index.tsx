@@ -1,7 +1,6 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-
 import { IntroduceAbout } from "./IntroduceAbout";
 import { Benefit } from "../home/Benefit";
 import { Slogan } from "../home/Slogan";

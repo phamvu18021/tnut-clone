@@ -1,18 +1,13 @@
 "use client";
 
 import { CardTestimonials } from "@/components/CardTestimonials";
-import { formatDate } from "@/ultil/date";
 import { Box, Container, Grid, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import xss from "xss";
 import { useSize } from "../../hooks/useSizeWindow";
-import { Loading } from "@/components/Loading";
 
 export const StyledContainer = styled(Container)`
   .mySwiper {

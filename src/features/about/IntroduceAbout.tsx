@@ -1,7 +1,5 @@
 "use client";
 import { MotionTop } from "@/components/MotionTop";
-import { FormPoupCTA } from "@/components/FormContact";
-import { MotionRightLeft } from "@/components/MotionLeft";
 import Image from "next/image";
 import {
   AspectRatio,

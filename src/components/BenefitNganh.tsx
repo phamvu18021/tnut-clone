@@ -98,7 +98,6 @@ export const BenefitNganh = () => {
   return (
     <Box py={"48px"}>
       <Container maxW="7xl">
-        {/* <HeadSection subtitle="LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH" /> */}
         <Text fontSize={32} color={"blue.700"} fontWeight={500}>
           LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH
         </Text>

@@ -1,15 +1,6 @@
 import { BtnTheme } from "@/components/BtnTheme";
 import { useModal } from "@/components/ModalContext";
-import {
-  Box,
-  Container,
-  VStack,
-  Heading,
-  Text,
-  SimpleGrid,
-  GridItem,
-  Flex,
-} from "@chakra-ui/react";
+import { Box, Container, VStack, Text } from "@chakra-ui/react";
 
 export const Advertisement = () => {
   const { isOpen, onOpen, onClose } = useModal();
@@ -35,7 +26,7 @@ export const Advertisement = () => {
               NHẬN BẰNG ĐẠI HỌC DANH GIÁ
             </Text>
           </Box>
- 
+
           <Box>
             <Text
               fontSize={{ lg: "16px" }}

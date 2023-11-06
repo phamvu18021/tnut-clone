@@ -3,8 +3,6 @@ import { useModal } from "@/components/ModalContext";
 import {
   Box,
   Container,
-  HStack,
-  Heading,
   Text,
   SimpleGrid,
   GridItem,

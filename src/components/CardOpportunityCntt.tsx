@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import Image from "next/image";
 import {
   Box,
   ListItem,
   OrderedList,
   SimpleGrid,
   Stack,
-  Heading
+  Heading,
 } from "@chakra-ui/react";
 
 export const CardOpportunityCntt = () => {
@@ -20,7 +20,7 @@ export const CardOpportunityCntt = () => {
     "Kỹ sư lập trình ứng dụng chi thiết bị di động (IOS, Android)",
     "Lập trình games",
     "Chuyên viên Quản trị hệ thống",
-    "Chuyên biên Nghiên cứu công nghệ"
+    "Chuyên biên Nghiên cứu công nghệ",
   ];
   return (
     <Box py={{ base: "10", lg: "16" }} id="sectionVieclam" margin={"0 auto"}>
@@ -50,8 +50,17 @@ export const CardOpportunityCntt = () => {
           margin={"0 auto"}
           py={10}
         >
-          <Stack height="full" padding={"24px"} pl={{ lg: "247px", md: "auto", base: "auto" }}>
-            <Heading fontWeight={"bold"} color={"white"} fontStyle={"italic"} fontSize={{ base: "25px" }}>
+          <Stack
+            height="full"
+            padding={"24px"}
+            pl={{ lg: "247px", md: "auto", base: "auto" }}
+          >
+            <Heading
+              fontWeight={"bold"}
+              color={"white"}
+              fontStyle={"italic"}
+              fontSize={{ base: "25px" }}
+            >
               CÔNG NGHỆ THÔNG TIN
             </Heading>
             <OrderedList color={"White"}>
@@ -64,10 +73,15 @@ export const CardOpportunityCntt = () => {
             <Image
               priority
               src="/program.jpg"
-              alt='ptit'
+              alt="ptit"
               width={500}
               height={200}
-              style={{ height: "auto", width: "100%", objectFit: 'cover', borderRadius: "20px" }}
+              style={{
+                height: "auto",
+                width: "100%",
+                objectFit: "cover",
+                borderRadius: "20px",
+              }}
             />
           </Box>
         </SimpleGrid>

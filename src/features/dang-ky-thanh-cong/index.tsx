@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Center,
-  Container,
-  Divider,
-  HStack,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
 
 import { SamePosts } from "../post/Sames";
 import { useModal } from "@/components/ModalContext";

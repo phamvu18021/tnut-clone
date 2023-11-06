@@ -18,7 +18,7 @@ export const CardMets = ({ image, desc }: { image?: string; desc: string }) => {
       _hover={{ transform: "translateY(-4px)" }}
       className="card-blog"
       h={"100%"}
-      paddingTop={{ base:"10px", lg:"30px"}}
+      paddingTop={{ base: "10px", lg: "30px" }}
     >
       <Flex
         flexDir={"column"}
@@ -26,7 +26,6 @@ export const CardMets = ({ image, desc }: { image?: string; desc: string }) => {
         maxW={"445px"}
         w={"full"}
         bg={"white"}
-     
         overflow={"hidden"}
         h={"100%"}
       >
@@ -41,7 +40,6 @@ export const CardMets = ({ image, desc }: { image?: string; desc: string }) => {
             />
           </Box>
           <Stack>
-        
             {isMounted && (
               <Text
                 color={"#1d376c"}
@@ -49,7 +47,6 @@ export const CardMets = ({ image, desc }: { image?: string; desc: string }) => {
                 fontWeight={500}
                 lineHeight={"1.6"}
                 mt={"15px"}
-          
                 dangerouslySetInnerHTML={{ __html: desc }}
               />
             )}
