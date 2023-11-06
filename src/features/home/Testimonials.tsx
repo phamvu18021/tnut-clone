@@ -65,6 +65,7 @@ export const Testimonials = () => {
           fontSize={{ base: "25px", md: "32px", lg: "32px" }}
           color={"blue.900"}
           textAlign={"center"}
+          fontWeight={500}
         >
           ĐÁNH GIÁ CỦA HỌC VIÊN
         </Text>

@@ -98,12 +98,15 @@ export const BenefitNganh = () => {
   return (
     <Box py={"48px"}>
       <Container maxW="7xl">
-        <HeadSection subtitle="LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH" />
+        {/* <HeadSection subtitle="LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH" /> */}
+        <Text fontSize={32} color={"blue.700"} fontWeight={500}>
+          LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH
+        </Text>
         <SimpleGrid
           pt={"24px"}
           spacing={"8"}
           columns={{ base: 1, md: 2 }}
-          
+          pb={{ lg: "20px" }}
         >
           {benefits.map((categoty, index) => (
             <Item

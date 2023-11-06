@@ -48,18 +48,19 @@ export const Introduce = () => {
               <Text
                 fontSize={{ base: "25px", md: "25px", lg: "32px" }}
                 color={"blue.800"}
+                fontWeight={500}
               >
                 ĐÀO TẠO TỪ XA – TNUT ELEARNING
               </Text>
             </MotionTop>
             <MotionTop>
-            <Divider
-              borderBottomWidth={"3px"}
-              borderBlockEndColor={"orange"}
-              w={"200px"}
-              p={{ base: "6px", lg: "15px" }}
-            />
-             </MotionTop>
+              <Divider
+                borderBottomWidth={"3px"}
+                borderBlockEndColor={"orange"}
+                w={"200px"}
+                p={{ base: "6px", lg: "15px" }}
+              />
+            </MotionTop>
             <List
               spacing={4}
               pt={"8px"}

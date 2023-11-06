@@ -94,7 +94,7 @@ export const ListPosts = ({
       <Box>
         <Heading
           size={"xl"}
-          color={"red.600"}
+          color={"blue.700"}
           pb={"20px"}
           textAlign={{ base: "center", lg: "center" }}
         >

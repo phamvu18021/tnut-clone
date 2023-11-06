@@ -35,14 +35,20 @@ export const MajorsDetails = (props: IMDetails) => {
         <Container maxW="7xl">
           <SimpleGrid columns={{ base: 1, md: 2 }} gap={24}>
             <GridItem colSpan={1}>
-              <Text fontSize={32} fontWeight={400}>
+              <Text fontSize={32} fontWeight={500}>
                 {major}
               </Text>
               <Tabs pt={8} pb={12}>
-                <TabList >
-                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>{tabf}</Tab>
-                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>{tabs}</Tab>
-                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>{tabt}</Tab>
+                <TabList>
+                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>
+                    {tabf}
+                  </Tab>
+                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>
+                    {tabs}
+                  </Tab>
+                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>
+                    {tabt}
+                  </Tab>
                 </TabList>
 
                 <TabPanels>
