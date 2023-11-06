@@ -9,13 +9,34 @@ import {
 } from "@chakra-ui/react";
 import { SamePosts } from "../post/Sames";
 import { useEffect, useState } from "react";
-import { CardBlog } from "@/components/CardBlog";
+import { CardLBlog } from "@/components/CardBlog";
 import { formatDate } from "@/ultil/date";
 import { clean } from "@/lib/sanitizeHtml";
 import { Loading } from "@/components/Loading";
+import { BtnThemeSe } from "@/components/BtnTheme";
+export const lblog = [
+  {
+    image: "/lblog1.jpg",
+    title: "Managing Your Finances",
+    author: "Theresa Barnes",
+    tags: "News",
+    desc: "Personal financial management is a subject that is not taught in many schools, but is something that nearly everyone has to deal with in their lives later on. Here are some statistics...",
+    path: "",
+    date: "Apr 21, 2023 at 12:05 pm",
+  },
+  {
+    image: "/lblog2.jpg",
+    title: "5 Reasons Why You Need an Accountant",
+    author: "Theresa Barnes",
+    tags: "Advertising",
+    desc: "As your business — and revenue — grow, managing your financials may become a task you don’t have the time or knowledge to manage. Specifically, when it comes avoiding legal and...",
+    path: "",
+    date: "Apr 21, 2023 at 12:05 pm",
+  },
+];
+
 export const LastestPost = () => {
   const [posts, setPosts] = useState<any[]>([]);
-
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const getPosts = async () => {
@@ -40,39 +61,54 @@ export const LastestPost = () => {
     <Container maxW={"7xl"}>
       <Box>
         <Text
-          pt={{ base: 16, lg: 32 }}
+          pt={{ base: 12, lg: 28 }}
           size={"xl"}
           color={"blue.800"}
-          fontSize={36}
-          pb={{ base: 12, lg: 20 }}
+          fontSize={{ base: 24, lg: 36 }}
+          pb={{ base: 8, lg: 12 }}
           textAlign={{ base: "center", lg: "center" }}
           fontWeight={500}
         >
           TIN TỨC
         </Text>
 
-        {!isLoading && (
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
-            {posts?.slice(0, 2).map((post: any, index: number) => (
-              <GridItem key={index}>
-                <CardBlog
-                  date={post?.date ? formatDate(post.date) : ""}
-                  title={post?.title?.rendered}
-                  desc={post?.desc?.rendered}
-                  image={post?.featured_image || ""}
-                  path={`/tin-tuc/${post?.slug}`}
-                />
-              </GridItem>
-            ))}
-            {posts?.length === 0 && (
-              <Grid placeItems={"center"} height={"40vh"}>
-                Dữ liệu đang được chúng tôi cập nhập
-              </Grid>
-            )}
-          </SimpleGrid>
-        )}
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
+          {lblog?.slice(0, 2).map((post: any, index: number) => (
+            <GridItem key={index}>
+              <CardLBlog
+                date={post?.date}
+                title={post?.title}
+                desc={post?.desc}
+                image={post?.image || ""}
+                path={``}
+                author={post?.author}
+                tags={post?.tags}
+              />
+            </GridItem>
+          ))}
+          {posts?.length === 0 && (
+            <Grid placeItems={"center"} height={"40vh"}>
+              Dữ liệu đang được chúng tôi cập nhập
+            </Grid>
+          )}
+        </SimpleGrid>
+        {/* )} */}
 
-        {isLoading && <Loading />}
+        {/* {isLoading && <Loading />} */}
+        <Box
+          display={"flex"}
+          justifyContent={"center"}
+          pt={4}
+          pb={{ base: 16, lg: 32 }}
+        >
+          <BtnThemeSe
+            bg={"none"}
+            size={{ base: "sm", md: "lg" }}
+            w={{ base: "200px", lg: "250px" }}
+          >
+            VIEW ALL BLOG POST
+          </BtnThemeSe>
+        </Box>
       </Box>
     </Container>
   );

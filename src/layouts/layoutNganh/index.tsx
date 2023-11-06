@@ -52,7 +52,7 @@ export const LayoutNganh = ({
             <Text
               fontWeight={400}
               textAlign={"start"}
-              fontSize={{ base: "32px", lg: "60px" }}
+              fontSize={{ base: "28px", lg: "60px" }}
               pb="40px"
             >
               {title || "Ngành "}

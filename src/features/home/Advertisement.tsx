@@ -5,12 +5,12 @@ import { Box, Container, VStack, Text } from "@chakra-ui/react";
 export const Advertisement = () => {
   const { isOpen, onOpen, onClose } = useModal();
   return (
-    <Box bg={"blue.900"} py={10}>
+    <Box bg={"blue.900"} py={{ base: 12, lg: 22 }}>
       <Container maxW={"7xl"}>
-        <VStack spacing={12} justifyContent={"center"} py={12}>
+        <VStack spacing={{ base: 8, lg: 12 }} justifyContent={"center"}>
           <Box>
             <Text
-              fontSize={{ lg: "36px" }}
+              fontSize={{ base: "24px", lg: "36px" }}
               color={"white"}
               fontWeight={"300"}
               textAlign={{ base: "center" }}
@@ -18,7 +18,7 @@ export const Advertisement = () => {
               HỌC TỪ XA
             </Text>
             <Text
-              fontSize={{ lg: "36px" }}
+              fontSize={{ base: "22px", lg: "36px" }}
               color={"white"}
               fontWeight={"600"}
               textAlign={{ base: "center" }}
@@ -29,7 +29,7 @@ export const Advertisement = () => {
 
           <Box>
             <Text
-              fontSize={{ lg: "16px" }}
+              fontSize={{ base: "14px", lg: "16px" }}
               color={"white"}
               fontWeight={"300"}
               textAlign={{ base: "center", lg: "right" }}
@@ -44,6 +44,7 @@ export const Advertisement = () => {
             size={{ base: "sm", md: "lg" }}
             onClick={() => !isOpen && onOpen && onOpen()}
             w={"300px"}
+            h={"60px"}
           >
             NHẬN TÀI KHOẢN HỌC THỬ
           </BtnTheme>

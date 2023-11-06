@@ -36,12 +36,12 @@ export const Item = ({
       as={Link}
       href={path || "/"}
     >
-      <SimpleGrid columns={5} gap={2}>
-        <GridItem colSpan={1}>
+      <SimpleGrid columns={5} gap={{ sm: 8, base: 2 }}>
+        <GridItem colSpan={1} justifyContent={"center"}>
           <Icon
             as={icon}
-            width={{ base: "30px", md: "50px" }}
-            height={{ base: "30px", md: "50px" }}
+            width={{ base: "35px", md: "50px" }}
+            height={{ base: "35px", md: "50px" }}
             alt=""
             color={"#004956"}
           />
@@ -51,10 +51,10 @@ export const Item = ({
           <VStack gap={"4px"} align={"start"}>
             <Text fontSize={{ base: "16px", md: "20px" }}>{title}</Text>
             <VStack align={"start"}>
-              <Text color={"gray.400"} fontSize={{ base: ".8rem", md: "sm" }}>
+              <Text color={"gray.400"} fontSize={{ base: "14px", md: "sm" }}>
                 {desc}
               </Text>
-              <Text color={"gray.400"} fontSize={{ base: ".8rem", md: "sm" }}>
+              <Text color={"gray.400"} fontSize={{ base: "14px", md: "sm" }}>
                 {descs}
               </Text>
             </VStack>

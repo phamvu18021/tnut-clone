@@ -9,6 +9,8 @@ import {
   Text,
   SimpleGrid,
   GridItem,
+  HStack,
+  Divider,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -222,6 +224,153 @@ export const CardBlogS = ({
           </Stack>
         </GridItem>
       </SimpleGrid>
+    </Box>
+  );
+};
+
+export const CardLBlog = ({
+  image,
+  title,
+  author,
+  tags,
+  desc,
+  path,
+  date,
+  imageH,
+}: {
+  image?: string;
+  title: string;
+  author: string;
+  tags: string;
+  desc: string;
+  path: string;
+  date?: string;
+  imageH?: string;
+}) => {
+  const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
+
+  const [isMounted, setMount] = useState(false);
+
+  useEffect(() => {
+    setMount(true);
+  }, []);
+  return (
+    <Box
+      as={Link}
+      style={{ textDecoration: "none" }}
+      href={path}
+      py={4}
+      px={6}
+      transition={"all ease .4s"}
+      _hover={{ transform: "translateY(-6px)" }}
+      className="card-blog"
+    >
+      <Flex
+        flexDir={"column"}
+        justify={"space-between"}
+        bg={"white"}
+        rounded={"sm"}
+        overflow={"hidden"}
+      >
+        <Box>
+          <Box
+            bg={"white"}
+            pos={"relative"}
+            aspectRatio={508 / 338}
+            overflow={"hidden"}
+          >
+            {hasSSL === "false" && (
+              <Img
+                src={image || `/blog.jpeg`}
+                style={{ maxHeight: imageH }}
+                alt={title}
+              />
+            )}
+            {hasSSL === "true" && (
+              <Box objectFit="contain">
+                <Image
+                  width={656}
+                  height={436}
+                  src={image || `/blog.jpeg`}
+                  style={{ maxHeight: imageH }}
+                  alt={title}
+                />
+              </Box>
+            )}
+          </Box>
+          <Stack>
+            <Text
+              color={"blue.500"}
+              fontSize={{ base: "18", lg: "24px" }}
+              fontWeight={"400"}
+              mt={2}
+              _hover={{ color: "blue.800" }}
+              css={{
+                display: "-webkit-box",
+                WebkitLineClamp: "2",
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+              dangerouslySetInnerHTML={{ __html: clean(title) }}
+            />
+            <Stack align={"center"} direction="row" h="28px">
+              <Text
+                fontSize={{ base: "14px", lg: "16px" }}
+                pr={2}
+                mt={-2}
+                color={"gray.500"}
+              >
+                by {author}
+              </Text>
+              <Divider color={"black"} orientation="vertical" />
+              <Text
+                fontSize={{ base: "14px", lg: "16px" }}
+                mt={-2}
+                px={2}
+                color={"gray.500"}
+              >
+                {date}
+              </Text>
+              <Divider orientation="vertical" />
+              <Text
+                display={{ base: "none", lg: "contents" }}
+                fontSize={"16px"}
+                mt={-2}
+                px={2}
+                color={"blue.300"}
+              >
+                {tags}
+              </Text>
+            </Stack>
+            <Text
+              display={{ base: "contents", lg: "none" }}
+              fontSize={{ base: "16px", lg: "16px" }}
+              mt={-2}
+              px={2}
+              color={"blue.300"}
+            >
+              {tags}
+            </Text>
+
+            {isMounted && (
+              <Text
+                pt={4}
+                color={"gray.500"}
+                fontSize={{ base: "14px", lg: "16px" }}
+                css={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: "2",
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+                dangerouslySetInnerHTML={{ __html: clean(desc) }}
+              />
+            )}
+          </Stack>
+        </Box>
+      </Flex>
     </Box>
   );
 };

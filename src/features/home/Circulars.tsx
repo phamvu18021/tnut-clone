@@ -33,14 +33,14 @@ export const Circulars = () => {
         columns={{ base: 1, lg: 2 }}
         maxW={"7xl"}
         margin={"0 auto"}
-        gap={20}
+        gap={{ base: 12, lg: 20 }}
       >
         <Box className="formbox" mt={{ lg: "47px" }}>
           <FormHome title="Vui lòng điền thông tin" />
         </Box>
         <Stack bg="gray.50" height="full" padding={"40px"}>
           <Heading
-            fontSize={{ base: "20px", md: "20px", lg: "28px" }}
+            fontSize={{ base: "20px", md: "24px", lg: "28px" }}
             color={"blue.600"}
           >
             THÔNG TƯ 27/2019/TT-BGDĐT KHÔNG GHI HÌNH THỨC ĐÀO TẠO TRÊN BẰNG TỐT
@@ -55,7 +55,7 @@ export const Circulars = () => {
           <List
             spacing={30}
             pt={{ lg: "15px", base: "15px" }}
-            fontSize={{ base: "18px" }}
+            fontSize={{ base: "16px", lg: "18px" }}
           >
             {items.map((item, index) => (
               <ListItem

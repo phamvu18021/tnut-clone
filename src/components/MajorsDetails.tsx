@@ -35,7 +35,7 @@ export const MajorsDetails = (props: IMDetails) => {
         <Container maxW="7xl">
           <SimpleGrid columns={{ base: 1, md: 2 }} gap={24}>
             <GridItem colSpan={1}>
-              <Text fontSize={32} fontWeight={500}>
+              <Text fontSize={{ base: 24, lg: 32 }} fontWeight={500}>
                 {major}
               </Text>
               <Tabs pt={8} pb={12}>

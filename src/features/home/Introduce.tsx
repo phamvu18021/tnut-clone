@@ -1,7 +1,6 @@
 "use client";
 import { MotionTop } from "@/components/MotionTop";
 import { FormMain } from "@/components/FormContact";
-import { MotionRightLeft } from "@/components/MotionLeft";
 
 import {
   AspectRatio,
@@ -46,7 +45,7 @@ export const Introduce = () => {
           <Stack bg="White" height="full" pt={{ base: "20px", lg: "48px" }}>
             <MotionTop>
               <Text
-                fontSize={{ base: "25px", md: "25px", lg: "32px" }}
+                fontSize={{ base: "24px", md: "24px", lg: "32px" }}
                 color={"blue.800"}
                 fontWeight={500}
               >
@@ -57,7 +56,7 @@ export const Introduce = () => {
               <Divider
                 borderBottomWidth={"3px"}
                 borderBlockEndColor={"orange"}
-                w={"200px"}
+                w={{ base: "120px", lg: "200px" }}
                 p={{ base: "6px", lg: "15px" }}
               />
             </MotionTop>
