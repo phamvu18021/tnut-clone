@@ -26,7 +26,7 @@ export const IntroduceAbout = () => {
         columns={{ base: 1, lg: 2 }}
         maxW={"7xl"}
         py={16}
-        gap={32}
+        gap={{ base: 20, lg: 32 }}
         margin={"0 auto"}
       >
         <GridItem colSpan={1}>

@@ -8,7 +8,7 @@ import { DefaultSeo } from "next-seo";
 import { ModalProvider } from "@/components/ModalContext";
 import "@/styles/globals.css";
 import "@/styles/tableContent.css";
-
+// import '@/styles/swiper.css'
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };

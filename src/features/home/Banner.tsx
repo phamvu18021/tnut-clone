@@ -14,9 +14,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 export const CardBanner = ({ image }: { image: string }) => {
   const { isOpen, onOpen, onClose } = useModal();
 
@@ -34,12 +33,13 @@ export const CardBanner = ({ image }: { image: string }) => {
       <BtnTheme
         position={"absolute"}
         top={"80%"}
-        left={"10%"}
+        left={{ base: "10%", lg: "18%" }}
         color={"white"}
         colorScheme="white"
-        size={{ base: "sm", md: "lg" }}
+        size={{ base: "xs", md: "lg" }}
+        fontSize={{ base: "14px", lg: "20px" }}
         onClick={() => !isOpen && onOpen && onOpen()}
-        w={{ base: "180px", md: "220px", lg: "260px" }}
+        w={{ base: "140px", md: "220px", lg: "260px" }}
       >
         ĐĂNG KÝ NGAY!
       </BtnTheme>
@@ -56,7 +56,35 @@ const SwiperContainer = styled.div`
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
   font-size:30px
 }
+.swiper-pagination {
+  position: absolute;
+  top: 82%;
+  left: 80%;
+  transform: translate3d(-50%, 0, 0);
+  bottom: 30px;
+  @media (max-width: 420px) {
+  display: none;
+  }
+}
+.swiper-pagination-bullet {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  justify-content: center;
+  font-size: 16px;
+  color: #8A8A8A;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0);
+}
 
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #4299E1;
+}
+@media (max-width: 420px) {
+  
+}
 }`;
 const ImageOverlay = styled.div`
   position: absolute;
@@ -130,21 +158,29 @@ export const Banner = () => {
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`,
     },
   ];
+
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index: number, className: string) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
   return (
     <SwiperContainer>
       <Swiper
+        pagination={pagination}
         spaceBetween={30}
         effect={"fade"}
         autoplay={{
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         loop={true}
-        modules={[Autoplay, EffectFade, Navigation]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
-        pagination={{
-          type: "fraction",
-        }}
+        // pagination={{
+        //   type: "fraction",
+        // }}
         navigation={true}
       >
         {teachers?.map((teacher, index) => (

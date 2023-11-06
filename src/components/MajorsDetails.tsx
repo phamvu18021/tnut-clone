@@ -40,13 +40,22 @@ export const MajorsDetails = (props: IMDetails) => {
               </Text>
               <Tabs pt={8} pb={12}>
                 <TabList>
-                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>
+                  <Tab
+                    fontSize={{ base: 16, lg: 20 }}
+                    _selected={{ color: "orange.500" }}
+                  >
                     {tabf}
                   </Tab>
-                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>
+                  <Tab
+                    fontSize={{ base: 16, lg: 20 }}
+                    _selected={{ color: "orange.500" }}
+                  >
                     {tabs}
                   </Tab>
-                  <Tab fontSize={20} _selected={{ color: "orange.500" }}>
+                  <Tab
+                    fontSize={{ base: 16, lg: 20 }}
+                    _selected={{ color: "orange.500" }}
+                  >
                     {tabt}
                   </Tab>
                 </TabList>

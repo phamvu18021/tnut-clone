@@ -25,7 +25,7 @@ export const LkgMain = () => {
       <SimpleGrid
         columns={{ base: 1, lg: 3 }}
         maxW={"7xl"}
-        py={20}
+        py={{ base: 12, lg: 20 }}
         gap={16}
         margin={"0 auto"}
       >

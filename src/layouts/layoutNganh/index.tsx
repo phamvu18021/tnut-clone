@@ -63,7 +63,7 @@ export const LayoutNganh = ({
             spacing="8px"
             separator={<ChevronRightIcon color="gray.50" />}
             fontWeight="medium"
-            fontSize="md"
+            fontSize={{ base: "sm", lg: "md" }}
           >
             <BreadcrumbItem color="gray.50" fontWeight={300}>
               <BreadcrumbLink href="/">Trang chủ</BreadcrumbLink>
@@ -81,7 +81,7 @@ export const LayoutNganh = ({
       </Box>
 
       <Box>
-        <Container maxW={"7xl"} py={36}>
+        <Container maxW={"7xl"} py={{ base: 20, lg: 36 }}>
           {children}
         </Container>
       </Box>

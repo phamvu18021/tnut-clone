@@ -23,8 +23,8 @@ export const DkMain = () => {
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         maxW={"7xl"}
-        py={20}
-        gap={32}
+        py={{ base: 12, lg: 20 }}
+        gap={{ base: 12, lg: 32 }}
         margin={"0 auto"}
       >
         <GridItem colSpan={1}>

@@ -98,7 +98,11 @@ export const BenefitNganh = () => {
   return (
     <Box py={"48px"}>
       <Container maxW="7xl">
-        <Text fontSize={32} color={"blue.700"} fontWeight={500}>
+        <Text
+          fontSize={{ base: 24, lg: 32 }}
+          color={"blue.700"}
+          fontWeight={500}
+        >
           LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH
         </Text>
         <SimpleGrid
