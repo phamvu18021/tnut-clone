@@ -154,7 +154,7 @@ export const Search = () => {
               </Box>
 
               {!isLoading && (
-                <VStack >
+                <VStack>
                   <SimpleGrid gap={8} columns={{ base: 1, md: 2, lg: 2 }}>
                     {posts?.map((post: any, index: number) => (
                       <CardBlog
@@ -163,7 +163,7 @@ export const Search = () => {
                         title={post?.title?.rendered}
                         desc={xss(post.excerpt.rendered)}
                         image={post?.featured_image || ""}
-                        path={`/tin-tuc/${post?.slug}`}
+                        path={`/${post?.slug}`}
                       />
                     ))}
                     {posts?.length === 0 && (

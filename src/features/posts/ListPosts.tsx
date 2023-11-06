@@ -110,7 +110,7 @@ export const ListPosts = ({
                   title={post?.title?.rendered}
                   desc={clean("")}
                   image={post?.featured_image || ""}
-                  path={`/tin-tuc/${post?.slug}`}
+                  path={`/${post?.slug}`}
                 />
               </GridItem>
             ))}
