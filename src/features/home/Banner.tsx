@@ -2,12 +2,7 @@ import { BtnTheme } from "@/components/BtnTheme";
 import { useModal } from "@/components/ModalContext";
 import {
   Box,
-  Button,
-  Heading,
   Image,
-  SimpleGrid,
-  Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import "swiper/css";

@@ -3,10 +3,8 @@ import { MotionTop } from "@/components/MotionTop";
 import { FormMain } from "@/components/FormContact";
 
 import {
-  AspectRatio,
   Box,
   Divider,
-  Heading,
   List,
   ListIcon,
   ListItem,

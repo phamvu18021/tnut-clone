@@ -1,14 +1,6 @@
 "use client";
 import { CardReg } from "@/components/CardReg";
-import { FormMain } from "@/components/FormContact";
-import {
-  Box,
-  Container,
-  Divider,
-  Heading,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Container, SimpleGrid, Text } from "@chakra-ui/react";
 
 export const Reg = [
   {

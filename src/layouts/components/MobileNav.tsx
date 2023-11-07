@@ -24,7 +24,7 @@ import {
 import Link from "next/link";
 import { useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { BsChevronDown, BsJustify } from "react-icons/bs";
+import { BsChevronDown, BsJustify, BsTiktok, BsYoutube } from "react-icons/bs";
 import { Logo } from "./Logo";
 import { FormInputs } from "@/components/FormInputs";
 import { FaFacebook } from "react-icons/fa";
@@ -154,16 +154,31 @@ export const MobileNav = () => {
                 <SocialButton
                   bagr="transparent"
                   label={"Facebook"}
-                  href={"https://www.facebook.com/TNUElearning"}
+                  href={"https://www.facebook.com/daihoctuxatnut"}
                 >
                   <FaFacebook color="white" />
                 </SocialButton>
                 <SocialButton
                   bagr="transparent"
                   label={"Zalo"}
-                  href={"https://zalo.me/0846770022"}
+                  href={"https://zalo.me/0815674848"}
                 >
                   <SiZalo color="white" />
+                </SocialButton>
+                <SocialButton
+                  bagr="transparent"
+                  label={"Tiktok"}
+                  href={"https://www.tiktok.com/@tnut_elearning"}
+                >
+                  <BsTiktok color="white" />
+                </SocialButton>
+
+                <SocialButton
+                  bagr="transparent"
+                  label={"Youtube"}
+                  href={"https://www.youtube.com/@etnut"}
+                >
+                  <BsYoutube color="white" />
                 </SocialButton>
               </HStack>
             </DrawerBody>

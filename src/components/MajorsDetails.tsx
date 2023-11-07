@@ -93,13 +93,13 @@ export const MajorsDetails = (props: IMDetails) => {
                   </TabPanel>
                 </TabPanels>
               </Tabs>
-              <Box display={"flex"} justifyContent={"center"}>
+              <Box display={"flex"} justifyContent={"start"}>
                 <BtnTheme
                   color={"white"}
                   colorScheme="white"
                   size={{ base: "sm", md: "lg" }}
                   onClick={() => !isOpen && onOpen && onOpen()}
-                  w={{ base: "200px", md: "240px", lg: "280px" }}
+                  w={{ base: "200px", md: "220px", lg: "240px" }}
                 >
                   ĐĂNG KÝ NGAY
                 </BtnTheme>

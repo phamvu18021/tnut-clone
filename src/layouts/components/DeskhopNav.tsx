@@ -11,16 +11,11 @@ import {
   Text,
   Input,
 } from "@chakra-ui/react";
-import { IconButton } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
 
 import Link from "next/link";
-import { BsChevronRight } from "react-icons/bs";
 import { useState, useEffect } from "react";
-import { BtnTheme } from "@/components/BtnTheme";
 import { ModalBase } from "@/components/Modal";
 import { FormPoup } from "@/components/FormContact";
-import { FormInputs } from "@/components/FormInputs";
 import { useRouter } from "next/router";
 interface INavItem {
   title: string;

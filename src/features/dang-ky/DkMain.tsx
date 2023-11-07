@@ -52,11 +52,13 @@ export const DkMain = () => {
                 THÔNG TIN TUYỂN SINH
               </Text>
             </MotionTop>
+            <MotionTop>
             <Divider
               borderBottomWidth={"3px"}
               borderBlockEndColor={"orange"}
               w={"150px"}
             />
+            </MotionTop>
             <List spacing={4} pt={"8px"} fontSize={{ base: "18px" }}>
               <MotionTop>
                 <ListItem mt={{ lg: "19px" }}>

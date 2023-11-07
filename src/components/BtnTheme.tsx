@@ -10,7 +10,6 @@ export const BtnTheme = (props: ButtonProps) => {
       {...args}
       bg={"blue.400"}
       h={"-moz-max-content"}
-      // transition={"all ease .4s"}
       transition={"0.25s cubic-bezier(0.2, 1, 0.3, 1)"}
       _hover={{
         bg: "blue.700",
@@ -36,7 +35,6 @@ export const BtnThemeSe = (props: ButtonProps) => {
         bg: "#0095D9",
         textColor: "white",
       }}
-  
     >
       {children}
     </Button>

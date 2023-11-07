@@ -17,8 +17,8 @@ export default async function handler(
   let filteredLines: string[] = [];
   try {
     const responeWordpress = await fetch(
-      `${api_url}/posts`,
-      //?slug=lich-khai-giang
+      `${api_url}/posts?slug=lich-khai-giang`,
+
       {
         next: { revalidate: 10 },
       }

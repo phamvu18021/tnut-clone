@@ -334,7 +334,7 @@ export const CardLBlog = ({
               </Text>
               <Divider orientation="vertical" />
               <Text
-                display={{ base: "none", lg: "contents" }}
+                display={{ base: "none", lg: "block" }}
                 fontSize={"16px"}
                 mt={-2}
                 px={2}
@@ -343,8 +343,9 @@ export const CardLBlog = ({
                 {tags}
               </Text>
             </Stack>
+
             <Text
-              display={{ base: "contents", lg: "none" }}
+              display={{ base: "block", lg: "none" }}
               fontSize={{ base: "16px", lg: "16px" }}
               mt={-2}
               px={2}

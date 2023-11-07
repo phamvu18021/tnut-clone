@@ -73,7 +73,7 @@ export const LichKg = ({
           </Breadcrumb>
         </Container>
       </Box>
-      <LkgMain />
+      {!isLoading && <LkgMain title={list[0]} lichkg={list[1]} />}
       <Box bg={"gray.50"}>
         <Container maxW={"7xl"}>
           <Majors />

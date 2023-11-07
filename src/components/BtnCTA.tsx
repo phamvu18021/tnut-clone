@@ -52,7 +52,7 @@ export const BtnZalo = (props: IconButtonProps) => {
         bg={"blue.500"}
         p={"8px"}
         as={"a"}
-        href={"https://zalo.me/0846770022"}
+        href={"https://zalo.me/0815674848"}
         {...props}
       />
     </Tooltip>

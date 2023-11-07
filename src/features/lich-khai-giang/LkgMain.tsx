@@ -19,7 +19,13 @@ import {
   HStack,
 } from "@chakra-ui/react";
 
-export const LkgMain = () => {
+export const LkgMain = ({
+  title,
+  lichkg,
+}: {
+  title: string;
+  lichkg: string;
+}) => {
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -40,12 +46,13 @@ export const LkgMain = () => {
                 ĐĂNG KÝ NGAY!
               </Text>
             </MotionTop>
+            <MotionTop>
             <Divider
               borderBottomWidth={"3px"}
               borderBlockEndColor={"orange"}
               w={"150px"}
-              // p={{ base: "6px", lg: "15px" }}
             />
+            </MotionTop>
             <List
               spacing={4}
               pt={"8px"}
@@ -67,7 +74,7 @@ export const LkgMain = () => {
                     textAlign={"center"}
                     fontWeight={600}
                   >
-                    KHAI GIẢNG ĐỢT III NĂM 2023
+                   {title}
                   </Text>
                 </ListItem>
                 <ListItem py={4}>
@@ -76,7 +83,7 @@ export const LkgMain = () => {
                     color={"blue.400"}
                     fontWeight={600}
                   >
-                    29/10/2023
+                    {lichkg}
                   </Text>
                 </ListItem>
               </Box>

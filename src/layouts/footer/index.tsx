@@ -18,7 +18,7 @@ import { FaFacebook } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
 import { BsYoutube } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
-
+import { BsTiktok } from "react-icons/bs";
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
     <Text
@@ -56,22 +56,30 @@ export const Footer = () => {
                 <SocialButton
                   bagr="rgba(255, 255, 255, 0.23)"
                   label={"Facebook"}
-                  href={"https://www.facebook.com/TNUElearning"}
+                  href={"https://www.facebook.com/daihoctuxatnut"}
                 >
                   <FaFacebook color="white" />
                 </SocialButton>
                 <SocialButton
                   bagr="transparent"
                   label={"Zalo"}
-                  href={"https://zalo.me/0846770022"}
+                  href={"https://zalo.me/0815674848"}
                 >
                   <SiZalo color="white" />
                 </SocialButton>
-                <SocialButton bagr="transparent" label={"Instagram"} href={""}>
-                  <GrInstagram color="white" />
+                <SocialButton
+                  bagr="transparent"
+                  label={"Tiktok"}
+                  href={"https://www.tiktok.com/@tnut_elearning"}
+                >
+                  <BsTiktok color="white" />
                 </SocialButton>
 
-                <SocialButton bagr="transparent" label={"Youtube"} href={""}>
+                <SocialButton
+                  bagr="transparent"
+                  label={"Youtube"}
+                  href={"https://www.youtube.com/@etnut"}
+                >
                   <BsYoutube color="white" />
                 </SocialButton>
               </HStack>
@@ -83,33 +91,28 @@ export const Footer = () => {
               <Box
                 pt={2}
                 as={Link}
-                href={"hhttps://www.facebook.com/daihoctuxatnut"}
+                href={"https://www.facebook.com/daihoctuxatnut"}
               >
                 www.facebook.com/daihoctuxatnut
               </Box>
 
-              <Box
-                py={2}
-                as={Link}
-                href={"https://www.facebook.com/TNUElearning/"}
-              >
-                www.facebook.com/TNUElearning
+              <Box py={2} as={Link} href={"https://www.tnut.vn"}>
+                Website: tnut.vn
               </Box>
 
               <Box as={Link} href={"tel:0846770022"}>
-                Hotline: 0846770022
+                Hotline: 0815674848
               </Box>
             </Stack>
             <Stack align={"flex-start"}>
               <ListHeader> TRẠM TUYỂN SINH</ListHeader>
               <UnorderedList>
                 <ListItem fontSize={14}>
-                  Hà Nội: Số 116 Trần Vĩ, Phường Mai Dịch, Quận Cầu Giấy, Thành
-                  Phố Hà Nội
+                  Hà Nội: Số 116 Trần Vỹ, Mai Dịch, Cầu Giấy, Hà Nội
                 </ListItem>
                 <ListItem fontSize={14}>
-                  Hồ Chí Minh: Số 91 Ký Con, phường Nguyễn Thái Bình, Quận 1, TP
-                  Hồ Chí Minh
+                  Tp. HCM: Số 91 Ký Con, Phường Nguyễn Thái Bình , Quận 1, Hồ
+                  Chí Minh
                 </ListItem>
               </UnorderedList>
               <Image

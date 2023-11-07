@@ -1,6 +1,6 @@
 "use client";
 
-import {  FormMain } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { categotys } from "@/features/home/Categorys";
 import {
   Box,
@@ -165,7 +165,7 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
               w={"full"}
               color={"whiteAlpha.800"}
               as={Link}
-              href={"https://www.tiktok.com/@tnut_learning"}
+              href={"https://www.tiktok.com/@tnut_elearning"}
             >
               Tiktok
             </Button>
