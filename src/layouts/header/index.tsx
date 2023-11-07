@@ -45,12 +45,6 @@ export const Header = () => {
         setNav("none");
         setColorh("gray.50");
         break;
-      case "/gioi-thieu":
-        setHeadt("flex");
-        setNav("none");
-        setColorh("gray.50");
-        break;
-
       default:
         setHeadt("none");
         setNav("flex");
