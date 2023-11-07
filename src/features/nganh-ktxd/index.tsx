@@ -2,7 +2,9 @@ import { LayoutNganh } from "@/layouts/layoutNganh";
 import { MajorsDetails } from "@/components/MajorsDetails";
 export const Ktxd = () => {
   return (
-    <LayoutNganh title="KỸ THUẬT XÂY DỰNG" image="/nganh-xay-dung.jpg">
+    <LayoutNganh title="KỸ THUẬT XÂY DỰNG" image="/nganh-xay-dung.jpg" 
+    path="/ky-thuat-xay-dung"
+    >
       <MajorsDetails
         major="KỸ THUẬT XÂY DỰNG"
         image="/nganh-xay-dung.jpg"

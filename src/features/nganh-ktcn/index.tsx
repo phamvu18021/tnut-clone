@@ -6,6 +6,7 @@ export const Ktcn = () => {
     <LayoutNganh
       title="KINH TẾ CÔNG NGHIỆP"
       image="/nganh-kinh-te-cong-nghiep.jpg"
+      path='/kinh-te-cong-nghiep'
     >
       <MajorsDetails
         major="KINH TẾ CÔNG NGHIỆP"

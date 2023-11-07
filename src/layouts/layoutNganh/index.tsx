@@ -17,10 +17,12 @@ export const LayoutNganh = ({
   children,
   title,
   image,
+  path,
 }: {
   children?: ReactNode;
   title?: string;
   image?: string;
+  path?: string;
 }) => {
   return (
     <>
@@ -70,11 +72,11 @@ export const LayoutNganh = ({
             </BreadcrumbItem>
 
             <BreadcrumbItem color="gray.50" px={4} fontWeight={300}>
-              <BreadcrumbLink href="/#">Chương trình đào tạo</BreadcrumbLink>
+              <BreadcrumbLink href="#">Chương trình đào tạo</BreadcrumbLink>
             </BreadcrumbItem>
 
             <BreadcrumbItem color="gray.50" px={4} fontWeight={600}>
-              <BreadcrumbLink href="/tin-tuc">{title}</BreadcrumbLink>
+              <BreadcrumbLink href={path}>{title}</BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
         </Container>

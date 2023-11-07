@@ -5,6 +5,7 @@ export const Qlcn = () => {
     <LayoutNganh
       title="QUẢN LÝ CÔNG NGHIỆP"
       image="/nganh-quan-li-cong-nghiep.jpg"
+      path="/quan-ly-cong-nghiep"
     >
       <MajorsDetails
         major="QUẢN LÝ CÔNG NGHIỆP"
@@ -13,7 +14,6 @@ export const Qlcn = () => {
         tabs="Cơ hội nghề nghiệp"
         tabt="Thông tin tuyển sinh"
         tabfp={[
-          
           "<p ><b> Quản Lý Công Nghiệp </b> (tên tiếng Anh là Industrial Management – IM) là ngành giao thoa giữa kinh tế và kỹ thuật. Đóng vai trò quan trọng cho thành công của các công ty, doanh nghiệp kinh doanh, thương mại, dịch vụ.</p>",
           "<p>Định nghĩa một cách ngắn gọn thì ngành quản lý công nghiệp là ngành đào tạo, cung cấp các kiến thức lẫn kỹ năng chuyên môn cho sinh viên về quản trị nguồn nhân lực, dự án, sản xuất, quản lý vật tư – tồn kho, đánh giá công nghệ. Với kiến thức bao quát về hoạt động kinh doanh và am hiểu thị trường, cử nhân quản lý đồng thời cũng là người chịu trách nhiệm lập dự án kinh doanh, kế hoạch tiếp thị, nghiên cứu thị trường và đầu tư tài chính…</p>",
         ]}

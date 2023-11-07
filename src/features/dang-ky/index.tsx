@@ -61,7 +61,7 @@ export const Dangky = () => {
             </BreadcrumbItem>
 
             <BreadcrumbItem color="gray.50" px={4} fontWeight={600}>
-              <BreadcrumbLink href="/tin-tuc">Đăng ký</BreadcrumbLink>
+              <BreadcrumbLink href="/dang-ky">Đăng ký</BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
         </Container>
