@@ -69,7 +69,7 @@ export const LkgMain = ({
                     textAlign={"center"}
                     fontWeight={600}
                   >
-                   {title}
+                   {title || "KHAI GIẢNG ĐỢT III NĂM 2023"}
                   </Text>
                 </ListItem>
                 <ListItem py={4}>
@@ -78,7 +78,7 @@ export const LkgMain = ({
                     color={"blue.400"}
                     fontWeight={600}
                   >
-                    {lichkg}
+                    {lichkg ||"29/10/2023"}
                   </Text>
                 </ListItem>
               </Box>
