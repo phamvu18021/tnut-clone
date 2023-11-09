@@ -44,7 +44,7 @@ export const LastestPost = () => {
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
 
-        posts?.length && setPosts([...posts, ...lblog]);
+        setPosts([...posts, ...lblog]);
       } catch (error) {
         console.log(error);
       }
