@@ -25,7 +25,7 @@ import { FormPoupCTA } from "./FormContact";
 
 export const BtnPhone = (props: IconButtonProps) => {
   return (
-    <Tooltip label={"0846770022"} placement="left" bg={"red.500"} hasArrow>
+    <Tooltip label={"0815674848"} placement="left" bg={"red.500"} hasArrow>
       <IconButton
         icon={<BiPhone />}
         size="lg"
@@ -34,7 +34,7 @@ export const BtnPhone = (props: IconButtonProps) => {
         bg={"red.600"}
         p={"8px"}
         as={"a"}
-        href={"tel: 0846770022"}
+        href={"tel: 0815674848"}
         {...props}
       />
     </Tooltip>

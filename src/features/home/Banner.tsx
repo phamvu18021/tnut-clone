@@ -1,15 +1,12 @@
 import { BtnTheme } from "@/components/BtnTheme";
 import { useModal } from "@/components/ModalContext";
-import {
-  Box,
-  Image,
-} from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 export const CardBanner = ({ image }: { image: string }) => {
   const { isOpen, onOpen, onClose } = useModal();
@@ -173,9 +170,6 @@ export const Banner = () => {
         loop={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
-        // pagination={{
-        //   type: "fraction",
-        // }}
         navigation={true}
       >
         {teachers?.map((teacher, index) => (

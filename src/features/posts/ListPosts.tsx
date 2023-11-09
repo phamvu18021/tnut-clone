@@ -2,16 +2,15 @@
 
 import { CardBlog } from "@/components/CardBlog";
 import { Loading } from "@/components/Loading";
-import { LayoutBottom } from "@/layouts/layoutPosts/LayoutBottom";
 import { formatDate } from "@/ultil/date";
 import { clean } from "@/lib/sanitizeHtml";
 import {
   Box,
-  Grid,
   HStack,
   Heading,
   SimpleGrid,
   GridItem,
+  Center,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { useSearchParams } from "next/navigation";
@@ -87,10 +86,10 @@ export const ListPosts = ({
     getPosts();
   }, [page]);
 
-  const len = Math.ceil(Number(totalPosts) / 10) || 1;
+  const len = Math.ceil(Number(totalPosts) / 8) || 1;
 
   return (
-    <LayoutBottom sticky="120px">
+    <>
       <Box>
         <Heading
           size={"xl"}
@@ -100,7 +99,6 @@ export const ListPosts = ({
         >
           Tin Tức
         </Heading>
-
         {!isLoading && (
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
             {posts?.map((post: any, index: number) => (
@@ -114,27 +112,27 @@ export const ListPosts = ({
                 />
               </GridItem>
             ))}
-            {posts?.length === 0 && (
-              <Grid placeItems={"center"} height={"40vh"}>
-                Dữ liệu đang được chúng tôi cập nhập
-              </Grid>
-            )}
           </SimpleGrid>
         )}
-
+        {posts?.length === 0 && (
+          <Center placeItems={"center"} height={"40vh"} textAlign={"center"}>
+            Dữ liệu đang được chúng tôi cập nhập
+          </Center>
+        )}
         {isLoading && <Loading />}
       </Box>
-
-      <HStack pt={"32px"} justify={"center"}>
-        <StyledPaginate
-          previousLabel="<"
-          nextLabel=">"
-          pageCount={len / 3}
-          onPageChange={handleRouter}
-          pageRangeDisplayed={1}
-          marginPagesDisplayed={1}
-        />
-      </HStack>
-    </LayoutBottom>
+      {posts?.length > 0 && (
+        <HStack pt={"32px"} justify={"center"}>
+          <StyledPaginate
+            previousLabel="<"
+            nextLabel=">"
+            pageCount={len}
+            onPageChange={handleRouter}
+            pageRangeDisplayed={1}
+            marginPagesDisplayed={1}
+          />
+        </HStack>
+      )}
+    </>
   );
 };

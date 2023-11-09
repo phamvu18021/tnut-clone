@@ -1,6 +1,5 @@
 "use client";
 
-
 import { NextSeo } from "next-seo";
 import { About } from "@/features/about";
 

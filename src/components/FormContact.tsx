@@ -420,7 +420,7 @@ export const FormHome = ({ title }: { title?: string }) => {
         const res = await fetch(`/api/data-form/?type=form-main`);
         const data = await res.json();
         const id = data?.id || "";
-        id && setId(id+2);
+        id && setId(id + 2);
         const href = data?.href || "";
         href && setHref(href);
         setIsLoading(false);

@@ -1,5 +1,6 @@
 "use client";
 import { Loading } from "@/components/Loading";
+import { LayoutBottom } from "@/layouts/layoutPosts/LayoutBottom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -87,7 +88,10 @@ export const Posts = () => {
       </Box>
       <Box pt={"12px"}>
         <Suspense fallback={<Loading />}>
+
+        <LayoutBottom sticky="120px">
           <ListPosts handleRouter={handleRouter} />
+          </LayoutBottom>
         </Suspense>
       </Box>
       <Divider size={"xl"} />

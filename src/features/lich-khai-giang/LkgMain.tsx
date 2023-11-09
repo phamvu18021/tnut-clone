@@ -3,20 +3,15 @@ import { MotionTop } from "@/components/MotionTop";
 import { FormMain } from "@/components/FormContact";
 
 import {
-  AspectRatio,
   Box,
   Divider,
-  Heading,
   List,
-  ListIcon,
   ListItem,
   SimpleGrid,
   Stack,
   Container,
   GridItem,
   Text,
-  UnorderedList,
-  HStack,
 } from "@chakra-ui/react";
 
 export const LkgMain = ({

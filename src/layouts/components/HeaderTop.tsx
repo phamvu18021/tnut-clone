@@ -67,7 +67,7 @@ export const HeaderTop = () => {
           display="flex"
           justifyContent={{ base: "space-between", lg: "flex-end" }}
         >
-          <Tags type="tel" label="0846770022">
+          <Tags type="tel" label="0815674848">
             <Icon w={"1.2em"} h={"1.2em"} as={LuPhone} />
           </Tags>
 

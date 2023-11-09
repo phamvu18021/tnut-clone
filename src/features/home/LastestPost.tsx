@@ -7,12 +7,8 @@ import {
   Text,
   SimpleGrid,
 } from "@chakra-ui/react";
-import { SamePosts } from "../post/Sames";
 import { useEffect, useState } from "react";
 import { CardLBlog } from "@/components/CardBlog";
-import { formatDate } from "@/ultil/date";
-import { clean } from "@/lib/sanitizeHtml";
-import { Loading } from "@/components/Loading";
 import { BtnThemeSe } from "@/components/BtnTheme";
 export const lblog = [
   {
@@ -47,8 +43,8 @@ export const LastestPost = () => {
         });
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
-        const { posts, totalPosts } = data;
-        posts?.length && setPosts(posts);
+
+        posts?.length && setPosts([...posts, ...lblog]);
       } catch (error) {
         console.log(error);
       }
@@ -58,58 +54,54 @@ export const LastestPost = () => {
     getPosts();
   }, []);
   return (
-    <Container maxW={"7xl"}>
-      <Box>
-        <Text
-          pt={{ base: 12, lg: 28 }}
-          size={"xl"}
-          color={"blue.800"}
-          fontSize={{ base: 24, lg: 36 }}
-          pb={{ base: 8, lg: 12 }}
-          textAlign={{ base: "center", lg: "center" }}
-          fontWeight={500}
-        >
-          TIN TỨC
-        </Text>
+    <>
+      {posts?.length > 0 && (
+        <Container maxW={"7xl"}>
+          <Box>
+            <Text
+              pt={{ base: 12, lg: 28 }}
+              size={"xl"}
+              color={"blue.800"}
+              fontSize={{ base: 24, lg: 36 }}
+              pb={{ base: 8, lg: 12 }}
+              textAlign={{ base: "center", lg: "center" }}
+              fontWeight={500}
+            >
+              TIN TỨC
+            </Text>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
-          {lblog?.slice(0, 2).map((post: any, index: number) => (
-            <GridItem key={index}>
-              <CardLBlog
-                date={post?.date}
-                title={post?.title}
-                desc={post?.desc}
-                image={post?.image || ""}
-                path={``}
-                author={post?.author}
-                tags={post?.tags}
-              />
-            </GridItem>
-          ))}
-          {posts?.length === 0 && (
-            <Grid placeItems={"center"} height={"40vh"}>
-              Dữ liệu đang được chúng tôi cập nhập
-            </Grid>
-          )}
-        </SimpleGrid>
-        {/* )} */}
-
-        {/* {isLoading && <Loading />} */}
-        <Box
-          display={"flex"}
-          justifyContent={"center"}
-          pt={4}
-          pb={{ base: 16, lg: 32 }}
-        >
-          <BtnThemeSe
-            bg={"none"}
-            size={{ base: "sm", md: "lg" }}
-            w={{ base: "200px", lg: "250px" }}
-          >
-            VIEW ALL BLOG POST
-          </BtnThemeSe>
-        </Box>
-      </Box>
-    </Container>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
+              {posts?.slice(0, 2).map((post: any, index: number) => (
+                <GridItem key={index}>
+                  <CardLBlog
+                    date={post?.date}
+                    title={post?.title}
+                    desc={post?.desc}
+                    image={post?.image || ""}
+                    path={``}
+                    author={post?.author}
+                    tags={post?.tags}
+                  />
+                </GridItem>
+              ))}
+            </SimpleGrid>
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              pt={4}
+              pb={{ base: 16, lg: 32 }}
+            >
+              <BtnThemeSe
+                bg={"none"}
+                size={{ base: "sm", md: "lg" }}
+                w={{ base: "200px", lg: "250px" }}
+              >
+                VIEW ALL BLOG POST
+              </BtnThemeSe>
+            </Box>
+          </Box>
+        </Container>
+      )}
+    </>
   );
 };
