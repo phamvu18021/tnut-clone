@@ -64,14 +64,14 @@ export const CardBlog = ({
             aspectRatio={508 / 338}
             overflow={"hidden"}
           >
-            {hasSSL === "false" && (
+            {/* {hasSSL === "false" && (
               <Img
                 src={image || `/blog.jpeg`}
                 style={{ maxHeight: imageH }}
                 alt={title}
               />
             )}
-            {hasSSL === "true" && (
+            {hasSSL === "true" && ( */}
               <Box objectFit="contain">
                 <Image
                   width={656}
@@ -81,7 +81,7 @@ export const CardBlog = ({
                   alt={title}
                 />
               </Box>
-            )}
+            {/* )} */}
           </Box>
           <Stack>
             <Heading
@@ -165,14 +165,14 @@ export const CardBlogS = ({
       <SimpleGrid columns={2} spacing={4} bg={"white"}>
         <GridItem colSpan={1}>
           <Box bg={"gray.100"} overflow={"hidden"}>
-            {hasSSL === "false" && (
+            {/* {hasSSL === "false" && (
               <Img
                 src={image || `/blog.jpeg`}
                 style={{ maxHeight: imageH }}
                 alt={title}
               />
             )}
-            {hasSSL === "true" && (
+            {hasSSL === "true" && ( */}
               <Box>
                 <Image
                   width={504}
@@ -182,7 +182,7 @@ export const CardBlogS = ({
                   alt={title}
                 />
               </Box>
-            )}
+            {/* )} */}
           </Box>
         </GridItem>
         <GridItem colSpan={1}>
@@ -278,14 +278,14 @@ export const CardLBlog = ({
             aspectRatio={508 / 338}
             overflow={"hidden"}
           >
-            {hasSSL === "false" && (
+            {/* {hasSSL === "false" && (
               <Img
                 src={image || `/blog.jpeg`}
                 style={{ maxHeight: imageH }}
                 alt={title}
               />
             )}
-            {hasSSL === "true" && (
+            {hasSSL === "true" && ( */}
               <Box objectFit="contain">
                 <Image
                   width={656}
@@ -295,7 +295,7 @@ export const CardLBlog = ({
                   alt={title}
                 />
               </Box>
-            )}
+            {/* )} */}
           </Box>
           <Stack>
             <Text
