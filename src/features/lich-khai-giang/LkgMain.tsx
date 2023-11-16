@@ -3,11 +3,9 @@ import { MotionTop } from "@/components/MotionTop";
 import { FormMain } from "@/components/FormContact";
 
 import {
-  Box,
-  Divider,
   List,
   ListItem,
-  SimpleGrid,
+  Box,
   Stack,
   Container,
   GridItem,
@@ -17,81 +15,57 @@ import {
 export const LkgMain = ({
   title,
   lichkg,
+  lichkg2,
 }: {
   title: string;
   lichkg: string;
+  lichkg2: string;
 }) => {
   return (
-    <Container maxW={"7xl"}>
-      <SimpleGrid
-        columns={{ base: 1, lg: 3 }}
-        maxW={"7xl"}
-        py={{ base: 12, lg: 20 }}
-        gap={16}
-        margin={"0 auto"}
-      >
+    <Container maxW={"7xl"} justifyContent={"center"}>
+      <Box py={{ base: 12, lg: 16 }} gap={16} margin={"0 auto"}>
         <GridItem colSpan={{ base: 1, lg: 2 }}>
           <Stack bg="White" height="full">
-            <MotionTop>
-              <Text
-                fontSize={{ base: "25px", md: "25px", lg: "40px" }}
-                color={"blue.800"}
-                fontWeight={600}
-              >
-                ĐĂNG KÝ NGAY!
-              </Text>
-            </MotionTop>
-            <MotionTop>
-            <Divider
-              borderBottomWidth={"3px"}
-              borderBlockEndColor={"orange"}
-              w={"150px"}
-            />
-            </MotionTop>
             <List
               spacing={4}
               pt={"8px"}
               fontSize={{ base: "18px", lg: "21px", md: "md" }}
             >
-              <MotionTop>
+              {/* <MotionTop>
                 <ListItem>
                   <Text fontWeight={400}>
                     Chương trình Đào tạo từ xa Đại học Kỹ Thuật Công Nghiệp Thái
                     Nguyên
                   </Text>
                 </ListItem>
-              </MotionTop>
+              </MotionTop> */}
               <Box border={"1px solid black"}>
                 <ListItem>
                   <Text
+                    color={"blue.400"}
                     fontSize={{ base: "20px", lg: "24px" }}
                     pt={2}
                     textAlign={"center"}
-                    fontWeight={600}
+                    fontWeight={700}
                   >
-                   {title || "KHAI GIẢNG ĐỢT III NĂM 2023"}
+                    {title}
                   </Text>
                 </ListItem>
-                <ListItem py={4}>
-                  <Text
-                    textAlign={"center"}
-                    color={"blue.400"}
-                    fontWeight={600}
-                  >
-                    {lichkg ||"29/10/2023"}
+                <ListItem pt={4}>
+                  <Text textAlign={"center"} color={"black"} fontWeight={400}>
+                    - {lichkg}
+                  </Text>
+                </ListItem>
+                <ListItem pb={4}>
+                  <Text textAlign={"center"} color={"black"} fontWeight={400}>
+                    - {lichkg2}
                   </Text>
                 </ListItem>
               </Box>
             </List>
           </Stack>
         </GridItem>
-
-        <GridItem colSpan={1}>
-          <Box pt={{ base: "20px", lg: "90px" }}>
-            <FormMain />
-          </Box>
-        </GridItem>
-      </SimpleGrid>
+      </Box>
     </Container>
   );
 };

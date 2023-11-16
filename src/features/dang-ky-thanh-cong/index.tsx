@@ -5,8 +5,31 @@ import { Box, Container, Text } from "@chakra-ui/react";
 import { SamePosts } from "../post/Sames";
 import { useModal } from "@/components/ModalContext";
 import { BtnTheme } from "@/components/BtnTheme";
+import { useEffect, useState } from "react";
+
 export const DangkyTc = () => {
+  const [news, setNews] = useState<any[]>([]);
   const { isOpen, onOpen, onClose } = useModal();
+  useEffect(() => {
+    const getPosts = async () => {
+    
+      try {
+        const res = await fetch(`/api/posts/?type=news&page=1`, {
+          next: { revalidate: 3 },
+        });
+
+        const data: { posts: any[]; totalPosts: string } = await res.json();
+        const { posts } = data;
+        posts?.length && setNews([posts[0], posts[1], posts[2], posts[4]]);
+      } catch (error) {
+        console.log(error);
+      }
+    
+    };
+
+    getPosts();
+  }, []);
+
   return (
     <>
       <Box
@@ -32,7 +55,7 @@ export const DangkyTc = () => {
         </Container>
       </Box>
       <Container maxW="7xl" justifyContent="center">
-        <SamePosts catId={"84"} id={"7096"} />
+        <SamePosts catId={news[0]?.categories[0]} id={String(news[0]?.id)} />
         <Box display={"flex"} justifyContent={"center"} pb={8}>
           <BtnTheme
             color={"white"}

@@ -78,51 +78,8 @@ const SwiperContainer = styled.div`
   
 }
 }`;
-const ImageOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 820px) {
-    top: -400px;
-  }
-  @media (max-width: 420px) {
-    top: -210px;
-  }
-`;
-const NavButton = styled.button`
-  display: flex;
-  width: 40px;
-  height: 40px;
-  border: none;
-  outline: none;
-  background-color: hsl(0, 0%, 100%);
-  color: #000000;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: all 0.5s;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  &:hover {
-    background-color: hsl(
-      40.08298755186722,
-      96.7871485943775%,
-      48.82352941176471%
-    );
-    cursor: pointer;
-    color: #ffffff;
-  }
-  @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
-  }
-`;
+
+
 export const Banner = () => {
   const teachers = [
     {

@@ -27,9 +27,9 @@ export default async function handler(
     // });
     // const cats: any[] = (await resCats.json()) || [];
     // const newCat = cats?.find((cat) => cat.name === "Tin Tức");
-    const idNew = 84;
+    const idNew = 217;
     // const notifiCat = cats?.find((cat) => cat.name === "Thông báo");
-    const idNotifi = 4;
+    const idNotifi = 216;
     const id = type === "news" ? idNew : type === "notifis" ? idNotifi : null;
     const endPoint = id
       ? `${api_url}/posts?_embed&per_page=8&status=publish&page=${page}&categories=${id}`
@@ -40,12 +40,13 @@ export default async function handler(
     const res = await fetch(endPoint, {
       next: { revalidate: 1 },
     });
-    let ttp = Number(res.headers?.get("X-WP-Total") || "0");
-    if (ttp > 4) {
-      totalPosts = String(ttp - 4);
-    } else {
-      totalPosts = String(ttp);
-    }
+    totalPosts = String(res.headers?.get("X-WP-Total") || "0");
+    // let ttp = Number(res.headers?.get("X-WP-Total") || "0");
+    // if (ttp > 4) {
+    //   totalPosts = String(ttp - 4);
+    // } else {
+    //   totalPosts = String(ttp);
+    // }
 
     const postsNotFeatureImage: any[] = (await res?.json()) || [];
     posts =

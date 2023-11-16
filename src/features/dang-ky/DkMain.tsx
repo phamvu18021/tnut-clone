@@ -28,14 +28,24 @@ export const DkMain = () => {
         margin={"0 auto"}
       >
         <GridItem colSpan={1}>
-          <Box pt={{ base: "20px", lg: "40px" }}>
+          <Box pt={{ base: "20px", lg: "0px" }}>
             <Text
-              size={"sm"}
-              pb={"8px"}
+              color={"blue.700"}
+              fontSize={"24px"}              
               textAlign={{ base: "center", lg: "center" }}
               fontWeight={"600"}
             >
-              ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
+              ĐĂNG KÝ XÉT TUYỂN KHÔNG CẦN THI
+            </Text>
+            <Text
+              color={"gray.700"}
+              fontSize={"18px"}
+              pb={"8px"}
+              textAlign={{ base: "center", lg: "center" }}
+              fontWeight={"400"}
+            >
+              Tư vấn chuyên nghiệp. Thủ tục nhanh gọn. Đi học được luôn. Ưu tiên
+              nộp hồ sơ sớm.
             </Text>
             <FormMain />
           </Box>
@@ -53,11 +63,11 @@ export const DkMain = () => {
               </Text>
             </MotionTop>
             <MotionTop>
-            <Divider
-              borderBottomWidth={"3px"}
-              borderBlockEndColor={"orange"}
-              w={"150px"}
-            />
+              <Divider
+                borderBottomWidth={"3px"}
+                borderBlockEndColor={"orange"}
+                w={"150px"}
+              />
             </MotionTop>
             <List spacing={4} pt={"8px"} fontSize={{ base: "18px" }}>
               <MotionTop>

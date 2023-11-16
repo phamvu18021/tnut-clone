@@ -57,7 +57,7 @@ export const Item = ({
         />
 
         <VStack align={"start"}>
-          <Text color={"gray.500"} fontSize={{ base: ".8rem", md: "sm" }}>
+          <Text color={"gray.800"} fontSize={{ base: ".8rem", md: "sm" }}>
             {desc}
           </Text>
         </VStack>
@@ -101,7 +101,8 @@ export const BenefitNganh = () => {
         <Text
           fontSize={{ base: 24, lg: 32 }}
           color={"blue.700"}
-          fontWeight={500}
+          fontWeight={600}
+          textAlign={'center'}
         >
           LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH
         </Text>

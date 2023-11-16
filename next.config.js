@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["bcvt.edu.vn"], // Add the domains you want to allow here
+    domains: ["tnut.vn"], // Add the domains you want to allow here
     //  domains: ["localhost"],
   },
 };

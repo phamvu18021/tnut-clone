@@ -1,7 +1,6 @@
-import { Heading, VStack, Box, Flex, Text } from "@chakra-ui/react";
+import { Heading, VStack, Box, Flex, Text, HStack } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-
 
 export const Logo = () => {
   return (
@@ -23,15 +22,33 @@ export const Logo = () => {
         "
       />
 
-      <Box>
+      <VStack gap={0}>
         <Text
-          size={{ lg: "md", base: "xs" }}
-          justifyContent={"center"}
-          fontWeight={600}
+          fontSize={{ lg: "12px", base: "8px" }}
+          textAlign={"center"}
+          fontWeight={500}
+          color={"gray.500"}
+          display={{base:"none",lg:"contents"}}
         >
-          Đại học Kỹ thuật Công nghiệp
+          ĐẠI HỌC THÁI NGUYÊN
         </Text>
-      </Box>
+        <Text
+          fontSize={{ lg: "16px", base: "14px" }}
+          textAlign={"center"}
+          fontWeight={700}
+        >
+          TRƯỜNG ĐẠI HỌC KỸ THUẬT CÔNG NGHIỆP
+        </Text>
+        <Text
+          fontSize={{ lg: "12px", base: "8px" }}
+          textAlign={"center"}
+          fontWeight={500}
+          color={"gray.500"}
+          display={{base:"none",lg:"contents"}}
+        >
+          THAINGUYEN UNIVERSITY OF TECHNOLOGY
+        </Text>
+      </VStack>
     </Link>
   );
 };

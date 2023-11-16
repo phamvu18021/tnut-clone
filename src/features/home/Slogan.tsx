@@ -21,8 +21,9 @@ export const Slogan = () => {
               color={"white"}
               fontWeight={"500"}
               textAlign={{ base: "center", lg: "right" }}
+            
             >
-              Xét tuyển – Không thi đầu vào
+              XÉT TUYỂN - KHÔNG THI ĐẦU VÀO
             </Text>
           </GridItem>
 

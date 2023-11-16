@@ -1,6 +1,6 @@
 "use client";
 
-import { FormMain } from "@/components/FormContact";
+import { FormHome, FormMain } from "@/components/FormContact";
 import { categotys } from "@/features/home/Categorys";
 import {
   Box,
@@ -11,12 +11,13 @@ import {
   Input,
   SimpleGrid,
   VStack,
+  Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import { BiLogoTiktok } from "react-icons/bi";
+import { useEffect, useState } from "react";
+import { BiBox, BiLogoTiktok } from "react-icons/bi";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 export const Item = ({
@@ -61,9 +62,52 @@ export const Item = ({
   );
 };
 
-export const Sidebar = ({ sticky }: { sticky?: string }) => {
+export const Sidebar = ({
+  sticky,
+  checkpost,
+}: {
+  sticky?: string;
+  checkpost: boolean;
+}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
+  const [totalPosts, setTotalPosts] = useState("0");
+  const [totalNotifis, setTotalNotifis] = useState("0");
+  const [posts, setPosts] = useState<any[]>([]);
+  useEffect(() => {
+    const getNews = async () => {
+      try {
+        const res = await fetch(`/api/posts/?type=news&page=1`, {
+          next: { revalidate: 3 },
+        });
+
+        const data: { posts: any[]; totalPosts: string } = await res.json();
+        const { posts, totalPosts } = data;
+        posts?.length && setPosts(posts);
+        console.log(data);
+        totalPosts && setTotalPosts(totalPosts);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const getNotifis = async () => {
+      try {
+        const resp = await fetch(`/api/posts/?type=notifis&page=1`, {
+          next: { revalidate: 3 },
+        });
+
+        const datap: { totalPosts: string } = await resp.json();
+        const { totalPosts } = datap;
+        totalPosts && setTotalNotifis(totalPosts);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getNews();
+    getNotifis();
+  }, []);
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,17 +143,33 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
         </form>
       </Box>
 
-      <Box px={6} pt={"32px"}>
-        <Heading
-          as={"h3"}
-          size={"sm"}
-          pb={"20px"}
-          textAlign={{ base: "center", lg: "center" }}
-        >
-          ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
-        </Heading>
-        <FormMain />
-      </Box>
+      {checkpost && (
+        <Box px={6} pt={"32px"}>
+          <Heading
+            as={"h3"}
+            size={"sm"}
+            pb={"20px"}
+            textAlign={{ base: "center", lg: "center" }}
+          >
+            ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
+          </Heading>
+          <FormMain />
+        </Box>
+      )}
+
+      {!checkpost && (
+        <Box px={6} pt={"32px"}>
+          <Heading
+            as={"h3"}
+            size={"sm"}
+            pb={"20px"}
+            textAlign={{ base: "center", lg: "center" }}
+          >
+            ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
+          </Heading>
+          <FormHome />
+        </Box>
+      )}
 
       <Box px={6} pt={"32px"}>
         <Heading
@@ -142,12 +202,7 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
         >
           Mạng xã hội
         </Heading>
-        <Box
-          rounded={"sm"}
-          p="24px"
-          border={"1px solid"}
-          borderColor={"gray.300"}
-        >
+        <Box rounded={"sm"} p="24px">
           <VStack spacing={"16px"}>
             <Button
               leftIcon={<FaFacebook />}
@@ -178,6 +233,46 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
               Youtube
             </Button>
           </VStack>
+        </Box>
+      </Box>
+
+      <Box pt={"32px"}>
+        <Heading
+          as={"h3"}
+          size={"md"}
+          pb={"20px"}
+          pl={"20px"}
+          textAlign={{ base: "center", lg: "start" }}
+        >
+          Mục lục
+        </Heading>
+        <Box
+          rounded={"sm"}
+          p="24px"
+          borderTop={"1px solid"}
+          borderColor={"gray.300"}
+        >
+          <HStack
+            as={Link}
+            href={"/tin-tuc"}
+            display={"flex"}
+            justifyContent={"space-between"}
+            _hover={{ color: "blue.300" }}
+          >
+            <Text>Tin Tức</Text>
+            <Text>{totalPosts}</Text>
+          </HStack>
+
+          <HStack
+            as={Link}
+            href={"/thong-bao"}
+            display={"flex"}
+            justifyContent={"space-between"}
+            _hover={{ color: "blue.300" }}
+          >
+            <Text>Thông Báo</Text>
+            <Text>{totalNotifis}</Text>
+          </HStack>
         </Box>
       </Box>
     </Box>

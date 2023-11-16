@@ -11,6 +11,7 @@ import {
 import { Majors } from "../home/Majors";
 import { LkgMain } from "./LkgMain";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { LkgTuyensinh } from "./LkgTuyensinh";
 
 export const LichKg = ({
   list,
@@ -73,7 +74,8 @@ export const LichKg = ({
           </Breadcrumb>
         </Container>
       </Box>
-      {!isLoading && <LkgMain title={list[0]} lichkg={list[1]} />}
+      {!isLoading && <LkgMain title={list[0]} lichkg={list[1]} lichkg2={list[2]} />}
+      <LkgTuyensinh />
       <Box bg={"gray.50"}>
         <Container maxW={"7xl"}>
           <Majors />

@@ -5,7 +5,7 @@ import { Box, Container, Grid, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSize } from "../../hooks/useSizeWindow";
 
@@ -86,7 +86,6 @@ export const Testimonials = () => {
                 title={testimo?.name}
                 desc={testimo.comment}
                 image={testimo?.image}
-                path={""}
               />
             </SwiperSlide>
           ))}

@@ -56,7 +56,7 @@ export const Footer = () => {
                 <SocialButton
                   bagr="rgba(255, 255, 255, 0.23)"
                   label={"Facebook"}
-                  href={"https://www.facebook.com/daihoctuxatnut"}
+                  href={"https://m.me/daihoctuxatnut"}
                 >
                   <FaFacebook color="white" />
                 </SocialButton>
@@ -88,11 +88,7 @@ export const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Liên hệ</ListHeader>
 
-              <Box
-                pt={2}
-                as={Link}
-                href={"https://www.facebook.com/daihoctuxatnut"}
-              >
+              <Box pt={2} as={Link} href={"https://m.me/daihoctuxatnut"}>
                 www.facebook.com/daihoctuxatnut
               </Box>
 
@@ -100,8 +96,8 @@ export const Footer = () => {
                 Website: tnut.vn
               </Box>
 
-              <Box as={Link} href={"tel:0846770022"}>
-                Hotline: 0815674848
+              <Box as={Link} href={"tel:0815674848"}>
+                Hotline: 081.567.4848
               </Box>
             </Stack>
             <Stack align={"flex-start"}>
@@ -115,12 +111,22 @@ export const Footer = () => {
                   Chí Minh
                 </ListItem>
               </UnorderedList>
-              <Image
-                src={"/aum.png"}
-                width={100}
-                height={40}
-                alt="Aum Việt Nam"
-              />
+              <HStack display={'flex'} alignItems={'start'} gap={4}>
+                <Image
+                  src={"/aum.png"}
+                  width={100}
+                  height={40}
+                  alt="Aum Việt Nam"
+                />
+            
+                  <Image
+                    src={"/logo-tnut.png"}
+                    width={100}
+                    height={40}
+                    alt="Tìm đối tác"
+                  />
+              
+              </HStack>
             </Stack>
 
             <Stack align={"flex-start"}>

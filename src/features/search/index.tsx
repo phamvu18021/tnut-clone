@@ -91,7 +91,7 @@ export const Search = () => {
               </form>
             </Box>
           </Box>
-          <ListPosts handleRouter={nextpage} />
+          <ListPosts cate="news" handleRouter={nextpage} />
         </Box>
         <Divider size={"xl"} />
       </Container>

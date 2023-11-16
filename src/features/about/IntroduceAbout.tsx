@@ -18,6 +18,7 @@ import {
 import { FcBookmark } from "react-icons/fc";
 import { BtnTheme } from "@/components/BtnTheme";
 import { useModal } from "@/components/ModalContext";
+import { AboutSwipe } from "@/components/AboutSwipe";
 export const IntroduceAbout = () => {
   const { isOpen, onOpen, onClose } = useModal();
   return (
@@ -25,19 +26,13 @@ export const IntroduceAbout = () => {
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         maxW={"7xl"}
-        py={16}
-        gap={{ base: 20, lg: 32 }}
+        py={{ lg: 16, base: 4 }}
+        gap={{ base: 12, lg: 16 }}
         margin={"0 auto"}
       >
-        <GridItem colSpan={1}>
-          <Box pt={"24px"}>
-            <Image
-              objectFit="cover"
-              width={600}
-              height={400}
-              src={"/introAbout.jpg"}
-              alt={"gioi-thieu-tnut"}
-            />
+        <GridItem display={{ base: "none", lg: "block" }} colSpan={1}>
+          <Box pt={{ lg: "40px", base: "0px" }}>
+            <AboutSwipe />
           </Box>
         </GridItem>
 
@@ -46,6 +41,7 @@ export const IntroduceAbout = () => {
             <MotionTop>
               <Text
                 fontSize={{ base: "25px", md: "25px", lg: "32px" }}
+                fontWeight={{lg:500,base:500}}
                 color={"blue.800"}
               >
                 ĐÔI NÉT VỀ ĐẠI HỌC KỸ THUẬT CÔNG NGHIỆP
@@ -56,7 +52,7 @@ export const IntroduceAbout = () => {
                 borderBottomWidth={"3px"}
                 borderBlockEndColor={"orange"}
                 w={"200px"}
-                p={{ base: "6px", lg: "15px" }}
+                p={{ base: "6px", lg: "12px" }}
               />
             </MotionTop>
             <List
@@ -82,11 +78,11 @@ export const IntroduceAbout = () => {
               <MotionTop>
                 <ListItem>
                   <ListIcon as={FcBookmark} />
-                  Liên thông đại học từ xa tại Đại học Kỹ thuật Công nghiệp là
-                  một chương trình giáo dục dành cho các sinh viên đã tốt nghiệp
-                  từ các trường trung cấp, cao đẳng hoặc có kinh nghiệm làm
-                  việc, nhằm nâng cao trình độ chuyên môn và nhận được bằng cấp
-                  đại học trong lĩnh vực kỹ thuật công nghiệp…
+                  Hệ đại học từ xa TNUT E-learning là chương trình giáo dục dành
+                  cho những người đã tốt nghiệp trung học phổ thông trở lên có
+                  được tấm bằng đại học. Phá bỏ mọi rào cản về không gian và
+                  thời gian, giúp nâng cao trình độ chuyên môn và nhận được bằng
+                  cấp trong lĩnh vực kỹ thuật công nghiệp…
                 </ListItem>
               </MotionTop>
 
@@ -101,6 +97,12 @@ export const IntroduceAbout = () => {
               </BtnTheme>
             </List>
           </Stack>
+        </GridItem>
+
+        <GridItem display={{ base: "block", lg: "none" }} colSpan={1}>
+          <Box pb={{base: "40px" }}>
+            <AboutSwipe />
+          </Box>
         </GridItem>
       </SimpleGrid>
     </Container>

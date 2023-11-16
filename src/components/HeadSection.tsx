@@ -48,3 +48,31 @@ export const HeadSectionLight = ({
     </VStack>
   );
 };
+
+export const HeadSectionEvent = ({
+  subtitle,
+  title,
+  desc,
+}: {
+  subtitle: string;
+  title: string;
+  desc: string;
+}) => {
+  return (
+    <VStack justify={"center"}>
+      {/* <Text color={"#FA692E"}>{subtitle}</Text> */}
+      <Text
+        fontSize={{ base: "24px", md: "32px" }}
+        textAlign={"center"}
+        textTransform={"uppercase"}
+        color={"blue.800"}
+        fontWeight={500}
+      >
+        {title}
+      </Text>
+      <Text color={"gray.500"} fontWeight={400} textAlign={"center"}>
+        {desc}
+      </Text>
+    </VStack>
+  );
+};

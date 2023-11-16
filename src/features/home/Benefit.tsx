@@ -76,7 +76,7 @@ export const benefits = [
   {
     path: "#",
     title: "Bằng Đại học uy tín ",
-    desc: ` • Bằng không ghi hình thức đào tạo và được Bộ Giáo dục công nhận `,
+    desc: ` • Bằng không ghi hình thức đào tạo và được Bộ GD&ĐT công nhận `,
     descs: `• Có giá trị sử dụng trọn đời`,
     icon: PiCertificate,
   },
@@ -91,7 +91,7 @@ export const benefits = [
     path: "#",
     title: "Kho học liệu đa dạng  ",
     desc: `•Tài liệu học tập đa Phương tiện (video, slide, script,..) `,
-    descs: `• Giáo trình do trường Đại học Kỹ thuật công nghiệp - Đại học Thái Nguyên biên soạn.`,
+    descs: `• Giáo trình do giảng viên đang trực tiếp công tác tại trường biên soạn.`,
     icon: MdOutlineWorkHistory,
   },
 ];

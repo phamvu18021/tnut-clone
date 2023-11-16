@@ -86,11 +86,10 @@ export const Posts = () => {
           </Container>
         </Box>
       </Box>
-      <Box pt={"12px"}>
+      <Box pt={"20px"}>
         <Suspense fallback={<Loading />}>
-
-        <LayoutBottom sticky="120px">
-          <ListPosts handleRouter={handleRouter} />
+          <LayoutBottom sticky="120px" >
+            <ListPosts cate="news" handleRouter={handleRouter} />
           </LayoutBottom>
         </Suspense>
       </Box>

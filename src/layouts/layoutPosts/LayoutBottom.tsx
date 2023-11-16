@@ -16,7 +16,7 @@ export const LayoutBottom = ({
       <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={"8"}>
         <GridItem colSpan={{ base: 1, lg: 2 }}>{children}</GridItem>
         <GridItem className="sidebar-posts" colSpan={{ base: 1, lg: 1 }}>
-          <Sidebar sticky={sticky} />
+          <Sidebar sticky={sticky} checkpost={true} />
         </GridItem>
       </SimpleGrid>
     </Container>

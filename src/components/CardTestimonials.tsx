@@ -1,36 +1,27 @@
 "use client";
 
 import { clean } from "@/lib/sanitizeHtml";
-import {
-  Box,
-  HStack,
-  Heading,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, HStack, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 export const CardTestimonials = ({
   image,
   title,
   desc,
-  path,
+
   career,
   imageH,
 }: {
   image?: string;
   title: string;
   desc: string;
-  path: string;
+
   career?: string;
   imageH?: string;
 }) => {
   return (
     <Box
-      as={Link}
       style={{ textDecoration: "none" }}
-      href={path}
       py={4}
       px={6}
       transition={"all ease .4s"}
@@ -59,7 +50,6 @@ export const CardTestimonials = ({
             as={"h3"}
             fontSize={{ base: "md", lg: "xl" }}
             fontWeight={"600"}
-            _hover={{ color: "red.500" }}
             css={{
               display: "-webkit-box",
               WebkitLineClamp: "2",
@@ -80,7 +70,7 @@ export const CardTestimonials = ({
         fontSize={"1rem"}
         css={{
           display: "-webkit-box",
-          WebkitLineClamp: "5",
+          WebkitLineClamp: "8",
           WebkitBoxOrient: "vertical",
           overflow: "hidden",
           textOverflow: "ellipsis",

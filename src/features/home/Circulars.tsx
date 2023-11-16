@@ -11,6 +11,8 @@ import {
   List,
   ListItem,
   ListIcon,
+  AspectRatio,
+  GridItem,
 } from "@chakra-ui/react";
 export const Circulars = () => {
   const items = [
@@ -35,9 +37,19 @@ export const Circulars = () => {
         margin={"0 auto"}
         gap={{ base: 12, lg: 20 }}
       >
-        <Box className="formbox" mt={{ lg: "47px" }}>
-          <FormHome title="Vui lòng điền thông tin" />
-        </Box>
+        <GridItem colSpan={1} >
+          <Box pt={20}>
+            <AspectRatio maxW="560px" ratio={16 / 9} maxH={"315px"}>
+              <iframe
+                title="Video"
+                src="https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
+                // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </AspectRatio>
+          </Box>
+        </GridItem>
+
         <Stack bg="gray.50" height="full" padding={"40px"}>
           <Heading
             fontSize={{ base: "20px", md: "24px", lg: "28px" }}

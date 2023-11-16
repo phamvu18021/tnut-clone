@@ -55,7 +55,9 @@ const StyledPaginate = styled(ReactPaginate)`
 
 export const ListPosts = ({
   handleRouter,
+  cate,
 }: {
+  cate: string;
   handleRouter?: ({ selected }: { selected: number }) => void;
 }) => {
   const searchParams = useSearchParams();
@@ -69,7 +71,8 @@ export const ListPosts = ({
     const getPosts = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`/api/posts/?type=news&page=${page}`, {
+        
+        const res = await fetch(`/api/posts/?type=${cate}&page=${page}`, {
           next: { revalidate: 3 },
         });
 
@@ -85,22 +88,23 @@ export const ListPosts = ({
 
     getPosts();
   }, [page]);
-
+  console.log(totalPosts);
   const len = Math.ceil(Number(totalPosts) / 8) || 1;
 
   return (
     <>
-      <Box>
+      <Box >
         <Heading
           size={"xl"}
           color={"blue.700"}
           pb={"20px"}
           textAlign={{ base: "center", lg: "center" }}
+    
         >
-          Tin Tức
+          {cate == 'news'  ? "Tin tức" : "Thông báo"}
         </Heading>
         {!isLoading && (
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
+          <SimpleGrid pt={2} columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
             {posts?.map((post: any, index: number) => (
               <GridItem key={index}>
                 <CardBlog

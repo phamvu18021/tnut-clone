@@ -22,10 +22,10 @@ export const Reg = [
 
 export const Majors = () => {
   return (
-    <Box py={{ base: "8", lg: "20" }}>
+    <Box py={{ base: "8", lg: "12" }}>
       <Container maxW="7xl">
         <Text
-          py={{ base: 4, lg: 12 }}
+          py={{ base: 4, lg: 8 }}
           fontSize={{ base: "25px", md: "32px", lg: "32px" }}
           color={"blue.900"}
           textAlign={"center"}

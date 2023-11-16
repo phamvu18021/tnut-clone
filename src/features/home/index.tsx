@@ -8,6 +8,9 @@ import { useEffect, useState } from "react";
 const Banner = dynamic(() => import("./Banner").then((mod) => mod.Banner), {
   loading: () => <Loading />,
 });
+const Event = dynamic(() => import("./Event").then((mod) => mod.Event), {
+  loading: () => <Loading />,
+});
 
 const Introduce = dynamic(
   () => import("./Introduce").then((mod) => mod.Introduce),
@@ -55,6 +58,49 @@ const LastestPost = dynamic(
 export const Home = () => {
   const { isOpen, onOpen } = useModal();
 
+  const [news, setNews] = useState<any[]>([]);
+  const [notifis, setNotifis] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(`/api/posts/?type=news&page=1`, {
+          next: { revalidate: 3 },
+        });
+
+        const data: { posts: any[]; totalPosts: string } = await res.json();
+        const { posts } = data;
+        posts?.length && setNews([posts[0], posts[1], posts[2], posts[4]]);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+
+    getPosts();
+  }, []);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(`/api/posts/?type=notifis&page=1`, {
+          next: { revalidate: 3 },
+        });
+
+        const data: { posts: any[]; totalPosts: string } = await res.json();
+        const { posts } = data;
+        posts?.length && setNotifis([posts[0], posts[1], posts[2], posts[4]]);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+
+    getPosts();
+  }, []);
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (!isOpen && onOpen) onOpen();
@@ -62,6 +108,7 @@ export const Home = () => {
 
     return () => window.clearTimeout(timeout);
   }, []);
+  console.log(news)
   return (
     <>
       <Banner />
@@ -71,7 +118,8 @@ export const Home = () => {
       <Majors />
       <Testimonials />
       <Advertisement />
-      <LastestPost />
+      {/* <LastestPost /> */}
+      <Event news={news} notifis={notifis} />
       <Circulars />
     </>
   );

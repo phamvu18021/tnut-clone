@@ -43,11 +43,11 @@ export const Introduce = () => {
           <Stack bg="White" height="full" pt={{ base: "20px", lg: "48px" }}>
             <MotionTop>
               <Text
-                fontSize={{ base: "24px", md: "24px", lg: "32px" }}
+                fontSize={{ base: "24px", md: "24px", lg: "40px" }}
                 color={"blue.800"}
-                fontWeight={500}
+                fontWeight={600}
               >
-                ĐÀO TẠO TỪ XA – TNUT ELEARNING
+                TUYỂN SINH HỆ ĐẠI HỌC TỪ XA TNUT E-LEARNING
               </Text>
             </MotionTop>
             <MotionTop>
@@ -55,7 +55,7 @@ export const Introduce = () => {
                 borderBottomWidth={"3px"}
                 borderBlockEndColor={"orange"}
                 w={{ base: "120px", lg: "200px" }}
-                p={{ base: "6px", lg: "15px" }}
+                p={{ base: "6px", lg: "8px" }}
               />
             </MotionTop>
             <List
@@ -66,24 +66,20 @@ export const Introduce = () => {
               <MotionTop>
                 <ListItem mt={{ lg: "19px" }}>
                   <ListIcon as={FcBookmark} />
-                  Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ
-                  xa, học Đại học trực tuyến không cần đến trường. Xét tuyển đối
-                  với các ngành: Kỹ Thuật Xây Dựng, Quản Lý Công Nghiệp, Kinh Tế
-                  Công Nghiệp.
+                  Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ xa, học trực tuyến không cần đến trường
                 </ListItem>
               </MotionTop>
 
               <MotionTop>
                 <ListItem>
                   <ListIcon as={FcBookmark} />
-                  Xét tuyển từ bằng THPT hoặc tương đương trở lên
+                  Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp
                 </ListItem>
               </MotionTop>
               <MotionTop>
                 <ListItem>
                   <ListIcon as={FcBookmark} />
-                  Chương trình phù hợp với người đi làm, bận rộn
-                </ListItem>
+                  Chương trình phù hợp với người đi làm bận rộn                </ListItem>
               </MotionTop>
             </List>
           </Stack>

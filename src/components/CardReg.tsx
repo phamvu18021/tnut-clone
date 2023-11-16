@@ -48,6 +48,7 @@ export const CardReg = ({
                 fontWeight={500}
                 color={"gray.600"}
                 fontSize={{ base: "16px", lg: "20px" }}
+                textAlign={'center'}
               >
                 {title}
               </Text>
