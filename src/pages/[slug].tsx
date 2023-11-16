@@ -6,7 +6,7 @@ import { LayoutPost } from "@/layouts/layoutPost";
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
-import Document from "./_document";
+
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = process.env.API_URL || "";
@@ -39,16 +39,16 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post } = props;
-
+console.log(post)
   return (
     <>
       <NextSeo
         title={
-          post?.title?.rendered.replace(/(<([^>]+)>)/gi, "") ||
+          (post?.title?.rendered).replace(/(<([^>]+)>)/gi, "") ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
         }
         description={
-          post?.excerpt?.rendered.replace(/(<([^>]+)>)/gi, "") ||
+          (post?.excerpt?.rendered).replace(/(<([^>]+)>)/gi, "") ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
         }
       />
