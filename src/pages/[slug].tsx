@@ -47,10 +47,10 @@ const Page = (props: IPostPage) => {
           post?.title?.rendered ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
         }
-        description={clean(
+        description={
           post?.excerpt?.rendered ||
-            "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
-        )}
+          "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
+        }
       />
       <ErrorBoundary fallback={<h1>Lỗi phía máy chủ</h1>}>
         <Post post={post} />
