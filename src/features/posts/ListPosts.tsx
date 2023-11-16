@@ -39,7 +39,7 @@ const StyledPaginate = styled(ReactPaginate)`
     border-color: transparent;
   }
   li.active a {
-    background-color: #0366d6;
+    background-color: #003163;
     border-color: transparent;
     color: white;
     min-width: 24px;
@@ -71,7 +71,6 @@ export const ListPosts = ({
     const getPosts = async () => {
       setIsLoading(true);
       try {
-        
         const res = await fetch(`/api/posts/?type=${cate}&page=${page}`, {
           next: { revalidate: 3 },
         });
@@ -93,15 +92,14 @@ export const ListPosts = ({
 
   return (
     <>
-      <Box >
+      <Box>
         <Heading
           size={"xl"}
           color={"blue.700"}
           pb={"20px"}
           textAlign={{ base: "center", lg: "center" }}
-    
         >
-          {cate == 'news'  ? "Tin tức" : "Thông báo"}
+          {cate == "news" ? "Tin tức" : "Thông báo"}
         </Heading>
         {!isLoading && (
           <SimpleGrid pt={2} columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
@@ -134,6 +132,7 @@ export const ListPosts = ({
             onPageChange={handleRouter}
             pageRangeDisplayed={1}
             marginPagesDisplayed={1}
+            activeClassName="active"
           />
         </HStack>
       )}
