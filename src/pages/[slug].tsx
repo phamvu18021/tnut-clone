@@ -39,16 +39,15 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post } = props;
-
   return (
     <>
       <NextSeo
         title={
-          post?.title ||
+          post?.title?.rendered.replace(/<\/?[^>]+(>|$)/g, "") ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
         }
         description={
-          post?.excerpt ||
+          post?.excerpt?.rendered.replace(/<\/?[^>]+(>|$)/g, "") ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
         }
       />
