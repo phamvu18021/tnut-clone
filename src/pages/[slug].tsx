@@ -40,18 +40,16 @@ interface IPostPage {
 const Page = (props: IPostPage) => {
   const { post } = props;
   var div = document.createElement("div");
-  div.innerHTML=post?.title?.rendered;
+  div.innerHTML = post?.title?.rendered;
   var divex = document.createElement("divex");
-  divex.innerHTML=post?.excerpt?.rendered;
+  var text = div.textContent || div.innerText || "";
+  var textex = divex.textContent || divex.innerText || "";
   return (
     <>
       <NextSeo
-        title={
-          div.textContent || div.innerText ||
-          "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
-        }
+        title={text || "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"}
         description={
-          divex.textContent || divex.innerText ||
+          textex ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
         }
       />
