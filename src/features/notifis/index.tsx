@@ -94,6 +94,7 @@ export const Notifis = () => {
           </LayoutBottom>
         </Container>
       </Suspense>
+      <Divider size={"xl"} />
     </Box>
   );
 };
