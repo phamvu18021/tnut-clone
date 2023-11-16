@@ -38,11 +38,8 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post } = props;
-  console.log(post);
   let tit = post?.title?.rendered.replace(/(<([^>]+)>)/gi, "");
   let des = post?.excerpt?.rendered.replace(/(<([^>]+)>)/gi, "");
-  console.log(tit);
-  console.log(des);
   return (
     <>
       <NextSeo

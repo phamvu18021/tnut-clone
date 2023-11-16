@@ -94,7 +94,7 @@ export const BtnMes = (props: IconButtonProps) => {
         p={"8px"}
         transition={"width ease .4s"}
         as={"a"}
-        href={"www.facebook.com/daihoctuxatnut"}
+        href={"https://m.me/daihoctuxatnut"}
         {...props}
       />
     </Tooltip>
