@@ -39,16 +39,19 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post } = props;
- //a
+  var div = document.createElement("div");
+  div.innerHTML=post?.title?.rendered;
+  var divex = document.createElement("divex");
+  divex.innerHTML=post?.excerpt?.rendered;
   return (
     <>
       <NextSeo
         title={
-          post?.title?.rendered.replace(/<\/?[^>]+(>|$)/g, "") ||
+          div.textContent || div.innerText ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
         }
         description={
-          post?.excerpt?.rendered.replace(/<\/?[^>]+(>|$)/g, "") ||
+          divex.textContent || divex.innerText ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
         }
       />
