@@ -38,7 +38,7 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post } = props;
-
+//...
   return (
     <>
       <NextSeo
