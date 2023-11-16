@@ -42,6 +42,7 @@ const Page = (props: IPostPage) => {
   var div = document.createElement("div");
   div.innerHTML = post?.title?.rendered;
   var divex = document.createElement("divex");
+  divex.innerHTML  = post?.excerpt?.rendered;
   var text = div.textContent || div.innerText || "";
   var textex = divex.textContent || divex.innerText || "";
   return (
