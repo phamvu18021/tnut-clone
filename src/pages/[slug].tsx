@@ -44,11 +44,11 @@ const Page = (props: IPostPage) => {
     <>
       <NextSeo
         title={
-          post?.title?.rendered ||
+          post?.title ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
         }
         description={
-          post?.excerpt?.rendered ||
+          post?.excerpt ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
         }
       />
