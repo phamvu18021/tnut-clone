@@ -128,7 +128,7 @@ export const BenefitNganh = () => {
             colorScheme="white"
             size={{ base: "sm", md: "lg" }}
             onClick={() => !isOpen && onOpen && onOpen()}
-            w={{ base: "240px", md: "280px", lg: "320px" }}
+            w={{ base: "240px", md: "320px", lg: "320px" }}
           >
             Nhận tài khoản học thử miễn phí!
           </BtnTheme>

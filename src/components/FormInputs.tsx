@@ -12,6 +12,7 @@ export const FormInputs = () => {
     e.preventDefault();
     const encodedSearchQuery = encodeURI(searchQuery || "");
     router.push(`/tim-kiem?s=${encodedSearchQuery}`);
+    setSearchQuery("");
   };
   return (
     <Box zIndex={"100"}>

@@ -460,34 +460,39 @@ export const CardBlogEvent = ({
                 </Text>
               )}
             </Box>
-            <Heading
-              className="event-heading"
-              color={"gray.700"}
-              fontSize={{ base: "sm", lg: "md" }}
-              fontFamily={"body"}
-              _hover={{ color: "red.400" }}
-              css={{
-                display: "-webkit-box",
-                WebkitLineClamp: "2",
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-              dangerouslySetInnerHTML={{ __html: clean(title) }}
-            />
-            {isMounted && (
-              <Text
-                color={"gray.500"}
-                fontSize={".8rem"}
+            <Box h={"2.5rem"}>
+              <Heading
+                className="event-heading"
+                color={"gray.700"}
+                fontSize={{ base: "sm", lg: "md" }}
+                fontFamily={"body"}
+                _hover={{ color: "red.400" }}
                 css={{
                   display: "-webkit-box",
-                  WebkitLineClamp: "4",
+                  WebkitLineClamp: "2",
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
                 }}
-                dangerouslySetInnerHTML={{ __html: desc }}
+                dangerouslySetInnerHTML={{ __html: clean(title) }}
               />
+            </Box>
+
+            {isMounted && (
+              <Box h={'5rem'}>
+                <Text
+                  color={"gray.500"}
+                  fontSize={".8rem"}
+                  css={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: "4",
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: desc }}
+                />
+              </Box>
             )}
           </Stack>
         </Box>

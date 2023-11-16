@@ -26,14 +26,15 @@ export const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const search = useSearchParams();
   const searchQuery2 = search ? search.get("s") : null;
-
-  const encodedSearchQuery2 = encodeURI(searchQuery2 || "");
+  console.log(searchQuery2);
+  const encodedSearchQuery2 = decodeURIComponent(searchQuery2 || "");
   const router = useRouter();
-
+  console.log(encodedSearchQuery2);
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const encodedSearchQuery = encodeURI(searchQuery || "");
     router.push(`/tim-kiem?s=${encodedSearchQuery}`);
+    setSearchQuery("");
   };
 
   const nextpage = ({ selected }: { selected: number }) => {
@@ -59,7 +60,7 @@ export const Search = () => {
               pb={"12px"}
               textAlign={{ base: "center", lg: "center" }}
             >
-              Kết quả trả về cho từ khóa : "{encodedSearchQuery2}"
+              Kết quả trả về cho từ khóa : " {encodedSearchQuery2} "
             </Heading>
 
             <Box pb={8}>

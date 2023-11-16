@@ -36,15 +36,20 @@ export const Item = ({
       pos="relative"
       transition={"all ease .4s"}
       _hover={{ transform: "translateY(-10px)" }}
+      aspectRatio={7 / 4}objectFit="cover"
     >
-      <Image
-        priority
-        width={700}
-        height={400}
-        src={image}
-        alt={title}
-        style={{ maxHeight: "150px", filter: "brightness(50%)" }}
-      />
+   
+        <Image
+          priority
+          width={700}
+          height={400}
+          src={image}
+          alt={title}
+          objectFit="cover"
+          style={{ height:'150px' ,maxWidth:"100%", filter: "brightness(50%)" }}
+        />
+  
+
       <Box
         as={Flex}
         pos={"absolute"}

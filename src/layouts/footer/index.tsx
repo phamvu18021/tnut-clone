@@ -85,10 +85,14 @@ export const Footer = () => {
               </HStack>
             </Stack>
 
-            <Stack align={"flex-start"}>
+            <Stack >
               <ListHeader>Liên hệ</ListHeader>
 
-              <Box pt={2} as={Link} href={"https://m.me/daihoctuxatnut"}>
+              <Box
+                pt={2}
+                as={Link}
+                href={"https://m.me/daihoctuxatnut"}
+              >
                 www.facebook.com/daihoctuxatnut
               </Box>
 
@@ -111,21 +115,20 @@ export const Footer = () => {
                   Chí Minh
                 </ListItem>
               </UnorderedList>
-              <HStack display={'flex'} alignItems={'start'} gap={4}>
+              <HStack display={"flex"} alignItems={"start"} gap={4}>
                 <Image
                   src={"/aum.png"}
                   width={100}
                   height={40}
                   alt="Aum Việt Nam"
                 />
-            
-                  <Image
-                    src={"/logo-tnut.png"}
-                    width={100}
-                    height={40}
-                    alt="Tìm đối tác"
-                  />
-              
+
+                <Image
+                  src={"/logo-tnut.png"}
+                  width={100}
+                  height={40}
+                  alt="Tìm đối tác"
+                />
               </HStack>
             </Stack>
 
