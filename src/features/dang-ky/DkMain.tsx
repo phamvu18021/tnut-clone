@@ -31,7 +31,7 @@ export const DkMain = () => {
           <Box pt={{ base: "20px", lg: "0px" }}>
             <Text
               color={"blue.700"}
-              fontSize={"24px"}              
+              fontSize={"24px"}
               textAlign={{ base: "center", lg: "center" }}
               fontWeight={"600"}
             >
@@ -74,7 +74,7 @@ export const DkMain = () => {
                 <ListItem mt={{ lg: "19px" }}>
                   <HStack>
                     <ListIcon as={FcBookmark} />
-                    <Text fontWeight={600}>Đối tượng xét tuyển</Text>
+                    <Text fontWeight={600}>Đối tượng xét tuyển:</Text>
                   </HStack>
                 </ListItem>
                 <UnorderedList pl={4}>
