@@ -41,6 +41,8 @@ const Page = (props: IPostPage) => {
   console.log(post);
   let tit = post?.title?.rendered.replace(/(<([^>]+)>)/gi, "");
   let des = post?.excerpt?.rendered.replace(/(<([^>]+)>)/gi, "");
+  console.log(tit);
+  console.log(des);
   return (
     <>
       <NextSeo
