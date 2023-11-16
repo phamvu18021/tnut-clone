@@ -7,7 +7,6 @@ import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
 
-
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = process.env.API_URL || "";
   const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
@@ -39,16 +38,15 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post } = props;
-console.log(post)
+  console.log(post);
+  let tit = post?.title?.rendered.replace(/(<([^>]+)>)/gi, "");
+  let des = post?.excerpt?.rendered.replace(/(<([^>]+)>)/gi, "");
   return (
     <>
       <NextSeo
-        title={
-          (post?.title?.rendered).replace(/(<([^>]+)>)/gi, "") ||
-          "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
-        }
+        title={tit || "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"}
         description={
-          (post?.excerpt?.rendered).replace(/(<([^>]+)>)/gi, "") ||
+          des ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
         }
       />
