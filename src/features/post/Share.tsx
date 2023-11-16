@@ -8,7 +8,7 @@ import { FiMail } from "react-icons/fi";
 import { ImFacebook } from "react-icons/im";
 
 export const Share = ({ url }: { url?: string }) => {
-  const domain = process.env.NEXT_PUBLIC_DOMAIN || "";
+  const domain = process.env.NEXT_PUBLIC_DOMAIN || "tnut.vn";
 
   const handleCopyLink = async () => {
     try {

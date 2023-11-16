@@ -65,7 +65,7 @@ export const SamePosts = ({ catId, id }: { catId?: string; id?: string }) => {
                     title={postCat?.title?.rendered}
                     desc=""
                     image={postCat?.featured_image || ""}
-                    path={`/tin-tuc/${postCat.slug}`}
+                    path={`/${postCat.slug}`}
                   />
                 </GridItem>
               );

@@ -3,6 +3,7 @@
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { Post } from "@/features/post";
 import { LayoutPost } from "@/layouts/layoutPost";
+import { clean } from "@/lib/sanitizeHtml";
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
@@ -43,12 +44,13 @@ const Page = (props: IPostPage) => {
     <>
       <NextSeo
         title={
-          post?.title?.rendered || "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
+          post?.title?.rendered ||
+          "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
         }
-        description={
+        description={clean(
           post?.excerpt?.rendered ||
-          "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
-        }
+            "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
+        )}
       />
       <ErrorBoundary fallback={<h1>Lỗi phía máy chủ</h1>}>
         <Post post={post} />
