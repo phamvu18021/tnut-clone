@@ -33,7 +33,7 @@ export const Notifis = () => {
     router.push(`/thong-bao?page=${selected + 1}`);
   };
   return (
-    <Box>
+    <Box pb={"40px"}>
       <Box bg={"#F8F9FA"}>
         <Box
           bg={"rgba(0, 0, 0, 0.5)"}
