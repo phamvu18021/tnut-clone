@@ -3,7 +3,6 @@
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { Post } from "@/features/post";
 import { LayoutPost } from "@/layouts/layoutPost";
-import { clean } from "@/lib/sanitizeHtml";
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
@@ -39,18 +38,15 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post } = props;
-  var div = document.createElement("div");
-  div.innerHTML = post?.title?.rendered;
-  var divex = document.createElement("divex");
-  divex.innerHTML  = post?.excerpt?.rendered;
-  var text = div.textContent || div.innerText || "";
-  var textex = divex.textContent || divex.innerText || "";
+
   return (
     <>
       <NextSeo
-        title={text || "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"}
+        title={
+          (post?.title?.rendered).text() || "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"
+        }
         description={
-          textex ||
+          (post?.excerpt?.rendered).text() ||
           "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
         }
       />
