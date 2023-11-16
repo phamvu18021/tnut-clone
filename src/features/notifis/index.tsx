@@ -16,9 +16,10 @@ import {
   BreadcrumbLink,
 } from "@chakra-ui/react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import dynamic from "next/dynamic";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { LayoutBottom } from "@/layouts/layoutPosts/LayoutBottom";
 
 const ListPosts = dynamic(
   () => import("@/features/posts/ListPosts").then((mod) => mod.ListPosts),
@@ -80,20 +81,19 @@ export const Notifis = () => {
               </BreadcrumbItem>
 
               <BreadcrumbItem color="gray.50" px={4} fontWeight={600}>
-                <BreadcrumbLink href="/thong-bao">
-                  Thông báo
-                </BreadcrumbLink>
+                <BreadcrumbLink href="/thong-bao">Thông báo</BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
           </Container>
         </Box>
       </Box>
-      <Container maxW={"7xl"}>
-        <Box pt={"32px"}>
-          <ListPosts cate="notifis" handleRouter={handleRouter} />
-        </Box>
-        <Divider size={"xl"} />
-      </Container>
+      <Suspense fallback={<Loading />}>
+        <Container maxW={"7xl"} pt={"32px"}>
+          <LayoutBottom sticky="120px">
+            <ListPosts cate="notifis" handleRouter={handleRouter} />
+          </LayoutBottom>
+        </Container>
+      </Suspense>
     </Box>
   );
 };
