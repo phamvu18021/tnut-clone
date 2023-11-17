@@ -136,7 +136,7 @@ export const Header = () => {
                     borderRadius={"0"}
                   />
                 </PopoverTrigger>
-                <PopoverContent p={5}>
+                <PopoverContent onSubmit={onClose} p={5}>
                   <FormInputs />
                 </PopoverContent>
               </Popover>
