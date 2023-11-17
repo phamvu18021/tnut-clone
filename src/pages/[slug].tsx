@@ -43,10 +43,10 @@ const Page = (props: IPostPage) => {
   return (
     <>
       <NextSeo
-        title={tit || "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa"}
+        title={tit || "ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"}
         description={
           des ||
-          "Đại Học Kỹ Thuật Công Nghiệp - tuyển sinh hệ từ xa, học tập tiết kiệm thời gian và chi phí bằng cử nhân do Bộ Giáo dục cấp"
+          "Tuyển sinh hệ đại học trực tuyến khối ngành kỹ thuật, học từ xa kết hợp thực hành trực tiếp. Cấp bằng Kỹ sư/ Cử nhân được Bộ GD&ĐT công nhận"
         }
       />
       <ErrorBoundary fallback={<h1>Lỗi phía máy chủ</h1>}>

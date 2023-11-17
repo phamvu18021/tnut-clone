@@ -7,14 +7,15 @@ import { BtnTheme } from "@/components/BtnTheme";
 import { ModalBase } from "@/components/Modal";
 import { FormPoup } from "@/components/FormContact";
 import { useModal } from "@/components/ModalContext";
-
+import { FaFacebook } from "react-icons/fa";
+import { BsMessenger } from "react-icons/bs";
 export const Tags = ({
   label,
-  type,
+  path,
   children,
 }: {
   label: string;
-  type: string;
+  path: string;
   children: ReactNode;
 }) => {
   return (
@@ -26,7 +27,7 @@ export const Tags = ({
       py="8px"
       px="8px"
       as={Link}
-      href={`${type}:${label}`}
+      href={path}
     >
       {children}
       <TagLabel fontSize={{ base: "4rem", md: "md" }}>{label}</TagLabel>
@@ -67,12 +68,11 @@ export const HeaderTop = () => {
           display="flex"
           justifyContent={{ base: "space-between", lg: "flex-end" }}
         >
-          <Tags type="tel" label="0815674848">
-            <Icon w={"1.2em"} h={"1.2em"} as={LuPhone} />
+          <Tags path={"https://m.me/daihoctuxatnut"} label="Messenger">
+            <Icon w={"1.3em"} h={"1.2em"} as={BsMessenger} pr={0.2} />
           </Tags>
-
-          <Tags type="mailto" label="hotro.tnut.vn@gmail.com">
-            <Icon w={"1.2em"} h={"1.2em"} as={MdOutlineMail} />
+          <Tags path="tel:0815674848" label="081.567.4848">
+            <Icon w={"1.3em"} h={"1.2em"} as={LuPhone} pr={0.2} />
           </Tags>
 
           <BtnTheme

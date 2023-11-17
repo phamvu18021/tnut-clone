@@ -85,15 +85,11 @@ export const Footer = () => {
               </HStack>
             </Stack>
 
-            <Stack >
+            <Stack>
               <ListHeader>Liên hệ</ListHeader>
 
-              <Box
-                pt={2}
-                as={Link}
-                href={"https://m.me/daihoctuxatnut"}
-              >
-                www.facebook.com/daihoctuxatnut
+              <Box pt={2} as={Link} href={"https://m.me/daihoctuxatnut"}>
+                Facebook
               </Box>
 
               <Box py={2} as={Link} href={"https://www.tnut.vn"}>
@@ -124,9 +120,9 @@ export const Footer = () => {
                 />
 
                 <Image
-                  src={"/logo-tnut.png"}
+                  src={"/logo-dhthainguyen.png"}
                   width={100}
-                  height={40}
+                  height={100}
                   alt="Tìm đối tác"
                 />
               </HStack>

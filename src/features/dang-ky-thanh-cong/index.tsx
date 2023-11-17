@@ -12,7 +12,6 @@ export const DangkyTc = () => {
   const { isOpen, onOpen, onClose } = useModal();
   useEffect(() => {
     const getPosts = async () => {
-    
       try {
         const res = await fetch(`/api/posts/?type=news&page=1`, {
           next: { revalidate: 3 },
@@ -24,7 +23,6 @@ export const DangkyTc = () => {
       } catch (error) {
         console.log(error);
       }
-    
     };
 
     getPosts();
@@ -34,16 +32,23 @@ export const DangkyTc = () => {
     <>
       <Box
         bg={"rgba(0, 0, 0, 0.5)"}
-        bgImage={"url('breadcrumbs-img.jpg')"}
+        bgImage={"url('bannernews.png')"}
+        bgSize={"cover"}
+        bgPosition={"bottom"}
         backgroundBlendMode={"overlay"}
       >
-        <Container maxW={"7xl"} py="24px" color={"white"}>
+        <Container
+          maxW={"7xl"}
+          py={{ base: "28px", lg: "42px" }}
+          color={"white"}
+          pl={{ base: 6, lg: 0 }}
+        >
           <Box py={24}>
             <Text
               fontWeight={400}
               textAlign={"start"}
               fontSize={{ base: "24px", lg: "60px" }}
-              pb="40px"
+              pb={{ base: "36px", lg: "52px" }}
             >
               ĐĂNG KÝ THÀNH CÔNG!
             </Text>

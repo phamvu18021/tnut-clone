@@ -25,10 +25,21 @@ export const LichKg = ({
       <Box
         bg={"rgba(0, 0, 0, 0.5)"}
         bgImage={"url('/bannernews.png')"}
+        bgSize={"cover"}
+        bgPosition={"bottom"}
         backgroundBlendMode={"overlay"}
       >
-        <Container maxW={"7xl"} py="24px" color={"white"}>
-          <HStack pt={24} color={"gray.50"}>
+          <Container
+            maxW={"7xl"}
+            py={{ base: "28px", lg: "42px" }}
+            color={"white"}
+            pl={{ base: 6, lg: 0 }}
+          >
+            <HStack
+              pt={{ base: 8, lg: 16 }}
+              pb={{ base: 2, lg: 8 }}
+              color={"gray.50"}
+            >
             <Box display={"flex"} alignContent={"center"}>
               <Divider
                 zIndex={2}
@@ -50,7 +61,7 @@ export const LichKg = ({
               fontWeight={400}
               textAlign={"start"}
               fontSize={{ base: "32px", lg: "60px" }}
-              pb="40px"
+              pb={{ base: "36px", lg: "52px" }}
             >
               Đại học Kỹ thuật Công nghiệp
             </Text>
@@ -61,6 +72,7 @@ export const LichKg = ({
             separator={<ChevronRightIcon color="gray.50" />}
             fontWeight="medium"
             fontSize="md"
+            pb={{ base: 2, lg: 8 }}
           >
             <BreadcrumbItem color="gray.50" fontWeight={300}>
               <BreadcrumbLink href="/">Trang chủ</BreadcrumbLink>
@@ -74,6 +86,8 @@ export const LichKg = ({
           </Breadcrumb>
         </Container>
       </Box>
+
+      
       {!isLoading && <LkgMain title={list[0]} lichkg={list[1]} lichkg2={list[2]} />}
       <LkgTuyensinh />
       <Box bg={"gray.50"}>

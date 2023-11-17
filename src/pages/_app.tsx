@@ -4,7 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, NextSeo } from "next-seo";
 import { ModalProvider } from "@/components/ModalContext";
 import "@/styles/globals.css";
 import "@/styles/tableContent.css";
@@ -23,8 +23,18 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <DefaultSeo
-        title="Đại Học Kỹ Thuật Công Nghiệp"
-        description="Đại Học Kỹ Thuật Công Nghiệp hệ đào tạo từ xa tuyển sinh 2023"
+        title="ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"
+        description="Tuyển sinh hệ đại học trực tuyến khối ngành kỹ thuật, học từ xa kết hợp thực hành trực tiếp. Cấp bằng Kỹ sư/ Cử nhân được Bộ GD&ĐT công nhận."
+        openGraph={{
+          images: [
+            {
+              url: "/seo.jpg",
+              width: 850,
+              height: 650,
+              alt: "ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa",
+            },
+          ],
+        }}
       />
       <ChakraProvider theme={theme}>
         <ModalProvider>

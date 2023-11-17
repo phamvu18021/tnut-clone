@@ -20,15 +20,14 @@ export const CTA = () => {
         height={"160px"}
         width={"200px"}
         alignItems={"center"}
-        top={"-108%"}
+        top={"-160%"}
         left={"-105%"}
         position={"absolute"}
       >
         <BtnEmail aria-label="email" />
       </Flex>
 
-      <VStack gap={0} alignItems={"flex-end"}>
-        <BtnMailN aria-label="mailto : " />
+      <VStack gap={0} alignItems={"flex-end"}>        
         <BtnMes aria-label="messenter" />
         <BtnPhone aria-label="phone" />
       </VStack>

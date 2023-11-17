@@ -18,8 +18,8 @@ const Page = () => {
   return (
     <>
       <NextSeo
-        title="Ngành quản lý công nghiệp"
-        description="Ngành quản lý công nghiệp"
+        title="Ngành quản lý công nghiệp ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"
+        description="Ngành quản lý công nghiệp ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"
       />
       <Qlcn />
       <ErrorBoundary fallback={<h1>Lỗi server</h1>}>

@@ -39,7 +39,14 @@ export const LkgTuyensinh = () => {
         </GridItem>
 
         <GridItem colSpan={1}>
-          <Text color={'blue.700'} fontSize={'20px'} fontWeight={600} textAlign={'center'}>ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ</Text>
+          <Text
+            color={"blue.700"}
+            fontSize={"20px"}
+            fontWeight={600}
+            textAlign={"center"}
+          >
+            ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ
+          </Text>
           <Box pt={{ base: "18px", lg: "0px" }}>
             <FormMain />
           </Box>
@@ -78,12 +85,12 @@ export const Accs = ({
   return (
     <Accordion defaultIndex={[0, 1, 2, 3, 4, 5]} allowMultiple>
       {accs.map((acc, index) => (
-        <AccordionItem border={"none"} key={index} py={"8px"} rounded={"sm"}>
+        <AccordionItem border={"none"} key={index}  rounded={"sm"}>
           <AccordionButton
             pointerEvents={"none"}
             cursor={"not-allowed"}
             bg={"gray.50"}
-            py="8px"
+           
             rounded={"sm"}
           >
             <Box flex="1" textAlign="left">
@@ -94,7 +101,7 @@ export const Accs = ({
               </HStack>
             </Box>
           </AccordionButton>
-          <AccordionPanel pb={2} color={"gray.900"}>
+          <AccordionPanel  p={0.5} color={"gray.900"}>
             {acc?.detail?.map((item, index) => (
               <Box key={index}>
                 <Heading as={"h4"} size={"sm"}>
@@ -102,8 +109,9 @@ export const Accs = ({
                 </Heading>
                 <List>
                   {item?.list?.map((item, i) => (
-                    
-                    <ListItem key={i}> <ListIcon as={CheckIcon} color='green.500' />  {item}</ListItem>
+                    <ListItem key={i}>
+                      <ListIcon as={CheckIcon} color="green.500" /> {item}
+                    </ListItem>
                   ))}
                 </List>
               </Box>
@@ -139,7 +147,7 @@ const infoInit = [
     detail: [
       {
         title: "",
-        list: ["Từ 2 - 4 năm tùy thuộc đầu vào của sinh viên"],
+        list: ["Từ 2 - 4,5 năm tùy thuộc đầu vào của sinh viên"],
       },
     ],
   },
@@ -157,20 +165,28 @@ const infoInit = [
     ],
   },
   {
-    title: "Khu vực tuyển sinh",
+    title: "Liên hệ",
     detail: [
       {
         title: "",
-        list: ["Có trạm tuyển sinh tại Hà Nội và Tp. HCM"],
+        list: ["Hotline: 081.567.4848"],
+      },
+      {
+        title: "",
+        list: ["Website: tnut.vn"],
       },
     ],
   },
   {
-    title: "Hotline",
+    title: "Trạm tuyển sinh",
     detail: [
       {
         title: "",
-        list: ["081.567.4848"],
+        list: ["Hà Nội: 116 Trần Vĩ, Mai Dịch, Cầu Giấy, Hà Nội"],
+      },
+      {
+        title: "",
+        list: ["Tp. HCM: 91 Kí Con, Nguyễn Thái Bình, Quận 1, Tp. HCM"],
       },
     ],
   },

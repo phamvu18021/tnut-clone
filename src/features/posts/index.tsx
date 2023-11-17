@@ -34,11 +34,22 @@ export const Posts = () => {
       <Box bg={"#F8F9FA"}>
         <Box
           bg={"rgba(0, 0, 0, 0.5)"}
-          bgImage={"url('/bannernews.png')"}
+          bgImage={"url('bannernews.png')"}
+          bgSize={"cover"}
+          bgPosition={"50% 100%"}
           backgroundBlendMode={"overlay"}
         >
-          <Container maxW={"7xl"} py="24px" color={"white"}>
-            <HStack pt={24} color={"gray.50"}>
+          <Container
+            maxW={"7xl"}
+            py={{ base: "28px", lg: "42px" }}
+            color={"white"}
+            pl={{ base: 6, lg: 0 }}
+          >
+            <HStack
+              pt={{ base: 8, lg: 16 }}
+              pb={{ base: 2, lg: 8 }}
+              color={"gray.50"}
+            >
               <Box display={"flex"} alignContent={"center"}>
                 <Divider
                   zIndex={2}
@@ -61,7 +72,7 @@ export const Posts = () => {
                 fontWeight={400}
                 textAlign={"start"}
                 fontSize={{ base: "32px", lg: "60px" }}
-                pb="40px"
+                pb={{ base: "36px", lg: "52px" }}
               >
                 TIN TỨC VÀ SỰ KIỆN
               </Text>
@@ -72,6 +83,7 @@ export const Posts = () => {
               separator={<ChevronRightIcon color="gray.50" />}
               fontWeight="medium"
               fontSize="md"
+              pb={{ base: 2, lg: 8 }}
             >
               <BreadcrumbItem color="gray.50" fontWeight={300}>
                 <BreadcrumbLink href="/">Trang chủ</BreadcrumbLink>
@@ -88,7 +100,7 @@ export const Posts = () => {
       </Box>
       <Box pt={"20px"}>
         <Suspense fallback={<Loading />}>
-          <LayoutBottom sticky="120px" >
+          <LayoutBottom sticky="120px">
             <ListPosts cate="news" handleRouter={handleRouter} />
           </LayoutBottom>
         </Suspense>
