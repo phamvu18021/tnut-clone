@@ -147,7 +147,7 @@ export const MobileNav = () => {
                 ))}
               </Stack>
               <Box onSubmit={onClose}>
-                <FormInputs />
+                <FormInputs type={"normal"} />
               </Box>
 
               <HStack py={4} spacing={2} display={{ base: "flex", lg: "flex" }}>

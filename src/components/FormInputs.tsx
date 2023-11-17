@@ -4,7 +4,7 @@ import { Box, Button, HStack, Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-export const FormInputs = () => {
+export const FormInputs = ({type}: {type:string}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
@@ -12,6 +12,9 @@ export const FormInputs = () => {
     e.preventDefault();
     const encodedSearchQuery = encodeURI(searchQuery || "");
     router.push(`/tim-kiem?s=${encodedSearchQuery}`);
+    if (type == "popover") {
+      setSearchQuery("")
+    }
   };
   return (
     <Box zIndex={"100"}>
