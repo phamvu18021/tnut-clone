@@ -68,9 +68,9 @@ export const HeaderTop = () => {
           display="flex"
           justifyContent={{ base: "space-between", lg: "flex-end" }}
         >
-          <Tags path={"https://m.me/daihoctuxatnut"} label="Messenger">
+          {/* <Tags path={"https://m.me/daihoctuxatnut"} label="Messenger">
             <Icon w={"1.3em"} h={"1.2em"} as={BsMessenger} pr={0.2} />
-          </Tags>
+          </Tags> */}
           <Tags path="tel:0815674848" label="081.567.4848">
             <Icon w={"1.3em"} h={"1.2em"} as={LuPhone} pr={0.2} />
           </Tags>
