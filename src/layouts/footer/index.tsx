@@ -56,7 +56,7 @@ export const Footer = () => {
                 <SocialButton
                   bagr="rgba(255, 255, 255, 0.23)"
                   label={"Facebook"}
-                  href={"https://m.me/daihoctuxatnut"}
+                  href={"https://www.facebook.com/daihoctuxatnutt"}
                 >
                   <FaFacebook color="white" />
                 </SocialButton>
