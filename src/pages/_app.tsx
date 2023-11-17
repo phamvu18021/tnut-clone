@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         openGraph={{
           images: [
             {
-              url: "/seo.jpg",
+              url: "/sep.jpg",
               width: 850,
               height: 650,
               alt: "ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa",
