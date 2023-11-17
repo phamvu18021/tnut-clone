@@ -70,7 +70,7 @@ export const benefits = [
     path: "#",
     title: "Thời gian Đào tạo ngắn",
     desc: `• Người học có thể học vượt để rút ngắn thời gian học tập theo quy định đào tạo tín chỉ `,
-    descs: `• Thời gian đào tạo từ 2-4 năm `,
+    descs: `• Thời gian đào tạo từ 2-4,5 năm `,
     icon: BsClockHistory,
   },
   {
