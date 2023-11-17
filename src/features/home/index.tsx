@@ -108,7 +108,7 @@ export const Home = () => {
 
     return () => window.clearTimeout(timeout);
   }, []);
-  console.log(news)
+  console.log(news);
   return (
     <>
       <Banner />
@@ -118,7 +118,6 @@ export const Home = () => {
       <Majors />
       <Testimonials />
       <Advertisement />
-      {/* <LastestPost /> */}
       <Event news={news} notifis={notifis} />
       <Circulars />
     </>

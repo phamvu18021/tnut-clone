@@ -1,4 +1,4 @@
-import { Heading, VStack, Box, Flex, Text, HStack } from "@chakra-ui/react";
+import { VStack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,7 +28,7 @@ export const Logo = () => {
           textAlign={"center"}
           fontWeight={500}
           color={"gray.500"}
-          display={{base:"none",lg:"contents"}}
+          display={{ base: "none", lg: "contents" }}
         >
           ĐẠI HỌC THÁI NGUYÊN
         </Text>
@@ -44,7 +44,7 @@ export const Logo = () => {
           textAlign={"center"}
           fontWeight={500}
           color={"gray.500"}
-          display={{base:"none",lg:"contents"}}
+          display={{ base: "none", lg: "contents" }}
         >
           THAINGUYEN UNIVERSITY OF TECHNOLOGY
         </Text>

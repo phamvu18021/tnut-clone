@@ -1,15 +1,12 @@
 import { menus } from "@/router";
 import {
   Box,
-  Flex,
-  Icon,
   Popover,
   PopoverContent,
   PopoverTrigger,
   useDisclosure,
   Stack,
   Text,
-  Input,
 } from "@chakra-ui/react";
 
 import Link from "next/link";

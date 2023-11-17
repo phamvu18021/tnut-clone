@@ -1,7 +1,4 @@
 "use client";
-import { MotionTop } from "@/components/MotionTop";
-import { FormMain } from "@/components/FormContact";
-
 import {
   List,
   ListItem,
@@ -31,14 +28,6 @@ export const LkgMain = ({
               pt={"8px"}
               fontSize={{ base: "18px", lg: "21px", md: "md" }}
             >
-              {/* <MotionTop>
-                <ListItem>
-                  <Text fontWeight={400}>
-                    Chương trình Đào tạo từ xa Đại học Kỹ Thuật Công Nghiệp Thái
-                    Nguyên
-                  </Text>
-                </ListItem>
-              </MotionTop> */}
               <Box border={"1px solid black"}>
                 <ListItem>
                   <Text

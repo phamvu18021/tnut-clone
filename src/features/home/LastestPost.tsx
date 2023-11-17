@@ -1,12 +1,4 @@
-import {
-  Box,
-  Container,
-  Grid,
-  GridItem,
-  Heading,
-  Text,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Box, Container, GridItem, Text, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { CardLBlog } from "@/components/CardBlog";
 import { BtnThemeSe } from "@/components/BtnTheme";

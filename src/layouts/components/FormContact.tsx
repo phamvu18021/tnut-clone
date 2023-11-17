@@ -21,12 +21,7 @@ export const FormContact = ({
 }) => {
   return (
     <Flex align={"center"} justify={"center"} bg={"gray.50"} rounded={"2xl"}>
-      <Stack    
-        p={10}
-        spacing={8}
-        align={"center"}
-        w={"full"}
-      >
+      <Stack p={10} spacing={8} align={"center"} w={"full"}>
         <Icon as={NotificationIcon} w={"50px"} h={"50px"} />
         <Stack align={"center"} spacing={2}>
           <Heading textTransform={"uppercase"} size={"md"} color={"gray.800"}>

@@ -17,7 +17,6 @@ import { ReactNode } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
 import { BsYoutube } from "react-icons/bs";
-import { GrInstagram } from "react-icons/gr";
 import { BsTiktok } from "react-icons/bs";
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -97,11 +96,20 @@ export const Footer = () => {
                 Facebook
               </Box>
 
-              <Box py={2} as={Link} href={"https://www.tnut.vn"}   _hover={{ textDecoration: "underline", color: "orange.400" }}>
+              <Box
+                py={2}
+                as={Link}
+                href={"https://www.tnut.vn"}
+                _hover={{ textDecoration: "underline", color: "orange.400" }}
+              >
                 Website: tnut.vn
               </Box>
 
-              <Box as={Link} href={"tel:0815674848"}   _hover={{ textDecoration: "underline", color: "orange.400" }}> 
+              <Box
+                as={Link}
+                href={"tel:0815674848"}
+                _hover={{ textDecoration: "underline", color: "orange.400" }}
+              >
                 Hotline: 081.567.4848
               </Box>
             </Stack>

@@ -1,13 +1,10 @@
 "use client";
 
-import { HeadSection } from "@/components/HeadSection";
 import {
   As,
   Box,
-  Button,
   Container,
   HStack,
-  Heading,
   Icon,
   SimpleGrid,
   Text,
@@ -102,7 +99,7 @@ export const BenefitNganh = () => {
           fontSize={{ base: 24, lg: 32 }}
           color={"blue.700"}
           fontWeight={600}
-          textAlign={'center'}
+          textAlign={"center"}
         >
           LỢI ÍCH BẠN NHẬN ĐƯỢC KHI THEO HỌC CHƯƠNG TRÌNH
         </Text>

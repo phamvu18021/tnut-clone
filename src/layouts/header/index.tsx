@@ -7,8 +7,6 @@ import { MobileNav } from "../components/MobileNav";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Heading,
-  VStack,
   Box,
   Container,
   Divider,

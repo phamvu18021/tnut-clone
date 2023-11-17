@@ -1,10 +1,4 @@
-import {
-  BtnMes,
-  BtnPhone,
-  BtnZalo,
-  BtnEmail,
-  BtnMailN,
-} from "@/components/BtnCTA";
+import { BtnMes, BtnPhone, BtnEmail } from "@/components/BtnCTA";
 import { Box, Flex, VStack } from "@chakra-ui/react";
 export const CTA = () => {
   return (
@@ -27,7 +21,7 @@ export const CTA = () => {
         <BtnEmail aria-label="email" />
       </Flex>
 
-      <VStack gap={0} alignItems={"flex-end"}>        
+      <VStack gap={0} alignItems={"flex-end"}>
         <BtnMes aria-label="messenter" />
         <BtnPhone aria-label="phone" />
       </VStack>

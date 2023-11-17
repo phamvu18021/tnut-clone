@@ -37,13 +37,12 @@ export const Circulars = () => {
         margin={"0 auto"}
         gap={{ base: 12, lg: 20 }}
       >
-        <GridItem colSpan={1} >
+        <GridItem colSpan={1}>
           <Box pt={20}>
             <AspectRatio maxW="560px" ratio={16 / 9} maxH={"315px"}>
               <iframe
                 title="Video"
                 src="https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
-                // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </AspectRatio>

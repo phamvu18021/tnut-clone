@@ -21,7 +21,6 @@ export const SamePosts = ({ catId, id }: { catId?: string; id?: string }) => {
     const getSamePosts = async () => {
       try {
         if (catId) {
-          // Lấy danh sách các bài viết cùng thể loại
           const res = await fetch(`/api/same-posts/?catId=${catId}&id=${id}`, {
             next: { revalidate: 3 },
           });

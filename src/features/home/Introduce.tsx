@@ -66,20 +66,23 @@ export const Introduce = () => {
               <MotionTop>
                 <ListItem mt={{ lg: "19px" }}>
                   <ListIcon as={FcBookmark} />
-                  Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ xa, học trực tuyến không cần đến trường
+                  Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ
+                  xa, học trực tuyến không cần đến trường
                 </ListItem>
               </MotionTop>
 
               <MotionTop>
                 <ListItem>
                   <ListIcon as={FcBookmark} />
-                  Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp
+                  Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ
+                  thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp
                 </ListItem>
               </MotionTop>
               <MotionTop>
                 <ListItem>
                   <ListIcon as={FcBookmark} />
-                  Chương trình phù hợp với người đi làm bận rộn                </ListItem>
+                  Chương trình phù hợp với người đi làm bận rộn{" "}
+                </ListItem>
               </MotionTop>
             </List>
           </Stack>

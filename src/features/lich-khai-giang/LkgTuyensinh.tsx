@@ -1,12 +1,10 @@
 "use client";
-import { MotionTop } from "@/components/MotionTop";
 import { FormMain } from "@/components/FormContact";
 
 import {
   Box,
   List,
   SimpleGrid,
-  Stack,
   Container,
   GridItem,
   Text,
@@ -85,12 +83,11 @@ export const Accs = ({
   return (
     <Accordion defaultIndex={[0, 1, 2, 3, 4, 5]} allowMultiple>
       {accs.map((acc, index) => (
-        <AccordionItem border={"none"} key={index}  rounded={"sm"}>
+        <AccordionItem border={"none"} key={index} rounded={"sm"}>
           <AccordionButton
             pointerEvents={"none"}
             cursor={"not-allowed"}
             bg={"gray.50"}
-           
             rounded={"sm"}
           >
             <Box flex="1" textAlign="left">
@@ -101,7 +98,7 @@ export const Accs = ({
               </HStack>
             </Box>
           </AccordionButton>
-          <AccordionPanel  p={0.5} color={"gray.900"}>
+          <AccordionPanel p={0.5} color={"gray.900"}>
             {acc?.detail?.map((item, index) => (
               <Box key={index}>
                 <Heading as={"h4"} size={"sm"}>

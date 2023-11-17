@@ -479,7 +479,7 @@ export const CardBlogEvent = ({
             </Box>
 
             {isMounted && (
-              <Box h={'5rem'}>
+              <Box h={"5rem"}>
                 <Text
                   color={"gray.500"}
                   fontSize={".8rem"}

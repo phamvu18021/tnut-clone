@@ -115,7 +115,6 @@ export const BtnEmail = (props: IconButtonProps) => {
           <IconButton
             icon={<MdEmail />}
             size="lg"
-            // rounded={""
             _hover={{}}
             color={"white"}
             bg={"orange.500"}

@@ -60,7 +60,6 @@ export const HeadSectionEvent = ({
 }) => {
   return (
     <VStack justify={"center"}>
-      {/* <Text color={"#FA692E"}>{subtitle}</Text> */}
       <Text
         fontSize={{ base: "24px", md: "32px" }}
         textAlign={"center"}

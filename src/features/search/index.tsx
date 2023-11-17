@@ -5,10 +5,7 @@ import {
   Container,
   Divider,
   Heading,
-  VStack,
-  SimpleGrid,
   HStack,
-  Grid,
   Button,
   Input,
 } from "@chakra-ui/react";
@@ -48,7 +45,6 @@ export const Search = () => {
         bgSize={"cover"}
         maxW={"100vw"}
         overflowX={"hidden"}
-        // h={"60vh"}
         h={{ base: "10vh", md: "15vh", lg: "20vh" }}
       ></Box>
       <Container maxW={"7xl"}>

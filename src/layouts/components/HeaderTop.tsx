@@ -1,14 +1,12 @@
 import { Box, HStack, Icon, Link, Tag, TagLabel } from "@chakra-ui/react";
 import { ReactNode, useEffect, useState } from "react";
 import { LuPhone } from "react-icons/lu";
-import { MdOutlineMail } from "react-icons/md";
 import { Logo } from "./Logo";
 import { BtnTheme } from "@/components/BtnTheme";
 import { ModalBase } from "@/components/Modal";
 import { FormPoup } from "@/components/FormContact";
 import { useModal } from "@/components/ModalContext";
-import { FaFacebook } from "react-icons/fa";
-import { BsMessenger } from "react-icons/bs";
+
 export const Tags = ({
   label,
   path,
@@ -68,9 +66,6 @@ export const HeaderTop = () => {
           display="flex"
           justifyContent={{ base: "space-between", lg: "flex-end" }}
         >
-          {/* <Tags path={"https://m.me/daihoctuxatnut"} label="Messenger">
-            <Icon w={"1.3em"} h={"1.2em"} as={BsMessenger} pr={0.2} />
-          </Tags> */}
           <Tags path="tel:0815674848" label="081.567.4848">
             <Icon w={"1.3em"} h={"1.2em"} as={LuPhone} pr={0.2} />
           </Tags>

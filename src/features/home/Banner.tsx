@@ -16,7 +16,6 @@ export const CardBanner = ({ image }: { image: string }) => {
       <Image
         className="Image"
         src={image}
-        // alt={title}
         width={"100%"}
         objectFit={"contain"}
         height={"auto"}
@@ -78,7 +77,6 @@ const SwiperContainer = styled.div`
   
 }
 }`;
-
 
 export const Banner = () => {
   const teachers = [
