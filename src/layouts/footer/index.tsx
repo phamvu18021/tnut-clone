@@ -86,17 +86,22 @@ export const Footer = () => {
             </Stack>
 
             <Stack>
-              <ListHeader>Liên hệ</ListHeader>
+              <ListHeader>LIÊN HỆ</ListHeader>
 
-              <Box pt={2} as={Link} href={"https://m.me/daihoctuxatnut"}>
+              <Box
+                pt={2}
+                as={Link}
+                href={"https://m.me/daihoctuxatnut"}
+                _hover={{ textDecoration: "underline", color: "orange.400" }}
+              >
                 Facebook
               </Box>
 
-              <Box py={2} as={Link} href={"https://www.tnut.vn"}>
+              <Box py={2} as={Link} href={"https://www.tnut.vn"}   _hover={{ textDecoration: "underline", color: "orange.400" }}>
                 Website: tnut.vn
               </Box>
 
-              <Box as={Link} href={"tel:0815674848"}>
+              <Box as={Link} href={"tel:0815674848"}   _hover={{ textDecoration: "underline", color: "orange.400" }}> 
                 Hotline: 081.567.4848
               </Box>
             </Stack>
