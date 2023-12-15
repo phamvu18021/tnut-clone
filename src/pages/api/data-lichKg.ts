@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { fetchAuth } from "@/ultil/fetchAuth";
 
 type Data = {
   list: string[];
@@ -16,12 +17,10 @@ export default async function handler(
 
   let filteredLines: string[] = [];
   try {
-    const responeWordpress = await fetch(
-      `${api_url}/posts?slug=lich-khai-giang`,
-
-      {
-        next: { revalidate: 10 },
-      }
+    const responeWordpress = await fetchAuth({
+      url: `${api_url}/posts?slug=lich-khai-giang`,
+      revalidate: 10
+    }
     );
     const data: any[] = await responeWordpress.json();
 

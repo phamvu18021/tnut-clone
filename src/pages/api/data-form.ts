@@ -1,5 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { fetchAuth } from "@/ultil/fetchAuth";
+
+
 type Data = {
   id: string;
   href: string;
@@ -14,8 +17,8 @@ export default async function handler(
   let id: string = "";
   let href: string = "";
   try {
-    const responeWordpress = await fetch(`${api_url}/posts/?slug=${type}`, {
-      next: { revalidate: 10 },
+    const responeWordpress = await fetchAuth({
+      url: `${api_url}/posts/?slug=${type}`, revalidate: 10
     });
     const data: any[] = await responeWordpress.json();
     const htmlString = data?.length > 0 ? data[0]?.content.rendered : ``;

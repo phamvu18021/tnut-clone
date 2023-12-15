@@ -87,7 +87,6 @@ export const ListPosts = ({
 
     getPosts();
   }, [page]);
-  console.log(totalPosts);
   const len = Math.ceil(Number(totalPosts) / 8) || 1;
 
   return (

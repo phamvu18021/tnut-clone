@@ -17,7 +17,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { BiBox, BiLogoTiktok } from "react-icons/bi";
+import { BiLogoTiktok } from "react-icons/bi";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 export const Item = ({
@@ -36,19 +36,19 @@ export const Item = ({
       pos="relative"
       transition={"all ease .4s"}
       _hover={{ transform: "translateY(-10px)" }}
-      aspectRatio={7 / 4}objectFit="cover"
+      aspectRatio={7 / 4} objectFit="cover"
     >
-   
-        <Image
-          priority
-          width={700}
-          height={400}
-          src={image}
-          alt={title}
-          objectFit="cover"
-          style={{ height:'150px' ,maxWidth:"100%", filter: "brightness(50%)" }}
-        />
-  
+
+      <Image
+        priority
+        width={700}
+        height={400}
+        src={image}
+        alt={title}
+        objectFit="cover"
+        style={{ height: '150px', maxWidth: "100%", filter: "brightness(50%)" }}
+      />
+
 
       <Box
         as={Flex}
@@ -89,7 +89,6 @@ export const Sidebar = ({
         const data: { posts: any[]; totalPosts: string } = await res.json();
         const { posts, totalPosts } = data;
         posts?.length && setPosts(posts);
-        console.log(data);
         totalPosts && setTotalPosts(totalPosts);
       } catch (error) {
         console.log(error);
@@ -116,8 +115,8 @@ export const Sidebar = ({
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const encodedSearchQuery = encodeURI(searchQuery || "");
-    router.push(`/tim-kiem?s=${encodedSearchQuery}`);
+    router.push(`/tim-kiem?keyword=${searchQuery}`);
+    setSearchQuery("")
   };
   return (
     <Box pos={sticky ? "sticky" : "static"} top={sticky} bg={"gray.100"}>
@@ -125,6 +124,7 @@ export const Sidebar = ({
         <form onSubmit={onSearch}>
           <HStack columnGap={"0"}>
             <Input
+              required
               value={searchQuery}
               type="Text"
               border={"1px solid #BFBFBF "}

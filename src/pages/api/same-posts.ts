@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { fetchAuth } from "@/ultil/fetchAuth";
 
 type Data = {
   samePosts: any[];
@@ -20,9 +21,9 @@ export default async function handler(
   if (catId) {
     try {
       // Lấy danh sách các bài viết cùng thể loại
-      const resRelatedPosts = await fetch(
-        `${api_url}/posts/?categories=${catId}&exclude=${id}&per_page=3&_embed`,
-        { next: { revalidate: 1 } }
+      const resRelatedPosts = await fetchAuth({
+        url : `${api_url}/posts/?categories=${catId}&exclude=${id}&per_page=3&_embed`,
+        revalidate: 1 }
       );
       const relatedPosts: any[] = await resRelatedPosts.json();
       const postsWithFeaturedImages =

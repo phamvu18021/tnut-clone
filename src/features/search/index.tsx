@@ -1,5 +1,4 @@
 "use client";
-import { Loading } from "@/components/Loading";
 import {
   Box,
   Container,
@@ -9,34 +8,25 @@ import {
   Button,
   Input,
 } from "@chakra-ui/react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
-import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { ListSearchPosts } from "./ListSearchPosts";
 
-const ListPosts = dynamic(
-  () => import("@/features/posts/ListPosts").then((mod) => mod.ListPosts),
-  {
-    loading: () => <Loading />,
-  }
-);
+
 export const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const search = useSearchParams();
-  const searchQuery2 = search ? search.get("s") : null;
-  console.log(searchQuery2);
-  const encodedSearchQuery2 = decodeURIComponent(searchQuery2 || "");
+  const [keyWord, setKeyWord] = useState("");
+
   const router = useRouter();
-  console.log(encodedSearchQuery2);
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const encodedSearchQuery = encodeURI(searchQuery || "");
-    router.push(`/tim-kiem?s=${encodedSearchQuery}`);
-    setSearchQuery("");
+    router.push(`/tim-kiem?keyword=${searchQuery}`);
   };
-
-  const nextpage = ({ selected }: { selected: number }) => {
-    router.push(`/tim-kiem?s=${encodedSearchQuery2}&page=${selected + 1}`);
-  };
+  useEffect(() => {
+    const { keyword } = router.query;
+    setKeyWord(Array.isArray(keyword) ? keyword[0] || "" : (keyword as string) || "");
+    setSearchQuery(Array.isArray(keyword) ? keyword[0] || "" : (keyword as string) || "")
+  }, [router.query])
   return (
     <Box>
       <Box
@@ -56,7 +46,7 @@ export const Search = () => {
               pb={"12px"}
               textAlign={{ base: "center", lg: "center" }}
             >
-              Kết quả trả về cho từ khóa : " {encodedSearchQuery2} "
+              Kết quả trả về cho từ khóa : " {keyWord} "
             </Heading>
 
             <Box pb={8}>
@@ -88,7 +78,10 @@ export const Search = () => {
               </form>
             </Box>
           </Box>
-          <ListPosts cate="news" handleRouter={nextpage} />
+          {keyWord != "" &&
+            <ListSearchPosts cate="news" searchText={keyWord} />
+          }
+
         </Box>
         <Divider size={"xl"} />
       </Container>

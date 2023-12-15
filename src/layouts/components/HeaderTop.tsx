@@ -44,7 +44,7 @@ export const HeaderTop = () => {
       try {
         const res = await fetch(`/api/data-form/?type=form-poup`);
         const data = await res.json();
-        const id = data?.id || "";
+        const id = data?.id ||"" ;
         id && setId(id);
         const href = data?.href || "";
         href && setHref(href);

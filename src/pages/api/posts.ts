@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { fetchAuth } from "@/ultil/fetchAuth";
 
 type Data = {
   posts: any[];
@@ -13,6 +14,7 @@ export default async function handler(
   //lấy dữ liệu form từ wordpress
   const type = req?.query?.type || "";
   const page = req?.query?.page || "";
+  const per_page = req?.query?.per_page || 8;
   const api_url = process.env.API_URL || "";
   const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
   if (hasSSL === "false") process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
@@ -32,14 +34,13 @@ export default async function handler(
     const idNotifi = 216;
     const id = type === "news" ? idNew : type === "notifis" ? idNotifi : null;
     const endPoint = id
-      ? `${api_url}/posts?_embed&per_page=8&status=publish&page=${page}&categories=${id}`
+      ? `${api_url}/posts?_embed&per_page=${per_page}&status=publish&page=${page}&categories=${id}`
       : //&categories=${id}
         `${api_url}/posts?_embed&per_page=8&status=publish&page=${page}`;
 
     //get posts category==='tin-tuc'
-    const res = await fetch(endPoint, {
-      next: { revalidate: 1 },
-    });
+    
+    const res = await fetchAuth({ url: endPoint, revalidate: 1 });
     totalPosts = String(res.headers?.get("X-WP-Total") || "0");
     // let ttp = Number(res.headers?.get("X-WP-Total") || "0");
     // if (ttp > 4) {

@@ -108,7 +108,6 @@ export const Home = () => {
 
     return () => window.clearTimeout(timeout);
   }, []);
-  console.log(news);
   return (
     <>
       <Banner />

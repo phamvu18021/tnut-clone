@@ -26,6 +26,7 @@ export const CardBlog = ({
   path,
   date,
   imageH,
+  preview,
 }: {
   image?: string;
   title: string;
@@ -33,6 +34,7 @@ export const CardBlog = ({
   path: string;
   date?: string;
   imageH?: string;
+  preview?: boolean;
 }) => {
   const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
 
@@ -60,21 +62,15 @@ export const CardBlog = ({
         overflow={"hidden"}
       >
         <Box>
-          <Box
-            bg={"white"}
-            mb={6}
-            pos={"relative"}
-            aspectRatio={508 / 338}
-            overflow={"hidden"}
-          >
-            {hasSSL === "false" && (
-              <Img
-                src={image || `/blog.jpeg`}
-                style={{ maxHeight: imageH }}
-                alt={title}
-              />
-            )}
-            {hasSSL === "true" && (
+          {!preview &&
+            <Box
+              bg={"white"}
+              mb={6}
+              pos={"relative"}
+              aspectRatio={508 / 338}
+              overflow={"hidden"}
+            >
+
               <Box objectFit="contain">
                 <Image
                   width={656}
@@ -84,8 +80,8 @@ export const CardBlog = ({
                   alt={title}
                 />
               </Box>
-            )}
-          </Box>
+            </Box>
+          }
           <Stack>
             <Heading
               color={"facebook.800"}

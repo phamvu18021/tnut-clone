@@ -6,6 +6,7 @@ import { LayoutPost } from "@/layouts/layoutPost";
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
+import { fetchAuth } from "@/ultil/fetchAuth";
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = process.env.API_URL || "";
@@ -15,8 +16,9 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
   try {
     const params = context.params;
     const slug = params?.slug || "";
-    const res = await fetch(`${api_url}/posts?slug=${slug}`, {
-      next: { revalidate: 3600 },
+    const res = await fetchAuth({
+      url: `${api_url}/posts?slug=${slug}`,
+      revalidate: 3600
     });
     const posts = await res.json();
     const post = posts ? posts[0] : null;

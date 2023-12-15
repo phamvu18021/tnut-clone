@@ -37,7 +37,7 @@ export const Search = () => {
           <DrawerHeader>Tìm kiếm bài viết</DrawerHeader>
 
           <DrawerBody>
-            <Input placeholder="Nhập dữ liệu..." />
+            <Input required placeholder="Nhập dữ liệu..." />
           </DrawerBody>
 
           <DrawerFooter>

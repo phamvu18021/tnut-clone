@@ -1,26 +1,26 @@
 "use client";
 
-import { Box, Button, HStack, Input } from "@chakra-ui/react";
+import { Box, HStack, Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-export const FormInputs = ({type}: {type:string}) => {
+export const FormInputs = ({ type }: { type: string }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const encodedSearchQuery = encodeURI(searchQuery || "");
-    router.push(`/tim-kiem?s=${encodedSearchQuery}`);
-    if (type == "popover") {
-      setSearchQuery("")
-    }
+    router.push(`/tim-kiem?keyword=${searchQuery}`);
+
+    setSearchQuery("")
+
   };
   return (
     <Box zIndex={"100"}>
       <form onSubmit={onSearch}>
         <HStack>
           <Input
+            required            
             bg={"white"}
             value={searchQuery}
             type="Text"

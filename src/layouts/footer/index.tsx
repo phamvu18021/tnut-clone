@@ -99,7 +99,7 @@ export const Footer = () => {
               <Box
                 py={2}
                 as={Link}
-                href={"https://www.tnut.vn"}
+                href={"https://tnut.vn"}
                 _hover={{ textDecoration: "underline", color: "orange.400" }}
               >
                 Website: tnut.vn
