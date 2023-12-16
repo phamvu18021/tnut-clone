@@ -7,6 +7,7 @@ import {
   HStack,
   Button,
   Input,
+  Text
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -15,18 +16,31 @@ import { ListSearchPosts } from "./ListSearchPosts";
 
 export const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [keyWord, setKeyWord] = useState("");
-
+  const [keyWord, setKeyWord] = useState<any>();
+  const [checkInput, setCheckInput] = useState(false)
   const router = useRouter();
+  let str = "@,#,$,^,&,*,(,),[,],{,},|,;,:,<,>,/,="
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/tim-kiem?keyword=${searchQuery}`);
+    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    if (str != "") {
+      router.push(`/tim-kiem?keyword=${str}`);
+    }
   };
+  useEffect(() => {
+    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    if (searchQuery != "" && str == "") {
+      setCheckInput(true)
+    } else {
+      setCheckInput(false)
+    }
+  }, [searchQuery])
   useEffect(() => {
     const { keyword } = router.query;
     setKeyWord(Array.isArray(keyword) ? keyword[0] || "" : (keyword as string) || "");
     setSearchQuery(Array.isArray(keyword) ? keyword[0] || "" : (keyword as string) || "")
   }, [router.query])
+
   return (
     <Box>
       <Box
@@ -43,16 +57,21 @@ export const Search = () => {
             <Heading
               size={"xl"}
               color={"red.600"}
-              pb={"12px"}
+              pb={"40px"}
               textAlign={{ base: "center", lg: "center" }}
             >
               Kết quả trả về cho từ khóa : " {keyWord} "
             </Heading>
-
-            <Box pb={8}>
+            {checkInput &&
+              <Box pt={2} display={"flex"} color={"#f5222d"} justifyContent={"center"}>
+                <Text>Từ khóa tìm kiếm không hợp lệ</Text>
+              </Box>
+            }
+            <Box justifyContent={"center"} pb={16}>
               <form onSubmit={onSearch}>
-                <HStack justifyContent={"center"} py={8} columnGap={0}>
+                <HStack justifyContent={"center"} columnGap={0}>
                   <Input
+                    required
                     value={searchQuery}
                     type="Text"
                     border={"1px solid #BFBFBF "}
@@ -76,6 +95,12 @@ export const Search = () => {
                   </Button>
                 </HStack>
               </form>
+              <Box display={"flex"} fontSize={"12px"} justifyContent={"center"}>
+                <Text as={'i'} >
+                  Ký tự đặc biệt {str} sẽ không được ghi nhận
+                </Text>
+              </Box>
+
             </Box>
           </Box>
           {keyWord != "" &&

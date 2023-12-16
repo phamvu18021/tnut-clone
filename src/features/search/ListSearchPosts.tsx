@@ -65,7 +65,7 @@ export const ListSearchPosts = ({
     const [isLoading, setIsLoading] = useState(true);
     const [searchPosts, setSearchPosts] = useState<any[]>([]);
 
-    function toSlug(str: string) {
+   function toSlug(str: string) {
         // Chuyển hết sang chữ thường
         str = str.toLowerCase();
 
@@ -78,10 +78,10 @@ export const ListSearchPosts = ({
         str = str.replace(/[đĐ]/g, 'd');
 
         // Xóa ký tự đặc biệt
-        str = str.replace(/([^0-9a-z-\s])/g, '');
+        // str = str.replace(/([^0-9a-z-\s])/g, '');
 
         // Xóa khoảng trắng thay bằng ký tự -
-        str = str.replace(/(\s+)/g, '-');
+        str = str.replace(/([^0-9a-z-$%!\s])/g, '');
 
         // Xóa ký tự - liên tiếp
         str = str.replace(/-+/g, '-');
@@ -150,7 +150,6 @@ export const ListSearchPosts = ({
     const changePage = (event: any) => {
         const newOffset = (event.selected * 8) % searchPosts.length;
         setCurrentPage(event.selected)
-
         setItemOffset(newOffset);
     };
     return (

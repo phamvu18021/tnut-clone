@@ -79,6 +79,8 @@ export const Sidebar = ({
   const [totalPosts, setTotalPosts] = useState("0");
   const [totalNotifis, setTotalNotifis] = useState("0");
   const [posts, setPosts] = useState<any[]>([]);
+  const [checkInput, setCheckInput] = useState(false)
+
   useEffect(() => {
     const getNews = async () => {
       try {
@@ -115,9 +117,21 @@ export const Sidebar = ({
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/tim-kiem?keyword=${searchQuery}`);
+    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    if (str != "") {
+      router.push(`/tim-kiem?keyword=${str}`);
+    }
     setSearchQuery("")
   };
+  useEffect(() => {
+    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    if (searchQuery != "" && str == "") {
+      setCheckInput(true)
+    } else {
+      setCheckInput(false)
+    }
+  }, [searchQuery])
+
   return (
     <Box pos={sticky ? "sticky" : "static"} top={sticky} bg={"gray.100"}>
       <Box pt={4} px={6}>
@@ -146,6 +160,11 @@ export const Sidebar = ({
             </Button>
           </HStack>
         </form>
+        {checkInput &&
+          <Box pt={2} display={"flex"} color={"#f5222d"} justifyContent={"center"}>
+            <Text>Từ khóa tìm kiếm không hợp lệ</Text>
+          </Box>
+        }
       </Box>
 
       {checkpost && (
