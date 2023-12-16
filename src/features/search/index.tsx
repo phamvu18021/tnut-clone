@@ -25,6 +25,8 @@ export const Search = () => {
     const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
     if (str != "") {
       router.push(`/tim-kiem?keyword=${str}`);
+    }else{
+      setCheckInput(true)
     }
   };
   useEffect(() => {
