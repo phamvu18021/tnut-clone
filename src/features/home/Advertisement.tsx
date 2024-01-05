@@ -3,11 +3,11 @@ import { useModal } from "@/components/ModalContext";
 import {
   Box,
   Container,
-  VStack,
-  Text,
-  SimpleGrid,
   GridItem,
   Image,
+  SimpleGrid,
+  Text,
+  VStack
 } from "@chakra-ui/react";
 
 export const Advertisement = () => {
@@ -68,7 +68,8 @@ export const Advertisement = () => {
           <GridItem colSpan={1}>
             <Box display={"flex"} justifyContent={"center"} py={8}>
               <Image
-                src={"/bang-dai-hoc.png"}
+                alt="bang-dai-hoc"
+                src={"/bang-dai-hoc.webp"}
                 width={"80%"}
                 maxHeight={"80%"}
                 objectFit={"contain"}

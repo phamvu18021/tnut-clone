@@ -1,11 +1,9 @@
 "use client";
 import { MotionTop } from "@/components/MotionTop";
-import Image from "next/image";
 import {
   AspectRatio,
   Box,
   Divider,
-  Heading,
   List,
   ListIcon,
   ListItem,
@@ -13,7 +11,7 @@ import {
   Stack,
   Container,
   GridItem,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import { FcBookmark } from "react-icons/fc";
 import { BtnTheme } from "@/components/BtnTheme";
@@ -41,7 +39,7 @@ export const IntroduceAbout = () => {
             <MotionTop>
               <Text
                 fontSize={{ base: "25px", md: "25px", lg: "32px" }}
-                fontWeight={{lg:500,base:500}}
+                fontWeight={{ lg: 500, base: 500 }}
                 color={"blue.800"}
               >
                 ĐÔI NÉT VỀ ĐẠI HỌC KỸ THUẬT CÔNG NGHIỆP
@@ -100,7 +98,7 @@ export const IntroduceAbout = () => {
         </GridItem>
 
         <GridItem display={{ base: "block", lg: "none" }} colSpan={1}>
-          <Box pb={{base: "40px" }}>
+          <Box pb={{ base: "40px" }}>
             <AboutSwipe />
           </Box>
         </GridItem>

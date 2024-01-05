@@ -12,6 +12,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   //lấy dữ liệu form từ wordpress
+  const searchtext = req?.query?.search || "";
   const type = req?.query?.type || "";
   const page = req?.query?.page || "";
   const per_page = req?.query?.per_page || 8;
@@ -19,7 +20,6 @@ export default async function handler(
 
   let posts: any[] = [];
   let totalPosts: string = "0";
-
   try {
     //get all categories
     // const resCats = await fetch(`${api_url}/categories`, {
@@ -32,7 +32,7 @@ export default async function handler(
     const idNotifi = 216;
     const id = type === "news" ? idNew : type === "notifis" ? idNotifi : null;
     const endPoint = id
-      ? `${api_url}/posts?_embed&per_page=${per_page}&status=publish&page=${page}&categories=${id}`
+      ? `${api_url}/posts?search=${searchtext}&_embed&per_page=${per_page}&status=publish&page=${page}&categories=${id}`
       : //&categories=${id}
         `${api_url}/posts?_embed&per_page=8&status=publish&page=${page}`;
 
@@ -40,13 +40,6 @@ export default async function handler(
 
     const res = await fetchAuth({ url: endPoint, revalidate: 1 });
     totalPosts = String(res.headers?.get("X-WP-Total") || "0");
-    // let ttp = Number(res.headers?.get("X-WP-Total") || "0");
-    // if (ttp > 4) {
-    //   totalPosts = String(ttp - 4);
-    // } else {
-    //   totalPosts = String(ttp);
-    // }
-
     const postsNotFeatureImage: any[] = (await res?.json()) || [];
     posts =
       postsNotFeatureImage?.length > 0

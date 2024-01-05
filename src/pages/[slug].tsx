@@ -10,8 +10,6 @@ import { fetchAuth } from "@/ultil/fetchAuth";
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = process.env.API_URL || "";
-  const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
-  if (hasSSL === "false") process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
   try {
     const params = context.params;
@@ -24,12 +22,12 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
     const post = posts ? posts[0] : null;
 
     return {
-      props: { post: post || null },
+      props: { post: post || null }
     };
   } catch (error) {
     console.log(error);
     return {
-      props: { post: null },
+      props: { post: null }
     };
   }
 };

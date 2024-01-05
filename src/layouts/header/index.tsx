@@ -1,28 +1,28 @@
 "use client";
 
 import { FormPoup } from "@/components/FormContact";
-import { DesktopNav } from "../components/DeskhopNav";
-import { HeaderTop } from "../components/HeaderTop";
-import { MobileNav } from "../components/MobileNav";
-import Image from "next/image";
-import Link from "next/link";
+import { ModalBase } from "@/components/Modal";
+import { InputSearch } from "@/features/search/InputSearch";
+import { SearchIcon } from "@chakra-ui/icons";
 import {
   Box,
   Container,
   Divider,
   Flex,
   HStack,
-  useDisclosure,
-  Popover,
-  PopoverTrigger,
   IconButton,
+  Popover,
   PopoverContent,
+  PopoverTrigger,
+  useDisclosure
 } from "@chakra-ui/react";
-import { ModalBase } from "@/components/Modal";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { SearchIcon } from "@chakra-ui/icons";
-import { FormInputs } from "@/components/FormInputs";
+import { DesktopNav } from "../components/DeskhopNav";
+import { HeaderTop } from "../components/HeaderTop";
+import { MobileNav } from "../components/MobileNav";
 
 export const Header = () => {
   const { onToggle, onOpen, onClose, isOpen } = useDisclosure();
@@ -88,15 +88,18 @@ export const Header = () => {
             w={"100vw"}
           >
             <Box display={nav}>
-              <Flex display={{ base: "none", lg: "flex" }}>
+              <Flex
+                display={{ base: "none", lg: "flex" }}
+                aspectRatio={60 / 60}
+              >
                 <Link
                   href="/"
                   style={{ display: "flex", alignItems: "center", gap: "4px" }}
                 >
                   <Image
                     priority
-                    width={60}
-                    height={60}
+                    width={250}
+                    height={250}
                     src={`/logo-tnut.png`}
                     alt="logo Trường Đại học Kỹ thuật Công nghiệp    "
                   />
@@ -136,7 +139,7 @@ export const Header = () => {
                 </PopoverTrigger>
                 <PopoverContent p={5}>
                   <Box>
-                    <FormInputs type="popover" />
+                    <InputSearch type="popover" />
                   </Box>
                 </PopoverContent>
               </Popover>

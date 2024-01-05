@@ -1,7 +1,7 @@
-import { Box, Container, GridItem, Text, SimpleGrid } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { CardLBlog } from "@/components/CardBlog";
 import { BtnThemeSe } from "@/components/BtnTheme";
+import { CardLBlog } from "@/components/CardBlog";
+import { Box, Container, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 export const lblog = [
   {
     image: "/lblog1.jpg",
@@ -10,7 +10,7 @@ export const lblog = [
     tags: "News",
     desc: "Personal financial management is a subject that is not taught in many schools, but is something that nearly everyone has to deal with in their lives later on. Here are some statistics...",
     path: "",
-    date: "Apr 21, 2023 at 12:05 pm",
+    date: "Apr 21, 2023 at 12:05 pm"
   },
   {
     image: "/lblog2.jpg",
@@ -19,8 +19,8 @@ export const lblog = [
     tags: "Advertising",
     desc: "As your business — and revenue — grow, managing your financials may become a task you don’t have the time or knowledge to manage. Specifically, when it comes avoiding legal and...",
     path: "",
-    date: "Apr 21, 2023 at 12:05 pm",
-  },
+    date: "Apr 21, 2023 at 12:05 pm"
+  }
 ];
 
 export const LastestPost = () => {
@@ -31,7 +31,7 @@ export const LastestPost = () => {
       setIsLoading(true);
       try {
         const res = await fetch(`/api/posts/?type=news&page=${1}`, {
-          next: { revalidate: 3 },
+          next: { revalidate: 3 }
         });
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
@@ -44,6 +44,7 @@ export const LastestPost = () => {
     };
 
     getPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

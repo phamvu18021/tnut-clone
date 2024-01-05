@@ -21,33 +21,33 @@ export const StyledContainer = styled(Container)`
 
 export const Testi = [
   {
-    image: "/testimo.jpg",
+    image: "/testimo.webp",
     name: "Nguyễn Thị Ngọc Lan",
     career: `Chuyên Viên Phân tích và Nghiên cứu Cấp cao`,
     comment:
-      "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao.",
+      "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao."
   },
   {
-    image: "/testimo2.jpg",
+    image: "/testimo2.webp",
     name: "Phạm Văn Phong",
     career: `Nhân viên văn phòng`,
     comment:
-      "Học tập trực tuyến mang nhiều ưu điểm vượt trội đã làm thay đổi mạnh mẽ khả năng tự học nhằm đáp ứng chương trình học tập. Nhà trường luôn tạo điều kiện cho học viên có thể sử dụng kho tài liệu phong phú nhằm nâng cao hiệu quả học tập.",
+      "Học tập trực tuyến mang nhiều ưu điểm vượt trội đã làm thay đổi mạnh mẽ khả năng tự học nhằm đáp ứng chương trình học tập. Nhà trường luôn tạo điều kiện cho học viên có thể sử dụng kho tài liệu phong phú nhằm nâng cao hiệu quả học tập."
   },
   {
-    image: "/testimo3.jpg",
+    image: "/testimo3.webp",
     name: "Đậu Thị Phương Thảo",
     career: `Nhân viên văn phòng`,
     comment:
-      "Phương pháp học trực tuyến của trường phù hợp với người đi làm bận rộn. Chỉ với 1 chiếc máy tính hoặc 1 chiếc smartphone bạn đã có thể học tập mọi lúc mọi nơi. Hình thức học trực tuyến giúp tôi vừa học để tích lũy kiến thức mà vẫn đảm bảo công việc cơ quan.",
+      "Phương pháp học trực tuyến của trường phù hợp với người đi làm bận rộn. Chỉ với 1 chiếc máy tính hoặc 1 chiếc smartphone bạn đã có thể học tập mọi lúc mọi nơi. Hình thức học trực tuyến giúp tôi vừa học để tích lũy kiến thức mà vẫn đảm bảo công việc cơ quan."
   },
   {
-    image: "/testimo.jpg",
+    image: "/testimo.webp",
     name: "Nguyễn Thị Ngọc Lan",
     career: `Chuyên Viên Phân tích và Nghiên cứu Cấp cao`,
     comment:
-      "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao.",
-  },
+      "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao."
+  }
 ];
 
 export const Testimonials = () => {
@@ -73,7 +73,7 @@ export const Testimonials = () => {
           }
           spaceBetween={36}
           pagination={{
-            clickable: true,
+            clickable: true
           }}
           modules={[Pagination]}
           className="mySwiper"

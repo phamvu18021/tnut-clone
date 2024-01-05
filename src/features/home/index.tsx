@@ -6,52 +6,52 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
 const Banner = dynamic(() => import("./Banner").then((mod) => mod.Banner), {
-  loading: () => <Loading />,
+  loading: () => <Loading />
 });
 const Event = dynamic(() => import("./Event").then((mod) => mod.Event), {
-  loading: () => <Loading />,
+  loading: () => <Loading />
 });
 
 const Introduce = dynamic(
   () => import("./Introduce").then((mod) => mod.Introduce),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 
 const Benefit = dynamic(() => import("./Benefit").then((mod) => mod.Benefit), {
-  loading: () => <Loading />,
+  loading: () => <Loading />
 });
 
 const Slogan = dynamic(() => import("./Slogan").then((mod) => mod.Slogan), {
-  loading: () => <Loading />,
+  loading: () => <Loading />
 });
 const Advertisement = dynamic(
   () => import("./Advertisement").then((mod) => mod.Advertisement),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 const Testimonials = dynamic(
   () => import("./Testimonials").then((mod) => mod.Testimonials),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 const Majors = dynamic(() => import("./Majors").then((mod) => mod.Majors), {
-  loading: () => <Loading />,
+  loading: () => <Loading />
 });
 
 const Circulars = dynamic(
   () => import("./Circulars").then((mod) => mod.Circulars),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 const LastestPost = dynamic(
   () => import("./LastestPost").then((mod) => mod.LastestPost),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 
@@ -67,7 +67,7 @@ export const Home = () => {
       setIsLoading(true);
       try {
         const res = await fetch(`/api/posts/?type=news&page=1`, {
-          next: { revalidate: 3 },
+          next: { revalidate: 3 }
         });
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
@@ -87,7 +87,7 @@ export const Home = () => {
       setIsLoading(true);
       try {
         const res = await fetch(`/api/posts/?type=notifis&page=1`, {
-          next: { revalidate: 3 },
+          next: { revalidate: 3 }
         });
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
@@ -107,6 +107,7 @@ export const Home = () => {
     }, 6000);
 
     return () => window.clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

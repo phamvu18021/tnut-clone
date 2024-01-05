@@ -1,11 +1,14 @@
 "use client";
+
+import { deleteSpace } from "@/ultil/deleteSpace";
+import { toSlug } from "@/ultil/toSlug";
 import {
   Box,
+  Button,
   Container,
   Divider,
-  Heading,
   HStack,
-  Button,
+  Heading,
   Input,
   Text
 } from "@chakra-ui/react";
@@ -13,35 +16,43 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ListSearchPosts } from "./ListSearchPosts";
 
-
 export const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [keyWord, setKeyWord] = useState<any>();
-  const [checkInput, setCheckInput] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(false);
+
   const router = useRouter();
-  let str = "@,#,$,^,&,*,(,),[,],{,},|,;,:,<,>,/,="
+
+  const special = "!,%,@,#,$,^,&,*,(,),[,],{,},|,;,:,<,>,/,=";
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    const str = toSlug({ input: searchQuery });
+
     if (str != "") {
-      router.push(`/tim-kiem?keyword=${str}`);
-    }else{
-      setCheckInput(true)
+      router.push(`/tim-kiem?keyword=${str}&page=1`);
+    } else {
+      setIsCorrect(true);
     }
   };
   useEffect(() => {
-    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    const str = toSlug({ input: searchQuery });
     if (searchQuery != "" && str == "") {
-      setCheckInput(true)
+      setIsCorrect(true);
     } else {
-      setCheckInput(false)
+      setIsCorrect(false);
     }
-  }, [searchQuery])
+  }, [searchQuery]);
+
   useEffect(() => {
     const { keyword } = router.query;
-    setKeyWord(Array.isArray(keyword) ? keyword[0] || "" : (keyword as string) || "");
-    setSearchQuery(Array.isArray(keyword) ? keyword[0] || "" : (keyword as string) || "")
-  }, [router.query])
+    setKeyWord(
+      Array.isArray(keyword) ? keyword[0] || "" : (keyword as string) || ""
+    );
+  }, [router.query]);
+
+  const handleRouter = ({ selected }: { selected: number }) => {
+    router.push(`/tim-kiem?keyword=${keyWord}&page=${selected + 1}`);
+  };
 
   return (
     <Box>
@@ -62,13 +73,18 @@ export const Search = () => {
               pb={"40px"}
               textAlign={{ base: "center", lg: "center" }}
             >
-              Kết quả trả về cho từ khóa : " {keyWord} "
+              Kết quả trả về cho từ khóa : "{deleteSpace(keyWord)}"
             </Heading>
-            {checkInput &&
-              <Box pt={2} display={"flex"} color={"#f5222d"} justifyContent={"center"}>
+            {isCorrect && (
+              <Box
+                pt={2}
+                display={"flex"}
+                color={"#f5222d"}
+                justifyContent={"center"}
+              >
                 <Text>Từ khóa tìm kiếm không hợp lệ</Text>
               </Box>
-            }
+            )}
             <Box justifyContent={"center"} pb={16}>
               <form onSubmit={onSearch}>
                 <HStack justifyContent={"center"} columnGap={0}>
@@ -90,7 +106,7 @@ export const Search = () => {
                     bg={"blue.800"}
                     color={"white"}
                     _hover={{
-                      bg: "red.600",
+                      bg: "red.600"
                     }}
                   >
                     Tìm kiếm
@@ -98,17 +114,13 @@ export const Search = () => {
                 </HStack>
               </form>
               <Box display={"flex"} fontSize={"12px"} justifyContent={"center"}>
-                <Text as={'i'} >
-                  Ký tự đặc biệt {str} sẽ không được ghi nhận
+                <Text as={"i"}>
+                  Ký tự đặc biệt {special} sẽ không được ghi nhận
                 </Text>
               </Box>
-
             </Box>
           </Box>
-          {keyWord != "" &&
-            <ListSearchPosts cate="news" searchText={keyWord} />
-          }
-
+          <ListSearchPosts handleRouter={handleRouter} />
         </Box>
         <Divider size={"xl"} />
       </Container>

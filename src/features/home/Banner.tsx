@@ -14,6 +14,7 @@ export const CardBanner = ({ image }: { image: string }) => {
   return (
     <Box>
       <Image
+        alt="image"
         className="Image"
         src={image}
         width={"100%"}
@@ -83,34 +84,34 @@ export const Banner = () => {
     {
       title:
         "Ứng dụng nền tảng Đại học số tiên tiến, Tuyển sinh liên tục, Xét duyệt hồ sơ dự tuyển, Bằng cấp tương đương hệ chính quy      ",
-      avt: `/banner-ptit.png`,
-      desc: `ĐẠI HỌC TỪ XA`,
+      avt: `/banner-tnut.webp`,
+      desc: `ĐẠI HỌC TỪ XA`
     },
     {
       title:
-        "Với hệ đào tạo từ xa PTIT, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: `/banner-ptit1.png`,
-      desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`,
+        "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
+      avt: `/banner-tnut1.webp`,
+      desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
-        "Với hệ đào tạo từ xa PTIT, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: `/banner-ptit2.png`,
-      desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`,
+        "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
+      avt: `/banner-tnut2.webp`,
+      desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
-        "Với hệ đào tạo từ xa PTIT, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: `/banner-ptit3.png`,
-      desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`,
-    },
+        "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
+      avt: `/banner-tnut3.webp`,
+      desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
+    }
   ];
 
   const pagination = {
     clickable: true,
     renderBullet: function (index: number, className: string) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
+    }
   };
   return (
     <SwiperContainer>
@@ -120,7 +121,7 @@ export const Banner = () => {
         effect={"fade"}
         autoplay={{
           delay: 4000,
-          disableOnInteraction: false,
+          disableOnInteraction: false
         }}
         loop={true}
         modules={[Autoplay, Pagination, Navigation]}

@@ -2,16 +2,12 @@
 
 import { CardBlog } from "@/components/CardBlog";
 import { Loading } from "@/components/Loading";
-import { formatDate } from "@/ultil/date";
 import { clean } from "@/lib/sanitizeHtml";
-import {
-    Box,
-    HStack,
-    SimpleGrid,
-    GridItem,
-    Center,
-} from "@chakra-ui/react";
+import { formatDate } from "@/ultil/date";
+import { toSlug } from "@/ultil/toSlug";
+import { Box, Center, GridItem, HStack, SimpleGrid } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
@@ -52,155 +48,104 @@ const StyledPaginate = styled(ReactPaginate)`
 `;
 
 export const ListSearchPosts = ({
-    cate,
-    searchText,
+  handleRouter
 }: {
+  handleRouter?: ({
+    selected,
+    searchText
+  }: {
+    selected: number;
     searchText: string;
-    cate: string;
-
+  }) => void;
 }) => {
-    const [posts, setPosts] = useState<any[]>([]);
-    const [postsse, setPostsse] = useState<any[]>([]);
-    const [totalp, setTotalp] = useState<any[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [searchPosts, setSearchPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<any[]>([]);
+  const [totalPosts, setTotalPosts] = useState("0");
+  const [isLoading, setIsLoading] = useState(true);
+  const [resetpagi, setResetpagi] = useState(false);
 
-   function toSlug(str: string) {
-        // Chuyển hết sang chữ thường
-        str = str.toLowerCase();
+  const router = useRouter();
+  useEffect(() => {
+    setResetpagi(true);
+  }, [router.query.page]);
 
-        // xóa dấu
-        str = str
-            .normalize('NFD') // chuyển chuỗi sang unicode tổ hợp
-            .replace(/[\u0300-\u036f]/g, ''); // xóa các ký tự dấu sau khi tách tổ hợp
-
-        // Thay ký tự đĐ
-        str = str.replace(/[đĐ]/g, 'd');
-
-        // Xóa ký tự đặc biệt
-        // str = str.replace(/([^0-9a-z-\s])/g, '');
-
-        // Xóa khoảng trắng thay bằng ký tự -
-        str = str.replace(/([^0-9a-z-$%!\s])/g, '');
-
-        // Xóa ký tự - liên tiếp
-        str = str.replace(/-+/g, '-');
-
-        // xóa phần dư - ở đầu & cuối
-        str = str.replace(/^-+|-+$/g, '');
-
-        // return
-        return str;
-    }
-    useEffect(() => {
-        const getPosts = async () => {
-            setIsLoading(true);
-            try {
-                const res = await fetch(`/api/posts/?type=${cate}&page=1&per_page=100`, {
-                    next: { revalidate: 3 },
-                });
-
-                const data: { posts: any[]; totalPosts: string } = await res.json();
-                const { posts, totalPosts } = data;
-                posts?.length && setPosts(posts);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getPosts();
-
-        const getPostsSe = async () => {
-            setIsLoading(true);
-            try {
-                const res = await fetch(`/api/posts/?type=${cate}&page=2&per_page=100`, {
-                    next: { revalidate: 3 },
-                });
-
-                const data: { posts: any[]; totalPosts: string } = await res.json();
-                const { posts, totalPosts } = data;
-                posts?.length && setPostsse(posts);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getPostsSe();
-
-    }, []);
-    useEffect(() => {
-        if (posts.length > 0 && postsse.length > 0) {
-            setTotalp([...posts, ...postsse])
-        }
-    }, [posts, postsse])
-
-    useEffect(() => {
-        setIsLoading(true);
-        const searchpost = totalp.filter((post) => toSlug(post?.title?.rendered).includes(toSlug(searchText)))
-        setSearchPosts(searchpost)
-        setIsLoading(false);
-        setCurrentPage(0)
-    }, [searchText, totalp])
-    const len = Math.ceil(Number(searchPosts.length) / 8) || 1;
-
-
-    const [currentPage, setCurrentPage] = useState(0)
-    const [itemOffset, setItemOffset] = useState(0);
-    const endOffset = itemOffset + 8;
-    const currentItems = searchPosts.slice(itemOffset, endOffset);
-
-    const changePage = (event: any) => {
-        const newOffset = (event.selected * 8) % searchPosts.length;
-        setCurrentPage(event.selected)
-        setItemOffset(newOffset);
-    };
-    return (
-        <>
-            <Box>
-                {!isLoading && (
-                    <SimpleGrid pt={2} columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
-                        {currentItems?.map((post: any, index: number) => (
-                            <GridItem key={index}>
-                                <CardBlog
-                                    date={post?.date ? formatDate(post.date) : ""}
-                                    title={post?.title?.rendered}
-                                    desc={clean("")}
-                                    image={post?.featured_image || ""}
-                                    path={`/${post?.slug}`}
-                                />
-                            </GridItem>
-                        ))}
-                    </SimpleGrid>
-                )}
-                {totalp?.length === 0 && (
-                    <><Center placeItems={"center"} height={"40vh"} textAlign={"center"}>
-                        Đang tìm dữ liệu
-                    </Center><Loading /></>
-                )}
-                {
-                    totalp?.length > 0 && searchPosts.length === 0 && (
-                        <Center placeItems={"center"} height={"40vh"} textAlign={"center"}>
-                            Không tìm được kết quả phù hợp
-                        </Center>
-                    )
-                }
-                {isLoading && <Loading />}
-            </Box>
-            {searchPosts?.length > 0 && !isLoading && (
-
-                <HStack pt={"32px"} justify={"center"}>
-                    <StyledPaginate
-                        className="paginate"
-                        previousLabel="<"
-                        nextLabel=">"
-                        pageCount={len}
-                        onPageChange={changePage}
-                        pageRangeDisplayed={1}
-                        marginPagesDisplayed={1}
-                        activeClassName="active"
-                        forcePage={currentPage}
-                    />
-                </HStack>
-
-            )}
-        </>
+  useEffect(() => {
+    const { keyword, page } = router.query;
+    let keywords = Array.isArray(keyword)
+      ? keyword[0] || ""
+      : (keyword as string) || "";
+    var pages = Number(
+      Array.isArray(page) ? page[0] || "" : (page as string) || ""
     );
+    const getPosts = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(
+          `/api/search/?type=news&page=${pages}&search=${toSlug({
+            type: "signed",
+            input: keywords
+          })}`,
+          {
+            next: { revalidate: 3 }
+          }
+        );
+
+        const data: { posts: any[]; totalPosts: string } = await res.json();
+        const { posts, totalPosts } = data;
+        totalPosts && setTotalPosts(totalPosts);
+        setPosts(posts);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+      setResetpagi(false);
+    };
+    getPosts();
+  }, [router.query]);
+  const len = Math.ceil(Number(totalPosts) / 8);
+
+  return (
+    <>
+      <Box>
+        {!isLoading && (
+          <SimpleGrid pt={2} columns={{ base: 1, md: 2, lg: 2 }} spacing={"8"}>
+            {posts?.map((post: any, index: number) => (
+              <GridItem key={index}>
+                <CardBlog
+                  date={post?.date ? formatDate(post.date) : ""}
+                  title={post?.title?.rendered}
+                  desc={clean("")}
+                  image={post?.featured_image || ""}
+                  path={`/${post?.slug}`}
+                />
+              </GridItem>
+            ))}
+          </SimpleGrid>
+        )}
+        {posts?.length === 0 && !isLoading && (
+          <>
+            <Center placeItems={"center"} height={"40vh"} textAlign={"center"}>
+              Không tìm được kết quả phù hợp
+            </Center>
+          </>
+        )}
+
+        {isLoading && <Loading />}
+      </Box>
+      {posts?.length > 0 && !resetpagi && (
+        <HStack pt={"32px"} justify={"center"}>
+          <StyledPaginate
+            className="paginate"
+            previousLabel="<"
+            nextLabel=">"
+            pageCount={len}
+            onPageChange={handleRouter}
+            pageRangeDisplayed={1}
+            marginPagesDisplayed={1}
+            activeClassName="active"
+            forcePage={Number(router.query.page) - 1}
+          />
+        </HStack>
+      )}
+    </>
+  );
 };

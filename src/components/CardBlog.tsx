@@ -12,7 +12,7 @@ import {
   Divider,
   Center,
   AvatarBadge,
-  Avatar,
+  Avatar
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export const CardBlog = ({
   path,
   date,
   imageH,
-  preview,
+  preview
 }: {
   image?: string;
   title: string;
@@ -36,8 +36,6 @@ export const CardBlog = ({
   imageH?: string;
   preview?: boolean;
 }) => {
-  const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
-
   const [isMounted, setMount] = useState(false);
 
   useEffect(() => {
@@ -62,7 +60,7 @@ export const CardBlog = ({
         overflow={"hidden"}
       >
         <Box>
-          {!preview &&
+          {!preview && (
             <Box
               bg={"white"}
               mb={6}
@@ -70,7 +68,6 @@ export const CardBlog = ({
               aspectRatio={508 / 338}
               overflow={"hidden"}
             >
-
               <Box objectFit="contain">
                 <Image
                   width={656}
@@ -81,7 +78,7 @@ export const CardBlog = ({
                 />
               </Box>
             </Box>
-          }
+          )}
           <Stack>
             <Heading
               color={"facebook.800"}
@@ -95,7 +92,7 @@ export const CardBlog = ({
                 WebkitLineClamp: "2",
                 WebkitBoxOrient: "vertical",
                 overflow: "hidden",
-                textOverflow: "ellipsis",
+                textOverflow: "ellipsis"
               }}
               dangerouslySetInnerHTML={{ __html: clean(title) }}
             />
@@ -111,7 +108,7 @@ export const CardBlog = ({
                   WebkitLineClamp: "2",
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  textOverflow: "ellipsis"
                 }}
                 dangerouslySetInnerHTML={{ __html: clean(desc) }}
               />
@@ -131,7 +128,7 @@ export const CardBlogS = ({
   tag,
   bgTag,
   date,
-  imageH,
+  imageH
 }: {
   image?: string;
   title: string;
@@ -142,8 +139,6 @@ export const CardBlogS = ({
   date?: string;
   imageH?: string;
 }) => {
-  const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
-
   const [isMounted, setMount] = useState(false);
 
   useEffect(() => {
@@ -164,24 +159,15 @@ export const CardBlogS = ({
       <SimpleGrid columns={2} spacing={4} bg={"white"}>
         <GridItem colSpan={1}>
           <Box bg={"gray.100"} overflow={"hidden"}>
-            {hasSSL === "false" && (
-              <Img
+            <Box>
+              <Image
+                width={504}
+                height={320}
                 src={image || `/blog.jpeg`}
                 style={{ maxHeight: imageH }}
                 alt={title}
               />
-            )}
-            {hasSSL === "true" && (
-              <Box>
-                <Image
-                  width={504}
-                  height={320}
-                  src={image || `/blog.jpeg`}
-                  style={{ maxHeight: imageH }}
-                  alt={title}
-                />
-              </Box>
-            )}
+            </Box>
           </Box>
         </GridItem>
         <GridItem colSpan={1}>
@@ -198,7 +184,7 @@ export const CardBlogS = ({
                 WebkitLineClamp: "2",
                 WebkitBoxOrient: "vertical",
                 overflow: "hidden",
-                textOverflow: "ellipsis",
+                textOverflow: "ellipsis"
               }}
               dangerouslySetInnerHTML={{ __html: clean(title) }}
             />
@@ -214,7 +200,7 @@ export const CardBlogS = ({
                   WebkitLineClamp: 2,
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  textOverflow: "ellipsis"
                 }}
                 dangerouslySetInnerHTML={{ __html: clean(desc) }}
               />
@@ -234,7 +220,7 @@ export const CardLBlog = ({
   desc,
   path,
   date,
-  imageH,
+  imageH
 }: {
   image?: string;
   title: string;
@@ -245,8 +231,6 @@ export const CardLBlog = ({
   date?: string;
   imageH?: string;
 }) => {
-  const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
-
   const [isMounted, setMount] = useState(false);
 
   useEffect(() => {
@@ -277,24 +261,15 @@ export const CardLBlog = ({
             aspectRatio={508 / 338}
             overflow={"hidden"}
           >
-            {hasSSL === "false" && (
-              <Img
+            <Box objectFit="contain">
+              <Image
+                width={656}
+                height={436}
                 src={image || `/blog.jpeg`}
                 style={{ maxHeight: imageH }}
                 alt={title}
               />
-            )}
-            {hasSSL === "true" && (
-              <Box objectFit="contain">
-                <Image
-                  width={656}
-                  height={436}
-                  src={image || `/blog.jpeg`}
-                  style={{ maxHeight: imageH }}
-                  alt={title}
-                />
-              </Box>
-            )}
+            </Box>
           </Box>
           <Stack>
             <Text
@@ -308,7 +283,7 @@ export const CardLBlog = ({
                 WebkitLineClamp: "2",
                 WebkitBoxOrient: "vertical",
                 overflow: "hidden",
-                textOverflow: "ellipsis",
+                textOverflow: "ellipsis"
               }}
               dangerouslySetInnerHTML={{ __html: clean(title) }}
             />
@@ -362,7 +337,7 @@ export const CardLBlog = ({
                   WebkitLineClamp: "2",
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  textOverflow: "ellipsis"
                 }}
                 dangerouslySetInnerHTML={{ __html: clean(desc) }}
               />
@@ -381,7 +356,7 @@ export const CardBlogEvent = ({
   tag,
   bgTag,
   date,
-  imageH,
+  imageH
 }: {
   image?: string;
   title: string;
@@ -468,7 +443,7 @@ export const CardBlogEvent = ({
                   WebkitLineClamp: "2",
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  textOverflow: "ellipsis"
                 }}
                 dangerouslySetInnerHTML={{ __html: clean(title) }}
               />
@@ -484,7 +459,7 @@ export const CardBlogEvent = ({
                     WebkitLineClamp: "4",
                     WebkitBoxOrient: "vertical",
                     overflow: "hidden",
-                    textOverflow: "ellipsis",
+                    textOverflow: "ellipsis"
                   }}
                   dangerouslySetInnerHTML={{ __html: desc }}
                 />

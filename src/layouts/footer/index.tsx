@@ -10,8 +10,8 @@ import {
   Stack,
   Text,
   UnorderedList,
+  Image
 } from "@chakra-ui/react";
-import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { FaFacebook } from "react-icons/fa";
@@ -42,7 +42,7 @@ export const Footer = () => {
                 <Image
                   src={"/logo-tnut.png"}
                   width={150}
-                  height={100}
+                  height={"auto"}
                   alt="Tìm đối tác"
                   style={{ float: "left" }}
                 />

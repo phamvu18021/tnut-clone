@@ -2,15 +2,15 @@
 
 import { CardBlog } from "@/components/CardBlog";
 import { Loading } from "@/components/Loading";
-import { formatDate } from "@/ultil/date";
 import { clean } from "@/lib/sanitizeHtml";
+import { formatDate } from "@/ultil/date";
 import {
   Box,
+  Center,
+  GridItem,
   HStack,
   Heading,
-  SimpleGrid,
-  GridItem,
-  Center,
+  SimpleGrid
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { useSearchParams } from "next/navigation";
@@ -55,7 +55,7 @@ const StyledPaginate = styled(ReactPaginate)`
 
 export const ListPosts = ({
   handleRouter,
-  cate,
+  cate
 }: {
   cate: string;
   handleRouter?: ({ selected }: { selected: number }) => void;
@@ -72,7 +72,7 @@ export const ListPosts = ({
       setIsLoading(true);
       try {
         const res = await fetch(`/api/posts/?type=${cate}&page=${page}`, {
-          next: { revalidate: 3 },
+          next: { revalidate: 3 }
         });
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
@@ -86,6 +86,7 @@ export const ListPosts = ({
     };
 
     getPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
   const len = Math.ceil(Number(totalPosts) / 8) || 1;
 
@@ -115,7 +116,7 @@ export const ListPosts = ({
             ))}
           </SimpleGrid>
         )}
-        {posts?.length === 0 && (
+        {posts?.length === 0 && !isLoading && (
           <Center placeItems={"center"} height={"40vh"} textAlign={"center"}>
             Dữ liệu đang được chúng tôi cập nhập
           </Center>

@@ -2,6 +2,7 @@
 
 import { FormHome, FormMain } from "@/components/FormContact";
 import { categotys } from "@/features/home/Categorys";
+import { toSlug } from "@/ultil/toSlug";
 import {
   Box,
   Button,
@@ -10,8 +11,8 @@ import {
   Heading,
   Input,
   SimpleGrid,
-  VStack,
   Text,
+  VStack
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +24,7 @@ import { FaFacebook, FaYoutube } from "react-icons/fa";
 export const Item = ({
   path,
   image,
-  title,
+  title
 }: {
   path: string;
   image: string;
@@ -36,9 +37,9 @@ export const Item = ({
       pos="relative"
       transition={"all ease .4s"}
       _hover={{ transform: "translateY(-10px)" }}
-      aspectRatio={7 / 4} objectFit="cover"
+      aspectRatio={7 / 4}
+      objectFit="cover"
     >
-
       <Image
         priority
         width={700}
@@ -46,9 +47,8 @@ export const Item = ({
         src={image}
         alt={title}
         objectFit="cover"
-        style={{ height: '150px', maxWidth: "100%", filter: "brightness(50%)" }}
+        style={{ height: "150px", maxWidth: "100%", filter: "brightness(50%)" }}
       />
-
 
       <Box
         as={Flex}
@@ -69,7 +69,7 @@ export const Item = ({
 
 export const Sidebar = ({
   sticky,
-  checkpost,
+  checkpost
 }: {
   sticky?: string;
   checkpost: boolean;
@@ -78,19 +78,17 @@ export const Sidebar = ({
   const router = useRouter();
   const [totalPosts, setTotalPosts] = useState("0");
   const [totalNotifis, setTotalNotifis] = useState("0");
-  const [posts, setPosts] = useState<any[]>([]);
-  const [checkInput, setCheckInput] = useState(false)
+  const [checkInput, setCheckInput] = useState(false);
 
   useEffect(() => {
     const getNews = async () => {
       try {
         const res = await fetch(`/api/posts/?type=news&page=1`, {
-          next: { revalidate: 3 },
+          next: { revalidate: 3 }
         });
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
-        const { posts, totalPosts } = data;
-        posts?.length && setPosts(posts);
+        const { totalPosts } = data;
         totalPosts && setTotalPosts(totalPosts);
       } catch (error) {
         console.log(error);
@@ -100,7 +98,7 @@ export const Sidebar = ({
     const getNotifis = async () => {
       try {
         const resp = await fetch(`/api/posts/?type=notifis&page=1`, {
-          next: { revalidate: 3 },
+          next: { revalidate: 3 }
         });
 
         const datap: { totalPosts: string } = await resp.json();
@@ -117,20 +115,21 @@ export const Sidebar = ({
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    const str = toSlug({ input: searchQuery });
     if (str != "") {
-      router.push(`/tim-kiem?keyword=${str}`);
+      router.push(`/tim-kiem?keyword=${str}&page=1`);
     }
-    setSearchQuery("")
+    setSearchQuery("");
   };
+
   useEffect(() => {
-    const str = searchQuery.replace(/([^0-9a-z-%!?\s])/g, '');
+    const str = toSlug({ input: searchQuery });
     if (searchQuery != "" && str == "") {
-      setCheckInput(true)
+      setCheckInput(true);
     } else {
-      setCheckInput(false)
+      setCheckInput(false);
     }
-  }, [searchQuery])
+  }, [searchQuery]);
 
   return (
     <Box pos={sticky ? "sticky" : "static"} top={sticky} bg={"gray.100"}>
@@ -153,18 +152,23 @@ export const Sidebar = ({
               bg={"blue.800"}
               color={"white"}
               _hover={{
-                bg: "red.600",
+                bg: "red.600"
               }}
             >
               Tìm kiếm
             </Button>
           </HStack>
         </form>
-        {checkInput &&
-          <Box pt={2} display={"flex"} color={"#f5222d"} justifyContent={"center"}>
+        {checkInput && (
+          <Box
+            pt={2}
+            display={"flex"}
+            color={"#f5222d"}
+            justifyContent={"center"}
+          >
             <Text>Từ khóa tìm kiếm không hợp lệ</Text>
           </Box>
-        }
+        )}
       </Box>
 
       {checkpost && (

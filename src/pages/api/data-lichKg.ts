@@ -12,16 +12,13 @@ export default async function handler(
 ) {
   //lấy dữ liệu form từ wordpress
   const api_url = process.env.API_URL || "";
-  const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
-  if (hasSSL === "false") process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
   let filteredLines: string[] = [];
   try {
     const responeWordpress = await fetchAuth({
       url: `${api_url}/posts?slug=lich-khai-giang`,
       revalidate: 10
-    }
-    );
+    });
     const data: any[] = await responeWordpress.json();
 
     //lấy ra chuỗi formHTML
@@ -42,7 +39,7 @@ export default async function handler(
 
   if (req.method === "GET") {
     res.status(200).json({
-      list: filteredLines || [],
+      list: filteredLines || []
     });
   }
 }

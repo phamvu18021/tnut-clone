@@ -14,17 +14,15 @@ export default async function handler(
   const catId = req?.query?.catId || "";
   const id = req?.query?.id || "";
   const api_url = process.env.API_URL || "";
-  const hasSSL = process.env.NEXT_PUBLIC_HAS_SSL || "true";
-  if (hasSSL === "false") process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
   let samePosts: any[] = [];
   if (catId) {
     try {
       // Lấy danh sách các bài viết cùng thể loại
       const resRelatedPosts = await fetchAuth({
-        url : `${api_url}/posts/?categories=${catId}&exclude=${id}&per_page=3&_embed`,
-        revalidate: 1 }
-      );
+        url: `${api_url}/posts/?categories=${catId}&exclude=${id}&per_page=3&_embed`,
+        revalidate: 1
+      });
       const relatedPosts: any[] = await resRelatedPosts.json();
       const postsWithFeaturedImages =
         relatedPosts?.length > 0
@@ -34,7 +32,7 @@ export default async function handler(
 
               return {
                 ...post,
-                featured_image,
+                featured_image
               };
             })
           : [];
@@ -47,7 +45,7 @@ export default async function handler(
 
   if (req.method === "GET") {
     res.status(200).json({
-      samePosts,
+      samePosts
     });
   }
 }

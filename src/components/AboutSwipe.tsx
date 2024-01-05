@@ -1,19 +1,17 @@
-import { BtnTheme } from "@/components/BtnTheme";
-import { useModal } from "@/components/ModalContext";
 import { Box, Image } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-export const CardAboutSwipe = ({ image }: { image: string }) => {
-  const { isOpen, onOpen, onClose } = useModal();
 
+export const CardAboutSwipe = ({ image }: { image: string }) => {
   return (
     <Box>
       <Image
+        alt="image"
         className="Image"
         src={image}
         width={"100%"}
@@ -68,32 +66,32 @@ export const AboutSwipe = () => {
   const AboutImg = [
     {
       title: "Ảnh giới thiệu 1",
-      avt: `/about1.jpg`,
+      avt: `/about1.webp`
     },
     {
       title: "Ảnh giới thiệu 2",
-      avt: `/about2.jpg`,
+      avt: `/about2.webp`
     },
 
     {
       title: "Ảnh giới thiệu 3",
-      avt: `/about3.jpg`,
+      avt: `/about3.webp`
     },
 
     {
       title: "Ảnh giới thiệu 4",
-      avt: `/about4.jpg`,
+      avt: `/about4.webp`
     },
 
     {
       title: "Ảnh giới thiệu 5",
-      avt: `/about5.jpg`,
+      avt: `/about5.webp`
     },
 
     {
       title: "Ảnh giới thiệu 6",
-      avt: `/about6.jpg`,
-    },
+      avt: `/about6.webp`
+    }
   ];
 
   return (
@@ -103,7 +101,7 @@ export const AboutSwipe = () => {
         effect={"fade"}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false,
+          disableOnInteraction: false
         }}
         loop={true}
         modules={[Autoplay, Navigation]}

@@ -19,14 +19,14 @@ import {
   Stack,
   useDisclosure,
   Input,
-  Box,
+  Box
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsChevronDown, BsJustify, BsTiktok, BsYoutube } from "react-icons/bs";
 import { Logo } from "./Logo";
-import { FormInputs } from "@/components/FormInputs";
+import { InputSearch } from "@/features/search/InputSearch";
 import { FaFacebook } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
 interface INavItem {
@@ -44,7 +44,7 @@ export const MobileNavItem = ({ title, childs, path, onClose }: INavItem) => {
         justifyContent="space-between"
         alignItems="center"
         _hover={{
-          textDecoration: "none",
+          textDecoration: "none"
         }}
         fontWeight={600}
         color={"white"}
@@ -84,7 +84,7 @@ export const MobileNavItem = ({ title, childs, path, onClose }: INavItem) => {
                   paddingTop: "8px",
                   paddingBottom: "8px",
                   fontWeight: "500",
-                  width: "100%",
+                  width: "100%"
                 }}
                 href={child.path ?? "/"}
                 onClick={onClose}
@@ -147,7 +147,7 @@ export const MobileNav = () => {
                 ))}
               </Stack>
               <Box onSubmit={onClose}>
-                <FormInputs type={"normal"} />
+                <InputSearch type={"normal"} />
               </Box>
 
               <HStack py={4} spacing={2} display={{ base: "flex", lg: "flex" }}>
