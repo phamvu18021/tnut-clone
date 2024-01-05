@@ -1,22 +1,21 @@
 "use client";
+import { AboutSwipe } from "@/components/AboutSwipe";
+import { BtnTheme } from "@/components/BtnTheme";
+import { useModal } from "@/components/ModalContext";
 import { MotionTop } from "@/components/MotionTop";
 import {
-  AspectRatio,
   Box,
+  Container,
   Divider,
+  GridItem,
   List,
   ListIcon,
   ListItem,
   SimpleGrid,
   Stack,
-  Container,
-  GridItem,
   Text
 } from "@chakra-ui/react";
 import { FcBookmark } from "react-icons/fc";
-import { BtnTheme } from "@/components/BtnTheme";
-import { useModal } from "@/components/ModalContext";
-import { AboutSwipe } from "@/components/AboutSwipe";
 export const IntroduceAbout = () => {
   const { isOpen, onOpen, onClose } = useModal();
   return (

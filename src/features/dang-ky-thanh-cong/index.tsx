@@ -2,10 +2,10 @@
 
 import { Box, Container, Text } from "@chakra-ui/react";
 
-import { SamePosts } from "../post/Sames";
-import { useModal } from "@/components/ModalContext";
 import { BtnTheme } from "@/components/BtnTheme";
+import { useModal } from "@/components/ModalContext";
 import { useEffect, useState } from "react";
+import { SamePosts } from "../post/Sames";
 
 export const DangkyTc = () => {
   const [news, setNews] = useState<any[]>([]);
@@ -14,7 +14,7 @@ export const DangkyTc = () => {
     const getPosts = async () => {
       try {
         const res = await fetch(`/api/posts/?type=news&page=1`, {
-          next: { revalidate: 3 },
+          next: { revalidate: 3 }
         });
 
         const data: { posts: any[]; totalPosts: string } = await res.json();
@@ -32,7 +32,7 @@ export const DangkyTc = () => {
     <>
       <Box
         bg={"rgba(0, 0, 0, 0.5)"}
-        bgImage={"url('bannernews.png')"}
+        bgImage={"url('bannernews.webp')"}
         bgSize={"cover"}
         bgPosition={"bottom"}
         backgroundBlendMode={"overlay"}

@@ -4,20 +4,20 @@ import { Box, Container, SimpleGrid, Text } from "@chakra-ui/react";
 
 export const Reg = [
   {
-    image: "/nganh-xay-dung.jpg",
+    image: "/nganh-xay-dung.webp",
     title: "Kỹ Thuật Xây Dựng",
-    path: "/ky-thuat-xay-dung",
+    path: "/ky-thuat-xay-dung"
   },
   {
-    image: "/nganh-quan-li-cong-nghiep.jpg",
+    image: "/nganh-quan-li-cong-nghiep.webp",
     title: "Quản Lý Công Nghiệp",
-    path: `quan-ly-cong-nghiep`,
+    path: `quan-ly-cong-nghiep`
   },
   {
-    image: "/nganh-kinh-te-cong-nghiep.jpg",
+    image: "/nganh-kinh-te-cong-nghiep.webp",
     title: "Kinh Tế Công nghiệp",
-    path: `/kinh-te-cong-nghiep`,
-  },
+    path: `/kinh-te-cong-nghiep`
+  }
 ];
 
 export const Majors = () => {

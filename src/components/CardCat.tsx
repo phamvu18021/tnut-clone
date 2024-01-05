@@ -9,7 +9,7 @@ export const CardCat = ({
   image,
   title,
   desc,
-  path,
+  path
 }: {
   image?: string;
   title: string;
@@ -43,15 +43,26 @@ export const CardCat = ({
         h={"100%"}
       >
         <Box>
-          <Box bg={"gray.100"} mt={{lg:-6 }} mx={-6} mb={6} pos={"relative"} height={{lg:"auto",md:"auto", base:"auto"}} >
+          <Box
+            bg={"gray.100"}
+            mt={{ lg: -6 }}
+            mx={-6}
+            mb={6}
+            pos={"relative"}
+            height={{ lg: "auto", md: "auto", base: "auto" }}
+          >
             <Image
-            priority
+              priority
               width={326}
               height={450}
-              src={image || `/blog.jpg`}
+              src={image || `/blog.webp`}
               alt={title}
-              style={{objectFit:"cover", width:"100%",height:"auto" , borderRadius:"21px"}}
-              
+              style={{
+                objectFit: "cover",
+                width: "100%",
+                height: "auto",
+                borderRadius: "21px"
+              }}
             />
           </Box>
           <Stack>
@@ -67,7 +78,7 @@ export const CardCat = ({
                 WebkitBoxOrient: "vertical",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
-                textAlign:"center",
+                textAlign: "center"
               }}
             >
               {title}
@@ -81,7 +92,7 @@ export const CardCat = ({
                   WebkitLineClamp: "4",
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  textOverflow: "ellipsis"
                 }}
                 dangerouslySetInnerHTML={{ __html: desc }}
               />

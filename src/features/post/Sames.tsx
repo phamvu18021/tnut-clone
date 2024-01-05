@@ -8,7 +8,7 @@ import {
   GridItem,
   HStack,
   Heading,
-  SimpleGrid,
+  SimpleGrid
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -22,7 +22,7 @@ export const SamePosts = ({ catId, id }: { catId?: string; id?: string }) => {
       try {
         if (catId) {
           const res = await fetch(`/api/same-posts/?catId=${catId}&id=${id}`, {
-            next: { revalidate: 3 },
+            next: { revalidate: 3 }
           });
           const data: { samePosts: any[] } = await res.json();
           const { samePosts } = data;

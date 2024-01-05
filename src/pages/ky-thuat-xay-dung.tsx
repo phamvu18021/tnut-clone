@@ -1,15 +1,15 @@
 "use client";
 
+import { BenefitNganh } from "@/components/BenefitNganh";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import { Loading } from "@/components/Loading";
 import { Box } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import { BenefitNganh } from "@/components/BenefitNganh";
 const Ktxd = dynamic(
   () => import("@/features/nganh-ktxd").then((mod) => mod.Ktxd),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 

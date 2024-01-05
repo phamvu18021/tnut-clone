@@ -3,12 +3,12 @@ import { FormMain } from "@/components/FormContact";
 
 import {
   Box,
-  List,
-  SimpleGrid,
   Container,
   GridItem,
-  Text,
+  List,
   ListIcon,
+  SimpleGrid,
+  Text
 } from "@chakra-ui/react";
 export const LkgTuyensinh = () => {
   const [info, setInfo] = useState<{ title: string; detail: any }[]>(infoInit);
@@ -54,23 +54,20 @@ export const LkgTuyensinh = () => {
   );
 };
 
+import { CheckIcon } from "@chakra-ui/icons";
 import {
   Accordion,
   AccordionButton,
   AccordionItem,
   AccordionPanel,
   HStack,
-  Icon,
   Heading,
-  UnorderedList,
-  ListItem,
+  ListItem
 } from "@chakra-ui/react";
-import { BiPlus } from "react-icons/bi";
-import { useEffect, useState } from "react";
-import { CheckIcon } from "@chakra-ui/icons";
+import { useState } from "react";
 
 export const Accs = ({
-  accs,
+  accs
 }: {
   accs: {
     title: string;
@@ -126,27 +123,27 @@ const infoInit = [
     detail: [
       {
         title: "",
-        list: ["Tốt nghiệp THPT hoặc tương đương trở lên"],
-      },
-    ],
+        list: ["Tốt nghiệp THPT hoặc tương đương trở lên"]
+      }
+    ]
   },
   {
     title: "Hình thức tuyển sinh",
     detail: [
       {
         title: "",
-        list: [" Chỉ xét tuyển hồ sơ đầu vào."],
-      },
-    ],
+        list: [" Chỉ xét tuyển hồ sơ đầu vào."]
+      }
+    ]
   },
   {
     title: "Thời gian học",
     detail: [
       {
         title: "",
-        list: ["Từ 2 - 4,5 năm tùy thuộc đầu vào của sinh viên"],
-      },
-    ],
+        list: ["Từ 2 - 4,5 năm tùy thuộc đầu vào của sinh viên"]
+      }
+    ]
   },
   {
     title: "Danh sách ngành học",
@@ -156,35 +153,35 @@ const infoInit = [
         list: [
           "Kỹ Thuật Xây Dựng",
           "Quản Lý Công Nghiệp",
-          " Kinh Tế Công Nghiệp",
-        ],
-      },
-    ],
+          " Kinh Tế Công Nghiệp"
+        ]
+      }
+    ]
   },
   {
     title: "Liên hệ",
     detail: [
       {
         title: "",
-        list: ["Hotline: 081.567.4848"],
+        list: ["Hotline: 081.567.4848"]
       },
       {
         title: "",
-        list: ["Website: tnut.vn"],
-      },
-    ],
+        list: ["Website: tnut.vn"]
+      }
+    ]
   },
   {
     title: "Trạm tuyển sinh",
     detail: [
       {
         title: "",
-        list: ["Hà Nội: 116 Trần Vĩ, Mai Dịch, Cầu Giấy, Hà Nội"],
+        list: ["Hà Nội: 116 Trần Vĩ, Mai Dịch, Cầu Giấy, Hà Nội"]
       },
       {
         title: "",
-        list: ["Tp. HCM: 91 Kí Con, Nguyễn Thái Bình, Quận 1, Tp. HCM"],
-      },
-    ],
-  },
+        list: ["Tp. HCM: 91 Kí Con, Nguyễn Thái Bình, Quận 1, Tp. HCM"]
+      }
+    ]
+  }
 ];

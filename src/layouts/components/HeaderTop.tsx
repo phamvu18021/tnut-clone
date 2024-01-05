@@ -1,16 +1,16 @@
+import { BtnTheme } from "@/components/BtnTheme";
+import { FormPoup } from "@/components/FormContact";
+import { ModalBase } from "@/components/Modal";
+import { useModal } from "@/components/ModalContext";
 import { Box, HStack, Icon, Link, Tag, TagLabel } from "@chakra-ui/react";
 import { ReactNode, useEffect, useState } from "react";
 import { LuPhone } from "react-icons/lu";
 import { Logo } from "./Logo";
-import { BtnTheme } from "@/components/BtnTheme";
-import { ModalBase } from "@/components/Modal";
-import { FormPoup } from "@/components/FormContact";
-import { useModal } from "@/components/ModalContext";
 
 export const Tags = ({
   label,
   path,
-  children,
+  children
 }: {
   label: string;
   path: string;
@@ -44,7 +44,7 @@ export const HeaderTop = () => {
       try {
         const res = await fetch(`/api/data-form/?type=form-poup`);
         const data = await res.json();
-        const id = data?.id ||"" ;
+        const id = data?.id || "";
         id && setId(id);
         const href = data?.href || "";
         href && setHref(href);

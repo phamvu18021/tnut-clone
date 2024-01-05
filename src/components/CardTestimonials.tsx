@@ -2,7 +2,6 @@
 
 import { clean } from "@/lib/sanitizeHtml";
 import { Box, HStack, Heading, Image, Stack, Text } from "@chakra-ui/react";
-import Link from "next/link";
 
 export const CardTestimonials = ({
   image,
@@ -10,7 +9,7 @@ export const CardTestimonials = ({
   desc,
 
   career,
-  imageH,
+  imageH
 }: {
   image?: string;
   title: string;
@@ -55,7 +54,7 @@ export const CardTestimonials = ({
               WebkitLineClamp: "2",
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
-              textOverflow: "ellipsis",
+              textOverflow: "ellipsis"
             }}
             dangerouslySetInnerHTML={{ __html: clean(title) }}
           />
@@ -73,7 +72,7 @@ export const CardTestimonials = ({
           WebkitLineClamp: "8",
           WebkitBoxOrient: "vertical",
           overflow: "hidden",
-          textOverflow: "ellipsis",
+          textOverflow: "ellipsis"
         }}
         dangerouslySetInnerHTML={{ __html: desc }}
       />

@@ -4,23 +4,23 @@ import {
   As,
   Box,
   Container,
+  GridItem,
   Icon,
   SimpleGrid,
   Text,
-  VStack,
-  GridItem,
+  VStack
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { BsClockHistory } from "react-icons/bs";
 import { MdOutlineWorkHistory } from "react-icons/md";
 import { PiCertificate } from "react-icons/pi";
-import { BsClockHistory } from "react-icons/bs";
 import { RiCustomerService2Line } from "react-icons/ri";
 export const Item = ({
   path,
   title,
   desc,
   descs,
-  icon,
+  icon
 }: {
   path: string;
   title: string;
@@ -71,29 +71,29 @@ export const benefits = [
     title: "Thời gian Đào tạo ngắn",
     desc: `• Người học có thể học vượt để rút ngắn thời gian học tập theo quy định đào tạo tín chỉ `,
     descs: `• Thời gian đào tạo từ 2-4,5 năm `,
-    icon: BsClockHistory,
+    icon: BsClockHistory
   },
   {
     path: "#",
     title: "Bằng Đại học uy tín ",
     desc: ` • Bằng không ghi hình thức đào tạo và được Bộ GD&ĐT công nhận `,
     descs: `• Có giá trị sử dụng trọn đời`,
-    icon: PiCertificate,
+    icon: PiCertificate
   },
   {
     path: "#",
     title: "Tư vấn 24/7",
     desc: `• Tư vấn lộ trình học miễn phí`,
     descs: `• Hỗ trợ học tập và kỹ thuật nhanh chóng - tận tình`,
-    icon: RiCustomerService2Line,
+    icon: RiCustomerService2Line
   },
   {
     path: "#",
     title: "Kho học liệu đa dạng  ",
     desc: `•Tài liệu học tập đa Phương tiện (video, slide, script,..) `,
     descs: `• Giáo trình do giảng viên đang trực tiếp công tác tại trường biên soạn.`,
-    icon: MdOutlineWorkHistory,
-  },
+    icon: MdOutlineWorkHistory
+  }
 ];
 
 export const Benefit = () => {

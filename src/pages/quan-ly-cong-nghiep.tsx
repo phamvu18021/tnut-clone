@@ -5,12 +5,12 @@ import { Box } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 
-import ErrorBoundary from "@/components/ErrorBoundary";
 import { BenefitNganh } from "@/components/BenefitNganh";
+import ErrorBoundary from "@/components/ErrorBoundary";
 const Qlcn = dynamic(
   () => import("@/features/nganh-qlcn").then((mod) => mod.Qlcn),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 

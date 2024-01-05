@@ -3,10 +3,17 @@
 import { CardBlog } from "@/components/CardBlog";
 import { HeadSection } from "@/components/HeadSection";
 import { Loading } from "@/components/Loading";
-import { formatDate } from "@/ultil/date";
-import { Box, Center, Container, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import { clean } from "@/lib/sanitizeHtml";
+import { formatDate } from "@/ultil/date";
+import {
+  Box,
+  Center,
+  Container,
+  GridItem,
+  SimpleGrid,
+  Text
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 export const DraftPosts = () => {
   const [posts, setPosts] = useState<any[]>([]);
@@ -42,10 +49,8 @@ export const DraftPosts = () => {
   return (
     <Box>
       <Container maxW={"6xl"} py={{ base: "32px", md: "48px" }}>
-        <HeadSection
-          subtitle="Danh sách bài viết chưa xuất bản"
-        />
-        <Text fontSize={"16px"} as='i' py={12}>
+        <HeadSection subtitle="Danh sách bài viết chưa xuất bản" />
+        <Text fontSize={"16px"} as="i" py={12}>
           Danh sách 09 bài viết chưa xuất bản gần đây
         </Text>
         <SimpleGrid

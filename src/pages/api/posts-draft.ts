@@ -17,7 +17,7 @@ export default async function handler(
 
   try {
     const endPoint = `${api_url}/posts?_embed&per_page=${len}&status=draft&page=1`;
-    const res = await fetchAuth({ url: endPoint,revalidate: 100 });
+    const res = await fetchAuth({ url: endPoint, revalidate: 100 });
 
     const postsNotFeatureImage: any[] = (await res?.json()) || [];
     posts =

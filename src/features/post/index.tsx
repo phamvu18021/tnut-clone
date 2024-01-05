@@ -23,14 +23,14 @@ export const Post = ({ post }: { post: any }) => {
               <div className={styles["post__heading"]}>
                 <h1
                   dangerouslySetInnerHTML={{
-                    __html: clean(post?.title?.rendered),
+                    __html: clean(post?.title?.rendered)
                   }}
                 />
                 <span>{formatDate(post?.date)}</span>
               </div>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: clean(post?.content?.rendered),
+                  __html: clean(post?.content?.rendered)
                 }}
               />
             </div>

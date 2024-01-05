@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Box,
   Breadcrumb,
@@ -8,16 +9,15 @@ import {
   Container,
   Divider,
   HStack,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import { DkMain } from "./DkMain";
-import { ChevronRightIcon } from "@chakra-ui/icons";
 export const Dangky = () => {
   return (
     <>
       <Box
         bg={"rgba(0, 0, 0, 0.5)"}
-        bgImage={"url('bannernews.png')"}
+        bgImage={"url('bannernews.webp')"}
         bgSize={"cover"}
         bgPosition={"bottom"}
         backgroundBlendMode={"overlay"}

@@ -4,16 +4,16 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-  useDisclosure,
   Stack,
   Text,
+  useDisclosure
 } from "@chakra-ui/react";
 
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { ModalBase } from "@/components/Modal";
 import { FormPoup } from "@/components/FormContact";
+import { ModalBase } from "@/components/Modal";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 interface INavItem {
   title: string;
   children?: Array<INavItem>;
@@ -53,7 +53,7 @@ export const DesktopNav = () => {
                   fontWeight={{ base: "400", lg: "500" }}
                   color={linkColor}
                   _hover={{
-                    color: linkHoverColor,
+                    color: linkHoverColor
                   }}
                 >
                   {navItem.title}

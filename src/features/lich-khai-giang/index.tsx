@@ -1,21 +1,21 @@
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
-  Container,
   Box,
-  Text,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  HStack,
+  Container,
   Divider,
+  HStack,
+  Text
 } from "@chakra-ui/react";
 import { Majors } from "../home/Majors";
 import { LkgMain } from "./LkgMain";
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import { LkgTuyensinh } from "./LkgTuyensinh";
 
 export const LichKg = ({
   list,
-  isLoading,
+  isLoading
 }: {
   list: string[];
   isLoading: boolean;
@@ -24,22 +24,22 @@ export const LichKg = ({
     <>
       <Box
         bg={"rgba(0, 0, 0, 0.5)"}
-        bgImage={"url('/bannernews.png')"}
+        bgImage={"url('/bannernews.webp')"}
         bgSize={"cover"}
         bgPosition={"bottom"}
         backgroundBlendMode={"overlay"}
       >
-          <Container
-            maxW={"7xl"}
-            py={{ base: "28px", lg: "42px" }}
-            color={"white"}
-            pl={{ base: 6, lg: 0 }}
+        <Container
+          maxW={"7xl"}
+          py={{ base: "28px", lg: "42px" }}
+          color={"white"}
+          pl={{ base: 6, lg: 0 }}
+        >
+          <HStack
+            pt={{ base: 8, lg: 16 }}
+            pb={{ base: 2, lg: 8 }}
+            color={"gray.50"}
           >
-            <HStack
-              pt={{ base: 8, lg: 16 }}
-              pb={{ base: 2, lg: 8 }}
-              color={"gray.50"}
-            >
             <Box display={"flex"} alignContent={"center"}>
               <Divider
                 zIndex={2}
@@ -87,8 +87,9 @@ export const LichKg = ({
         </Container>
       </Box>
 
-      
-      {!isLoading && <LkgMain title={list[0]} lichkg={list[1]} lichkg2={list[2]} />}
+      {!isLoading && (
+        <LkgMain title={list[0]} lichkg={list[1]} lichkg2={list[2]} />
+      )}
       <LkgTuyensinh />
       <Box bg={"gray.50"}>
         <Container maxW={"7xl"}>

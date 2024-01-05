@@ -2,7 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { fetchAuth } from "@/ultil/fetchAuth";
 
-
 type Data = {
   id: string;
   href: string;
@@ -18,7 +17,8 @@ export default async function handler(
   let href: string = "";
   try {
     const responeWordpress = await fetchAuth({
-      url: `${api_url}/posts/?slug=${type}`, revalidate: 10
+      url: `${api_url}/posts/?slug=${type}`,
+      revalidate: 10
     });
     const data: any[] = await responeWordpress.json();
     const htmlString = data?.length > 0 ? data[0]?.content.rendered : ``;
@@ -49,7 +49,7 @@ export default async function handler(
   if (req.method === "GET") {
     res.status(200).json({
       id,
-      href,
+      href
     });
   }
 }

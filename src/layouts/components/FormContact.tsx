@@ -7,13 +7,13 @@ import {
   Icon,
   Input,
   Stack,
-  createIcon,
+  createIcon
 } from "@chakra-ui/react";
 
 export const FormContact = ({
   title,
   action,
-  onClick,
+  onClick
 }: {
   title: string;
   action: string;
@@ -143,5 +143,5 @@ const NotificationIcon = createIcon({
         d="M74,59H36a3,3,0,0,1,0-6H74a3,3,0,0,1,0,6Z"
       />
     </g>
-  ),
+  )
 });

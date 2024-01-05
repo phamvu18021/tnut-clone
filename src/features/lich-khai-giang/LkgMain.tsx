@@ -1,18 +1,18 @@
 "use client";
 import {
-  List,
-  ListItem,
   Box,
-  Stack,
   Container,
   GridItem,
-  Text,
+  List,
+  ListItem,
+  Stack,
+  Text
 } from "@chakra-ui/react";
 
 export const LkgMain = ({
   title,
   lichkg,
-  lichkg2,
+  lichkg2
 }: {
   title: string;
   lichkg: string;

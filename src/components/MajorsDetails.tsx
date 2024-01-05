@@ -8,11 +8,10 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import { BtnTheme } from "./BtnTheme";
 import { useModal } from "./ModalContext";
-import ReactHtmlParser from "html-react-parser";
 
 interface IMDetails {
   major: string;

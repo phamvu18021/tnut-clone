@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const LichKg = dynamic(
   () => import("@/features/lich-khai-giang").then((mod) => mod.LichKg),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 

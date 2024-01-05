@@ -25,7 +25,7 @@ export const HeadSection = ({ subtitle }: { subtitle: string }) => {
 export const HeadSectionLight = ({
   subtitle,
   title,
-  desc,
+  desc
 }: {
   subtitle: string;
   title: string;
@@ -52,7 +52,7 @@ export const HeadSectionLight = ({
 export const HeadSectionEvent = ({
   subtitle,
   title,
-  desc,
+  desc
 }: {
   subtitle: string;
   title: string;

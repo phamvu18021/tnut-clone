@@ -8,7 +8,7 @@ import {
   Icon,
   SimpleGrid,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
@@ -22,7 +22,7 @@ export const Item = ({
   path,
   title,
   desc,
-  icon,
+  icon
 }: {
   path: string;
   title: string;
@@ -68,26 +68,26 @@ export const benefits = [
     path: "#",
     title: "Thời gian học tập linh hoạt, phù hợp với mọi đối tượng",
     desc: "Với hình thức học tập online, học viên có thể chủ động về kế hoạch cũng như thời gian học tập, đây là ưu điểm vượt trội của chương trình",
-    icon: BiHome,
+    icon: BiHome
   },
   {
     path: "#",
     title: "Sở hữu bằng đại học uy tín hàng đầu Việt Nam",
     desc: "Chương trình học do Đại học Thái Nguyên cấp bằng và được Bộ GD&ĐT công nhận",
-    icon: PiCertificate,
+    icon: PiCertificate
   },
   {
     path: "#",
     title: "Đội ngũ giảng viên đầu ngành, giàu kinh nghiệm",
     desc: "100% giảng viên tham gia chương trình đều có bằng Thạc sĩ, Tiến sĩ và đều đang giảng dạy và làm việc tại trường",
-    icon: LiaIndustrySolid,
+    icon: LiaIndustrySolid
   },
   {
     path: "#",
     title: "96% Sinh viên ra trường có việc làm",
     desc: "Dễ dàng hơn khi xin việc, xét bậc tăng lương. Tốt nghiệp bạn đủ điều kiện để học lên Thạc sĩ, Tiến sĩ theo quy định",
-    icon: MdOutlineWorkHistory,
-  },
+    icon: MdOutlineWorkHistory
+  }
 ];
 
 export const BenefitNganh = () => {

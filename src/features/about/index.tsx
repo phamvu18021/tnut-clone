@@ -1,11 +1,11 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-import { IntroduceAbout } from "./IntroduceAbout";
-import { Benefit } from "../home/Benefit";
-import { Slogan } from "../home/Slogan";
-import { Majors } from "../home/Majors";
 import { Banner } from "../home/Banner";
+import { Benefit } from "../home/Benefit";
+import { Majors } from "../home/Majors";
+import { Slogan } from "../home/Slogan";
+import { IntroduceAbout } from "./IntroduceAbout";
 export const About = () => {
   return (
     <>

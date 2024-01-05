@@ -17,9 +17,8 @@ export const Logo = () => {
         priority
         width={60}
         height={60}
-        src={`/logo-tnut.png`}
-        alt="logo Trường Đại học Kỹ thuật Công nghiệp
-        "
+        src={`/logo-tnut.webp`}
+        alt="logo Trường Đại học Kỹ thuật Công nghiệp"
       />
 
       <VStack gap={0}>

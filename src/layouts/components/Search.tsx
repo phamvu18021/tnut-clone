@@ -11,9 +11,9 @@ import {
   DrawerOverlay,
   Icon,
   Input,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { FiSearch } from "react-icons/fi";
 
 export const Search = () => {

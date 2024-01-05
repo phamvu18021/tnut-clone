@@ -5,7 +5,7 @@ export const SocialButton = ({
   children,
   label,
   href,
-  bagr,
+  bagr
 }: {
   children: ReactNode;
   label: string;

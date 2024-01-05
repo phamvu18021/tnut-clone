@@ -40,7 +40,7 @@ export const Footer = () => {
             <Stack>
               <Stack direction={"row"} align={"flex-start"} gap={5} mb={5}>
                 <Image
-                  src={"/logo-tnut.png"}
+                  src={"/logo-tnut.webp"}
                   width={100}
                   height={100}
                   alt="Tìm đối tác"
@@ -126,14 +126,14 @@ export const Footer = () => {
               </UnorderedList>
               <HStack display={"flex"} alignItems={"start"} gap={4}>
                 <Image
-                  src={"/aum.png"}
+                  src={"/aum.webp"}
                   width={100}
                   height={40}
                   alt="Aum Việt Nam"
                 />
 
                 <Image
-                  src={"/logo-dhthainguyen.png"}
+                  src={"/logo-dhthainguyen.webp"}
                   width={100}
                   height={100}
                   alt="Tìm đối tác"
@@ -146,7 +146,7 @@ export const Footer = () => {
 
               <Link href={"https://timdoitac.aum.edu.vn/"}>
                 <Image
-                  src={"/timdoitac.jpg"}
+                  src={"/timdoitac.webp"}
                   width={300}
                   height={100}
                   alt="Tìm đối tác"

@@ -97,7 +97,7 @@ export const Header = () => {
                     priority
                     width={60}
                     height={60}
-                    src={`/logo-tnut.png`}
+                    src={`/logo-tnut.webp`}
                     alt="logo Trường Đại học Kỹ thuật Công nghiệp    "
                   />
                 </Link>
@@ -152,7 +152,7 @@ export const Header = () => {
                 width={50}
                 height={50}
                 // style={{ borderRadius: "50%" }}
-                src={`/logo-tnut.png`}
+                src={`/logo-tnut.webp`}
                 alt="logo Trường Đại học Kỹ thuật Công nghiệp 
         "
               />

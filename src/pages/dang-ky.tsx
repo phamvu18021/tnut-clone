@@ -10,10 +10,9 @@ import { Box } from "@chakra-ui/react";
 const Dangky = dynamic(
   () => import("@/features/dang-ky").then((mod) => mod.Dangky),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
-
 
 const Page = () => {
   return (
@@ -24,7 +23,7 @@ const Page = () => {
       />
       <Dangky />
       <ErrorBoundary fallback={<h1>Lỗi server</h1>}>
-        <Box margin={"0 auto"} bg={'gray.50'}>
+        <Box margin={"0 auto"} bg={"gray.50"}>
           <BenefitNganh />
         </Box>
       </ErrorBoundary>

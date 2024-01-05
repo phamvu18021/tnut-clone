@@ -1,34 +1,32 @@
 "use client";
 import { SocialButton } from "@/components/SocialButton";
+import { InputSearch } from "@/features/search/InputSearch";
 import { useSize } from "@/hooks/useSizeWindow";
 import { menus } from "@/router";
 import {
-  HStack,
+  Box,
   Collapse,
   Divider,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   Flex,
+  HStack,
   Icon,
   IconButton,
   Stack,
-  useDisclosure,
-  Input,
-  Box
+  useDisclosure
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { BsChevronDown, BsJustify, BsTiktok, BsYoutube } from "react-icons/bs";
-import { Logo } from "./Logo";
-import { InputSearch } from "@/features/search/InputSearch";
+import { BsChevronDown, BsTiktok, BsYoutube } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
+import { Logo } from "./Logo";
 interface INavItem {
   title: string;
   childs?: Array<{ title: string; childs?: Array<{}>; path?: string }>;

@@ -1,27 +1,26 @@
 "use client";
-import { FormHome } from "@/components/FormContact";
 
-import { FcBookmark } from "react-icons/fc";
 import {
-  Box,
-  SimpleGrid,
-  Stack,
-  Heading,
-  Divider,
-  List,
-  ListItem,
-  ListIcon,
   AspectRatio,
+  Box,
+  Divider,
   GridItem,
+  Heading,
+  List,
+  ListIcon,
+  ListItem,
+  SimpleGrid,
+  Stack
 } from "@chakra-ui/react";
+import { FcBookmark } from "react-icons/fc";
 export const Circulars = () => {
   const items = [
     {
-      text: "Ngày 30/12/2019, Bộ Giáo dục và Đào tạo đã ban hành Thông tư 27/2019/TT-BGDĐT quy định nội dung chính ghi trên văn bằng và phụ lục văn bằng giáo dục đại học.",
+      text: "Ngày 30/12/2019, Bộ Giáo dục và Đào tạo đã ban hành Thông tư 27/2019/TT-BGDĐT quy định nội dung chính ghi trên văn bằng và phụ lục văn bằng giáo dục đại học."
     },
     {
-      text: "Đặc biệt, một trong những điểm mới của Thông tư này là không ghi thông tin về hình thức đào tạo như chính quy hoặc vừa làm vừa học; học từ xa hay tự học có hướng dẫn trong nội dung chính của văn bằng như quy định cũ tại phụ lục kèm theo Thông tư số 19/2011/TT-BGDĐT.      ",
-    },
+      text: "Đặc biệt, một trong những điểm mới của Thông tư này là không ghi thông tin về hình thức đào tạo như chính quy hoặc vừa làm vừa học; học từ xa hay tự học có hướng dẫn trong nội dung chính của văn bằng như quy định cũ tại phụ lục kèm theo Thông tư số 19/2011/TT-BGDĐT.      "
+    }
   ];
 
   return (

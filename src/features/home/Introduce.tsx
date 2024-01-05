@@ -1,18 +1,18 @@
 "use client";
-import { MotionTop } from "@/components/MotionTop";
 import { FormMain } from "@/components/FormContact";
+import { MotionTop } from "@/components/MotionTop";
 
 import {
   Box,
+  Container,
   Divider,
+  GridItem,
   List,
   ListIcon,
   ListItem,
   SimpleGrid,
   Stack,
-  Container,
-  GridItem,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import { FcBookmark } from "react-icons/fc";
 export const Introduce = () => {

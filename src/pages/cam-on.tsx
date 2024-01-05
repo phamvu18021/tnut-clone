@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 const DangkyTc = dynamic(
   () => import("@/features/dang-ky-thanh-cong").then((mod) => mod.DangkyTc),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 

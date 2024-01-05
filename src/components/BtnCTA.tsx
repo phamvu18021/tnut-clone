@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  HStack,
   Heading,
   IconButton,
   IconButtonProps,
@@ -11,15 +12,12 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-  Tooltip,
-  Box,
   Text,
-  HStack,
+  Tooltip
 } from "@chakra-ui/react";
-import { MdOutlineMail } from "react-icons/md";
 import { BiPhone } from "react-icons/bi";
 import { BsMessenger } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdOutlineMail } from "react-icons/md";
 import { SiZalo } from "react-icons/si";
 import { FormPoupCTA } from "./FormContact";
 

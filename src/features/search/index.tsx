@@ -57,7 +57,7 @@ export const Search = () => {
   return (
     <Box>
       <Box
-        bgImage={"url('/bannernews.png')"}
+        bgImage={"url('/bannernews.webp')"}
         bgRepeat={"no-repeat"}
         bgSize={"cover"}
         maxW={"100vw"}

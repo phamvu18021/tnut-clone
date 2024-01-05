@@ -3,13 +3,13 @@
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Container,
-  Text,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  HStack,
+  Container,
   Divider,
+  HStack,
+  Text
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
@@ -17,7 +17,7 @@ export const LayoutNganh = ({
   children,
   title,
   image,
-  path,
+  path
 }: {
   children?: ReactNode;
   title?: string;

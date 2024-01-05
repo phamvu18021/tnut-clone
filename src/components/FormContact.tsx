@@ -12,7 +12,7 @@ import {
   Select,
   SelectProps,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import Image from "next/image";
@@ -58,9 +58,9 @@ export const FormContact = (props: IForm) => {
         method: "POST",
         mode: "no-cors",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: new URLSearchParams(formData).toString(),
+        body: new URLSearchParams(formData).toString()
       });
       actions.setSubmitting(false);
       setSucess(true);
@@ -98,7 +98,7 @@ export const FormContact = (props: IForm) => {
             class: "",
             course: "",
             email: "",
-            place: "",
+            place: ""
           }}
           onSubmit={(values, actions) => {
             handleSubmit(values, actions);
@@ -209,7 +209,7 @@ export const FormContact = (props: IForm) => {
         <Center flexDir={"column"}>
           <Image
             priority
-            src={"/success-icon.png"}
+            src={"/success-icon.webp"}
             width={100}
             height={100}
             alt="Thành công"
@@ -333,7 +333,7 @@ const comonForm = ({ id, href }: { id: string; href: string }) => {
 export const FormPoup = ({
   title,
   id,
-  href,
+  href
 }: {
   title?: string;
   id?: string;
@@ -344,7 +344,7 @@ export const FormPoup = ({
       href &&
       comonForm({
         id,
-        href,
+        href
       });
   }, [id, href]);
   return (
@@ -375,9 +375,9 @@ export const FormMain = ({ title }: { title?: string }) => {
         const res = await fetch(`/api/data-form/?type=form-main`);
         const data = await res.json();
         const id = data?.id || "";
-  
+
         id && setId(id);
-        const href = data?.href || ""
+        const href = data?.href || "";
         href && setHref(href);
         setIsLoading(false);
       } catch (error) {
@@ -389,7 +389,7 @@ export const FormMain = ({ title }: { title?: string }) => {
   useEffect(() => {
     comonForm({
       id,
-      href,
+      href
     });
   }, [isLoading, id, href]);
   return (
@@ -422,7 +422,7 @@ export const FormHome = ({ title }: { title?: string }) => {
         const data = await res.json();
         const id = data?.id || "";
         id && setId(id + 2);
-        const href = data?.href || ""
+        const href = data?.href || "";
         href && setHref(href);
         setIsLoading(false);
       } catch (error) {
@@ -434,7 +434,7 @@ export const FormHome = ({ title }: { title?: string }) => {
   useEffect(() => {
     comonForm({
       id,
-      href,
+      href
     });
   }, [isLoading, id, href]);
   return (
@@ -479,7 +479,7 @@ export const FormPoupCTA = ({ title }: { title?: string }) => {
   useEffect(() => {
     comonForm({
       id,
-      href,
+      href
     });
   }, [isLoading, id, href]);
   return (

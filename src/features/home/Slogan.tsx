@@ -1,14 +1,14 @@
 import { BtnTheme } from "@/components/BtnTheme";
 import { useModal } from "@/components/ModalContext";
+import { MotionTop } from "@/components/MotionTop";
 import {
   Box,
   Container,
-  Text,
-  SimpleGrid,
-  GridItem,
   Flex,
+  GridItem,
+  SimpleGrid,
+  Text
 } from "@chakra-ui/react";
-import { MotionTop } from "@/components/MotionTop";
 export const Slogan = () => {
   const { isOpen, onOpen, onClose } = useModal();
   return (
@@ -21,7 +21,6 @@ export const Slogan = () => {
               color={"white"}
               fontWeight={"500"}
               textAlign={{ base: "center", lg: "right" }}
-            
             >
               XÉT TUYỂN - KHÔNG THI ĐẦU VÀO
             </Text>

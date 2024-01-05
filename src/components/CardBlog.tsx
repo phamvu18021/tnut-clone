@@ -1,23 +1,22 @@
 "use client";
 
+import { clean } from "@/lib/sanitizeHtml";
 import {
-  Box,
-  Flex,
-  Heading,
-  Img,
-  Stack,
-  Text,
-  SimpleGrid,
-  GridItem,
-  Divider,
-  Center,
+  Avatar,
   AvatarBadge,
-  Avatar
+  Box,
+  Center,
+  Divider,
+  Flex,
+  GridItem,
+  Heading,
+  SimpleGrid,
+  Stack,
+  Text
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { clean } from "@/lib/sanitizeHtml";
 
 export const CardBlog = ({
   image,

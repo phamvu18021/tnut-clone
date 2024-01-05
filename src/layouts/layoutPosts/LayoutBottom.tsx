@@ -6,7 +6,7 @@ import { Sidebar } from "../components/Sidebar";
 
 export const LayoutBottom = ({
   children,
-  sticky,
+  sticky
 }: {
   children: ReactNode;
   sticky?: string;

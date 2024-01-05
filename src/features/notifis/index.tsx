@@ -8,7 +8,7 @@ import {
   Text,
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
+  BreadcrumbLink
 } from "@chakra-ui/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
@@ -19,7 +19,7 @@ import { LayoutBottom } from "@/layouts/layoutPosts/LayoutBottom";
 const ListPosts = dynamic(
   () => import("@/features/posts/ListPosts").then((mod) => mod.ListPosts),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 export const Notifis = () => {
@@ -32,7 +32,7 @@ export const Notifis = () => {
       <Box bg={"#F8F9FA"}>
         <Box
           bg={"rgba(0, 0, 0, 0.5)"}
-          bgImage={"url('/bannernews.png')"}
+          bgImage={"url('/bannernews.webp')"}
           backgroundBlendMode={"overlay"}
         >
           <Container maxW={"7xl"} py="24px" color={"white"}>

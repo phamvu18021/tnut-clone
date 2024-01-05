@@ -1,7 +1,6 @@
 "use client";
 import { FormMain } from "@/components/FormContact";
-import { Box, Heading } from "@chakra-ui/react";
-import { Icon, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Heading, Icon, IconButton, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 import { BsLink45Deg } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";

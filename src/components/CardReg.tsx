@@ -6,7 +6,7 @@ import Link from "next/link";
 export const CardReg = ({
   image,
   path,
-  title,
+  title
 }: {
   image?: string;
   path: string;
@@ -36,7 +36,7 @@ export const CardReg = ({
               <Image
                 width={431}
                 height={288}
-                src={image || `/blog.jpg`}
+                src={image || `/blog.webp`}
                 priority
                 alt={""}
                 style={{ height: "100%", objectFit: "cover" }}
@@ -48,7 +48,7 @@ export const CardReg = ({
                 fontWeight={500}
                 color={"gray.600"}
                 fontSize={{ base: "16px", lg: "20px" }}
-                textAlign={'center'}
+                textAlign={"center"}
               >
                 {title}
               </Text>

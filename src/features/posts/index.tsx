@@ -10,7 +10,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Text,
-  HStack,
+  HStack
 } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
@@ -19,7 +19,7 @@ import { Suspense } from "react";
 const ListPosts = dynamic(
   () => import("./ListPosts").then((mod) => mod.ListPosts),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 
@@ -34,7 +34,7 @@ export const Posts = () => {
       <Box bg={"#F8F9FA"}>
         <Box
           bg={"rgba(0, 0, 0, 0.5)"}
-          bgImage={"url('bannernews.png')"}
+          bgImage={"url('bannernews.webp')"}
           bgSize={"cover"}
           bgPosition={"50% 100%"}
           backgroundBlendMode={"overlay"}

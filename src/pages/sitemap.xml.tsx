@@ -54,7 +54,7 @@ export const getServerSideProps = async ({ res }: { res: NextApiResponse }) => {
   res.write(sitemap);
   res.end();
   return {
-    props: {},
+    props: {}
   };
 };
 const SiteMap = () => {

@@ -1,15 +1,15 @@
 "use client";
 
+import { BenefitNganh } from "@/components/BenefitNganh";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import { Loading } from "@/components/Loading";
 import { Box } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import { BenefitNganh } from "@/components/BenefitNganh";
 const Ktcn = dynamic(
   () => import("@/features/nganh-ktcn").then((mod) => mod.Ktcn),
   {
-    loading: () => <Loading />,
+    loading: () => <Loading />
   }
 );
 

@@ -8,12 +8,11 @@ import {
   GridItem,
   HStack,
   Heading,
-  SimpleGrid,
+  SimpleGrid
 } from "@chakra-ui/react";
 import Link from "next/link";
 
 export const Event = ({ news, notifis }: { news: any[]; notifis: any[] }) => {
- 
   return (
     <Container maxW={"7xl"} py={"64px"}>
       <HeadSectionEvent

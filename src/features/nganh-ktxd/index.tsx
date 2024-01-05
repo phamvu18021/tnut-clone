@@ -2,18 +2,20 @@ import { LayoutNganh } from "@/layouts/layoutNganh";
 import { MajorsDetails } from "@/components/MajorsDetails";
 export const Ktxd = () => {
   return (
-    <LayoutNganh title="KỸ THUẬT XÂY DỰNG" image="/nganh-xay-dung.jpg" 
-    path="/ky-thuat-xay-dung"
+    <LayoutNganh
+      title="KỸ THUẬT XÂY DỰNG"
+      image="/nganh-xay-dung.webp"
+      path="/ky-thuat-xay-dung"
     >
       <MajorsDetails
         major="KỸ THUẬT XÂY DỰNG"
-        image="/nganh-xay-dung.jpg"
+        image="/nganh-xay-dung.webp"
         tabf="Tổng quan chương trình"
         tabs="Cơ hội nghề nghiệp"
         tabt="Thông tin tuyển sinh"
         tabfp={[
           "<b> Ngành Kỹ thuật xây dựng </b> là ngành học đào tạo ra các kỹ sư xây dựng có khả năng tư vấn, thực thi, giám sát, thiết kế và nghiệm thu công trình. Trong đó bao gồm các công trình của nhà nước như đường cầu, các cơ sở vật chất công cộng. Ngoài ra kỹ sư xây dựng còn làm các công trình cho doanh nghiệp cá nhân.",
-          "Khi học ngành <b> Kỹ thuật xây dựng </b> bạn sẽ được học các kiến thức cơ bản về khoa học tự nhiên và khoa học xã hội. Một số môn như: chủ nghĩa Mác Lênin, tư tưởng Hồ Chí Minh, Toán học đại cương… Tiếp đến là các môn chuyên ngành về kỹ thuật xây dựng. Bạn sẽ được học các môn về thiết kế, tính toán, phân tích, tổ chức thi công và tư vấn giám sát công trình. Sinh viên được thực tập tại các công ty xây dựng, có kiến thức thực tế.",
+          "Khi học ngành <b> Kỹ thuật xây dựng </b> bạn sẽ được học các kiến thức cơ bản về khoa học tự nhiên và khoa học xã hội. Một số môn như: chủ nghĩa Mác Lênin, tư tưởng Hồ Chí Minh, Toán học đại cương… Tiếp đến là các môn chuyên ngành về kỹ thuật xây dựng. Bạn sẽ được học các môn về thiết kế, tính toán, phân tích, tổ chức thi công và tư vấn giám sát công trình. Sinh viên được thực tập tại các công ty xây dựng, có kiến thức thực tế."
         ]}
         tabsp={[
           "Sinh viên tốt nghiệp ngành Kỹ thuật xây dựng có thể làm việc tại các công ty tư vấn về xây dựng, thi công xây dựng dự án hoặc tự lập các công ty riêng về thiết kế, giám sát, lập dự án hoặc làm việc tại các ban quản lý dự án xây dựng. Cụ thể:",
@@ -21,7 +23,7 @@ export const Ktxd = () => {
           ". Kỹ sư giám sát",
           ". Kỹ sư quản lý chất lượng",
           ". Chuyên viên tư vấn",
-          ". Giảng dạy",
+          ". Giảng dạy"
         ]}
         tabtp={[
           ". Đối tượng tuyển sinh: Tốt nghiệp THPT trở lên ",
@@ -32,7 +34,7 @@ export const Ktxd = () => {
           "<b>Văn bằng tốt nghiệp</b",
           ". Bằng do Đại học kỹ thuật công nghiệp – ĐH Thái Nguyên cấp",
           ". Không ghi hình thức Đào tạo trên văn bằng tốt nghiệp",
-          ". Có giá trị tương đương bằng CHÍNH QUY, được Bộ GD&ĐT công nhận và có thể học tiếp lên Thạc sĩ, Tiến sĩ, thi công chức, xét bậc lương theo quy định nhà nước",
+          ". Có giá trị tương đương bằng CHÍNH QUY, được Bộ GD&ĐT công nhận và có thể học tiếp lên Thạc sĩ, Tiến sĩ, thi công chức, xét bậc lương theo quy định nhà nước"
         ]}
       />
     </LayoutNganh>
