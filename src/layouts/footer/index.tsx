@@ -9,9 +9,9 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  UnorderedList,
-  Image
+  UnorderedList
 } from "@chakra-ui/react";
+import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { FaFacebook } from "react-icons/fa";
@@ -41,8 +41,8 @@ export const Footer = () => {
               <Stack direction={"row"} align={"flex-start"} gap={5} mb={5}>
                 <Image
                   src={"/logo-tnut.png"}
-                  width={150}
-                  height={"auto"}
+                  width={100}
+                  height={100}
                   alt="Tìm đối tác"
                   style={{ float: "left" }}
                 />

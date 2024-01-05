@@ -88,18 +88,15 @@ export const Header = () => {
             w={"100vw"}
           >
             <Box display={nav}>
-              <Flex
-                display={{ base: "none", lg: "flex" }}
-                aspectRatio={60 / 60}
-              >
+              <Flex display={{ base: "none", lg: "flex" }}>
                 <Link
                   href="/"
                   style={{ display: "flex", alignItems: "center", gap: "4px" }}
                 >
                   <Image
                     priority
-                    width={250}
-                    height={250}
+                    width={60}
+                    height={60}
                     src={`/logo-tnut.png`}
                     alt="logo Trường Đại học Kỹ thuật Công nghiệp    "
                   />

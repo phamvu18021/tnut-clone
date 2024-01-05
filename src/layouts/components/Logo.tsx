@@ -10,7 +10,7 @@ export const Logo = () => {
         display: "flex",
         alignItems: "center",
         gap: "4px",
-        justifyContent: "flex-start",
+        justifyContent: "flex-start"
       }}
     >
       <Image
