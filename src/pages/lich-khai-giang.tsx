@@ -1,9 +1,13 @@
 "use client";
 
 import { Loading } from "@/components/Loading";
+import { fetchSeo } from "@/ultil/seo";
+import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 import { useEffect, useState } from "react";
+import ReactHtmlParser from "html-react-parser";
 
 const LichKg = dynamic(
   () => import("@/features/lich-khai-giang").then((mod) => mod.LichKg),
@@ -12,7 +16,19 @@ const LichKg = dynamic(
   }
 );
 
-const Page = () => {
+export const getServerSideProps: GetServerSideProps = async () => {
+  const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/lich-khai-giang`;
+
+  const res = await fetchSeo({ url: api_url, revalidate: 3600 });
+  const head = await res.json();
+  return {
+    props: {
+      head: head.head || null
+    }
+  };
+};
+
+const Page = (props: any) => {
   const [list, setList] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,10 +50,9 @@ const Page = () => {
 
   return (
     <>
-      <NextSeo
-        title="Lịch khải Giảng - ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"
-        description="Lịch khải giảng - ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"
-      />
+      <div>
+        <Head>{ReactHtmlParser(props.head)}</Head>
+      </div>
       <LichKg list={list} isLoading={isLoading} />
     </>
   );

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
+import { CTA } from "./components/Cta";
 import { Footer } from "./footer";
 import { Header } from "./header";
-import { CTA } from "./components/Cta";
 interface ILayout {
   children: ReactNode;
 }
