@@ -49,5 +49,9 @@ export const replaceSeoRM = (input: string) => {
     `"mainEntityOfPage":{"@id":"https://nologin.tnut.vn/`,
     `"mainEntityOfPage":{"@id":"https://tnut.vn/`
   );
+  input = input.replace(
+    `"@id":"https://nologin.tnut.vn/#organization"`,
+    `"@id":"https://tnut.vn/#organization"`
+  );
   return input;
 };
