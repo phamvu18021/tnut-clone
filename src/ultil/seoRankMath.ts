@@ -37,8 +37,8 @@ export const replaceSeoRM = (input: string) => {
   );
 
   input = input.replace(
-    `"isPartOf":{"@id":"https://nologin.tnut.vn`,
-    `"isPartOf":{"@id":"https://tnut.vn`
+    `"isPartOf":{"@id":"https://nologin.tnut.vn/#webpage"}`,
+    `"isPartOf":{"@id":"https://tnut.vn/#webpage"}`
   );
   input = input.replace(
     `"mainEntityOfPage":{"@id":"https://nologin.tnut.vn/`,
@@ -54,8 +54,8 @@ export const replaceSeoRM = (input: string) => {
     `"sameAs":["https://tnut.vn"]`
   );
   input = input.replace(
-    `publisher":{"@id":"https://nologin.tnut.vn/#organization`,
-    `publisher":{"@id":"tnut.vn/#organization`
+    `"publisher":{"@id":"https://nologin.tnut.vn/#organization"}`,
+    `"publisher":{"@id":"https://tnut.vn/#organization"}`
   );
   return input;
 };
