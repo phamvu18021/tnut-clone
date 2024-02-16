@@ -9,8 +9,8 @@ export const replaceSeoRM = (input: string) => {
   );
 
   input = input.replace(
-    `"https://nologin.tnut.vn/#organization"`,
-    `"https://tnut.vn/#organization"`
+    `https://nologin.tnut.vn/#organization`,
+    `https://tnut.vn/#organization`
   );
   input = input.replace(
     `https://nologin.tnut.vn/#logo`,
