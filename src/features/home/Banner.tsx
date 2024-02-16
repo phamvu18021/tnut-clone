@@ -19,7 +19,7 @@ export const CardBanner = ({ image }: { image: string }) => {
         src={image}
         width={"1883"}
         objectFit={"contain"}
-        height={"775"}
+        height={"auto"}
       />
 
       <BtnTheme
