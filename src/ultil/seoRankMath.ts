@@ -50,8 +50,17 @@ export const replaceSeoRM = (input: string) => {
     `"mainEntityOfPage":{"@id":"https://tnut.vn/`
   );
   input = input.replace(
-    `"@id":"https://nologin.tnut.vn/#organization"`,
-    `"@id":"https://tnut.vn/#organization"`
+    `@id":"https://nologin.tnut.vn/#organization`,
+    `@id":"https://tnut.vn/#organization`
+  );
+
+  input = input.replace(
+    `"sameAs":["https://nologin.tnut.vn"]`,
+    `"sameAs":["https://tnut.vn"]`
+  );
+  input = input.replace(
+    `publisher":{"@id":"https://nologin.tnut.vn/#organization`,
+    `publisher":{"@id":"tnut.vn/#organization`
   );
   return input;
 };
