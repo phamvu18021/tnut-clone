@@ -3,6 +3,7 @@ import Head from "next/head";
 import ReactHtmlParser from "html-react-parser";
 import { GetServerSideProps } from "next";
 import { fetchSeo } from "@/ultil/seo";
+import { replaceSeoRM } from "@/ultil/seoRankMath";
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/`;
@@ -18,9 +19,11 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 const Page = (props: any) => {
   return (
     <>
-      <div>
-        <Head>{ReactHtmlParser(props.head)}</Head>
-      </div>
+      {props.head && (
+        <div>
+          <Head>{ReactHtmlParser(replaceSeoRM(props.head))}</Head>
+        </div>
+      )}
       <Home />
     </>
   );

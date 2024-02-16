@@ -10,6 +10,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import { fetchSeo } from "@/ultil/seo";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { replaceSeoRM } from "@/ultil/seoRankMath";
 const Qlcn = dynamic(
   () => import("@/features/nganh-qlcn").then((mod) => mod.Qlcn),
   {
@@ -31,9 +32,11 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 const Page = (props: any) => {
   return (
     <>
-      <div>
-        <Head>{ReactHtmlParser(props.head)}</Head>
-      </div>
+      {props.head && (
+        <div>
+          <Head>{ReactHtmlParser(replaceSeoRM(props.head))}</Head>
+        </div>
+      )}
       <Qlcn />
       <ErrorBoundary fallback={<h1>Lỗi server</h1>}>
         <Box margin={"0 auto"} bg={"gray.50"}>

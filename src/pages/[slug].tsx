@@ -9,7 +9,7 @@ import { fetchAuth } from "@/ultil/fetchAuth";
 import { fetchSeo } from "@/ultil/seo";
 import Head from "next/head";
 import ReactHtmlParser from "html-react-parser";
-
+import { replaceSeoRM } from "@/ultil/seoRankMath";
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = process.env.API_URL || "";
   const url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/`;
@@ -26,7 +26,6 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
       revalidate: 3600
     });
     const head = await resSeo.json();
-
     const posts = await res.json();
     const post = posts ? posts[0] : null;
 
@@ -43,18 +42,18 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 
 interface IPostPage {
   post: any;
-  head: any;
+  head: string;
 }
 
 const Page = (props: IPostPage) => {
   const { post, head } = props;
-  let tit = post?.title?.rendered.replace(/(<([^>]+)>)/gi, "");
-  let des = post?.excerpt?.rendered.replace(/(<([^>]+)>)/gi, "");
   return (
     <>
-      <div>
-        <Head>{ReactHtmlParser(head)}</Head>
-      </div>
+      {head && (
+        <div>
+          <Head>{ReactHtmlParser(replaceSeoRM(head))}</Head>
+        </div>
+      )}
       <ErrorBoundary fallback={<h1>Lỗi phía máy chủ</h1>}>
         <Post post={post} />
       </ErrorBoundary>

@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import ReactHtmlParser from "html-react-parser";
+import { replaceSeoRM } from "@/ultil/seoRankMath";
 
 const LichKg = dynamic(
   () => import("@/features/lich-khai-giang").then((mod) => mod.LichKg),
@@ -50,9 +51,11 @@ const Page = (props: any) => {
 
   return (
     <>
-      <div>
-        <Head>{ReactHtmlParser(props.head)}</Head>
-      </div>
+      {props.head && (
+        <div>
+          <Head>{ReactHtmlParser(replaceSeoRM(props.head))}</Head>
+        </div>
+      )}
       <LichKg list={list} isLoading={isLoading} />
     </>
   );

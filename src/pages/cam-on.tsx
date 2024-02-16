@@ -7,6 +7,7 @@ import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import ReactHtmlParser from "html-react-parser";
+import { replaceSeoRM } from "@/ultil/seoRankMath";
 
 const DangkyTc = dynamic(
   () => import("@/features/dang-ky-thanh-cong").then((mod) => mod.DangkyTc),
@@ -30,9 +31,11 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 const Page = (props: any) => {
   return (
     <>
-      <div>
-        <Head>{ReactHtmlParser(props.head)}</Head>
-      </div>
+      {props.head && (
+        <div>
+          <Head>{ReactHtmlParser(replaceSeoRM(props.head))}</Head>
+        </div>
+      )}
       <DangkyTc />
     </>
   );

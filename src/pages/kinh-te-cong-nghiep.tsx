@@ -12,6 +12,7 @@ import Head from "next/head";
 import ReactHtmlParser from "html-react-parser";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/router";
+import { replaceSeoRM } from "@/ultil/seoRankMath";
 const Ktcn = dynamic(
   () => import("@/features/nganh-ktcn").then((mod) => mod.Ktcn),
   {
@@ -35,9 +36,11 @@ const Page = (props: any) => {
   console.log(props.head);
   return (
     <>
-      <div>
-        <Head>{ReactHtmlParser(props.head)}</Head>
-      </div>
+      {props.head && (
+        <div>
+          <Head>{ReactHtmlParser(replaceSeoRM(props.head))}</Head>
+        </div>
+      )}
       <Ktcn />
       <ErrorBoundary fallback={<h1>Lỗi server</h1>}>
         <Box margin={"0 auto"} bg={"gray.50"}>

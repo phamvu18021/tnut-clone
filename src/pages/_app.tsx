@@ -22,6 +22,20 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   return (
     <>
+      <DefaultSeo
+        title="ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"
+        description="Tuyển sinh hệ đại học trực tuyến khối ngành kỹ thuật, học từ xa kết hợp thực hành trực tiếp. Cấp bằng Kỹ sư/ Cử nhân được Bộ GD&ĐT công nhận."
+        openGraph={{
+          images: [
+            {
+              url: "/sep.webp",
+              width: 850,
+              height: 650,
+              alt: "ĐH Kỹ thuật Công nghiệp Thái Nguyên hệ đào tạo từ xa"
+            }
+          ]
+        }}
+      />
       <ChakraProvider theme={theme}>
         <ModalProvider>
           <Layout>{getLayout(<Component {...pageProps} />)}</Layout>

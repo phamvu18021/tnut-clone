@@ -10,6 +10,7 @@ import { fetchSeo } from "@/ultil/seo";
 import ReactHtmlParser from "html-react-parser";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { replaceSeoRM } from "@/ultil/seoRankMath";
 const Ktxd = dynamic(
   () => import("@/features/nganh-ktxd").then((mod) => mod.Ktxd),
   {
@@ -32,9 +33,11 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 const Page = (props: any) => {
   return (
     <>
-      <div>
-        <Head>{ReactHtmlParser(props.head)}</Head>
-      </div>
+      {props.head && (
+        <div>
+          <Head>{ReactHtmlParser(replaceSeoRM(props.head))}</Head>
+        </div>
+      )}
       <Ktxd />
       <ErrorBoundary fallback={<h1>Lỗi server</h1>}>
         <Box margin={"0 auto"} bg={"gray.50"}>
