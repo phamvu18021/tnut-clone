@@ -7,7 +7,6 @@ export const fetchSeo = ({
 }) => {
   return fetch(url, {
     method: "GET",
-
     next: { revalidate }
   });
 };

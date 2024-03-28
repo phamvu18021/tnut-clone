@@ -69,6 +69,7 @@ export const CardBlog = ({
             >
               <Box objectFit="contain">
                 <Image
+                  loading="lazy"
                   width={656}
                   height={436}
                   src={image || `/blog.jpeg`}
@@ -160,6 +161,7 @@ export const CardBlogS = ({
           <Box bg={"gray.100"} overflow={"hidden"}>
             <Box>
               <Image
+                loading="lazy"
                 width={504}
                 height={320}
                 src={image || `/blog.jpeg`}
@@ -262,6 +264,7 @@ export const CardLBlog = ({
           >
             <Box objectFit="contain">
               <Image
+                loading="lazy"
                 width={656}
                 height={436}
                 src={image || `/blog.jpeg`}
@@ -406,6 +409,7 @@ export const CardBlogEvent = ({
             overflow={"hidden"}
           >
             <Image
+              loading="lazy"
               width={600}
               height={350}
               src={image || `/blog.jpeg`}

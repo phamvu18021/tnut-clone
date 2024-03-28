@@ -6,7 +6,8 @@ import { fetchSeo } from "@/ultil/seo";
 import { replaceSeoRM } from "@/ultil/seoRankMath";
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/`;
+  const api_rm_url = process.env.API_RMS_URL || "";
+  const api_url = `${api_rm_url}`;
 
   const res = await fetchSeo({ url: api_url, revalidate: 3600 });
   const head = await res.json();

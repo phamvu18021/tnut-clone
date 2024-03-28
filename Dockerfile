@@ -20,6 +20,7 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV API_URL https://nologin.tnut.vn/wp-json/wp/v2
+ENV API_RMS_URL https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn
 ENV NEXT_PUBLIC_DOMAIN https://tnut.vn
 ENV TOKEN eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI0LCJuYW1lIjoidG51dC5hZG1pbiIsImlhdCI6MTcwMjY5OTUzNCwiZXhwIjoxODYwMzc5NTM0fQ._7-KRgPw9sjuhJtEVN81_pMdgQBMH_iSJ1nokvHML6A
 

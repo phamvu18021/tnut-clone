@@ -3,7 +3,6 @@
 import { Loading } from "@/components/Loading";
 import { fetchSeo } from "@/ultil/seo";
 import { GetServerSideProps } from "next";
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -18,7 +17,8 @@ const LichKg = dynamic(
 );
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/lich-khai-giang`;
+  const api_rm_url = process.env.API_RMS_URL || "";
+  const api_url = `${api_rm_url}/lich-khai-giang`;
 
   const res = await fetchSeo({ url: api_url, revalidate: 3600 });
   const head = await res.json();

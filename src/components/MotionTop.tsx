@@ -16,7 +16,7 @@ export const MotionTop = ({ children }: { children: ReactNode }) => {
         top: 0,
         opacity: 1
       }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 1, delay: 0 }}
     >
       {children}
     </motion.div>

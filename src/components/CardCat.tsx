@@ -52,7 +52,7 @@ export const CardCat = ({
             height={{ lg: "auto", md: "auto", base: "auto" }}
           >
             <Image
-              priority
+              loading="lazy"
               width={326}
               height={450}
               src={image || `/blog.webp`}

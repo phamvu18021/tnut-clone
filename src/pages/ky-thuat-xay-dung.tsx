@@ -5,7 +5,6 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import { Loading } from "@/components/Loading";
 import { Box } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
-import { NextSeo } from "next-seo";
 import { fetchSeo } from "@/ultil/seo";
 import ReactHtmlParser from "html-react-parser";
 import dynamic from "next/dynamic";
@@ -19,7 +18,8 @@ const Ktxd = dynamic(
 );
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/ky-thuat-xay-dung`;
+  const api_rm_url = process.env.API_RMS_URL || "";
+  const api_url = `${api_rm_url}/ky-thuat-xay-dung`;
 
   const res = await fetchSeo({ url: api_url, revalidate: 3600 });
   const head = await res.json();

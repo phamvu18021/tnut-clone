@@ -61,6 +61,23 @@ export const Home = () => {
   const [news, setNews] = useState<any[]>([]);
   const [notifis, setNotifis] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [home_content, setHomeContent] = useState<any>(null);
+
+  useEffect(() => {
+    const getHomeContent = async () => {
+      try {
+        const res = await fetch(`/api/content-page/?type=trang-chu`, {
+          next: { revalidate: 3 }
+        });
+        const data = await res.json();
+        setHomeContent(data?.posts[0]);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+    getHomeContent();
+  }, []);
 
   useEffect(() => {
     const getPosts = async () => {
@@ -109,17 +126,18 @@ export const Home = () => {
     return () => window.clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
-      <Banner />
-      <Introduce />
-      <Benefit />
-      <Slogan />
-      <Majors />
-      <Testimonials />
-      <Advertisement />
+      <Banner imagesBanner={home_content?.acf?.anh_banner} />
+      <Introduce introduce={home_content?.acf?.gioi_thieu} />
+      <Benefit benefit={home_content?.acf?.loi_ich} />
+      <Slogan slogan={home_content?.acf?.slogan} />
+      <Majors majors={home_content?.acf?.nganh_dao_tao} />
+      <Testimonials testimonials={home_content?.acf?.danh_gia_cua_hoc_vien} />
+      <Advertisement advertisement={home_content?.acf?.quang_cao} />
       <Event news={news} notifis={notifis} />
-      <Circulars />
+      <Circulars circulars={home_content?.acf?.thong_tu} />
     </>
   );
 };

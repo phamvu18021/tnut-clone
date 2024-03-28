@@ -11,6 +11,7 @@ export const CardAboutSwipe = ({ image }: { image: string }) => {
   return (
     <Box>
       <Image
+        loading="lazy"
         alt="image"
         className="Image"
         src={image}

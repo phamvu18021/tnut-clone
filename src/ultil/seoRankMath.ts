@@ -9,8 +9,8 @@ export const replaceSeoRM = (input: string) => {
   );
 
   input = input.replace(
-    `https://nologin.tnut.vn/#organization`,
-    `https://tnut.vn/#organization`
+    `"@id":"https://nologin.tnut.vn/#organization"`,
+    `"@id":"https://tnut.vn/#organization"`
   );
   input = input.replace(
     `https://nologin.tnut.vn/#logo`,
@@ -20,7 +20,10 @@ export const replaceSeoRM = (input: string) => {
     `https://nologin.tnut.vn/#website`,
     `https://tnut.vn/#website`
   );
-
+  input = input.replace(
+    `https://nologin.tnut.vn/#webpage`,
+    `https://tnut.vn/#webpage`
+  );
   input = input.replace(
     `"url":"https://nologin.tnut.vn"`,
     `"url":"https://tnut.vn"`
@@ -41,21 +44,13 @@ export const replaceSeoRM = (input: string) => {
     `"mainEntityOfPage":{"@id":"https://tnut.vn/`
   );
   input = input.replace(
-    `worksFor":{"@id":"https://nologin.tnut.vn/#organization`,
-    `worksFor":{"@id":"https://tnut.vn/#organization`
+    `"worksFor":{"@id":"https://nologin.tnut.vn/#organization`,
+    `"worksFor":{"@id":"https://tnut.vn/#organization`
   );
 
   input = input.replace(
     `"sameAs":["https://nologin.tnut.vn"]`,
     `"sameAs":["https://tnut.vn"]`
-  );
-  input = input.replace(
-    `"publisher":{"@id":"https://nologin.tnut.vn/#organization"}`,
-    `"publisher":{"@id":"https://tnut.vn/#organization"}`
-  );
-  input = input.replace(
-    `isPartOf":{"@id":"https://nologin.tnut.vn`,
-    `isPartOf":{"@id":"https://tnut.vn`
   );
   return input;
 };

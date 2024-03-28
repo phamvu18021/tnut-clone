@@ -10,14 +10,13 @@ import {
   VStack
 } from "@chakra-ui/react";
 
-export const Advertisement = () => {
+export const Advertisement = (advertisement: any) => {
   const { isOpen, onOpen, onClose } = useModal();
   return (
     <Box bg={"blue.900"} py={{ base: 2, lg: 10 }}>
       <Container maxW={"7xl"}>
         <SimpleGrid columns={{ base: 1, lg: 2 }}>
           <GridItem colSpan={1}>
-            {" "}
             <VStack
               py={{ base: 10, lg: 12 }}
               spacing={{ base: 8, lg: 8 }}
@@ -30,7 +29,8 @@ export const Advertisement = () => {
                   fontWeight={"300"}
                   textAlign={{ base: "center" }}
                 >
-                  HỌC ĐẠI HỌC TỪ XA
+                  {advertisement?.advertisement?.quang_cao?.text_1 ||
+                    "HỌC ĐẠI HỌC TỪ XA"}
                 </Text>
                 <Text
                   fontSize={{ base: "22px", lg: "36px" }}
@@ -38,7 +38,8 @@ export const Advertisement = () => {
                   fontWeight={"600"}
                   textAlign={{ base: "center" }}
                 >
-                  BẰNG CÓ GIÁ TRỊ TƯƠNG ĐƯƠNG HỆ CHÍNH QUY
+                  {advertisement?.advertisement?.quang_cao?.text_2 ||
+                    "BẰNG CÓ GIÁ TRỊ TƯƠNG ĐƯƠNG HỆ CHÍNH QUY"}
                 </Text>
               </Box>
 
@@ -49,8 +50,8 @@ export const Advertisement = () => {
                   fontWeight={"300"}
                   textAlign={{ base: "center", lg: "center" }}
                 >
-                  Tốt nghiệp được cấp bằng KỸ SƯ/CỬ NHÂN không ghi hình thức đào
-                  tạo, có giá trị vĩnh viễn
+                  {advertisement?.advertisement?.quang_cao?.text_3 ||
+                    "Tốt nghiệp được cấp bằng KỸ SƯ/CỬ NHÂN không ghi hình thức đào tạo, có giá trị vĩnh viễn"}
                 </Text>
               </Box>
               <BtnTheme
@@ -61,15 +62,19 @@ export const Advertisement = () => {
                 w={"300px"}
                 h={"60px"}
               >
-                NHẬN TÀI KHOẢN HỌC THỬ
+                {advertisement?.advertisement?.quang_cao?.text_button ||
+                  "NHẬN TÀI KHOẢN HỌC THỬ"}
               </BtnTheme>
             </VStack>
           </GridItem>
           <GridItem colSpan={1}>
             <Box display={"flex"} justifyContent={"center"} py={8}>
               <Image
+                loading="lazy"
                 alt="bang-dai-hoc"
-                src={"/bang-dai-hoc.webp"}
+                src={
+                  advertisement?.advertisement?.anh_bang || "/bang-dai-hoc.webp"
+                }
                 width={"80%"}
                 maxHeight={"80%"}
                 objectFit={"contain"}

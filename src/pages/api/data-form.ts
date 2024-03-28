@@ -12,7 +12,7 @@ export default async function handler(
 ) {
   //lấy dữ liệu form từ wordpress
   const type = req?.query?.type || "";
-  const api_url = process.env.API_URL || "";
+  const api_url = `https://nologin.tnut.vn/wp-json/wp/v2` || "";
   let id: string = "";
   let href: string = "";
   try {

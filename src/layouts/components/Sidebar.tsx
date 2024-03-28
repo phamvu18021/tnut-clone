@@ -41,7 +41,7 @@ export const Item = ({
       objectFit="cover"
     >
       <Image
-        priority
+        loading="lazy"
         width={700}
         height={400}
         src={image}

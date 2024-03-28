@@ -4,7 +4,6 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";
-import { DefaultSeo, NextSeo } from "next-seo";
 import { ModalProvider } from "@/components/ModalContext";
 import "@/styles/globals.css";
 import "@/styles/tableContent.css";

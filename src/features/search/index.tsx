@@ -73,7 +73,7 @@ export const Search = () => {
               pb={"40px"}
               textAlign={{ base: "center", lg: "center" }}
             >
-              Kết quả trả về cho từ khóa : "{deleteSpace(keyWord)}"
+              Kết quả trả về cho từ khóa : `{deleteSpace(keyWord)}`
             </Heading>
             {isCorrect && (
               <Box

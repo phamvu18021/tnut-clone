@@ -2,7 +2,6 @@
 
 import { Loading } from "@/components/Loading";
 import { Box } from "@chakra-ui/react";
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import ReactHtmlParser from "html-react-parser";
 import { BenefitNganh } from "@/components/BenefitNganh";
@@ -19,7 +18,8 @@ const Qlcn = dynamic(
 );
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/quan-ly-cong-nghiep`;
+  const api_rm_url = process.env.API_RMS_URL || "";
+  const api_url = `${api_rm_url}/quan-ly-cong-nghiep`;
 
   const res = await fetchSeo({ url: api_url, revalidate: 3600 });
   const head = await res.json();

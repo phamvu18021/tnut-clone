@@ -37,7 +37,7 @@ export const CardReg = ({
                 width={431}
                 height={288}
                 src={image || `/blog.webp`}
-                priority
+                loading="lazy"
                 alt={""}
                 style={{ height: "100%", objectFit: "cover" }}
               />

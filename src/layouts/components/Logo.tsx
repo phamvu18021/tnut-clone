@@ -14,7 +14,6 @@ export const Logo = () => {
       }}
     >
       <Image
-        priority
         width={60}
         height={60}
         src={`/logo-tnut.webp`}

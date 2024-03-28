@@ -36,6 +36,7 @@ export const CardTestimonials = ({
           justifyContent={"center"}
         >
           <Image
+            loading="lazy"
             width={70}
             height={70}
             src={image || `/blog.jpeg`}

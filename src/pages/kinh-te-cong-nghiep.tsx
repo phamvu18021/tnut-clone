@@ -6,12 +6,9 @@ import { Loading } from "@/components/Loading";
 import { fetchSeo } from "@/ultil/seo";
 import { Box } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import ReactHtmlParser from "html-react-parser";
-import { useParams } from "next/navigation";
-import { useRouter } from "next/router";
 import { replaceSeoRM } from "@/ultil/seoRankMath";
 const Ktcn = dynamic(
   () => import("@/features/nganh-ktcn").then((mod) => mod.Ktcn),
@@ -21,7 +18,8 @@ const Ktcn = dynamic(
 );
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/kinh-te-cong-nghiep`;
+  const api_rm_url = process.env.API_RMS_URL || "";
+  const api_url = `${api_rm_url}/kinh-te-cong-nghiep`;
 
   const res = await fetchSeo({ url: api_url, revalidate: 3600 });
   const head = await res.json();
@@ -33,7 +31,6 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 };
 
 const Page = (props: any) => {
-  console.log(props.head);
   return (
     <>
       {props.head && (

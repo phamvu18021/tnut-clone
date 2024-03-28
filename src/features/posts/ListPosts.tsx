@@ -13,7 +13,7 @@ import {
   SimpleGrid
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
@@ -60,9 +60,8 @@ export const ListPosts = ({
   cate: string;
   handleRouter?: ({ selected }: { selected: number }) => void;
 }) => {
-  const searchParams = useSearchParams();
-  const page = searchParams.get("page") || "1";
-
+  const router = useRouter();
+  const page = router.query.page || 1;
   const [posts, setPosts] = useState<any[]>([]);
   const [totalPosts, setTotalPosts] = useState("0");
   const [isLoading, setIsLoading] = useState(true);
@@ -133,6 +132,7 @@ export const ListPosts = ({
             pageRangeDisplayed={1}
             marginPagesDisplayed={1}
             activeClassName="active"
+            forcePage={Number(page) - 1}
           />
         </HStack>
       )}

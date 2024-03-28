@@ -13,13 +13,18 @@ import {
   Stack
 } from "@chakra-ui/react";
 import { FcBookmark } from "react-icons/fc";
-export const Circulars = () => {
+export const Circulars = (circulars: any) => {
+  console.log(circulars?.circulars);
   const items = [
     {
-      text: "Ngày 30/12/2019, Bộ Giáo dục và Đào tạo đã ban hành Thông tư 27/2019/TT-BGDĐT quy định nội dung chính ghi trên văn bằng và phụ lục văn bằng giáo dục đại học."
+      text:
+        circulars?.circulars?.thong_tu?.text_2 ||
+        "Ngày 30/12/2019, Bộ Giáo dục và Đào tạo đã ban hành Thông tư 27/2019/TT-BGDĐT quy định nội dung chính ghi trên văn bằng và phụ lục văn bằng giáo dục đại học."
     },
     {
-      text: "Đặc biệt, một trong những điểm mới của Thông tư này là không ghi thông tin về hình thức đào tạo như chính quy hoặc vừa làm vừa học; học từ xa hay tự học có hướng dẫn trong nội dung chính của văn bằng như quy định cũ tại phụ lục kèm theo Thông tư số 19/2011/TT-BGDĐT.      "
+      text:
+        circulars?.circulars?.thong_tu?.text_3 ||
+        "Đặc biệt, một trong những điểm mới của Thông tư này là không ghi thông tin về hình thức đào tạo như chính quy hoặc vừa làm vừa học; học từ xa hay tự học có hướng dẫn trong nội dung chính của văn bằng như quy định cũ tại phụ lục kèm theo Thông tư số 19/2011/TT-BGDĐT.      "
     }
   ];
 
@@ -41,7 +46,10 @@ export const Circulars = () => {
             <AspectRatio maxW="560px" ratio={16 / 9} maxH={"315px"}>
               <iframe
                 title="Video"
-                src="https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
+                src={
+                  circulars?.circulars?.link_video ||
+                  "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
+                }
                 allowFullScreen
               />
             </AspectRatio>
@@ -53,8 +61,7 @@ export const Circulars = () => {
             fontSize={{ base: "20px", md: "24px", lg: "28px" }}
             color={"blue.600"}
           >
-            THÔNG TƯ 27/2019/TT-BGDĐT KHÔNG GHI HÌNH THỨC ĐÀO TẠO TRÊN BẰNG TỐT
-            NGHIỆP
+            {circulars?.circulars?.thong_tu?.text_1 || "THÔNG TƯ 27/2019/TT"}
           </Heading>
           <Divider
             borderBottomWidth={"3px"}

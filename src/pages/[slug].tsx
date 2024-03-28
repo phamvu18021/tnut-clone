@@ -12,7 +12,7 @@ import ReactHtmlParser from "html-react-parser";
 import { replaceSeoRM } from "@/ultil/seoRankMath";
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = process.env.API_URL || "";
-  const url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/`;
+  const url = process.env.API_RMS_URL || "";
 
   try {
     const params = context.params;

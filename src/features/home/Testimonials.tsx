@@ -19,38 +19,66 @@ export const StyledContainer = styled(Container)`
   }
 `;
 
-export const Testi = [
-  {
-    image: "/testimo.webp",
-    name: "Nguyễn Thị Ngọc Lan",
-    career: `Chuyên Viên Phân tích và Nghiên cứu Cấp cao`,
-    comment:
-      "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao."
-  },
-  {
-    image: "/testimo2.webp",
-    name: "Phạm Văn Phong",
-    career: `Nhân viên văn phòng`,
-    comment:
-      "Học tập trực tuyến mang nhiều ưu điểm vượt trội đã làm thay đổi mạnh mẽ khả năng tự học nhằm đáp ứng chương trình học tập. Nhà trường luôn tạo điều kiện cho học viên có thể sử dụng kho tài liệu phong phú nhằm nâng cao hiệu quả học tập."
-  },
-  {
-    image: "/testimo3.webp",
-    name: "Đậu Thị Phương Thảo",
-    career: `Nhân viên văn phòng`,
-    comment:
-      "Phương pháp học trực tuyến của trường phù hợp với người đi làm bận rộn. Chỉ với 1 chiếc máy tính hoặc 1 chiếc smartphone bạn đã có thể học tập mọi lúc mọi nơi. Hình thức học trực tuyến giúp tôi vừa học để tích lũy kiến thức mà vẫn đảm bảo công việc cơ quan."
-  },
-  {
-    image: "/testimo.webp",
-    name: "Nguyễn Thị Ngọc Lan",
-    career: `Chuyên Viên Phân tích và Nghiên cứu Cấp cao`,
-    comment:
-      "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao."
-  }
-];
+export const Testimonials = (testimonials: any) => {
+  const Testi = [
+    {
+      image:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.anh_hoc_vien ||
+        "/testimo.webp",
+      name:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.ten_hoc_vien ||
+        "Nguyễn Thị Ngọc Lan",
+      career:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.nghe_nghiep ||
+        `Chuyên Viên Phân tích và Nghiên cứu Cấp cao`,
+      comment:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.danh_gia ||
+        "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao."
+    },
+    {
+      image:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_2?.anh_hoc_vien ||
+        "/testimo2.webp",
+      name:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_2?.ten_hoc_vien ||
+        "Phạm Văn Phong",
+      career:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_2?.nghe_nghiep ||
+        `Nhân viên văn phòng`,
+      comment:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_2?.danh_gia ||
+        "Học tập trực tuyến mang nhiều ưu điểm vượt trội đã làm thay đổi mạnh mẽ khả năng tự học nhằm đáp ứng chương trình học tập. Nhà trường luôn tạo điều kiện cho học viên có thể sử dụng kho tài liệu phong phú nhằm nâng cao hiệu quả học tập."
+    },
+    {
+      image:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_3?.anh_hoc_vien ||
+        "/testimo3.webp",
+      name:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_3?.ten_hoc_vien ||
+        "Đậu Thị Phương Thảo",
+      career:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_3?.nghe_nghiep ||
+        `Nhân viên văn phòng`,
+      comment:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_3?.danh_gia ||
+        "Phương pháp học trực tuyến của trường phù hợp với người đi làm bận rộn. Chỉ với 1 chiếc máy tính hoặc 1 chiếc smartphone bạn đã có thể học tập mọi lúc mọi nơi. Hình thức học trực tuyến giúp tôi vừa học để tích lũy kiến thức mà vẫn đảm bảo công việc cơ quan."
+    },
+    {
+      image:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.anh_hoc_vien ||
+        "/testimo.webp",
+      name:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.ten_hoc_vien ||
+        "Nguyễn Thị Ngọc Lan",
+      career:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.nghe_nghiep ||
+        `Chuyên Viên Phân tích và Nghiên cứu Cấp cao`,
+      comment:
+        testimonials?.testimonials?.cac_danh_gia?.danh_gia_1?.danh_gia ||
+        "Sau khi trải qua 4 học kỳ thì tôi cảm thấy chương trình học online này là chương trình hữu ích. Khóa học giúp em nâng cao kỹ năng sử dụng online platform được thiết kế tương tự với phần mềm cuả các công ty có kỹ thuật hiện đại. Ở mỗi học kỳ có lịch trình cụ thể, tài liệu học tập rõ ràng và mang tính áp dụng cao."
+    }
+  ];
 
-export const Testimonials = () => {
   const { size } = useSize();
   return (
     <Box>
@@ -62,7 +90,8 @@ export const Testimonials = () => {
           textAlign={"center"}
           fontWeight={500}
         >
-          ĐÁNH GIÁ CỦA HỌC VIÊN
+          {testimonials?.testimonials?.tieu_de_section ||
+            "ĐÁNH GIÁ CỦA HỌC VIÊN"}
         </Text>
       </Box>
 

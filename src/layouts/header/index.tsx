@@ -94,7 +94,6 @@ export const Header = () => {
                   style={{ display: "flex", alignItems: "center", gap: "4px" }}
                 >
                   <Image
-                    priority
                     width={60}
                     height={60}
                     src={`/logo-tnut.webp`}
@@ -148,7 +147,6 @@ export const Header = () => {
               style={{ display: "flex", alignItems: "center", gap: "4px" }}
             >
               <Image
-                priority
                 width={50}
                 height={50}
                 // style={{ borderRadius: "50%" }}
