@@ -14,7 +14,7 @@ export const CardBanner = ({ image }: { image: string }) => {
   return (
     <Box>
       <Image
-        loading="lazy"
+        loading="eager"
         alt="image"
         className="Image"
         src={image}
