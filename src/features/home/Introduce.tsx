@@ -33,8 +33,8 @@ export const Introduce = (introduce: any) => {
               textAlign={{ base: "center", lg: "center" }}
               fontWeight={"600"}
             >
-              {introduce?.introduce?.form_title || ""}
-              {/* "ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN"} */}
+              {introduce?.introduce?.form_title ||
+                "ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN"}
             </Text>
             <FormMain />
           </Box>

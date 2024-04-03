@@ -405,7 +405,7 @@ export const FormMain = ({ title }: { title?: string }) => {
           {title}
         </Heading>
       )}
-      {isLoading && <Loading he={"38vh"} />}
+      {isLoading && <Loading he={"48vh"} />}
       {!isLoading && <div id={id} />}
     </>
   );
