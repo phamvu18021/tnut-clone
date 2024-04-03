@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { FcBookmark } from "react-icons/fc";
 export const Circulars = (circulars: any) => {
-  console.log(circulars?.circulars);
   const items = [
     {
       text:
