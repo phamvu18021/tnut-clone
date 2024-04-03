@@ -91,19 +91,19 @@ export const Banner = (imagesBanner: any) => {
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: `${imagesBanner?.imagesBanner?.anh_banner2 || `/banner-tnut.webp`}`,
+      avt: `${imagesBanner?.imagesBanner?.anh_banner2 || `/banner-tnut1.webp`}`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: `${imagesBanner?.imagesBanner?.anh_banner3 || `/banner-tnut.webp`}`,
+      avt: `${imagesBanner?.imagesBanner?.anh_banner3 || `/banner-tnut2.webp`}`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: `${imagesBanner?.imagesBanner?.anh_banner4 || `/banner-tnut.webp`}`,
+      avt: `${imagesBanner?.imagesBanner?.anh_banner4 || `/banner-tnut3.webp`}`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     }
   ];
