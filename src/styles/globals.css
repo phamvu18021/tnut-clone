@@ -1,4 +1,5 @@
 body {
   font-family: "TT Norms Pro", sans-serif;
+  font-display: swap;
   scroll-behavior: smooth;
 }
