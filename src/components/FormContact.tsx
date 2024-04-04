@@ -17,7 +17,7 @@ import {
 import { Field, Form, Formik } from "formik";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BtnTheme } from "./BtnTheme";f
+import { BtnTheme } from "./BtnTheme";
 import { Loading } from "./Loading";
 
 interface IForm {
