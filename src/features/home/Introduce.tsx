@@ -48,8 +48,8 @@ export const Introduce = (introduce: any) => {
                 color={"blue.800"}
                 fontWeight={600}
               >
-                {introduce?.introduce?.section_title || ""}
-                {/* "TUYỂN SINH HỆ ĐẠI HỌC TỪ XA TNUT E-LEARNING"} */}
+                {introduce?.introduce?.section_title ||
+                  "TUYỂN SINH HỆ ĐẠI HỌC TỪ XA TNUT E-LEARNING"}
               </Text>
             </MotionTop>
             <MotionTop>
@@ -76,8 +76,8 @@ export const Introduce = (introduce: any) => {
                   ) : (
                     ""
                   )}
-                  {introduce?.introduce?.text_list1 || ""}
-                  {/* "Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ xa, học trực tuyến không cần đến trường"} */}
+                  {introduce?.introduce?.text_list1 ||
+                    "Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ xa, học trực tuyến không cần đến trường"}
                 </ListItem>
               </MotionTop>
 
@@ -88,8 +88,8 @@ export const Introduce = (introduce: any) => {
                   ) : (
                     ""
                   )}
-                  {introduce?.introduce?.text_list2 || ""}
-                  {/* "Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp"} */}
+                  {introduce?.introduce?.text_list2 ||
+                    "Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp"}
                 </ListItem>
               </MotionTop>
               <MotionTop>
@@ -99,7 +99,8 @@ export const Introduce = (introduce: any) => {
                   ) : (
                     ""
                   )}
-                  {introduce?.introduce?.text_list3 || ""}
+                  {introduce?.introduce?.text_list3 ||
+                    "Chương trình phù hợp với người đi làm bận rộn"}
                 </ListItem>
               </MotionTop>
             </List>
