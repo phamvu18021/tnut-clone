@@ -1,6 +1,7 @@
 import { BtnTheme } from "@/components/BtnTheme";
 import { useModal } from "@/components/ModalContext";
-import { Box, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import Image from "next/image";
 import styled from "@emotion/styled";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -14,13 +15,17 @@ export const CardBanner = ({ image }: { image: string }) => {
   return (
     <Box>
       <Image
-        loading="eager"
+        priority
         alt="image"
         className="Image"
         src={image}
-        width={"1883"}
-        objectFit={"contain"}
-        height={"auto"}
+        // width={"1883"}
+        // objectFit={"contain"}
+        // layout="fill"
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
       />
 
       <BtnTheme
