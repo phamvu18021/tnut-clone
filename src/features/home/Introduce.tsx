@@ -17,7 +17,10 @@ import {
 import { FcBookmark } from "react-icons/fc";
 export const Introduce = (introduce: any) => {
   return (
-    <Container maxW={"7xl"}>
+    <Container
+      maxW={"7xl"}
+      height={{ base: "auto", sm: "58em", md: "50em", lg: "35em" }}
+    >
       <SimpleGrid
         columns={{ base: 1, lg: 3 }}
         maxW={"7xl"}
