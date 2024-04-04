@@ -66,18 +66,18 @@ export const Circulars = (circulars: any) => {
       >
         <GridItem colSpan={1}>
           <Box pt={20}>
-            <AspectRatio maxW="560px" ratio={16 / 9} maxH={"315px"} ref={ref}>
-              <div>
-                {inView && (
+            <div ref={ref}>
+              {inView && (
+                <AspectRatio maxW="560px" ratio={16 / 9} maxH={"315px"}>
                   <iframe
                     title="Video"
                     src={videoSrc}
                     loading="lazy"
                     allowFullScreen
                   />
-                )}
-              </div>
-            </AspectRatio>
+                </AspectRatio>
+              )}
+            </div>
           </Box>
         </GridItem>
 
