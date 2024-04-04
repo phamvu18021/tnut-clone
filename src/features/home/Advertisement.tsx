@@ -4,12 +4,11 @@ import {
   Box,
   Container,
   GridItem,
-  Image,
   SimpleGrid,
   Text,
   VStack
 } from "@chakra-ui/react";
-
+import Image from "next/image";
 export const Advertisement = (advertisement: any) => {
   const { isOpen, onOpen, onClose } = useModal();
   return (
@@ -75,10 +74,13 @@ export const Advertisement = (advertisement: any) => {
                 src={
                   advertisement?.advertisement?.anh_bang || "/bang-dai-hoc.webp"
                 }
-                width={"80%"}
-                maxHeight={"80%"}
-                objectFit={"contain"}
-                height={"auto"}
+                width={"500"}
+                height={"500"}
+                // width={"80%"}
+                // maxHeight={"80%"}
+                // objectFit={"contain"}
+                // height={"auto"}
+                style={{ width: "80%", height: "auto" }}
               />
             </Box>
           </GridItem>
