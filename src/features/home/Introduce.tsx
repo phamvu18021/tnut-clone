@@ -52,17 +52,13 @@ export const Introduce = (introduce: any) => {
                   "TUYỂN SINH HỆ ĐẠI HỌC TỪ XA TNUT E-LEARNING"}
               </Text>
             </MotionTop>
-            <MotionTop>
-              {introduce?.introduce?.text_list1 ? (
+            <MotionTop>              
                 <Divider
                   borderBottomWidth={"3px"}
                   borderBlockEndColor={"orange"}
                   w={{ base: "120px", lg: "200px" }}
                   p={{ base: "6px", lg: "8px" }}
                 />
-              ) : (
-                ""
-              )}
             </MotionTop>
             <List
               spacing={4}
