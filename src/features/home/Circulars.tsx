@@ -12,7 +12,10 @@ import {
   SimpleGrid,
   Stack
 } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import { FcBookmark } from "react-icons/fc";
+import { useInView } from "react-intersection-observer";
+
 export const Circulars = (circulars: any) => {
   const items = [
     {
@@ -27,6 +30,27 @@ export const Circulars = (circulars: any) => {
     }
   ];
 
+  const [videoSrc, setVideoSrc] = useState(
+    "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
+  );
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5 // Adjust threshold as needed
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // Set the video source when it's in view
+      setVideoSrc(
+        circulars?.circulars?.link_video ||
+          "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
+      );
+    }
+  }, [
+    inView,
+    circulars?.circulars?.link_video,
+    "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
+  ]);
   return (
     <Box
       py={{ base: "10", lg: "16" }}
@@ -42,16 +66,17 @@ export const Circulars = (circulars: any) => {
       >
         <GridItem colSpan={1}>
           <Box pt={20}>
-            <AspectRatio maxW="560px" ratio={16 / 9} maxH={"315px"}>
-              <iframe
-                title="Video"
-                src={
-                  circulars?.circulars?.link_video ||
-                  "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
-                }
-                loading="lazy"
-                allowFullScreen
-              />
+            <AspectRatio maxW="560px" ratio={16 / 9} maxH={"315px"} ref={ref}>
+              <div>
+                {inView && (
+                  <iframe
+                    title="Video"
+                    src={videoSrc}
+                    loading="lazy"
+                    allowFullScreen
+                  />
+                )}
+              </div>
             </AspectRatio>
           </Box>
         </GridItem>
