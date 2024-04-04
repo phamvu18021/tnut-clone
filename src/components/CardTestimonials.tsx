@@ -1,13 +1,12 @@
 "use client";
 
 import { clean } from "@/lib/sanitizeHtml";
-import { Box, HStack, Heading, Image, Stack, Text } from "@chakra-ui/react";
-
+import { Box, HStack, Heading, Stack, Text } from "@chakra-ui/react";
+import Image from "next/image";
 export const CardTestimonials = ({
   image,
   title,
   desc,
-
   career,
   imageH
 }: {
@@ -40,7 +39,7 @@ export const CardTestimonials = ({
             width={70}
             height={70}
             src={image || `/blog.jpeg`}
-            style={{ height: "100%", objectFit: "contain" }}
+            style={{ height: "70", width: "70" }}
             alt={title}
           />
         </Box>
