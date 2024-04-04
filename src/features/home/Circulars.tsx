@@ -49,6 +49,7 @@ export const Circulars = (circulars: any) => {
                   circulars?.circulars?.link_video ||
                   "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
                 }
+                loading="lazy"
                 allowFullScreen
               />
             </AspectRatio>
