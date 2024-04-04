@@ -55,30 +55,18 @@ export const Footer = () => {
                 <SocialButton
                   bagr="rgba(255, 255, 255, 0.23)"
                   label={"Facebook"}
-                  href={"https://www.facebook.com/daihoctuxatnut"}
+                  href={"#"}
                 >
                   <FaFacebook color="white" />
                 </SocialButton>
-                <SocialButton
-                  bagr="transparent"
-                  label={"Zalo"}
-                  href={"https://zalo.me/0815674848"}
-                >
+                <SocialButton bagr="transparent" label={"Zalo"} href={"#"}>
                   <SiZalo color="white" />
                 </SocialButton>
-                <SocialButton
-                  bagr="transparent"
-                  label={"Tiktok"}
-                  href={"https://www.tiktok.com/@tnut_elearning"}
-                >
+                <SocialButton bagr="transparent" label={"Tiktok"} href={"#"}>
                   <BsTiktok color="white" />
                 </SocialButton>
 
-                <SocialButton
-                  bagr="transparent"
-                  label={"Youtube"}
-                  href={"https://www.youtube.com/@etnut"}
-                >
+                <SocialButton bagr="transparent" label={"Youtube"} href={"#"}>
                   <BsYoutube color="white" />
                 </SocialButton>
               </HStack>
