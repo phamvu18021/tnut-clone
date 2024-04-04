@@ -71,11 +71,7 @@ export const Introduce = (introduce: any) => {
             >
               <MotionTop>
                 <ListItem mt={{ lg: "19px" }}>
-                  {introduce?.introduce?.text_list1 ? (
-                    <ListIcon as={FcBookmark} />
-                  ) : (
-                    ""
-                  )}
+                  <ListIcon as={FcBookmark} />
                   {introduce?.introduce?.text_list1 ||
                     "Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ xa, học trực tuyến không cần đến trường"}
                 </ListItem>
@@ -83,22 +79,14 @@ export const Introduce = (introduce: any) => {
 
               <MotionTop>
                 <ListItem>
-                  {introduce?.introduce?.text_list2 ? (
-                    <ListIcon as={FcBookmark} />
-                  ) : (
-                    ""
-                  )}
+                  <ListIcon as={FcBookmark} />
                   {introduce?.introduce?.text_list2 ||
                     "Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp"}
                 </ListItem>
               </MotionTop>
               <MotionTop>
                 <ListItem>
-                  {introduce?.introduce?.text_list3 ? (
-                    <ListIcon as={FcBookmark} />
-                  ) : (
-                    ""
-                  )}
+                  <ListIcon as={FcBookmark} />
                   {introduce?.introduce?.text_list3 ||
                     "Chương trình phù hợp với người đi làm bận rộn"}
                 </ListItem>
