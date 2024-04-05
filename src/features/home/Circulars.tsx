@@ -46,11 +46,7 @@ export const Circulars = (circulars: any) => {
           "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
       );
     }
-  }, [
-    inView,
-    circulars?.circulars?.link_video,
-    "https://www.youtube.com/embed/nZvtnzMb0PA?si=Df21_aaIe2S1x4Ie"
-  ]);
+  }, [inView, circulars?.circulars?.link_video]);
   return (
     <Box
       py={{ base: "10", lg: "16" }}

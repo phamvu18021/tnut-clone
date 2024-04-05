@@ -11,7 +11,7 @@ export const Majors = (majors: any) => {
         "/nganh-xay-dung.webp",
       title:
         majors?.majors?.cac_nganh_hoc?.nganh_1?.text_nganh ||
-        "Kỹ Thuật Xây Dựng",
+        "Kỹ Thuật Xây Dựng.",
       path: "/ky-thuat-xay-dung"
     },
     {
@@ -20,7 +20,7 @@ export const Majors = (majors: any) => {
         "/nganh-quan-li-cong-nghiep.webp",
       title:
         majors?.majors?.cac_nganh_hoc?.nganh_2?.text_nganh ||
-        "Quản Lý Công Nghiệp",
+        "Quản Lý Công Nghiệp.",
       path: `quan-ly-cong-nghiep`
     },
     {
@@ -29,7 +29,7 @@ export const Majors = (majors: any) => {
         "/nganh-kinh-te-cong-nghiep.webp",
       title:
         majors?.majors?.cac_nganh_hoc?.nganh_3?.text_nganh ||
-        "Kinh Tế Công nghiệp",
+        "Kinh Tế Công nghiệp.",
       path: `/kinh-te-cong-nghiep`
     }
   ];
@@ -44,7 +44,7 @@ export const Majors = (majors: any) => {
             textAlign={"center"}
             fontWeight={500}
           >
-            {majors?.majors?.tieu_de_section || ""}
+            {majors?.majors?.tieu_de_section || ".NGÀNH ĐÀO TẠO"}
           </Text>
         </MotionTop>
 
