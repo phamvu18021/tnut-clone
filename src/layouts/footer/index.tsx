@@ -55,18 +55,30 @@ export const Footer = () => {
                 <SocialButton
                   bagr="rgba(255, 255, 255, 0.23)"
                   label={"Facebook"}
-                  href={"#"}
+                  href={"https://www.facebook.com/daihoctuxatnut"}
                 >
                   <FaFacebook color="white" />
                 </SocialButton>
-                <SocialButton bagr="transparent" label={"Zalo"} href={"#"}>
+                <SocialButton
+                  bagr="transparent"
+                  label={"Zalo"}
+                  href={"https://zalo.me/0815674848"}
+                >
                   <SiZalo color="white" />
                 </SocialButton>
-                <SocialButton bagr="transparent" label={"Tiktok"} href={"#"}>
+                <SocialButton
+                  bagr="transparent"
+                  label={"Tiktok"}
+                  href={"https://www.tiktok.com/@tnut_elearning"}
+                >
                   <BsTiktok color="white" />
                 </SocialButton>
 
-                <SocialButton bagr="transparent" label={"Youtube"} href={"#"}>
+                <SocialButton
+                  bagr="transparent"
+                  label={"Youtube"}
+                  href={"https://www.youtube.com/@etnut"}
+                >
                   <BsYoutube color="white" />
                 </SocialButton>
               </HStack>
@@ -114,7 +126,6 @@ export const Footer = () => {
               </UnorderedList>
               <HStack display={"flex"} alignItems={"start"} gap={4}>
                 <Image
-                  loading="lazy"
                   src={"/aum.webp"}
                   width={100}
                   height={40}
@@ -122,7 +133,6 @@ export const Footer = () => {
                 />
 
                 <Image
-                  loading="lazy"
                   src={"/logo-dhthainguyen.webp"}
                   width={100}
                   height={100}
@@ -136,7 +146,6 @@ export const Footer = () => {
 
               <Link href={"https://timdoitac.aum.edu.vn/"}>
                 <Image
-                  loading="lazy"
                   src={"/timdoitac.webp"}
                   width={300}
                   height={100}
