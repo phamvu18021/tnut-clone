@@ -86,9 +86,8 @@ export const Home = () => {
   return (
     <>
       <Banner imagesBanner={home_content?.acf?.anh_banner} />
-      {/* <Introduce /> */}
-      {/* introduce={home_content?.acf?.gioi_thieu} */}
-      {/* <Benefit benefit={home_content?.acf?.loi_ich} /> */}
+      <Introduce introduce={home_content?.acf?.gioi_thieu} />
+      <Benefit benefit={home_content?.acf?.loi_ich} />
       <Slogan slogan={home_content?.acf?.slogan} />
       <Majors majors={home_content?.acf?.nganh_dao_tao} />
       <Testimonials testimonials={home_content?.acf?.danh_gia_cua_hoc_vien} />
