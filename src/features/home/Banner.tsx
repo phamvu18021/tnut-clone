@@ -22,10 +22,10 @@ export const CardBanner = ({ image }: { image: string }) => {
         // width={"1883"}
         // objectFit={"contain"}
         // layout="fill"
-        width={0}
-        height={0}
+        width={1950}
+        height={800}
         sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
+        style={{ width: "100%", height: "auto", objectFit: "contain" }}
       />
 
       <BtnTheme
