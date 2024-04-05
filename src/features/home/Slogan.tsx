@@ -23,7 +23,7 @@ export const Slogan = (slogan: any) => {
                 fontWeight={"500"}
                 textAlign={{ base: "center", lg: "right" }}
               >
-                {slogan?.slogan || ""}
+                {slogan?.slogan || "XÉT TUYỂN - KHÔNG THI ĐẦU VÀO"}
               </Text>
             </MotionTop>
           </GridItem>
