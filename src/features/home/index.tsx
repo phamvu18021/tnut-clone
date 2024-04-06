@@ -57,6 +57,10 @@ const LastestPost = dynamic(
 
 export const Home = () => {
   const { isOpen, onOpen } = useModal();
+
+  const [news, setNews] = useState<any[]>([]);
+  const [notifis, setNotifis] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [home_content, setHomeContent] = useState<any>(null);
 
   useEffect(() => {
@@ -70,14 +74,54 @@ export const Home = () => {
       } catch (error) {
         console.log(error);
       }
+      setIsLoading(false);
     };
     getHomeContent();
   }, []);
 
   useEffect(() => {
+    const getPosts = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(`/api/posts/?type=news&page=1`, {
+          next: { revalidate: 3 }
+        });
+
+        const data: { posts: any[]; totalPosts: string } = await res.json();
+        const { posts } = data;
+        posts?.length && setNews([posts[0], posts[1], posts[2], posts[4]]);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+
+    getPosts();
+  }, []);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(`/api/posts/?type=notifis&page=1`, {
+          next: { revalidate: 3 }
+        });
+
+        const data: { posts: any[]; totalPosts: string } = await res.json();
+        const { posts } = data;
+        posts?.length && setNotifis([posts[0], posts[1], posts[2], posts[4]]);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+
+    getPosts();
+  }, []);
+  useEffect(() => {
     const timeout = setTimeout(() => {
       if (!isOpen && onOpen) onOpen();
-    }, 2000);
+    }, 6000);
 
     return () => window.clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -92,7 +136,7 @@ export const Home = () => {
       <Majors majors={home_content?.acf?.nganh_dao_tao} />
       <Testimonials testimonials={home_content?.acf?.danh_gia_cua_hoc_vien} />
       <Advertisement advertisement={home_content?.acf?.quang_cao} />
-      <Event />
+      <Event news={news} notifis={notifis} />
       <Circulars circulars={home_content?.acf?.thong_tu} />
     </>
   );

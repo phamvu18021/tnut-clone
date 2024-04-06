@@ -33,8 +33,8 @@ export const Introduce = (introduce: any) => {
               textAlign={{ base: "center", lg: "center" }}
               fontWeight={"600"}
             >
-              {introduce?.introduce?.form_title ||
-                "ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN"}
+              {introduce?.introduce?.form_title || ""}
+              {/* "ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN"} */}
             </Text>
             <FormMain />
           </Box>
@@ -48,17 +48,21 @@ export const Introduce = (introduce: any) => {
                 color={"blue.800"}
                 fontWeight={600}
               >
-                {introduce?.introduce?.section_title ||
-                  "TUYỂN SINH HỆ ĐẠI HỌC TỪ XA TNUT E-LEARNING"}
+                {introduce?.introduce?.section_title || ""}
+                {/* "TUYỂN SINH HỆ ĐẠI HỌC TỪ XA TNUT E-LEARNING"} */}
               </Text>
             </MotionTop>
             <MotionTop>
-              <Divider
-                borderBottomWidth={"3px"}
-                borderBlockEndColor={"orange"}
-                w={{ base: "120px", lg: "200px" }}
-                p={{ base: "6px", lg: "8px" }}
-              />
+              {introduce?.introduce?.text_list1 ? (
+                <Divider
+                  borderBottomWidth={"3px"}
+                  borderBlockEndColor={"orange"}
+                  w={{ base: "120px", lg: "200px" }}
+                  p={{ base: "6px", lg: "8px" }}
+                />
+              ) : (
+                ""
+              )}
             </MotionTop>
             <List
               spacing={4}
@@ -67,24 +71,35 @@ export const Introduce = (introduce: any) => {
             >
               <MotionTop>
                 <ListItem mt={{ lg: "19px" }}>
-                  <ListIcon as={FcBookmark} />
-                  {introduce?.introduce?.text_list1 ||
-                    "Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ xa, học trực tuyến không cần đến trường"}
+                  {introduce?.introduce?.text_list1 ? (
+                    <ListIcon as={FcBookmark} />
+                  ) : (
+                    ""
+                  )}
+                  {introduce?.introduce?.text_list1 || ""}
+                  {/* "Trường Đại học Kỹ Thuật Công Nghiệp thông báo tuyển sinh hệ từ xa, học trực tuyến không cần đến trường"} */}
                 </ListItem>
               </MotionTop>
 
               <MotionTop>
                 <ListItem>
-                  <ListIcon as={FcBookmark} />
-                  {introduce?.introduce?.text_list2 ||
-                    "Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp"}
+                  {introduce?.introduce?.text_list2 ? (
+                    <ListIcon as={FcBookmark} />
+                  ) : (
+                    ""
+                  )}
+                  {introduce?.introduce?.text_list2 || ""}
+                  {/* "Xét tuyển từ THPT (hoặc tương đương trở lên) các ngành: Kỹ thuật xây dựng, Quản lý công nghiệp, Kinh tế công nghiệp"} */}
                 </ListItem>
               </MotionTop>
               <MotionTop>
                 <ListItem>
-                  <ListIcon as={FcBookmark} />
-                  {introduce?.introduce?.text_list3 ||
-                    "Chương trình phù hợp với người đi làm bận rộn"}
+                  {introduce?.introduce?.text_list3 ? (
+                    <ListIcon as={FcBookmark} />
+                  ) : (
+                    ""
+                  )}
+                  {introduce?.introduce?.text_list3 || ""}
                 </ListItem>
               </MotionTop>
             </List>
