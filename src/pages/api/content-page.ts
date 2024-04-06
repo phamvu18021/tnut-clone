@@ -26,7 +26,7 @@ export default async function handler(
 
     posts = (await res?.json()) || [];
   } catch (error) {
-    console.log(error);
+    console.error({ error, message: "Failed to fetch in content-page" });
   }
 
   if (req.method === "GET") {
