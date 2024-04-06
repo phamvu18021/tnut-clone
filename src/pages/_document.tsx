@@ -1,10 +1,7 @@
 /* eslint-disable @next/next/next-script-for-ga */
 import { Head, Html, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default function Document() {
-  const GA_ID = process.env.NEXT_PUBLIC_GA || "G-B2032WPKYW";
-
   return (
     <Html lang="en">
       <Head>
