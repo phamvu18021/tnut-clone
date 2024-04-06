@@ -37,8 +37,8 @@ export default function Document() {
         <script
           id="google-tag-manager"
           dangerouslySetInnerHTML={{
-            __html: `
-                setTimeout(function() {
+            __html: `            
+            var timeoutID = setTimeout(function() {
                   (function(w,d,s,l,i){
                     w[l]=w[l]||[];w[l].push({'gtm.start':
                     new Date().getTime(),event:'gtm.js'});
@@ -49,6 +49,12 @@ export default function Document() {
                     f.parentNode.insertBefore(j,f);
                   })(window,document,'script','dataLayer','GTM-TDCV4KK')
                 }, 8000);
+                timeoutID();
+            setTimeout(
+              function() {
+                    clearTimeout(timeoutID);
+                  }, 5000);
+            
               `
           }}
         />
