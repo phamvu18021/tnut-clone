@@ -19,9 +19,6 @@ export const CardBanner = ({ image }: { image: string }) => {
         alt="image"
         className="Image"
         src={image}
-        // width={"1883"}
-        // objectFit={"contain"}
-        // layout="fill"
         width={1950}
         height={800}
         sizes="100vw"
