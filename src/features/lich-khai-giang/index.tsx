@@ -12,19 +12,34 @@ import {
 import { Majors } from "../home/Majors";
 import { LkgMain } from "./LkgMain";
 import { LkgTuyensinh } from "./LkgTuyensinh";
+import { useEffect, useState } from "react";
 
-export const LichKg = ({
-  list,
-  isLoading
-}: {
-  list: string[];
-  isLoading: boolean;
-}) => {
+export const LichKg = () => {
+  const [page_content, setPageContent] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const getPageContent = async () => {
+      try {
+        const res = await fetch(`/api/content-page/?type=lichkg`, {
+          next: { revalidate: 3 }
+        });
+        const data = await res.json();
+        setPageContent(data?.posts[0]);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+    getPageContent();
+  }, []);
   return (
     <>
       <Box
         bg={"rgba(0, 0, 0, 0.5)"}
-        bgImage={"url('/bannernews.webp')"}
+        bgImage={
+          page_content?.acf?.breadcrumbs?.image || "url('/bannernews.webp')"
+        }
         bgSize={"cover"}
         bgPosition={"bottom"}
         backgroundBlendMode={"overlay"}
@@ -63,7 +78,8 @@ export const LichKg = ({
               fontSize={{ base: "32px", lg: "60px" }}
               pb={{ base: "36px", lg: "52px" }}
             >
-              Đại học Kỹ thuật Công nghiệp
+              {page_content?.acf?.breadcrumbs?.title ||
+                ".Đại học Kỹ thuật Công nghiệp"}
             </Text>
           </Box>
 
@@ -88,12 +104,18 @@ export const LichKg = ({
       </Box>
 
       {!isLoading && (
-        <LkgMain title={list[0]} lichkg={list[1]} lichkg2={list[2]} />
+        <LkgMain
+          title={
+            page_content?.acf?.lick_kg?.title || ".KHAI GIẢNG ĐỢT I NĂM 2024"
+          }
+          lichkg={page_content?.acf?.lick_kg?.lich_kg_hcm}
+          lichkg2={page_content?.acf?.lick_kg?.lich_kg_hn}
+        />
       )}
-      <LkgTuyensinh />
+      <LkgTuyensinh info={page_content?.acf?.info} />
       <Box bg={"gray.50"}>
         <Container maxW={"7xl"}>
-          <Majors />
+          <Majors majors={page_content?.acf?.nganh_dao_tao} />
         </Container>
       </Box>
     </>

@@ -12,12 +12,32 @@ import {
   Text
 } from "@chakra-ui/react";
 import { DkMain } from "./DkMain";
+import { useState, useEffect } from "react";
+import { BenefitNganh } from "@/components/BenefitNganh";
 export const Dangky = () => {
+  const [page_content, setPageContent] = useState<any>(null);
+
+  useEffect(() => {
+    const getPageContent = async () => {
+      try {
+        const res = await fetch(`/api/content-page/?type=dang-ky`, {
+          next: { revalidate: 3 }
+        });
+        const data = await res.json();
+        setPageContent(data?.posts[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getPageContent();
+  }, []);
   return (
     <>
       <Box
         bg={"rgba(0, 0, 0, 0.5)"}
-        bgImage={"url('bannernews.webp')"}
+        bgImage={
+          page_content?.acf?.breadcrumbs?.image || "url('bannernews.webp')"
+        }
         bgSize={"cover"}
         bgPosition={"bottom"}
         backgroundBlendMode={"overlay"}
@@ -57,7 +77,7 @@ export const Dangky = () => {
               fontSize={{ base: "32px", lg: "60px" }}
               pb={{ base: "36px", lg: "52px" }}
             >
-              ĐĂNG KÝ
+              {page_content?.acf?.breadcrumbs?.title || "ĐĂNG KÝ."}
             </Text>
           </Box>
 
@@ -79,7 +99,10 @@ export const Dangky = () => {
         </Container>
       </Box>
       <Box>
-        <DkMain />
+        <DkMain dkmain={page_content?.acf?.info} />
+      </Box>
+      <Box margin={"0 auto"} bg={"gray.50"}>
+        <BenefitNganh major_benefit={page_content?.acf?.major_benefit} />
       </Box>
     </>
   );

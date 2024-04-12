@@ -1,8 +1,8 @@
 import { BtnTheme } from "@/components/BtnTheme";
 import { useModal } from "@/components/ModalContext";
 import { Box } from "@chakra-ui/react";
-import Image from "next/image";
 import styled from "@emotion/styled";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -86,26 +86,26 @@ export const Banner = (imagesBanner: any) => {
   const teachers = [
     {
       title:
-        "Ứng dụng nền tảng Đại học số tiên tiến, Tuyển sinh liên tục, Xét duyệt hồ sơ dự tuyển, Bằng cấp tương đương hệ chính quy      ",
+        ".Ứng dụng nền tảng Đại học số tiên tiến, Tuyển sinh liên tục, Xét duyệt hồ sơ dự tuyển, Bằng cấp tương đương hệ chính quy",
       avt: imagesBanner?.imagesBanner?.anh_banner1 || `/banner-tnut.webp`,
       desc: `ĐẠI HỌC TỪ XA`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: imagesBanner?.imagesBanner?.anh_banner2 || `/banner-tnut1.webp`,
+      avt: imagesBanner?.imagesBanner?.anh_banner2 || `/banner-tnut.webp`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: imagesBanner?.imagesBanner?.anh_banner3 || `/banner-tnut2.webp`,
+      avt: imagesBanner?.imagesBanner?.anh_banner3 || `/banner-tnut.webp`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: imagesBanner?.imagesBanner?.anh_banner4 || `/banner-tnut3.webp`,
+      avt: imagesBanner?.imagesBanner?.anh_banner4 || `/banner-tnut.webp`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     }
   ];

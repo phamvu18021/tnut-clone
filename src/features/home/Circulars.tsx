@@ -15,18 +15,17 @@ import {
 import { useState, useEffect } from "react";
 import { FcBookmark } from "react-icons/fc";
 import { useInView } from "react-intersection-observer";
-
 export const Circulars = (circulars: any) => {
   const items = [
     {
       text:
         circulars?.circulars?.thong_tu?.text_2 ||
-        "Ngày 30/12/2019, Bộ Giáo dục và Đào tạo đã ban hành Thông tư 27/2019/TT-BGDĐT quy định nội dung chính ghi trên văn bằng và phụ lục văn bằng giáo dục đại học."
+        ".Ngày 30/12/2019, Bộ Giáo dục và Đào tạo đã ban hành Thông tư 27/2019/TT-BGDĐT quy định nội dung chính ghi trên văn bằng và phụ lục văn bằng giáo dục đại học."
     },
     {
       text:
         circulars?.circulars?.thong_tu?.text_3 ||
-        "Đặc biệt, một trong những điểm mới của Thông tư này là không ghi thông tin về hình thức đào tạo như chính quy hoặc vừa làm vừa học; học từ xa hay tự học có hướng dẫn trong nội dung chính của văn bằng như quy định cũ tại phụ lục kèm theo Thông tư số 19/2011/TT-BGDĐT.      "
+        ".Đặc biệt, một trong những điểm mới của Thông tư này là không ghi thông tin về hình thức đào tạo như chính quy hoặc vừa làm vừa học; học từ xa hay tự học có hướng dẫn trong nội dung chính của văn bằng như quy định cũ tại phụ lục kèm theo Thông tư số 19/2011/TT-BGDĐT.      "
     }
   ];
 
@@ -47,6 +46,7 @@ export const Circulars = (circulars: any) => {
       );
     }
   }, [inView, circulars?.circulars?.link_video]);
+
   return (
     <Box
       py={{ base: "10", lg: "16" }}
@@ -82,7 +82,7 @@ export const Circulars = (circulars: any) => {
             fontSize={{ base: "20px", md: "24px", lg: "28px" }}
             color={"blue.600"}
           >
-            {circulars?.circulars?.thong_tu?.text_1 || "THÔNG TƯ 27/2019/TT"}
+            {circulars?.circulars?.thong_tu?.text_1 || ".THÔNG TƯ 27/2019/TT"}
           </Heading>
           <Divider
             borderBottomWidth={"3px"}

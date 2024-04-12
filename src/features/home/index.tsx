@@ -48,12 +48,6 @@ const Circulars = dynamic(
     loading: () => <Loading />
   }
 );
-const LastestPost = dynamic(
-  () => import("./LastestPost").then((mod) => mod.LastestPost),
-  {
-    loading: () => <Loading />
-  }
-);
 
 export const Home = () => {
   const { isOpen, onOpen } = useModal();

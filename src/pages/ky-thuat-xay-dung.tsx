@@ -1,9 +1,6 @@
 "use client";
 
-import { BenefitNganh } from "@/components/BenefitNganh";
-import ErrorBoundary from "@/components/ErrorBoundary";
 import { Loading } from "@/components/Loading";
-import { Box } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { fetchSeo } from "@/ultil/seo";
 import ReactHtmlParser from "html-react-parser";
@@ -20,14 +17,22 @@ const Ktxd = dynamic(
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_rm_url = process.env.API_RMS_URL || "";
   const api_url = `${api_rm_url}/ky-thuat-xay-dung`;
-
-  const res = await fetchSeo({ url: api_url, revalidate: 3600 });
-  const head = await res.json();
-  return {
-    props: {
-      head: head.head
-    }
-  };
+  try {
+    const res = await fetchSeo({ url: api_url, revalidate: 3600 });
+    const head = await res.json();
+    return {
+      props: {
+        head: head.head
+      }
+    };
+  } catch (error) {
+    console.error("fetch failed ktxd" + error);
+    return {
+      props: {
+        head: null
+      }
+    };
+  }
 };
 
 const Page = (props: any) => {
@@ -39,11 +44,6 @@ const Page = (props: any) => {
         </div>
       )}
       <Ktxd />
-      <ErrorBoundary fallback={<h1>Lỗi server</h1>}>
-        <Box margin={"0 auto"} bg={"gray.50"}>
-          <BenefitNganh />
-        </Box>
-      </ErrorBoundary>
     </>
   );
 };

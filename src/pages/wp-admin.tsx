@@ -5,7 +5,7 @@ const Page = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/");
+    router.push("https://nologin.tnut.vn/wp-admin/");
   }, [router]);
   return null;
 };

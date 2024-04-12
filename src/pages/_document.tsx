@@ -50,8 +50,7 @@ export default function Document() {
             setTimeout(
               function() {
                     clearTimeout(timeoutID);
-                  }, 5000);
-            
+                  }, 5000);            
               `
           }}
         />

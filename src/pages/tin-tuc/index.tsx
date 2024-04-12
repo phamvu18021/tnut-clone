@@ -8,14 +8,22 @@ import { replaceSeoRM } from "@/ultil/seoRankMath";
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_url = `https://nologin.tnut.vn/wp-json/rankmath/v1/getHead?url=https://nologin.tnut.vn/tin-tuc-su-kien`;
-
-  const res = await fetchSeo({ url: api_url, revalidate: 3600 });
-  const head = await res.json();
-  return {
-    props: {
-      head: head.head
-    }
-  };
+  try {
+    const res = await fetchSeo({ url: api_url, revalidate: 3600 });
+    const head = await res.json();
+    return {
+      props: {
+        head: head.head
+      }
+    };
+  } catch (error) {
+    console.error("fetch failed tin tuc" + error);
+    return {
+      props: {
+        head: null
+      }
+    };
+  }
 };
 
 const Page = (props: any) => {

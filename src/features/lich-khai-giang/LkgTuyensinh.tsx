@@ -10,9 +10,81 @@ import {
   SimpleGrid,
   Text
 } from "@chakra-ui/react";
-export const LkgTuyensinh = () => {
-  const [info, setInfo] = useState<{ title: string; detail: any }[]>(infoInit);
-
+export const LkgTuyensinh = (info: any) => {
+  const inforInit = [
+    {
+      title: info?.info?.info_1?.title || ".Đối tượng tuyển sinh",
+      detail: [
+        {
+          list: [
+            info?.info?.info_1?.text_1 ||
+              ".Tốt nghiệp THPT hoặc tương đương trở lên"
+          ]
+        }
+      ]
+    },
+    {
+      title: info?.info?.info_2?.title || ".Hình thức tuyển sinh",
+      detail: [
+        {
+          list: [info?.info?.info_2?.text_1 || ".Chỉ xét tuyển hồ sơ đầu vào."]
+        }
+      ]
+    },
+    {
+      title: info?.info?.info_3?.title || ".Thời gian học",
+      detail: [
+        {
+          list: [
+            info?.info?.info_3?.text_1 ||
+              ".Từ 2 - 4,5 năm tùy thuộc đầu vào của sinh viên"
+          ]
+        }
+      ]
+    },
+    {
+      title: info?.info?.info_4?.title || ".Danh sách ngành học",
+      detail: [
+        {
+          list: [
+            info?.info?.info_4?.text_1 || ".Kỹ Thuật Xây Dựng",
+            info?.info?.info_4?.text_2 || ".Quản Lý Công Nghiệp",
+            info?.info?.info_4?.text_3 || ".Kinh Tế Công Nghiệp"
+          ]
+        }
+      ]
+    },
+    {
+      title: info?.info?.info_5?.title || ".Liên hệ",
+      detail: [
+        {
+          list: [
+            info?.info?.info_5?.text_1 || ".Hotline: 081.567.4848",
+            info?.info?.info_5?.text_2 || ".Website: tnut.vn"
+          ]
+        }
+      ]
+    },
+    {
+      title: info?.info?.info_6?.title || ".Trạm tuyển sinh",
+      detail: [
+        {
+          list: [
+            info?.info?.info_6?.text_1 ||
+              ".Hà Nội: 116 Trần Vĩ, Mai Dịch, Cầu Giấy, Hà Nội",
+            info?.info?.info_6?.text_2 ||
+              ".Tp. HCM: 91 Kí Con, Nguyễn Thái Bình, Quận 1, Tp. HCM"
+          ]
+        }
+      ]
+    }
+  ];
+  const [infor, setInfo] =
+    useState<{ title: string; detail: any }[]>(inforInit);
+  useEffect(() => {
+    setInfo(inforInit);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [info]);
   return (
     <Container maxW={"7xl"}>
       <Box>
@@ -33,7 +105,7 @@ export const LkgTuyensinh = () => {
         margin={"0 auto"}
       >
         <GridItem>
-          <Accs accs={info} />
+          <Accs accs={infor} />
         </GridItem>
 
         <GridItem colSpan={1}>
@@ -64,7 +136,7 @@ import {
   Heading,
   ListItem
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Accs = ({
   accs
@@ -79,7 +151,7 @@ export const Accs = ({
 }) => {
   return (
     <Accordion defaultIndex={[0, 1, 2, 3, 4, 5]} allowMultiple>
-      {accs.map((acc, index) => (
+      {accs?.map((acc, index) => (
         <AccordionItem border={"none"} key={index} rounded={"sm"}>
           <AccordionButton
             pointerEvents={"none"}
@@ -116,72 +188,3 @@ export const Accs = ({
     </Accordion>
   );
 };
-
-const infoInit = [
-  {
-    title: "Đối tượng tuyển sinh",
-    detail: [
-      {
-        title: "",
-        list: ["Tốt nghiệp THPT hoặc tương đương trở lên"]
-      }
-    ]
-  },
-  {
-    title: "Hình thức tuyển sinh",
-    detail: [
-      {
-        title: "",
-        list: [" Chỉ xét tuyển hồ sơ đầu vào."]
-      }
-    ]
-  },
-  {
-    title: "Thời gian học",
-    detail: [
-      {
-        title: "",
-        list: ["Từ 2 - 4,5 năm tùy thuộc đầu vào của sinh viên"]
-      }
-    ]
-  },
-  {
-    title: "Danh sách ngành học",
-    detail: [
-      {
-        title: "",
-        list: [
-          "Kỹ Thuật Xây Dựng",
-          "Quản Lý Công Nghiệp",
-          " Kinh Tế Công Nghiệp"
-        ]
-      }
-    ]
-  },
-  {
-    title: "Liên hệ",
-    detail: [
-      {
-        title: "",
-        list: ["Hotline: 081.567.4848"]
-      },
-      {
-        title: "",
-        list: ["Website: tnut.vn"]
-      }
-    ]
-  },
-  {
-    title: "Trạm tuyển sinh",
-    detail: [
-      {
-        title: "",
-        list: ["Hà Nội: 116 Trần Vĩ, Mai Dịch, Cầu Giấy, Hà Nội"]
-      },
-      {
-        title: "",
-        list: ["Tp. HCM: 91 Kí Con, Nguyễn Thái Bình, Quận 1, Tp. HCM"]
-      }
-    ]
-  }
-];

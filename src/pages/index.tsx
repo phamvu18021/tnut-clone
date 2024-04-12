@@ -8,14 +8,22 @@ import { replaceSeoRM } from "@/ultil/seoRankMath";
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const api_rm_url = process.env.API_RMS_URL || "";
   const api_url = `${api_rm_url}`;
-
-  const res = await fetchSeo({ url: api_url, revalidate: 3600 });
-  const head = await res.json();
-  return {
-    props: {
-      head: head.head
-    }
-  };
+  try {
+    const res = (await fetchSeo({ url: api_url, revalidate: 3600 })) || "";
+    const head = (await res.json()) || "";
+    return {
+      props: {
+        head: head.head
+      }
+    };
+  } catch (error) {
+    console.error("Error in fetching seo", error);
+    return {
+      props: {
+        head: null
+      }
+    };
+  }
 };
 const Page = (props: any) => {
   return (

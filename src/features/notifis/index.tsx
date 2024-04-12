@@ -10,8 +10,8 @@ import {
   BreadcrumbItem,
   BreadcrumbLink
 } from "@chakra-ui/react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { LayoutBottom } from "@/layouts/layoutPosts/LayoutBottom";

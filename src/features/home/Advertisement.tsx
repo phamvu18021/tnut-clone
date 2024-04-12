@@ -29,7 +29,7 @@ export const Advertisement = (advertisement: any) => {
                   textAlign={{ base: "center" }}
                 >
                   {advertisement?.advertisement?.quang_cao?.text_1 ||
-                    "HỌC ĐẠI HỌC TỪ XA"}
+                    ".HỌC ĐẠI HỌC TỪ XA"}
                 </Text>
                 <Text
                   fontSize={{ base: "22px", lg: "36px" }}
@@ -38,7 +38,7 @@ export const Advertisement = (advertisement: any) => {
                   textAlign={{ base: "center" }}
                 >
                   {advertisement?.advertisement?.quang_cao?.text_2 ||
-                    "BẰNG CÓ GIÁ TRỊ TƯƠNG ĐƯƠNG HỆ CHÍNH QUY"}
+                    ".BẰNG CÓ GIÁ TRỊ TƯƠNG ĐƯƠNG HỆ CHÍNH QUY"}
                 </Text>
               </Box>
 
@@ -50,7 +50,7 @@ export const Advertisement = (advertisement: any) => {
                   textAlign={{ base: "center", lg: "center" }}
                 >
                   {advertisement?.advertisement?.quang_cao?.text_3 ||
-                    "Tốt nghiệp được cấp bằng KỸ SƯ/CỬ NHÂN không ghi hình thức đào tạo, có giá trị vĩnh viễn"}
+                    ".Tốt nghiệp được cấp bằng KỸ SƯ/CỬ NHÂN không ghi hình thức đào tạo, có giá trị vĩnh viễn"}
                 </Text>
               </Box>
               <BtnTheme
@@ -62,7 +62,7 @@ export const Advertisement = (advertisement: any) => {
                 h={"60px"}
               >
                 {advertisement?.advertisement?.quang_cao?.text_button ||
-                  "NHẬN TÀI KHOẢN HỌC THỬ"}
+                  ".NHẬN TÀI KHOẢN HỌC THỬ"}
               </BtnTheme>
             </VStack>
           </GridItem>
@@ -76,10 +76,6 @@ export const Advertisement = (advertisement: any) => {
                 }
                 width={"500"}
                 height={"500"}
-                // width={"80%"}
-                // maxHeight={"80%"}
-                // objectFit={"contain"}
-                // height={"auto"}
                 style={{ width: "80%", height: "auto" }}
               />
             </Box>

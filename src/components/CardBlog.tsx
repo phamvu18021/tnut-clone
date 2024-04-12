@@ -72,7 +72,7 @@ export const CardBlog = ({
                   loading="lazy"
                   width={656}
                   height={436}
-                  src={image || `/blog.jpeg`}
+                  src={image || `/blog.webp`}
                   style={{ maxHeight: imageH }}
                   alt={title}
                 />
@@ -164,7 +164,7 @@ export const CardBlogS = ({
                 loading="lazy"
                 width={504}
                 height={320}
-                src={image || `/blog.jpeg`}
+                src={image || `/blog.webp`}
                 style={{ maxHeight: imageH }}
                 alt={title}
               />
@@ -267,7 +267,7 @@ export const CardLBlog = ({
                 loading="lazy"
                 width={656}
                 height={436}
-                src={image || `/blog.jpeg`}
+                src={image || `/blog.webp`}
                 style={{ maxHeight: imageH }}
                 alt={title}
               />
@@ -412,7 +412,7 @@ export const CardBlogEvent = ({
               loading="lazy"
               width={600}
               height={350}
-              src={image || `/blog.jpeg`}
+              src={image || `/blog.webp`}
               style={{ maxHeight: imageH }}
               alt={title}
             />
