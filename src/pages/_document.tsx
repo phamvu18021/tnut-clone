@@ -23,7 +23,7 @@ export default function Document() {
         <noscript
           dangerouslySetInnerHTML={{
             __html: `
-              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXW3K2P"
+              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDCV4KK"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>
             `
           }}
@@ -47,10 +47,11 @@ export default function Document() {
               })(window,document,'script','dataLayer','GTM-TDCV4KK')
             }, 8000);
             timeoutID();
-            setTimeout(
+            var clearTime = () => setTimeout(
               function() {
                     clearTimeout(timeoutID);
-                  }, 5000);            
+                  }, 5000);
+            clearTime();           
               `
           }}
         />
