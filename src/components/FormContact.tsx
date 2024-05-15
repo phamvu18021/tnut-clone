@@ -325,6 +325,7 @@ const comonForm = ({ id, href }: { id: string; href: string }) => {
   f.setAttribute("frameborder", "0");
   f.setAttribute("marginheight", "0");
   f.setAttribute("marginwidth", "0");
+  f.setAttribute("title", "Form");
   const s = document.getElementById(id);
 
   if (!s?.hasChildNodes()) s?.appendChild(f);
