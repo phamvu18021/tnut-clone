@@ -34,8 +34,7 @@ export default function Document() {
         <script
           id="google-tag-manager"
           dangerouslySetInnerHTML={{
-            __html: `            
-            var timeoutID;
+            __html: `             
             function timeOut() {
               timeoutID = setTimeout(function() {
                 (function(w,d,s,l,i){
@@ -49,7 +48,6 @@ export default function Document() {
                 })(window,document,'script','dataLayer','GTM-TDCV4KK');
               }, 8000);
             }
-            timeOut();
             setTimeout(
               function() {
                     clearTimeout(timeoutID);
