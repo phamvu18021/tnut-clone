@@ -21,9 +21,20 @@ import { MdEmail, MdOutlineMail } from "react-icons/md";
 import { SiZalo } from "react-icons/si";
 import { FormPoupCTA } from "./FormContact";
 
-export const BtnPhone = (props: IconButtonProps) => {
+export const BtnPhone = ({
+  link,
+  label
+}: {
+  link?: string;
+  label?: string;
+}) => {
   return (
-    <Tooltip label={"0815674848"} placement="left" bg={"red.500"} hasArrow>
+    <Tooltip
+      label={label || ".0815674848"}
+      placement="left"
+      bg={"red.500"}
+      hasArrow
+    >
       <IconButton
         icon={<BiPhone />}
         size="lg"
@@ -32,8 +43,8 @@ export const BtnPhone = (props: IconButtonProps) => {
         bg={"red.600"}
         p={"8px"}
         as={"a"}
-        href={"tel: 0815674848"}
-        {...props}
+        href={link || "tel: 0815674848"}
+        aria-label="phone"
       />
     </Tooltip>
   );
@@ -74,11 +85,11 @@ export const BtnMailN = (props: IconButtonProps) => {
     </Tooltip>
   );
 };
-export const BtnMes = (props: IconButtonProps) => {
+export const BtnMes = ({ link, label }: { link?: string; label?: string }) => {
   return (
     <Tooltip
       transition={"all 0.2s"}
-      label={"Facebook messenger"}
+      label={label || ".Facebook messenger"}
       placement="left"
       bg={"blue.500"}
       hasArrow
@@ -92,14 +103,20 @@ export const BtnMes = (props: IconButtonProps) => {
         p={"8px"}
         transition={"width ease .4s"}
         as={"a"}
-        href={"https://m.me/daihoctuxatnut"}
-        {...props}
+        href={link || "https://m.me/daihoctuxatnut"}
+        aria-label="mes"
       />
     </Tooltip>
   );
 };
 
-export const BtnEmail = (props: IconButtonProps) => {
+export const BtnEmail = ({
+  link,
+  label
+}: {
+  link?: string;
+  label?: string;
+}) => {
   return (
     <Popover placement="left" trigger="hover">
       <PopoverTrigger>
@@ -109,7 +126,6 @@ export const BtnEmail = (props: IconButtonProps) => {
           bg={"orange.500"}
           transform={"rotate(270deg)"}
         >
-          {" "}
           <IconButton
             icon={<MdEmail />}
             size="lg"
@@ -117,10 +133,10 @@ export const BtnEmail = (props: IconButtonProps) => {
             color={"white"}
             bg={"orange.500"}
             p={"8px"}
-            {...props}
+            aria-label="email"
           />
           <Text pr={2} color={"white"}>
-            Tư vấn ngay
+            {label || "Tư vấn ngay"}
           </Text>
         </HStack>
       </PopoverTrigger>

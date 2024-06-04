@@ -80,9 +80,6 @@ export const MajorsDetails = (props: IMDetails) => {
                   </TabPanel>
                   <TabPanel>
                     {tabtp.map((linet, indext) => (
-                      // <Text color={"gray.500"} pb={2} key={indext}>
-                      //   {linet}
-                      // </Text>
                       <div
                         style={{ paddingTop: "8px" }}
                         key={indext}

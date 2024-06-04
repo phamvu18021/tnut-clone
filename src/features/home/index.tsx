@@ -2,8 +2,10 @@
 
 import { Loading } from "@/components/Loading";
 import { useModal } from "@/components/ModalContext";
+import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Banner = dynamic(() => import("./Banner").then((mod) => mod.Banner), {
   loading: () => <Loading />
@@ -52,7 +54,10 @@ const Circulars = dynamic(
 export const Home = () => {
   const { isOpen, onOpen } = useModal();
   const [home_content, setHomeContent] = useState<any>(null);
-
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.5 // Kích hoạt khi 50% của phần tử hiển thị trong viewport
+  });
   useEffect(() => {
     const getHomeContent = async () => {
       try {
@@ -71,23 +76,36 @@ export const Home = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (!isOpen && onOpen) onOpen();
-    }, 8000);
+    }, 2000);
 
     return () => window.clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  useEffect(() => {
+    // Kiểm tra xem trongView và isVisible đều là true
+    if (inView && !isVisible) {
+      setIsVisible(true); // Nếu không thì hiển thị
+    }
+  }, [inView, isVisible]);
   return (
     <>
       <Banner imagesBanner={home_content?.acf?.anh_banner} />
       <Introduce introduce={home_content?.acf?.gioi_thieu} />
-      <Benefit benefit={home_content?.acf?.loi_ich} />
-      <Slogan slogan={home_content?.acf?.slogan} />
-      <Majors majors={home_content?.acf?.nganh_dao_tao} />
-      <Testimonials testimonials={home_content?.acf?.danh_gia_cua_hoc_vien} />
-      <Advertisement advertisement={home_content?.acf?.quang_cao} />
-      <Event />
-      <Circulars circulars={home_content?.acf?.thong_tu} />
+      <Box ref={ref}>
+        {isVisible && (
+          <>
+            <Benefit benefit={home_content?.acf?.loi_ich} />
+            <Slogan slogan={home_content?.acf?.slogan} />
+            <Majors majors={home_content?.acf?.nganh_dao_tao} />
+            <Testimonials
+              testimonials={home_content?.acf?.danh_gia_cua_hoc_vien}
+            />
+            <Advertisement advertisement={home_content?.acf?.quang_cao} />
+            <Event />
+            <Circulars circulars={home_content?.acf?.thong_tu} />
+          </>
+        )}
+      </Box>
     </>
   );
 };

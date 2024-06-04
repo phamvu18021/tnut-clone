@@ -52,5 +52,8 @@ export const replaceSeoRM = (input: string) => {
     `"sameAs":["https://nologin.tnut.vn"]`,
     `"sameAs":["https://tnut.vn"]`
   );
+
+  input = input.replace("noindex", "index");
+  input = input.replace("nofollow", "follow");
   return input;
 };

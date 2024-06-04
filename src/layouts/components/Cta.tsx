@@ -1,6 +1,24 @@
 import { BtnMes, BtnPhone, BtnEmail } from "@/components/BtnCTA";
 import { Box, Flex, VStack } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 export const CTA = () => {
+  const [page_content, setPageContent] = useState<any>(null);
+
+  useEffect(() => {
+    const getPageContent = async () => {
+      try {
+        const res = await fetch(`/api/content-page/?type=cta`, {
+          next: { revalidate: 3 }
+        });
+        const data = await res.json();
+        setPageContent(data?.posts[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getPageContent();
+  }, []);
+
   return (
     <Box
       pos={"fixed"}
@@ -18,12 +36,18 @@ export const CTA = () => {
         left={"-105%"}
         position={"absolute"}
       >
-        <BtnEmail aria-label="email" />
+        <BtnEmail label={page_content?.acf?.email_title} />
       </Flex>
 
       <VStack gap={0} alignItems={"flex-end"}>
-        <BtnMes aria-label="messenter" />
-        <BtnPhone aria-label="phone" />
+        <BtnMes
+          label={page_content?.acf?.messenger}
+          link={page_content?.acf?.link_messenger}
+        />
+        <BtnPhone
+          label={page_content?.acf?.phone}
+          link={page_content?.acf?.link_phone}
+        />
       </VStack>
     </Box>
   );

@@ -17,11 +17,11 @@ export default async function handler(
   let href: string = "";
   try {
     const responeWordpress = await fetchAuth({
-      url: `${api_url}/posts/?slug=${type}`,
+      url: `${api_url}/form`,
       revalidate: 10
     });
     const data: any[] = await responeWordpress.json();
-    const htmlString = data?.length > 0 ? data[0]?.content.rendered : ``;
+    const htmlString = data?.length > 0 ? data[0]?.acf?.[String(type)] : "";
     // Sử dụng biểu thức chính quy để trích xuất chuỗi id
     const idIndex = htmlString.indexOf('id="');
     if (idIndex !== -1) {
