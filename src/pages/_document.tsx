@@ -17,7 +17,6 @@ export default function Document() {
             src="https://www.googletagmanager.com/ns.html?id=GTM-TDCV4KK"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
             loading="lazy"
           ></iframe>
         </noscript>
