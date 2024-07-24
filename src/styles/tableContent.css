@@ -1,4 +1,4 @@
-#toc_container {
+#ez-toc-container {
   border: 1px solid black;
   border-radius: 16px;
   width: max-content;
@@ -7,17 +7,17 @@
   margin-bottom: 24px;
 }
 
-#toc_container li {
+#ez-toc-container li {
   list-style: none;
 }
 
-#toc_container li a {
+#ez-toc-container li a {
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 500;
 }
 
-#toc_container .toc_title {
+#ez-toc-container .ez-toc-title {
   font-size: 1.2rem;
   font-weight: 600;
 }

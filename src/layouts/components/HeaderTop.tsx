@@ -1,5 +1,5 @@
 import { BtnTheme } from "@/components/BtnTheme";
-import { FormPoup } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { ModalBase } from "@/components/Modal";
 import { useModal } from "@/components/ModalContext";
 import { Box, HStack, Icon, Link, Tag, TagLabel } from "@chakra-ui/react";
@@ -42,7 +42,7 @@ export const HeaderTop = () => {
   useEffect(() => {
     const getForm = async () => {
       try {
-        const res = await fetch(`/api/data-form/?type=form-poup`);
+        const res = await fetch(`/api/data-form/?type=form-main`);
         const data = await res.json();
         const id = data?.id || "";
         id && setId(id);
@@ -85,7 +85,7 @@ export const HeaderTop = () => {
         onClose={() => onClose && onClose()}
         onOpen={() => onOpen && onOpen()}
       >
-        <FormPoup id={id} href={href} title="Để lại thông tin" />
+        <FormMain />
       </ModalBase>
     </>
   );

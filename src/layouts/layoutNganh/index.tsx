@@ -30,9 +30,10 @@ export const LayoutNganh = ({
   return (
     <>
       <Box
-        bg={"rgba(0, 0, 0, 0.5)"}
+        bg={"rgba(0, 0, 0, 0)"}
         bgImage={image}
         backgroundBlendMode={"overlay"}
+        backgroundPosition={"40%  50%"}
       >
         <Container maxW={"7xl"} py="52px" color={"white"}>
           <HStack pt={16} color={"gray.50"}>

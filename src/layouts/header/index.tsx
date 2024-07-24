@@ -1,6 +1,6 @@
 "use client";
 
-import { FormPoup } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { ModalBase } from "@/components/Modal";
 import { InputSearch } from "@/features/search/InputSearch";
 import { SearchIcon } from "@chakra-ui/icons";
@@ -158,7 +158,7 @@ export const Header = () => {
           </Box>
 
           <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-            <FormPoup title="Để lại thông tin" />
+            <FormMain />
           </ModalBase>
         </Container>
       </Box>

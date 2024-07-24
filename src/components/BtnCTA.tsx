@@ -19,7 +19,7 @@ import { BiPhone } from "react-icons/bi";
 import { BsMessenger } from "react-icons/bs";
 import { MdEmail, MdOutlineMail } from "react-icons/md";
 import { SiZalo } from "react-icons/si";
-import { FormPoupCTA } from "./FormContact";
+import { FormMain } from "./FormContact";
 
 export const BtnPhone = ({
   link,
@@ -147,7 +147,7 @@ export const BtnEmail = ({
           Để lại thông tin
         </PopoverHeader>
         <PopoverBody>
-          <FormPoupCTA />
+          <FormMain />
         </PopoverBody>
       </PopoverContent>
     </Popover>

@@ -104,11 +104,12 @@ export const MajorsDetails = (props: IMDetails) => {
 
             <GridItem colSpan={1}>
               <Box
+              aspectRatio={562/781}
                 bgImage={image}
                 bgSize={"cover"}
-                w={"full"}
-                h={400}
-                bgPosition={"left"}
+                // w={"full"}
+                // h={781}
+                bgPosition={"center"}
               ></Box>
             </GridItem>
           </SimpleGrid>

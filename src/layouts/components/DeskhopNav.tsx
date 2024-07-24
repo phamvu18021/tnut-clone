@@ -9,7 +9,7 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 
-import { FormPoup } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { ModalBase } from "@/components/Modal";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -83,7 +83,7 @@ export const DesktopNav = () => {
       </Stack>
 
       <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-        <FormPoup title="Để lại thông tin" />
+        <FormMain />
       </ModalBase>
     </>
   );

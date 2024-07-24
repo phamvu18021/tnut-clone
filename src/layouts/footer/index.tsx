@@ -118,8 +118,7 @@ export const Footer = () => {
 
             <Stack>
               <ListHeader>
-                {page_content?.acf?.footer?.block_2?.item_1?.label ||
-                  ".LIÊN HỆ"}
+                {page_content?.acf?.footer?.block_2?.title || ".LIÊN HỆ"}
               </ListHeader>
 
               <Box

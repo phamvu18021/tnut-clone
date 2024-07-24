@@ -8,6 +8,7 @@ import {
   Container,
   Divider,
   GridItem,
+  VStack,
   List,
   ListIcon,
   ListItem,
@@ -20,10 +21,33 @@ export const IntroduceAbout = (introduceAbout: any) => {
   const { isOpen, onOpen, onClose } = useModal();
   return (
     <Container maxW={"7xl"}>
+      <Box display={"flex"} justifyContent={"center"} mt={8}>
+        <VStack>
+          <MotionTop>
+            <Text
+              textAlign={"center"}
+              fontSize={{ base: "30px", md: "30px", lg: "36px" }}
+              fontWeight={{ lg: 600, base: 600 }}
+              color={"blue.800"}
+            >
+              {introduceAbout?.introduceAbout?.text_about?.text_1 ||
+                "ĐÔI NÉT VỀ ĐẠI HỌC KỸ THUẬT CÔNG NGHIỆP."}
+            </Text>
+          </MotionTop>
+          <MotionTop>
+            <Divider
+              borderBottomWidth={"3px"}
+              borderBlockEndColor={"orange"}
+              w={"200px"}
+              p={{ base: "6px", lg: "12px" }}
+            />
+          </MotionTop>
+        </VStack>
+      </Box>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         maxW={"7xl"}
-        py={{ lg: 16, base: 4 }}
+        py={{ lg: 4, base: 4 }}
         gap={{ base: 12, lg: 16 }}
         margin={"0 auto"}
       >
@@ -35,24 +59,6 @@ export const IntroduceAbout = (introduceAbout: any) => {
 
         <GridItem colSpan={{ base: 1, lg: 1 }}>
           <Stack bg="White" height="full">
-            <MotionTop>
-              <Text
-                fontSize={{ base: "25px", md: "25px", lg: "32px" }}
-                fontWeight={{ lg: 500, base: 500 }}
-                color={"blue.800"}
-              >
-                {introduceAbout?.introduceAbout?.text_about?.text_1 ||
-                  "ĐÔI NÉT VỀ ĐẠI HỌC KỸ THUẬT CÔNG NGHIỆP."}
-              </Text>
-            </MotionTop>
-            <MotionTop>
-              <Divider
-                borderBottomWidth={"3px"}
-                borderBlockEndColor={"orange"}
-                w={"200px"}
-                p={{ base: "6px", lg: "12px" }}
-              />
-            </MotionTop>
             <List
               spacing={4}
               pt={"8px"}
@@ -73,17 +79,6 @@ export const IntroduceAbout = (introduceAbout: any) => {
                     ".Hệ đại học từ xa TNUT E-learning là chương trình giáo dục dành cho những người đã tốt nghiệp trung học phổ thông trở lên có được tấm bằng đại học. Phá bỏ mọi rào cản về không gian và thời gian, giúp nâng cao trình độ chuyên môn và nhận được bằng cấp trong lĩnh vực kỹ thuật công nghiệp…"}
                 </ListItem>
               </MotionTop>
-
-              <BtnTheme
-                color={"white"}
-                colorScheme="white"
-                size={{ base: "sm", md: "lg" }}
-                onClick={() => !isOpen && onOpen && onOpen()}
-                w={{ base: "200px", md: "240px", lg: "280px" }}
-              >
-                {introduceAbout?.introduceAbout?.text_about?.text_button ||
-                  ".Nhận thông tin lộ trình học"}
-              </BtnTheme>
             </List>
           </Stack>
         </GridItem>
@@ -94,6 +89,19 @@ export const IntroduceAbout = (introduceAbout: any) => {
           </Box>
         </GridItem>
       </SimpleGrid>
+
+      <Box display={"flex"} justifyContent={"center"} mt={4} mb={8}>
+        <BtnTheme
+          color={"white"}
+          colorScheme="white"
+          size={{ base: "sm", md: "lg" }}
+          onClick={() => !isOpen && onOpen && onOpen()}
+          w={{ base: "200px", md: "240px", lg: "280px" }}
+        >
+          {introduceAbout?.introduceAbout?.text_about?.text_button ||
+            ".Nhận thông tin lộ trình học"}
+        </BtnTheme>
+      </Box>
     </Container>
   );
 };

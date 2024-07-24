@@ -1,6 +1,6 @@
 "use client";
 
-import { FormHome, FormMain } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { categotys } from "@/features/home/Categorys";
 import { toSlug } from "@/ultil/toSlug";
 import {
@@ -195,7 +195,7 @@ export const Sidebar = ({
           >
             ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN
           </Heading>
-          <FormHome />
+          <FormMain />
         </Box>
       )}
 
