@@ -6,7 +6,7 @@ function GetForm (name, id) {
     f.setAttribute("src", name + "?referrer=" + odoo_utm);
     f.style.width = "100%";
     f.classList.add("formio_form_embed")
-    
+    console.log(class_form)
     if(class_form.length > 1){    
         for (let i = 0; i < class_form.length; i++) {
             let new_id = "formio_form_iframe_container_" + id + '_' + i;
