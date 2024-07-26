@@ -10,11 +10,9 @@ function GetForm (name, id) {
     let class_form = document.getElementsByClassName('formio_form_iframe_container')
     for (; i < class_form.length; i++){
         if(class_form[i].id == `formio_form_iframe_container_${id}`){
-            console.log("loop"+i)
             let new_id = "formio_form_iframe_container_" + id + '_' + i;
             class_form[i].id = new_id
             let s = document.getElementById(new_id);
-            console.log("new"+s)
             if (s && !s.querySelector("iframe")) {
                 s.appendChild(f);
             }
