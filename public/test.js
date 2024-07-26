@@ -17,7 +17,10 @@ function GetForm (name, id) {
            }
         }
     }else if(class_form.length == 1 ){
-        class_form.appendChild(f)
+        let s = document.getElementById(id);
+            if (s && !s.querySelector("iframe")){
+                s.appendChild(f);
+           }
     }
 }
 
