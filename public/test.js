@@ -36,9 +36,7 @@ function GetForm (name, id) {
            let new_id = "formio_form_iframe_container_" + id + '_' + count;
            class_form[i].id = new_id
            let s = document.getElementById(new_id);
-           if (s && !s.querySelector("iframe")){
-              s.appendChild(f);
-            }
+            s.appendChild(f);
             count++;
         }
     }
