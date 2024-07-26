@@ -10,7 +10,8 @@ function GetForm (name, id) {
     let count = 0;    
     let class_form = document.getElementsByClassName('formio_form_iframe_container')
     console.log(class_form)
-    console.log(class_form.length)
+    console.log(class_form[i].id)
+    console.log("test:"+`"formio_form_iframe_container_" + ${id}`)
     for (; i < class_form.length; i++){
         if(class_form[i].id == `"formio_form_iframe_container_" + ${id}`){
             console.log("loop"+i)
