@@ -1,27 +1,24 @@
 function GetForm (name, id) {
     const f = document.createElement("iframe");
-    let class_form = document.getElementsById(id)
+    let class_form = document.getElementsByClassName('formio_form_iframe_container')
     let odoo_utm = th_get_cookie()
     let referrer = document.referrer
     f.setAttribute("src", name + "?referrer=" + odoo_utm);
     f.style.width = "100%";
+    let i = 0;
+    let count = 0;
     f.classList.add("formio_form_embed")
-    console.log(class_form)
-    if(class_form.length > 1){    
-        for (let i = 0; i < class_form.length; i++) {
-            let new_id = "formio_form_iframe_container_" + id + '_' + i;
+    for (; i < class_form.length; i++){
+        if(class_form[i].id == id){
+            let new_id = "formio_form_iframe_container_" + id + '_' + count;
             class_form[i].id = new_id
             let s = document.getElementById(new_id);
             if (s && !s.querySelector("iframe")){
                 s.appendChild(f);
-           }
-        }
-    }else if(class_form.length == 1 ){
-        let s = document.getElementById(id);
-            if (s && !s.querySelector("iframe")){
-                s.appendChild(f);
-           }
-    }
+            }
+            count = count + 1
+        }            
+    } 
 }
 
 function th_get_cookie (){
