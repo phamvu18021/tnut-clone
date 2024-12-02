@@ -21,7 +21,7 @@ export const Ktxd = () => {
   return (
     <LayoutNganh
       title={page_content?.acf?.breadcrumbs?.title || ".KỸ THUẬT XÂY DỰNG"}
-      image={page_content?.acf?.breadcrumbs?.image || "/nganh-xay-dung-banner.png"}
+      image={page_content?.acf?.breadcrumbs?.image || "/2.jpg"}
       path="/ky-thuat-xay-dung"
       major_benefit={page_content?.acf?.major_benefit || ""}
     >
@@ -29,9 +29,8 @@ export const Ktxd = () => {
         major={
           page_content?.acf?.majors_details?.majors_name || "zKỸ THUẬT XÂY DỰNG"
         }
-        image={
-          page_content?.acf?.majors_details?.image || "/nganh-xay-dung-content.jpg"
-        }
+        image={page_content?.acf?.majors_details?.image || "/tbts-tnut-1.png"}
+        image_2={page_content?.acf?.majors_details?.image_2 || ""}
         tabf={
           page_content?.acf?.majors_details?.over?.overview?.title ||
           ".Tổng quan chương trình."

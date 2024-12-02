@@ -18,8 +18,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { BiLogoTiktok } from "react-icons/bi";
-import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 export const Item = ({
   path,
@@ -37,7 +35,7 @@ export const Item = ({
       pos="relative"
       transition={"all ease .4s"}
       _hover={{ transform: "translateY(-10px)" }}
-      aspectRatio={7 / 4}
+      // aspectRatio={7 / 4}
       objectFit="cover"
     >
       <Image
@@ -76,40 +74,26 @@ export const Sidebar = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
-  const [totalPosts, setTotalPosts] = useState("0");
   const [totalNotifis, setTotalNotifis] = useState("0");
   const [checkInput, setCheckInput] = useState(false);
+  const [notifis, setNotifis] = useState<any[]>([]);
 
   useEffect(() => {
-    const getNews = async () => {
-      try {
-        const res = await fetch(`/api/posts/?type=news&page=1`, {
-          next: { revalidate: 3 }
-        });
-
-        const data: { posts: any[]; totalPosts: string } = await res.json();
-        const { totalPosts } = data;
-        totalPosts && setTotalPosts(totalPosts);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
     const getNotifis = async () => {
       try {
         const resp = await fetch(`/api/posts/?type=notifis&page=1`, {
           next: { revalidate: 3 }
         });
 
-        const datap: { totalPosts: string } = await resp.json();
-        const { totalPosts } = datap;
+        const datap: { posts: any[]; totalPosts: string } = await resp.json();
+        const { posts, totalPosts } = datap;
+        posts && setNotifis(posts);
         totalPosts && setTotalNotifis(totalPosts);
       } catch (error) {
         console.log(error);
       }
     };
 
-    getNews();
     getNotifis();
   }, []);
 
@@ -220,7 +204,7 @@ export const Sidebar = ({
         </SimpleGrid>
       </Box>
 
-      <Box pt={"32px"}>
+      {/* <Box pt={"32px"}>
         <Heading
           as={"h3"}
           size={"md"}
@@ -301,6 +285,40 @@ export const Sidebar = ({
             <Text>Thông Báo</Text>
             <Text>{totalNotifis}</Text>
           </HStack>
+        </Box>
+      </Box> */}
+
+      <Box py={"32px"}>
+        <Heading
+          as={"h3"}
+          size={"md"}
+          pb={"8px"}
+          pl={"20px"}
+          textAlign={{ base: "center", lg: "start" }}
+        >
+          Thông báo
+        </Heading>
+        <Box>
+          {notifis &&
+            notifis.slice(0, 5).map((item: any, index: number) => (
+              <Box py={3} px={6} key={index}>
+                <Text
+                  as={Link}
+                  href={`/${item.slug}`}
+                  lineHeight={1.2}
+                  css={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: "2",
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis"
+                  }}
+                  fontWeight={500}
+                >
+                  {item.title.rendered}
+                </Text>
+              </Box>
+            ))}
         </Box>
       </Box>
     </Box>

@@ -12,10 +12,12 @@ import {
 } from "@chakra-ui/react";
 import { BtnTheme } from "./BtnTheme";
 import { useModal } from "./ModalContext";
+import { MajorSwipe } from "./MajorSwipe";
 
 interface IMDetails {
   major: string;
   image: string;
+  image_2: string;
   tabf: any;
   tabs: any;
   tabt: any;
@@ -25,9 +27,19 @@ interface IMDetails {
 }
 
 export const MajorsDetails = (props: IMDetails) => {
-  const { image, major, tabf, tabs, tabt, tabfp, tabsp, tabtp } = props;
+  const { image, major, tabf, tabs, tabt, tabfp, tabsp, tabtp, image_2 } =
+    props;
   const { isOpen, onOpen, onClose } = useModal();
-
+  const MajorImg = [
+    {
+      title: "Ảnh giới thiệu 1",
+      avt: `${image}`
+    },
+    {
+      title: "Ảnh giới thiệu 2",
+      avt: `${image_2}`
+    }
+  ];
   return (
     <>
       <Box>
@@ -103,14 +115,17 @@ export const MajorsDetails = (props: IMDetails) => {
             </GridItem>
 
             <GridItem colSpan={1}>
-              <Box
-              aspectRatio={562/781}
-                bgImage={image}
-                bgSize={"cover"}
-                // w={"full"}
-                // h={781}
-                bgPosition={"center"}
-              ></Box>
+              {image_2 == "" && (
+                <Box
+                  aspectRatio={562 / 781}
+                  bgImage={image}
+                  bgSize={"cover"}
+                  // w={"full"}
+                  // h={781}
+                  bgPosition={"center"}
+                ></Box>
+              )}
+              {image_2 != "" && <MajorSwipe listImage={MajorImg} />}
             </GridItem>
           </SimpleGrid>
         </Container>

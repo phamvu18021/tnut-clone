@@ -11,7 +11,7 @@ export const Majors = (majors: any) => {
         "/nganh-xay-dung.webp",
       title:
         majors?.majors?.cac_nganh_hoc?.nganh_1?.text_nganh ||
-        ".Kỹ Thuật Xây Dựngz",
+        ".Kỹ Thuật Xây Dựng",
       path: "/ky-thuat-xay-dung"
     },
     {
@@ -20,7 +20,7 @@ export const Majors = (majors: any) => {
         "/nganh-quan-li-cong-nghiep.webp",
       title:
         majors?.majors?.cac_nganh_hoc?.nganh_2?.text_nganh ||
-        ".Quản Lý Công Nghiệpz",
+        ".Quản Lý Công Nghiệp",
       path: `quan-ly-cong-nghiep`
     },
     {
@@ -29,8 +29,16 @@ export const Majors = (majors: any) => {
         "/nganh-kinh-te-cong-nghiep.webp",
       title:
         majors?.majors?.cac_nganh_hoc?.nganh_3?.text_nganh ||
-        ".Kinh Tế Công nghiệpz",
+        ".Kinh Tế Công nghiệp",
       path: `/kinh-te-cong-nghiep`
+    },
+    {
+      image:
+        majors?.majors?.cac_nganh_hoc?.nganh_4?.image_nganh ||
+        "/nganh-ngon-ngu-anh.webp",
+      title:
+        majors?.majors?.cac_nganh_hoc?.nganh_4?.text_nganh || ".Ngôn ngữ Anh",
+      path: `/ngon-ngu-anh`
     }
   ];
   return (
@@ -48,7 +56,7 @@ export const Majors = (majors: any) => {
           </Text>
         </MotionTop>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={5} py={5}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={5} py={5}>
           {Reg.map((Reg, index) => (
             <CardReg
               key={index}

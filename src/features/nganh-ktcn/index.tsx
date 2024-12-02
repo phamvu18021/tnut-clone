@@ -21,10 +21,7 @@ export const Ktcn = () => {
   return (
     <LayoutNganh
       title={page_content?.acf?.breadcrumbs?.title || "zKINH TẾ CÔNG NGHIỆP"}
-      image={
-        page_content?.acf?.breadcrumbs?.image ||
-        "/nganh-kinh-te-cong-nghiep.webp"
-      }
+      image={page_content?.acf?.breadcrumbs?.image || "/3.jpg"}
       path="/kinh-te-cong-nghiep"
       major_benefit={page_content?.acf?.major_benefit || ""}
     >
@@ -33,10 +30,8 @@ export const Ktcn = () => {
           page_content?.acf?.majors_details?.majors_name ||
           "zKINH TẾ CÔNG NGHIỆP"
         }
-        image={
-          page_content?.acf?.majors_details?.image ||
-          "/nganh-kinh-te-cong-nghiep.webp"
-        }
+        image={page_content?.acf?.majors_details?.image || "/tbts-tnut-1.png"}
+        image_2={page_content?.acf?.majors_details?.image_2 || ""}
         tabf={
           page_content?.acf?.majors_details?.over?.overview?.title ||
           ".Tổng quan chương trình"

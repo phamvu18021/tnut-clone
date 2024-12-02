@@ -21,10 +21,7 @@ export const Qlcn = () => {
   return (
     <LayoutNganh
       title={page_content?.acf?.breadcrumbs?.title || ".QUẢN LÝ CÔNG NGHIỆP"}
-      image={
-        page_content?.acf?.breadcrumbs?.image ||
-        "/nganh-quan-li-cong-nghiep.webp"
-      }
+      image={page_content?.acf?.breadcrumbs?.image || "/1.jpg"}
       major_benefit={page_content?.acf?.major_benefit || ""}
       path="/quan-ly-cong-nghiep"
     >
@@ -33,10 +30,7 @@ export const Qlcn = () => {
           page_content?.acf?.majors_details?.majors_name ||
           ".zQUẢN LÝ CÔNG NGHIỆP"
         }
-        image={
-          page_content?.acf?.majors_details?.image ||
-          "/nganh-quan-li-cong-nghiep.webp"
-        }
+        image={page_content?.acf?.majors_details?.image || "/tbts-tnut-1.png"}
         tabf={
           page_content?.acf?.majors_details?.over?.overview?.title ||
           ".Tổng quan chương trình"
@@ -98,6 +92,7 @@ export const Qlcn = () => {
           page_content?.acf?.majors_details?.over?.info?.text_9 ||
             ". .Có giá trị tương đương bằng CHÍNH QUY, được Bộ GD&ĐT công nhận và có thể học tiếp lên Thạc sĩ, Tiến sĩ, thi công chức, xét bậc lương theo quy định nhà nước"
         ]}
+        image_2={page_content?.acf?.majors_details?.image_2 || ""}
       />
     </LayoutNganh>
   );

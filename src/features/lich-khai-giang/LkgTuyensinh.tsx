@@ -47,9 +47,10 @@ export const LkgTuyensinh = (info: any) => {
       detail: [
         {
           list: [
-            info?.info?.info_4?.text_1 || ".Kỹ Thuật Xây Dựng",
-            info?.info?.info_4?.text_2 || ".Quản Lý Công Nghiệp",
-            info?.info?.info_4?.text_3 || ".Kinh Tế Công Nghiệp"
+            info?.info?.info_4?.text_1 || ".Ngôn Ngữ Anh",
+            info?.info?.info_4?.text_2 || ".Kỹ Thuật Xây Dựng",
+            info?.info?.info_4?.text_3 || ".Quản Lý Công Nghiệp",
+            info?.info?.info_4?.text_4 || ".Kinh Tế Công Nghiệp"
           ]
         }
       ]

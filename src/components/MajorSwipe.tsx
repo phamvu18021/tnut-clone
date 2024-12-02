@@ -9,17 +9,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export const CardAboutSwipe = ({ image }: { image: string }) => {
   return (
-    <Box>
-      <Image
-        loading="lazy"
-        alt="image"
-        className="Image"
-        src={image}
-        width={"100%"}
-        objectFit={"contain"}
-        height={"auto"}
-      />
-    </Box>
+    <Box
+      aspectRatio={562 / 781}
+      bgImage={image}
+      bgSize={"cover"}
+      // w={"full"}
+      // h={781}
+      bgPosition={"center"}
+    ></Box>
   );
 };
 const SwiperContainer = styled.div`
@@ -63,7 +60,7 @@ const SwiperContainer = styled.div`
 }
 }`;
 
-export const AboutSwipe = ({ listImage }: { listImage: any }) => {
+export const MajorSwipe = ({ listImage }: { listImage: any }) => {
   return (
     <SwiperContainer>
       <Swiper

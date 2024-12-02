@@ -87,25 +87,31 @@ export const Banner = (imagesBanner: any) => {
     {
       title:
         ".Ứng dụng nền tảng Đại học số tiên tiến, Tuyển sinh liên tục, Xét duyệt hồ sơ dự tuyển, Bằng cấp tương đương hệ chính quy",
-      avt: imagesBanner?.imagesBanner?.anh_banner_1 || `/banner-tnut.webp`,
+      avt: imagesBanner?.imagesBanner?.anh_banner_1 || `/main.jpg`,
       desc: `ĐẠI HỌC TỪ XA`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: imagesBanner?.imagesBanner?.anh_banner_2 || `/banner-tnut.webp`,
+      avt: imagesBanner?.imagesBanner?.anh_banner_2 || `/main.jpg`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: imagesBanner?.imagesBanner?.anh_banner_3 || `/banner-tnut.webp`,
+      avt: imagesBanner?.imagesBanner?.anh_banner_3 || `/main.jpg`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     },
     {
       title:
         "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
-      avt: imagesBanner?.imagesBanner?.anh_banner_4 || `/banner-tnut.webp`,
+      avt: imagesBanner?.imagesBanner?.anh_banner_4 || `/main.jpg`,
+      desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
+    },
+    {
+      title:
+        "Với hệ đào tạo từ xa tnut, chương trình học được thiết kế theo quy chuẩn của Bộ GD&ĐT, đảm bảo cho học viên đầy đủ kiến thức chuyên môn và kinh nghiệm thực hành thực tế, thỏa sức theo đuổi đam mê.",
+      avt: imagesBanner?.imagesBanner?.anh_banner_5 || `/main.jpg`,
       desc: `CÁC NGÀNH ĐÀO TẠO "HOT"`
     }
   ];
