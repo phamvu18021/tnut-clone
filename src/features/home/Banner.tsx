@@ -128,10 +128,6 @@ export const Banner = (imagesBanner: any) => {
         pagination={pagination}
         spaceBetween={30}
         effect={"fade"}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false
-        }}
         loop={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
