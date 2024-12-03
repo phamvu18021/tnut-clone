@@ -87,7 +87,7 @@ export const Banner = (imagesBanner: any) => {
     {
       title:
         ".Ứng dụng nền tảng Đại học số tiên tiến, Tuyển sinh liên tục, Xét duyệt hồ sơ dự tuyển, Bằng cấp tương đương hệ chính quy",
-      avt: imagesBanner?.imagesBanner?.anh_banner_1 || `/main.jpg`,
+      avt: imagesBanner?.imagesBanner?.anh_banner_1 || `/banner-tnut2.png`,
       desc: `ĐẠI HỌC TỪ XA`
     },
     {
