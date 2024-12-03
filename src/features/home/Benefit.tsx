@@ -67,7 +67,6 @@ export const Item = ({
 };
 
 export const Benefit = (benefit: any) => {
-  console.log("benefit", benefit);
   const benefits = [
     {
       path: "#",
