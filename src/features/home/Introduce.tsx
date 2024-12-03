@@ -36,7 +36,7 @@ export const Introduce = (introduce: any) => {
               {introduce?.introduce?.form_title ||
                 ".ĐĂNG KÝ NGAY ĐỂ NHẬN TƯ VẤN"}
             </Text>
-            <FormMain />
+            {/* <FormMain /> */}
           </Box>
         </GridItem>
 
