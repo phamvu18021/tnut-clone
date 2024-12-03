@@ -13,12 +13,17 @@ import { replaceSeoRM } from "@/ultil/seoRankMath";
 import { fetchGraphQL } from "@/ultil/fetchAuth";
 import { useRouter } from "next/router";
 import { graphqlPostQuery } from "@/graphQLQuery";
+import client from "@/apollo/apolloClient";
+import { getPostBySlug } from "@/apollo/queries/homeQueries";
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const url = process.env.API_RMS_URL || "";
-
   try {
     const params = context.params;
     const slug = params?.slug || "";
+    const GET_POST = getPostBySlug({ slug });
+    const { data } = await client.query({
+      query: GET_POST
+    });
     const resSeo = await fetchSeo({
       url: `${url}/${slug}`,
       revalidate: 3600
@@ -26,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
     const head = await resSeo.json();
 
     return {
-      props: { head: head.head }
+      props: { post: data.postBy, head: head.head }
     };
   } catch (error) {
     console.error(error);
@@ -42,13 +47,38 @@ interface IPostPage {
 }
 
 const Page = (props: IPostPage) => {
-  const { head } = props;
+  const { post, head } = props;
+  console.log(post);
   const router = useRouter();
+  const slug = router.query.slug as string;
   const slugQuery = graphqlPostQuery({ slug: router.query.slug as string });
-  const { data, isLoading } = useQuery({
-    queryKey: ["graphqlPostQuery"],
-    queryFn: () => fetchGraphQL({ query: slugQuery })
-  });
+  // const { data, isLoading } = useQuery({
+  //   queryKey: ["graphqlPostQuery"],
+  //   queryFn: () => fetchGraphQL({ query: slugQuery })
+  // });
+  const [postz, setPostz] = useState<any>();
+  const [loading, setLoading] = useState(true);
+  const queryApolo = getPostBySlug({ slug: slug });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await client.query({
+          query: queryApolo
+        });
+        setPostz(data);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching post:", err);
+        setLoading(false);
+      }
+    };
+
+    if (slugQuery) {
+      fetchData();
+    }
+  }, []);
+  // console.log(!loading && postz);
+
   return (
     <>
       {head && (
@@ -57,7 +87,7 @@ const Page = (props: IPostPage) => {
         </div>
       )}
       <ErrorBoundary fallback={<h1>Lỗi phía máy chủ</h1>}>
-        {!isLoading && <Post post={data?.postBy} />}
+        {!loading && <Post post={postz.postBy} />}
       </ErrorBoundary>
     </>
   );
