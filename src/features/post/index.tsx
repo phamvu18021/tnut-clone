@@ -9,11 +9,11 @@ import { Share } from "./Share";
 import { useEffect } from "react";
 
 export const Post = ({ post }: { post: any }) => {
-  const catIds = post?.categories || [];
-  const catId = catIds[0];
+  const catIds = post?.categories?.nodes || [];
+  const catId = catIds[0]?.categoryId || "";
   useEffect(() => {
     const replaceHrefWithId = () => {
-      const ezTocContainer = document.getElementById("ez-toc-container");
+      const ezTocContainer = document.getElementById("toc_container");
 
       if (ezTocContainer) {
         const tocLinks = ezTocContainer.querySelectorAll('a[href*="#"]');
@@ -58,18 +58,18 @@ export const Post = ({ post }: { post: any }) => {
               <div className={styles["post__heading"]}>
                 <h1
                   dangerouslySetInnerHTML={{
-                    __html: clean(post?.title?.rendered)
+                    __html: clean(post?.title)
                   }}
                 />
                 <span>{formatDate(post?.date)}</span>
               </div>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: clean(post?.content?.rendered)
+                  __html: clean(post?.content)
                 }}
               />
             </div>
-            <SamePosts catId={catId} id={post?.id} />
+            <SamePosts catId={catId} id={post?.postId} />
           </>
         )}
 

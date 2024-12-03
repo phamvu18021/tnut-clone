@@ -5,37 +5,33 @@ import { Post } from "@/features/post";
 import { LayoutPost } from "@/layouts/layoutPost";
 import { GetServerSideProps } from "next";
 import { ReactElement, useEffect, useState } from "react";
-import { fetchAuth } from "@/ultil/fetchAuth";
+import { useQuery } from "@tanstack/react-query";
 import { fetchSeo } from "@/ultil/seo";
 import Head from "next/head";
 import ReactHtmlParser from "html-react-parser";
 import { replaceSeoRM } from "@/ultil/seoRankMath";
+import { fetchGraphQL } from "@/ultil/fetchAuth";
+import { useRouter } from "next/router";
+import { graphqlPostQuery } from "@/graphQLQuery";
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const api_url = process.env.API_URL || "";
   const url = process.env.API_RMS_URL || "";
 
   try {
     const params = context.params;
     const slug = params?.slug || "";
-    const res = await fetchAuth({
-      url: `${api_url}/posts?slug=${slug}`,
-      revalidate: 3600
-    });
     const resSeo = await fetchSeo({
       url: `${url}/${slug}`,
       revalidate: 3600
     });
     const head = await resSeo.json();
-    const posts = await res.json();
-    const post = posts ? posts[0] : null;
 
     return {
-      props: { post: post || null, head: head.head }
+      props: { head: head.head }
     };
   } catch (error) {
     console.error(error);
     return {
-      props: { post: null, head: null }
+      props: { head: null }
     };
   }
 };
@@ -46,8 +42,13 @@ interface IPostPage {
 }
 
 const Page = (props: IPostPage) => {
-  const { post, head } = props;
-
+  const { head } = props;
+  const router = useRouter();
+  const slugQuery = graphqlPostQuery({ slug: router.query.slug as string });
+  const { data, isLoading } = useQuery({
+    queryKey: ["graphqlPostQuery"],
+    queryFn: () => fetchGraphQL({ query: slugQuery })
+  });
   return (
     <>
       {head && (
@@ -56,7 +57,7 @@ const Page = (props: IPostPage) => {
         </div>
       )}
       <ErrorBoundary fallback={<h1>Lỗi phía máy chủ</h1>}>
-        <Post post={post} />
+        {!isLoading && <Post post={data?.postBy} />}
       </ErrorBoundary>
     </>
   );

@@ -1,5 +1,5 @@
 export const graphqlHomeQuery = `
-  query NewQuery {
+  query graphqlHomeQuery {
     trangChus {
       nodes {
         anhBanner {
@@ -96,3 +96,20 @@ export const graphqlHomeQuery = `
     }
   }
 `;
+
+export const graphqlPostQuery = ({ slug }: { slug: string }) => {
+  return `query graphqlPostQuery {
+  postBy(slug: "${slug}") {
+    title
+    date
+    content
+    postId
+    slug
+    categories {
+      nodes {
+        categoryId
+      }
+    }
+  }
+}`;
+};
