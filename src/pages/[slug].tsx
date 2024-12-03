@@ -29,9 +29,10 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
       revalidate: 3600
     });
     const head = await resSeo.json();
+    const postdata = await data.postBy;
 
     return {
-      props: { post: data.postBy, head: head.head }
+      props: { post: postdata, head: head.head }
     };
   } catch (error) {
     console.error(error);
@@ -48,35 +49,35 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post, head } = props;
-  console.log(post);
-  const router = useRouter();
-  const slug = router.query.slug as string;
-  const slugQuery = graphqlPostQuery({ slug: router.query.slug as string });
+  // console.log(post);
+  // const router = useRouter();
+  // const slug = router.query.slug as string;
+  // const slugQuery = graphqlPostQuery({ slug: router.query.slug as string });
   // const { data, isLoading } = useQuery({
   //   queryKey: ["graphqlPostQuery"],
   //   queryFn: () => fetchGraphQL({ query: slugQuery })
   // });
-  const [postz, setPostz] = useState<any>();
-  const [loading, setLoading] = useState(true);
-  const queryApolo = getPostBySlug({ slug: slug });
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await client.query({
-          query: queryApolo
-        });
-        setPostz(data);
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching post:", err);
-        setLoading(false);
-      }
-    };
+  // const [postz, setPostz] = useState<any>();
+  // const [loading, setLoading] = useState(true);
+  // const queryApolo = getPostBySlug({ slug: slug });
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const { data } = await client.query({
+  //         query: queryApolo
+  //       });
+  //       setPostz(data);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       console.error("Error fetching post:", err);
+  //       setLoading(false);
+  //     }
+  //   };
 
-    if (slugQuery) {
-      fetchData();
-    }
-  }, []);
+  //   if (slugQuery) {
+  //     fetchData();
+  //   }
+  // }, []);
   // console.log(!loading && postz);
 
   return (
@@ -87,7 +88,7 @@ const Page = (props: IPostPage) => {
         </div>
       )}
       <ErrorBoundary fallback={<h1>Lỗi phía máy chủ</h1>}>
-        {!loading && <Post post={postz.postBy} />}
+        {<Post post={post} />}
       </ErrorBoundary>
     </>
   );
