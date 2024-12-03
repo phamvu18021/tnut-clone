@@ -2,10 +2,13 @@
 
 import { Loading } from "@/components/Loading";
 import { useModal } from "@/components/ModalContext";
+import { fetchGraphQL } from "@/ultil/fetchAuth";
 import { Box } from "@chakra-ui/react";
+import { useQuery } from "@tanstack/react-query";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { graphqlHomeQuery } from "@/graphQLQuery";
 
 const Banner = dynamic(() => import("./Banner").then((mod) => mod.Banner), {
   loading: () => <Loading />
@@ -54,24 +57,11 @@ const Circulars = dynamic(
 export const Home = () => {
   const { isOpen, onOpen } = useModal();
   const [home_content, setHomeContent] = useState<any>(null);
+  const [graphqlData, setGraphqlData] = useState<any>(null);
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
     threshold: 0.5 // Kích hoạt khi 50% của phần tử hiển thị trong viewport
   });
-  useEffect(() => {
-    const getHomeContent = async () => {
-      try {
-        const res = await fetch(`/api/content-page/?type=trang-chu`, {
-          next: { revalidate: 3 }
-        });
-        const data = await res.json();
-        setHomeContent(data?.posts[0]);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getHomeContent();
-  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -87,22 +77,28 @@ export const Home = () => {
       setIsVisible(true); // Nếu không thì hiển thị
     }
   }, [inView, isVisible]);
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["graphqlHomeData"],
+    queryFn: () => fetchGraphQL({ query: graphqlHomeQuery })
+  });
+
+  // Trích xuất dữ liệu
+  const trangChus = data?.trangChus?.nodes ?? [];
   return (
     <>
-      <Banner imagesBanner={home_content?.acf?.anh_banner} />
-      <Introduce introduce={home_content?.acf?.gioi_thieu} />
+      <Banner imagesBanner={trangChus[0]?.anhBanner} />
+      <Introduce introduce={trangChus[0]?.gioiThieu} />
       <Box ref={ref}>
         {isVisible && (
           <>
-            <Benefit benefit={home_content?.acf?.loi_ich} />
-            <Slogan slogan={home_content?.acf?.slogan} />
-            <Majors majors={home_content?.acf?.nganh_dao_tao} />
-            <Testimonials
-              testimonials={home_content?.acf?.danh_gia_cua_hoc_vien}
-            />
-            <Advertisement advertisement={home_content?.acf?.quang_cao} />
+            <Benefit benefit={trangChus[0]?.loiIch} />
+            <Slogan slogan={trangChus[0]?.slogan} />
+            <Majors majors={trangChus[0]?.nganhDaoTao} />
+            <Testimonials testimonials={trangChus[0]?.danhGiaHocVien} />
+            <Advertisement advertisement={trangChus[0]?.quangCao} />
             <Event />
-            <Circulars circulars={home_content?.acf?.thong_tu} />
+            <Circulars circulars={trangChus[0]?.thongTu} />
           </>
         )}
       </Box>

@@ -5,6 +5,7 @@ import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";
 import { ModalProvider } from "@/components/ModalContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "@/styles/globals.css";
 import "@/styles/tableContent.css";
 // import '@/styles/swiper.css'
@@ -18,13 +19,15 @@ type AppPropsWithLayout = AppProps & {
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page: any) => page);
-
+  const queryClient = new QueryClient();
   return (
     <>
       <ChakraProvider theme={theme}>
-        <ModalProvider>
-          <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
-        </ModalProvider>
+        <QueryClientProvider client={queryClient}>
+          <ModalProvider>
+            <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
+          </ModalProvider>
+        </QueryClientProvider>
       </ChakraProvider>
     </>
   );

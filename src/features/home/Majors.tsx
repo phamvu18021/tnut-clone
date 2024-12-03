@@ -7,37 +7,32 @@ export const Majors = (majors: any) => {
   const Reg = [
     {
       image:
-        majors?.majors?.cac_nganh_hoc?.nganh_1?.image_nganh ||
-        "/nganh-xay-dung.webp",
+        majors?.majors?.cac_nganh_hoc[0]?.image_nganh || "/nganh-xay-dung.webp",
       title:
-        majors?.majors?.cac_nganh_hoc?.nganh_1?.text_nganh ||
-        ".Kỹ Thuật Xây Dựng",
+        majors?.majors?.cac_nganh_hoc[0]?.text_nganh || ".Kỹ Thuật Xây Dựng",
       path: "/ky-thuat-xay-dung"
     },
     {
       image:
-        majors?.majors?.cac_nganh_hoc?.nganh_2?.image_nganh ||
+        majors?.majors?.cac_nganh_hoc[1]?.image_nganh ||
         "/nganh-quan-li-cong-nghiep.webp",
       title:
-        majors?.majors?.cac_nganh_hoc?.nganh_2?.text_nganh ||
-        ".Quản Lý Công Nghiệp",
+        majors?.majors?.cac_nganh_hoc[1]?.text_nganh || ".Quản Lý Công Nghiệp",
       path: `quan-ly-cong-nghiep`
     },
     {
       image:
-        majors?.majors?.cac_nganh_hoc?.nganh_3?.image_nganh ||
+        majors?.majors?.cac_nganh_hoc[2]?.image_nganh ||
         "/nganh-kinh-te-cong-nghiep.webp",
       title:
-        majors?.majors?.cac_nganh_hoc?.nganh_3?.text_nganh ||
-        ".Kinh Tế Công nghiệp",
+        majors?.majors?.cac_nganh_hoc[2]?.text_nganh || ".Kinh Tế Công nghiệp",
       path: `/kinh-te-cong-nghiep`
     },
     {
       image:
-        majors?.majors?.cac_nganh_hoc?.nganh_4?.image_nganh ||
+        majors?.majors?.cac_nganh_hoc[3]?.image_nganh ||
         "/nganh-ngon-ngu-anh.webp",
-      title:
-        majors?.majors?.cac_nganh_hoc?.nganh_4?.text_nganh || ".Ngôn ngữ Anh",
+      title: majors?.majors?.cac_nganh_hoc[3]?.text_nganh || ".Ngôn ngữ Anh",
       path: `/ngon-ngu-anh`
     }
   ];
