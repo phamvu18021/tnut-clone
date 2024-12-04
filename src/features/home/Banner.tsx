@@ -60,6 +60,11 @@ const SwiperContainer = styled.div`
   display: none;
   }
 }
+.swiper-pagination-horizontal{
+  position: absolute;
+  top: 82%;
+  left: 80%;
+  }
 .swiper-pagination-bullet {
   width: 30px;
   height: 30px;
