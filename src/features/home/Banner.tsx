@@ -60,11 +60,17 @@ const SwiperContainer = styled.div`
   display: none;
   }
 }
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    top: 82% !important;
+    left: 80% !important;
+    width: 100%;
+}
 .swiper-pagination-horizontal{
   position: absolute;
-  top: 82%;
-  left: 80%;
-  }
+  top: 82% !important;
+  left: 80% !important;
+}
 .swiper-pagination-bullet {
   width: 30px;
   height: 30px;
