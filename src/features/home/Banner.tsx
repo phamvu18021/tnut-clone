@@ -56,7 +56,6 @@ const SwiperContainer = styled.div`
   top: 82%;
   left: 80%;
   transform: translate3d(-50%, 0, 0);
-  bottom: 30px;
   @media (max-width: 420px) {
   display: none;
   }
