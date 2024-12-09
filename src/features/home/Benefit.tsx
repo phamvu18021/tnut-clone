@@ -70,43 +70,48 @@ export const Benefit = (benefit: any) => {
   const benefits = [
     {
       path: "#",
-      title: benefit?.benefit[0]?.loi_ich_title || ".Tzhời gian Đào tạo ngắn",
+      title:
+        benefit?.benefit?.loi_ich_1.loi_ich_title || ".Thời gian Đào tạo ngắn",
       desc:
-        benefit?.benefit[0]?.loi_ich_desc ||
-        "• .Nzgười học có thể học vượt để rút ngắn thời gian học tập theo quy định đào tạo tín chỉ ",
+        benefit?.benefit?.loi_ich_1.loi_ich_desc ||
+        "• .Người học có thể học vượt để rút ngắn thời gian học tập theo quy định đào tạo tín chỉ ",
       descs:
-        benefit?.benefit[0]?.loi_ich_descs ||
+        benefit?.benefit?.loi_ich_1.loi_ich_descs ||
         "• .Thời gian đào tạo từ 2-4,5 năm ",
       icon: BsClockHistory
     },
     {
       path: "#",
-      title: benefit?.benefit[1]?.loi_ich_title || ".Bằng Đại học uy tín ",
+      title:
+        benefit?.benefit?.loi_ich_2.loi_ich_title || ".Bằng Đại học uy tín ",
       desc:
-        benefit?.benefit[1]?.loi_ich_desc ||
+        benefit?.benefit?.loi_ich_2.loi_ich_desc ||
         "• .Bằng không ghi hình thức đào tạo và được Bộ GD&ĐT công nhận ",
       descs:
-        benefit?.benefit[1]?.loi_ich_descs || "• .Có giá trị sử dụng trọn đời",
+        benefit?.benefit?.loi_ich_2.loi_ich_descs ||
+        "• .Có giá trị sử dụng trọn đời",
       icon: PiCertificate
     },
     {
       path: "#",
-      title: benefit?.benefit[2]?.loi_ich_title || ".Tư vấn 24/7",
+      title: benefit?.benefit?.loi_ich_3.loi_ich_title || ".Tư vấn 24/7",
       desc:
-        benefit?.benefit[2]?.loi_ich_desc || "• .Tư vấn lộ trình học miễn phí",
+        benefit?.benefit?.loi_ich_3.loi_ich_desc ||
+        "• .Tư vấn lộ trình học miễn phí",
       descs:
-        benefit?.benefit[2]?.loi_ich_descs ||
+        benefit?.benefit?.loi_ich_3.loi_ich_descs ||
         "• .Hỗ trợ học tập và kỹ thuật nhanh chóng - tận tình",
       icon: RiCustomerService2Line
     },
     {
       path: "#",
-      title: benefit?.benefit[3]?.loi_ich_title || ".Kho học liệu đa dạng",
+      title:
+        benefit?.benefit?.loi_ich_4.loi_ich_title || ".Kho học liệu đa dạng",
       desc:
-        benefit?.benefit[3]?.loi_ich_desc ||
+        benefit?.benefit?.loi_ich_4.loi_ich_desc ||
         "• .Tài liệu học tập đa Phương tiện (video, slide, script,..) ",
       descs:
-        benefit?.benefit[3]?.loi_ich_descs ||
+        benefit?.benefit?.loi_ich_4.loi_ich_descs ||
         "• .Giáo trình do giảng viên đang trực tiếp công tác tại trường biên soạn.",
       icon: MdOutlineWorkHistory
     }

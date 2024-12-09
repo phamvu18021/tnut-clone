@@ -28,13 +28,13 @@ export const About = () => {
     <>
       <Box color={"blue.800"}>
         <Box bg="radial-gradient(circle, rgba(5,70,89,1) 2%, rgba(98,212,245,1) 100%, rgba(252,89,52,1) 100%)"></Box>
-        {/* <Box>
+        <Box>
           <Banner imagesBanner={page_content?.acf?.anh_banner} />
           <IntroduceAbout introduceAbout={page_content?.acf?.gioi_thieu} />
           <Benefit benefit={page_content?.acf?.loi_ich} />
           <Slogan slogan={page_content?.acf?.slogan} />
           <Majors majors={page_content?.acf?.nganh_dao_tao} />
-        </Box> */}
+        </Box>
       </Box>
     </>
   );

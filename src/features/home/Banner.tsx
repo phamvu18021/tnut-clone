@@ -60,7 +60,6 @@ const SwiperContainer = styled.div`
   display: none;
   }
 }
-
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     top: 82% !important;
     left: 80% !important;
